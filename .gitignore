@@ -1,0 +1,7 @@
+# Local Codex configuration (machine paths / credentials)
+.codex/
+.env
+.env.*
+*.log
+Thumbs.db
+.DS_Store

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lootfall 2.0: lokale Entwicklungschronik mit Meilensteinen, früheren Screenshots und Gameplay-Clips.">
+  <title>Lootfall 2.0 – Entwicklungschronik</title>
+  <style>
+    :root { color-scheme: dark; --ink: #e8e3dc; --muted: #b3b1b2; --night: #101318; --panel: #191e25; --line: #48434a; --gold: #c6a16b; --blue: #6faee9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: radial-gradient(ellipse at 75% 0%, #26394a 0, transparent 34rem), var(--night); font: 16px/1.55 "Segoe UI", Arial, sans-serif; }
+    a { color: #9ac8f1; text-underline-offset: .2em; }
+    a:hover { color: #d2e9ff; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+    header { padding: 26px 0 16px; border-bottom: 1px solid #76644f; }
+    .brand { color: var(--gold); font: 700 13px/1.2 "Segoe UI", Arial, sans-serif; letter-spacing: .22em; text-transform: uppercase; }
+    nav { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 16px; font-size: 14px; }
+    nav a { color: var(--muted); text-decoration: none; }
+    .hero { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: end; padding: 64px 0 48px; }
+    .eyebrow { color: var(--gold); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    h1 { max-width: 720px; margin: 10px 0 16px; font-size: clamp(42px, 7vw, 76px); line-height: .98; }
+    .hero p { max-width: 650px; color: #c1c1c3; font-size: 18px; }
+    .vision { padding: 21px; border: 1px solid var(--line); border-left: 3px solid var(--gold); background: #171b21d9; }
+    .vision strong { display: block; margin-bottom: 7px; color: #e4c99a; font: 18px Georgia, serif; }
+    .vision p { margin: 0; color: var(--muted); font-size: 14px; }
+    section { padding: 24px 0 34px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    h2 { margin: 0; font-size: 30px; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 13px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card { overflow: hidden; border: 1px solid var(--line); border-radius: 7px; background: linear-gradient(145deg, #1b2027, #14171d); }
+    .card img, .card video { display: block; width: 100%; background: #0b0e12; object-fit: cover; }
+    .card img { aspect-ratio: 16 / 10; }
+    .card video { aspect-ratio: 16 / 9; }
+    .card-body { padding: 16px 17px 18px; }
+    .tag { display: inline-block; margin-bottom: 8px; color: #e2bf87; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h3 { margin: 0 0 7px; font-size: 21px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .featured { display: grid; grid-template-columns: 1.5fr 1fr; }
+    .featured > a { display: block; background: #090c11; }
+    .featured img { height: 100%; min-height: 280px; object-fit: contain; }
+    .featured .card-body { align-self: center; padding: 28px; }
+    .status { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+    .status span { padding: 5px 9px; border: 1px solid #4f545b; border-radius: 20px; color: #d2d5d8; font-size: 12px; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px 22px; padding: 22px 0 48px; border-top: 1px solid var(--line); font-size: 14px; }
+    footer { padding: 18px 0 30px; border-top: 1px solid var(--line); color: #92949a; font-size: 12px; }
+    @media (max-width: 760px) { .hero, .featured { grid-template-columns: 1fr; } .hero { padding-top: 42px; } .grid { grid-template-columns: 1fr; } .featured img { min-height: 0; } .section-head { align-items: start; flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <div class="brand">Lootfall 2.0 / Entwicklungschronik</div>
+    <nav aria-label="Seitennavigation"><a href="#stand">Heute</a><a href="#checkpoint">Vor dem Inventar</a><a href="#loot-dev">Loot &amp; Dev-Konsole</a><a href="#prototype">Erster Prototyp</a><a href="#chronik">Meilensteine</a><a href="#vorgeschichte">Vorgeschichte</a><a href="#clips">Clips</a><a href="#dokumente">Dokumente</a></nav>
+  </div></header>
+  <main class="wrap">
+    <section class="hero" id="stand">
+      <div><div class="eyebrow">Vom ersten Test zum eigenen Spiel</div><h1>Experimentieren.<br>Entdecken.<br>Weiterkommen.</h1><p>Die Entwicklung von Lootfall 2.0: Entscheidungen, Versuche und sichtbare Fortschritte – gesammelt als Grundlage für ein mögliches YouTube-Devlog.</p></div>
+      <aside class="vision"><strong>Stand · 16. Oktober 2026</strong><p>Cinder Codex verstärkt den aktuellen Run, abgeschlossene Wellen bringen am Ende gespeicherte Echoes. F1 öffnet 28 Balancing-Regler, Messwerte und Testwerkzeuge. 112 automatisierte Prüfungen bestanden; die neuen Systeme warten auf deine manuelle Abnahme.</p></aside>
+    </section>
+    <section id="checkpoint" aria-labelledby="checkpoint-title">
+      <div class="section-head"><h2 id="checkpoint-title">Bevor Ausrüstung eine Entscheidung wird</h2><p>16. Oktober 2026 · Git-Checkpoint bc2877f</p></div>
+      <article class="card featured">
+        <a href="captures/2026-10-16_before_inventory.png"><img src="captures/2026-10-16_before_inventory.png" alt="Aktueller Lootfall-Lauf vor dem Inventar-Umbau: Magier und Gegner in Welle 1, Echoes und Dev-Konsole-Hinweis im HUD"></a>
+        <div class="card-body"><span class="tag">Echte Laufzeitaufnahme via Godot MCP</span><h3>Der gesicherte Ausgangspunkt</h3><p>Arena, zufälliger Cinder Codex, gespeicherte Echoes und F1-Balancing sind vorhanden. Der nächste geplante Schritt ist ein Run-Inventar mit bewusster Ausrüstungswahl.</p><p style="margin-top:12px">Der Screenshot stammt aus einem kurzen echten Spielstart für das Archiv. Spielquellen und Chronik sind lokal in zwei Git-Repositories gesichert, ohne die aktiven Projektpfade zu verschieben.</p><div class="status"><span>112 Prüfungen erneut bestanden</span><span>Spiel-Commit bc2877f</span><span>Kein Upload</span></div></div>
+      </article>
+    </section>
+    <section id="loot-dev" aria-labelledby="loot-dev-title">
+      <div class="section-head"><h2 id="loot-dev-title">Loot, Echoes &amp; selbst abstimmen</h2><p>16. Oktober 2026 · Neu technisch geprüft</p></div>
+      <p>Der erste Zufallsfund ergänzt den Run. Höhere abgeschlossene Wellen ergeben mehr Echoes am Ende; die bisherigen Wellenkarten bleiben erhalten. Die Bilder sind inszenierte native Engine-Vorschauen, keine menschlichen Playthroughs.</p>
+      <div class="grid">
+        <article class="card"><a href="captures/2026-10-16_codex_v01.png"><img src="captures/2026-10-16_codex_v01.png" alt="Golden leuchtender Cinder Codex als physischer Fund in der Arena"></a><div class="card-body"><span class="tag">Ein besonderer Fund · Nur dieser Run</span><h3>Cinder Codex</h3><p>Ein seltenes Buch kann zufällig von besiegten Gegnern fallen. Nach dem Aufheben verursachen Feuerballtreffer zusätzlichen Flächenschaden. Maximal ein Buch pro Run; beim Neustart beginnt die Suche erneut.</p></div></article>
+        <article class="card"><a href="captures/2026-10-16_tuning_v01.png"><img src="captures/2026-10-16_tuning_v01.png" alt="F1-Dev-Konsole mit Reglern für Geschosse, Karten und Loot" loading="lazy"></a><div class="card-body"><span class="tag">F1 · 28 Regler · Profile</span><h3>Balance selbst ausprobieren</h3><p>Bewegung, Kampf, Gegnerdruck, Itemwirkung und Echoes einstellen. Hinweise erklären den Wirkungszeitpunkt. Messwerte, Testaktionen, Standard-Reset und eigene Profile helfen beim Vergleichen.</p><p style="margin-top:12px"><a href="captures/2026-10-16_console_v01.png">Metriken ansehen</a></p></div></article>
+        <article class="card"><a href="captures/2026-10-16_echoes_v01.png"><img src="captures/2026-10-16_echoes_v01.png" alt="Ergebnisbildschirm mit 210 gespeicherten Echoes nach sechs abgeschlossenen Wellen" loading="lazy"></a><div class="card-body"><span class="tag">Am Run-Ende · Einmalig gespeichert</span><h3>Weiter kommen lohnt sich</h3><p>Nur abgeschlossene Wellen zählen zur Auszahlung. Echoes und Bestwelle bleiben nach dem Neustart erhalten. Hideout und Kaufmöglichkeiten folgen als separates Paket.</p></div></article>
+      </div>
+      <div class="status"><span>112 Prüfungen · 0 Fehler</span><span>Native D3D12-Vorschauen gesichtet</span><span>Manuelle Balance offen</span></div>
+      <p><a href="../DEVLOG.md">Änderungen und Prüfung</a> · <a href="../README.md">Starten und F1 bedienen</a> · <a href="snapshots/2026-10-16_p0_before_loot.zip">Quellen vor diesem Paket</a> · <a href="snapshots/2026-10-16_loot_echoes_console.zip">Quellen dieses Pakets</a></p>
+    </section>
+    <section id="prototype" aria-labelledby="prototype-title">
+      <div class="section-head"><h2 id="prototype-title">Historie · Der erste P0-Prototyp</h2><p>16. Oktober 2026 · Technisch geprüft, Spielabnahme offen</p></div>
+      <p>Ein vollständiger kleiner Arena-Run: bewegen, zielen, Feuerbälle wirken, sechs zunehmend volle Wellen überstehen und nach Welle 2 und 4 den Build verändern. Eigene Platzhaltergrafik. Die Bilder sind inszenierte Vorschauen aus der echten Godot-Engine, keine Dokumentation eines menschlichen Durchlaufs.</p>
+      <div class="grid">
+        <article class="card"><a href="captures/2026-10-16_arena_v01.png"><img src="captures/2026-10-16_arena_v01.png" alt="Lootfall 2.0: Magier, Feuerball und Gegner in einer steinernen Arena"></a><div class="card-body"><span class="tag">Neuer Prototyp · Engine-Vorschau</span><h3>Der erste aktive Kampf</h3><p>WASD bewegt den Magier, die Maus zielt unabhängig. Linke Maustaste halten zaubert. Gegner verfolgen dich; Treffer, Schaden und Leben sind sichtbar.</p></div></article>
+        <article class="card"><a href="captures/2026-10-16_upgrades_v01.png"><img src="captures/2026-10-16_upgrades_v01.png" alt="Englische Upgrade-Auswahl mit Ember Power, Quick Casting und Fire Fan" loading="lazy"></a><div class="card-body"><span class="tag">Zwei Entscheidungen · Drei Optionen</span><h3>Den Feuerball verändern</h3><p>Mehr Schaden, schneller zaubern oder ein weiteres Projektil: Nach Welle 2 und 4 pausiert der Kampf für eine Wahl. Die gleiche Karte kann zweimal gewählt werden.</p></div></article>
+        <article class="card"><a href="captures/2026-10-16_result_v01.png"><img src="captures/2026-10-16_result_v01.png" alt="Englischer Ergebnisbildschirm des Arena-Prototyps mit Neustart-Schaltfläche" loading="lazy"></a><div class="card-body"><span class="tag">Tod oder Sieg · Neuer Versuch</span><h3>Ein geschlossener Run</h3><p>Welle 6 oder der Tod beenden den Versuch. Neustart setzt Gegner, Projektile und Verbesserungen zurück; nur die Bestwelle dieser Spielsitzung bleibt.</p></div></article>
+      </div>
+      <div class="status"><span>58 Prüfungen · 0 Fehler</span><span>Native D3D12-Vorschauen</span><span>Manuelle Balance offen</span></div>
+      <p><a href="../DEVLOG.md">Änderung und Prüfnachweise</a> · <a href="../README.md">Starten und Steuerung</a></p>
+    </section>
+    <section id="chronik" aria-labelledby="chronik-title">
+      <div class="section-head"><h2 id="chronik-title">Der dokumentierte Ausgangspunkt</h2><p>16. Oktober 2026 · Dokumentation eingerichtet</p></div>
+      <div class="grid">
+        <article class="card"><div class="card-body"><span class="tag">Ausgangspunkt</span><h3>Die Vision festhalten</h3><p>Build-Entdeckung, herausfordernder Aufstieg und ein belohnender Neuanfang bilden den Konzeptentwurf. Der Masterplan trennt Entscheidungen, Hypothesen und offene Fragen.</p></div></article>
+        <article class="card"><div class="card-body"><span class="tag">Heute umgesetzt</span><h3>Entwicklung sichtbar machen</h3><p>Die Gestaltung der alten HTML-Galerie lebt weiter. Drei Screenshots und zwei vorhandene Clips sind lokal als Vorgeschichte gesichert. Künftige Meilensteine bekommen eine kurze Geschichte mit echten Prüfergebnissen.</p></div></article>
+        <article class="card"><div class="card-body"><span class="tag">Damals geplant · jetzt umgesetzt</span><h3>Der erste Kampftest</h3><p>Beim Einstieg war der kleine Kampftest noch ein Vorschlag. Inzwischen wurde das Arena-Paket freigegeben und umgesetzt – den neuen Stand zeigen die Vorschauen oben.</p></div></article>
+      </div>
+    </section>
+    <section id="vorgeschichte" aria-labelledby="history-title">
+      <div class="section-head"><h2 id="history-title">Woher Lootfall kommt</h2><p>Historische Bilder · 14.–15. Oktober 2026</p></div>
+      <p>Ausgewählte Originalmedien aus dem früheren Projekt. Sie dokumentieren damalige Arbeitsstände und sind kein Nachweis für Funktionen in Lootfall 2.0. Frühere Testaussagen wurden hier nicht erneut überprüft.</p>
+      <div class="grid">
+        <article class="card"><a href="archive/dungeon_v03.png"><img src="archive/dungeon_v03.png" alt="Historische Dungeon-Vorschau des früheren Lootfall-Prototyps" loading="lazy"></a><div class="card-body"><span class="tag">Vorgeschichte · 14.10.2026</span><h3>Räume erkunden</h3><p>Ein früherer Stand mit Dungeon-Räumen. Ausgangsmaterial für einen späteren Vorher-nachher-Vergleich.</p></div></article>
+        <article class="card"><a href="archive/inventory_v01.png"><img src="archive/inventory_v01.png" alt="Historisches Inventar mit Magier, Ausrüstung und Tasche" loading="lazy"></a><div class="card-body"><span class="tag">Vorgeschichte · 14.10.2026</span><h3>Beute sichtbar machen</h3><p>Die frühere Inventaransicht zeigt, wie Ausrüstung und Itemvergleiche damals dargestellt wurden.</p></div></article>
+        <article class="card"><a href="archive/rarity_stats_v01.png"><img src="archive/rarity_stats_v01.png" alt="Historischer Testaufbau mit Magierwerten und farbigen Itemqualitäten" loading="lazy"></a><div class="card-body"><span class="tag">Vorgeschichte · 15.10.2026</span><h3>Fortschritt verstehen</h3><p>Ein damaliger Testaufbau mit Charakterwerten und Seltenheiten. Keine Festlegung für das neue Spiel.</p></div></article>
+      </div>
+    </section>
+    <section id="clips" aria-labelledby="clips-title">
+      <div class="section-head"><h2 id="clips-title">Bewegte Vorgeschichte</h2><p>Vorhandene Aufnahmen · 14. Oktober 2026</p></div>
+      <div class="grid">
+        <article class="card"><video controls preload="none" aria-label="Historische Lootfall-Aufnahme vom 14. Oktober um 11:54"><source src="archive/Recording%202026-10-14%20115459.mp4" type="video/mp4">MP4-Wiedergabe wird nicht unterstützt.</video><div class="card-body"><span class="tag">Originalclip · Inhalt nicht neu gesichtet</span><h3>Aufnahme · 11:54 Uhr</h3><p><a href="archive/Recording%202026-10-14%20115459.mp4">Originaldatei öffnen</a></p></div></article>
+        <article class="card"><video controls preload="none" aria-label="Historische Lootfall-Aufnahme vom 14. Oktober um 17:23"><source src="archive/Recording%202026-10-14%20172325.mp4" type="video/mp4">MP4-Wiedergabe wird nicht unterstützt.</video><div class="card-body"><span class="tag">Originalclip · Inhalt nicht neu gesichtet</span><h3>Aufnahme · 17:23 Uhr</h3><p><a href="archive/Recording%202026-10-14%20172325.mp4">Originaldatei öffnen</a></p></div></article>
+        <article class="card"><div class="card-body"><span class="tag">Künftige Meilensteine</span><h3>Material für die Geschichte</h3><p>Pro sichtbarem Fortschritt: Ausgangsproblem, Änderung, Ergebnis und offene Frage. Dazu ein passender Screenshot oder ausgewählter Clip, sofern vorhanden. Neue Medien landen in <code>Progress/captures/</code>.</p><p style="margin-top:12px"><a href="README.md">So pflegen wir die Chronik</a></p></div></article>
+      </div>
+    </section>
+    <section id="dokumente" aria-labelledby="docs-title">
+      <div class="section-head"><h2 id="docs-title">Hinter den Kulissen</h2><p>Konzept und nachgewiesener Fortschritt</p></div>
+      <div class="links"><a href="../LOOTFALL_MASTERPLAN.md">Masterplan</a><a href="../DEVLOG.md">Entwicklungsprotokoll</a><a href="../README.md">Projekteinstieg</a><a href="README.md">Chronik &amp; Medienherkunft</a></div>
+    </section>
+  </main>
+  <footer><div class="wrap">Lokale Chronik · Gestaltung aus der früheren Lootfall-Galerie übernommen · Keine Veröffentlichung oder automatische Bildschirmaufnahme.</div></footer>
+</body>
+</html>
