@@ -51,12 +51,25 @@
 <body>
   <header><div class="wrap">
     <div class="brand">Lootfall 2.0 / Entwicklungschronik</div>
-    <nav aria-label="Seitennavigation"><a href="#stand">Heute</a><a href="#checkpoint">Vor dem Inventar</a><a href="#loot-dev">Loot &amp; Dev-Konsole</a><a href="#prototype">Erster Prototyp</a><a href="#chronik">Meilensteine</a><a href="#vorgeschichte">Vorgeschichte</a><a href="#clips">Clips</a><a href="#dokumente">Dokumente</a></nav>
+    <nav aria-label="Seitennavigation"><a href="#stand">Heute</a><a href="#inventory">Inventar &amp; Equipment</a><a href="#checkpoint">Vor dem Inventar</a><a href="#loot-dev">Loot &amp; Dev-Konsole</a><a href="#prototype">Erster Prototyp</a><a href="#chronik">Meilensteine</a><a href="#vorgeschichte">Vorgeschichte</a><a href="#clips">Clips</a><a href="#dokumente">Dokumente</a></nav>
   </div></header>
   <main class="wrap">
     <section class="hero" id="stand">
       <div><div class="eyebrow">Vom ersten Test zum eigenen Spiel</div><h1>Experimentieren.<br>Entdecken.<br>Weiterkommen.</h1><p>Die Entwicklung von Lootfall 2.0: Entscheidungen, Versuche und sichtbare Fortschritte – gesammelt als Grundlage für ein mögliches YouTube-Devlog.</p></div>
-      <aside class="vision"><strong>Stand · 16. Oktober 2026</strong><p>Cinder Codex verstärkt den aktuellen Run, abgeschlossene Wellen bringen am Ende gespeicherte Echoes. F1 öffnet 28 Balancing-Regler, Messwerte und Testwerkzeuge. 112 automatisierte Prüfungen bestanden; die neuen Systeme warten auf deine manuelle Abnahme.</p></aside>
+      <aside class="vision"><strong>Stand · 16. Oktober 2026</strong><p>Loot landet zuerst in der Tasche. I öffnet Equipment mit Beschreibung und Vergleich; erst Ausrüsten aktiviert den Fund. Vier feste Items, zwei Slots und 33 F1-Regler. 158 automatisierte Prüfungen bestanden; Verständlichkeit und Balance warten auf den Spieltest.</p></aside>
+    </section>
+    <section id="inventory" aria-labelledby="inventory-title">
+      <div class="section-head"><h2 id="inventory-title">Ein Fund wird zur Entscheidung</h2><p>16. Oktober 2026 · INV1 technisch geprüft</p></div>
+      <p>Das Feedback: Der Cinder Codex fühlte sich wie ein automatisches Power-up an. Jetzt sammelt man Gegenstände, liest ihre Wirkung und entscheidet selbst über die Ausrüstung. Die Bilder zeigen inszenierte native Engine-Testaufbauten, keine menschlichen Playthroughs.</p>
+      <article class="card featured">
+        <a href="captures/2026-10-16_inventory_v01.png"><img src="captures/2026-10-16_inventory_v01.png" alt="Neues Lootfall-Inventar mit Zepter, Codex und acht Taschenfeldern: Focus Grimoire zeigt vor dem Wechsel mehr Schaden und den Verlust von Splash"></a>
+        <div class="card-body"><span class="tag">I · Acht Taschenfelder · Zwei Slots</span><h3>Verstehen, vergleichen, ausrüsten</h3><p>Ember oder Swift Scepter, Cinder Codex oder Focus Grimoire: vier feste Items für erste Entscheidungen. Der Vergleich nutzt dieselben Werte wie der Kampf. Wechsel bewahrt das alte Item; bei voller Tasche bleibt Bodenloot liegen.</p><p style="margin-top:12px">Karten bleiben nach Welle 2 und 4, Echoes kommen am Run-Ende. Tasche und Equipment gelten für diesen Run; dauerhafte Items sind weiterhin eine offene Entscheidung.</p></div>
+      </article>
+      <div class="grid" style="margin-top:14px">
+        <article class="card"><a href="captures/2026-10-16_ground_item_inv1.png"><img src="captures/2026-10-16_ground_item_inv1.png" alt="Cinder Codex am Boden mit Name, Typ, kurzer Wirkung und Inventarhinweis" loading="lazy"></a><div class="card-body"><span class="tag">Aufheben aktiviert nichts</span><h3>Der Fund erklärt sich</h3><p>Beim Annähern werden Name, Typ und kurze Wirkung sichtbar. Ein Fundhinweis führt ins pausierte Equipment-Fenster, ohne es beim Aufheben zu erzwingen.</p></div></article>
+        <article class="card"><a href="captures/2026-10-16_item_tuning_inv1.png"><img src="captures/2026-10-16_item_tuning_inv1.png" alt="F1-Konsole mit zusätzlicher Dropchance, Bodenlimit und Zepterwerten" loading="lazy"></a><div class="card-body"><span class="tag">F1 · 33 Regler · Alte Profile ladbar</span><h3>Items selbst abstimmen</h3><p>Itemboni und Dropverteilung direkt verändern oder gezielt eines der vier Items erzeugen. Alte Balance-Profile behalten ihre bisherigen Werte; neue Felder starten mit Standardwerten.</p></div></article>
+        <article class="card"><div class="card-body"><span class="tag">Technische Prüfung ≠ Spielabnahme</span><h3>Die nächste Beobachtung</h3><p>Kannst du einen Fund vor dem Ausrüsten erklären? Ist der Tausch zwischen Flächenschaden und direktem Schaden interessant? Das entscheidet der nächste Spieltest.</p><div class="status"><span>158 Checks · 0 Fehler</span><span>5 Scripts via Godot MCP validiert</span><span>Kein neuer Clip</span></div><p style="margin-top:12px"><a href="../DEVLOG.md">Änderung und echte Prüfergebnisse</a></p></div></article>
+      </div>
     </section>
     <section id="checkpoint" aria-labelledby="checkpoint-title">
       <div class="section-head"><h2 id="checkpoint-title">Bevor Ausrüstung eine Entscheidung wird</h2><p>16. Oktober 2026 · Git-Checkpoint bc2877f</p></div>
@@ -66,8 +79,8 @@
       </article>
     </section>
     <section id="loot-dev" aria-labelledby="loot-dev-title">
-      <div class="section-head"><h2 id="loot-dev-title">Loot, Echoes &amp; selbst abstimmen</h2><p>16. Oktober 2026 · Neu technisch geprüft</p></div>
-      <p>Der erste Zufallsfund ergänzt den Run. Höhere abgeschlossene Wellen ergeben mehr Echoes am Ende; die bisherigen Wellenkarten bleiben erhalten. Die Bilder sind inszenierte native Engine-Vorschauen, keine menschlichen Playthroughs.</p>
+      <div class="section-head"><h2 id="loot-dev-title">Historie · Loot, Echoes &amp; selbst abstimmen</h2><p>16. Oktober 2026 · Vor INV1</p></div>
+      <p>Der erste Zufallsfund ergänzte den Run noch durch automatische Aktivierung; INV1 ersetzt dieses Verhalten durch bewusstes Ausrüsten. Höhere abgeschlossene Wellen ergeben weiterhin mehr Echoes am Ende. Die Bilder dokumentieren den damaligen Stand als inszenierte native Engine-Vorschauen, keine menschlichen Playthroughs.</p>
       <div class="grid">
         <article class="card"><a href="captures/2026-10-16_codex_v01.png"><img src="captures/2026-10-16_codex_v01.png" alt="Golden leuchtender Cinder Codex als physischer Fund in der Arena"></a><div class="card-body"><span class="tag">Ein besonderer Fund · Nur dieser Run</span><h3>Cinder Codex</h3><p>Ein seltenes Buch kann zufällig von besiegten Gegnern fallen. Nach dem Aufheben verursachen Feuerballtreffer zusätzlichen Flächenschaden. Maximal ein Buch pro Run; beim Neustart beginnt die Suche erneut.</p></div></article>
         <article class="card"><a href="captures/2026-10-16_tuning_v01.png"><img src="captures/2026-10-16_tuning_v01.png" alt="F1-Dev-Konsole mit Reglern für Geschosse, Karten und Loot" loading="lazy"></a><div class="card-body"><span class="tag">F1 · 28 Regler · Profile</span><h3>Balance selbst ausprobieren</h3><p>Bewegung, Kampf, Gegnerdruck, Itemwirkung und Echoes einstellen. Hinweise erklären den Wirkungszeitpunkt. Messwerte, Testaktionen, Standard-Reset und eigene Profile helfen beim Vergleichen.</p><p style="margin-top:12px"><a href="captures/2026-10-16_console_v01.png">Metriken ansehen</a></p></div></article>

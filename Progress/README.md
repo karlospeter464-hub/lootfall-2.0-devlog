@@ -43,3 +43,7 @@ Unter `snapshots/` liegen ausgewählte Spielquellen (Scripts, Szenen, Tests, pro
 ## Checkpoint vor INV1
 
 `captures/2026-10-16_before_inventory.png`: echter Laufzeit-Screenshot (1152 × 720) über Godot MCP aus der aktuellen Hauptszene, aufgenommen vor dem Inventar-Umbau und visuell geprüft. Keine gestellte Capture-Szene und keine menschliche Gameplay-Aufnahme. Zugehöriger Spiel-Commit: `bc2877fd82fa738a3ba5d27905e7a3a2210c9fba`. In diesem Chronik-Commit zusammen mit den übrigen Medien lokal archiviert; keine Veröffentlichung.
+
+## INV1 – Fund verstehen, dann ausrüsten
+
+`captures/2026-10-16_inventory_v01.png`, `2026-10-16_ground_item_inv1.png`, `2026-10-16_item_tuning_inv1.png`: neue native D3D12-Vorschauen aus `tests/capture_preview.gd -- --test-mode` mit den Ansichten `inventory`, `loot`, `tuning`. Alle drei Bilder gesichtet, 1152 × 720. Sie zeigen den Buchvergleich mit verlorenem Splash, den erklärten Bodenfund und die zusätzlichen Itemregler. Inszenierte Testaufbauten mit isolierten Spielständen, kein menschlicher Durchlauf und kein neuer Clip. Aktueller Spiel-Commit steht im zugehörigen INV1-Devlog-Eintrag; frühere Bilder zeigen historische Verhaltensstände, insbesondere die inzwischen ersetzte automatische Codex-Aktivierung.

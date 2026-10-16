@@ -2,13 +2,13 @@
 
 **Starten:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot` in Godot öffnen, **F5**. Falls nach der Hauptszene gefragt wird: `scenes/arena.tscn`. Spielcode und Oberfläche sind Englisch; dieser separate OneDrive-Ordner enthält die deutsche Chronik.
 
-**Aktuelles Paket:** Zufälliger Cinder Codex als Run-Item mit Flächentreffern. Echoes für abgeschlossene Wellen bei Tod/Sieg, einmalig gespeichert; Wallet und Bestwelle bleiben erhalten. Die Karten kommen weiterhin nach Welle 2 und 4. Startwerte: 2 % Dropchance, ein Buch pro Run, Explosion Radius 85 / 60 % Geschossschaden, Echoes = 10 × (1 + 2 + … + abgeschlossene Wellen).
+**Aktuelles Paket INV1:** Aufheben → acht Taschenfelder → Beschreibung/Vergleich → bewusst ausrüsten. Zepter- und Buchslot, vier feste Items: Ember Scepter (+30 % Schaden), Swift Scepter (20 % kürzeres Intervall), Cinder Codex (85 Radius / 60 % Splash) und Focus Grimoire (+40 % Schaden statt Splash). Run-Items werden beim nächsten Versuch zurückgesetzt. Karten weiterhin nach Welle 2/4; Echoes unverändert nur am Run-Ende für abgeschlossene Wellen, gespeichert mit Bestwelle.
 
-**Dev-Konsole: F1.** 28 einstellbare Werte, Live-Metriken, Testaktionen, Standard-Reset und manuell speicherbare Profile. Während der Bearbeitung pausiert das Spiel. Werte haben Wirkungshinweise; Gegnerwerte gelten für neue Gegner. Testaktionen können echte Echoes beeinflussen. Vollständige englische Anleitung und Testbefehle: `README.md` im Spielordner.
+**Dev-Konsole: F1.** 33 einstellbare Werte einschließlich Itemboni und Dropverteilung, Live-Metriken, gezielte Testfunde, Standard-Reset und manuell speicherbare Profile. Alte Profile mit 28 Werten bleiben ladbar. Während der Bearbeitung pausiert das Spiel. Gegnerwerte gelten für neue Gegner; Testaktionen können echte Echoes beeinflussen. Vollständige englische Anleitung und Testbefehle: `README.md` im Spielordner.
 
-Steuerung: WASD bewegen, Maus zielen, linke Maustaste halten zaubern, Escape pausieren. Zum Loot-Test: F1 → Rewards & tools → Drop Codex → schließen und das Buch aufheben. Dort gibt es auch HP auffüllen, Gegner einfrieren und einen RNG-Seed. Profile speichern keine Testschalter oder Währung.
+Steuerung: WASD bewegen, Maus zielen, linke Maustaste halten zaubern, **I** Equipment, **Escape** aktuelles Fenster schließen oder pausieren. Zum Loot-Test: F1 → Rewards & tools → Item wählen → Drop selected item → schließen und aufheben → I → vergleichen und ausrüsten. Erst ausgerüstete Items wirken. Volle Tasche lässt Bodenfunde liegen; Wechsel bewahrt das vorherige Item. Profile speichern keine Items, Testschalter oder Währung.
 
-**Prüfung:** Godot 4.7.2: 112 automatisierte Prüfungen ohne Fehler, native D3D12-Vorschauen gesichtet. Manuelle Balance-/Loot-/Konsolenabnahme bleibt offen. Echoes-Ausgaben/Hideout sind noch nicht implementiert; kein Inventar oder dauerhafter Itembesitz.
+**Prüfung:** Godot 4.7.2: 158 automatisierte Prüfungen ohne Fehler, fünf Scripts via Godot MCP validiert und drei neue D3D12-Vorschauen gesichtet. Manuelle Verständlichkeit/Balance, andere Fenstergrößen und Export bleiben offen. Echoes-Ausgaben/Hideout und dauerhafter Itembesitz sind noch nicht implementiert.
 
 - [Entwicklungschronik](Progress/index.html): neue Vorschauen und gekennzeichnete Vorgeschichte.
 - [Masterplan](LOOTFALL_MASTERPLAN.md): Konzept, aktueller Stand und wesentliche Entscheidungen.
@@ -18,9 +18,10 @@ Steuerung: WASD bewegen, Maus zielen, linke Maustaste halten zaubern, Escape pau
 
 Das alte Projekt `C:/Users/elias/lootfall` und die Downloads-Kopie des Masterplans bleiben unverändert. Nächster Schritt: aktuellen Run spielen, F1/Profile ausprobieren und anhand einer konkreten Beobachtung abstimmen.
 
-## Git-Stand vor dem Inventar
+## Lokale Git-Checkpoints
 
 - Spielquellen: eigenes Repository unter `C:/Users/elias/Lootfall 2.0/lootfall-2.0`, erster Checkpoint **bc2877f**, Branch `codex/baseline`.
+- INV1: **215f601**, Branch `codex/inventory`; Spiel-Arbeitsbaum nach Commit sauber. Neuer Stand und Screenshots sind im zugehörigen Devlog-Eintrag beschrieben.
 - Diese Chronik: separates bestehendes Repository im OneDrive-Ordner, eigener begleitender Commit mit Masterplan, Medien und Verweis auf den Spiel-Commit.
 - Nach getesteten Paketen zuerst ausgewählte Spieländerungen committen, danach Spiel-Hash und Medien im Devlog festhalten und die Chronik committen. Beide Git-Zustände prüfen. Lokale `.codex`-/MCP-Konfiguration bleibt ignoriert.
 - Aktueller archivierter Laufzeit-Screenshot: [Vor dem Inventar](Progress/captures/2026-10-16_before_inventory.png). Keine Ordner verschoben und keine Remotes/Uploads eingerichtet.

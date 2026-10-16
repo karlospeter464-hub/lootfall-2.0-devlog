@@ -1,5 +1,27 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-16 – INV1: Ein Fund wird zur Ausrüstungsentscheidung
+
+**Auftrag / Planabgleich:** Nutzer startet das zuvor bestätigte INV1-Paket nach dem Git-/Screenshot-Checkpoint. Bezug: Masterplan 8.4, gezielte Erweiterung des P1-Loot-Tests. Bestätigte Abweichung vom ursprünglichen „ein Drop, kein Inventar“: Aufheben aktiviert keinen Bonus mehr, sondern legt ein Run-Item in die Tasche. Karten bleiben wellenbasiert; Echoes-Auszahlung und dauerhafter Speicher bleiben unverändert. Keine weitere Scope-Abweichung im Abschlussdiff.
+
+**Grund und Änderung:** Der Codex fühlte sich laut Feedback wie ein automatischer Power-up an und erklärte sich zu wenig. Nun acht Taschenfelder, Zepter-/Buchslot, englische Namen/Icons/Wirkungen und Vergleich vor dem Wechsel. I öffnet das pausierte Equipment, Escape schließt zur vorherigen Ansicht; der Pausenbildschirm bietet ebenfalls Equipment. Ein-/Auswechseln und Ablegen per Schaltfläche. Volle Tasche lässt Bodenloot liegen; ein fehlgeschlagener Drop am Bodenlimit behält das eigene Item. Ein belegter Slot tauscht sein altes Item in genau das ausgewählte Taschenfeld zurück.
+
+**Vier feste Testitems:** Ember Scepter +30 % Schaden, Swift Scepter 20 % kürzeres Intervall, Cinder Codex Radius 85 / 60 % Splash, Focus Grimoire +40 % Schaden statt Splash. Schadensboni der Ausrüstung addieren sich vor Multiplikation mit dem Kartenschaden; Swift multipliziert das Intervall nach Karten. Codex weiterhin 2 % / maximal ein natürlicher Fund pro Run; sonst separater 10-%-Wurf gleichverteilt auf die drei anderen Items. Bodenlimit 16. Startwerte für den Spieltest, kein abgenommenes Balancing. Tasche/Ausrüstung werden beim nächsten Run geleert, nicht gespeichert.
+
+**F1:** 33 statt 28 Regler, neue Itemboni/Dropverteilung/Bodenlimit, gezielt auswählbare Testfunde und Bag-/Equipment-Metriken. Inventarvergleich und Kampf nutzen dieselbe Berechnung. Neue Profile v2 enthalten 33 Werte; alte v1-Profile laden ihre 28 Werte und verwenden für fünf neue Felder Startup-Defaults mit Statushinweis. Keine automatische Umschreibung alter Dateien beim Laden. Vollständige Validierung vor Anwendung, Profil und Wallet weiterhin getrennt.
+
+**Tatsächliche Prüfung:** Godot 4.7.2, isoliertes APPDATA und zwingend `--test-mode`: Arena 58 + Loot/Konsole 54 + Inventar 46 = **158 checks / 0 failures**, alle Exit 0. Unter anderem echte Pickup-/Projektilabläufe, inaktive Tasche, Entfernen alter Boni, volle Tasche und verlustfreie Swaps, abgewiesenes Ablegen, Wiederaufnahme blockierter Funde, I/Escape/F1-Input durch den Viewport, ausstehende Wellenkarte, Ergebnis/Restart und alte Profilformate. Die Equip-Schaltflächen wurden über echte Button-Signale geprüft, kein menschlicher Mausklick-Durchlauf. Fünf Gameplay-Scripts außerdem via verbundenem Godot MCP `script_check` ohne Diagnosen validiert; Projektname lesend bestätigt. Galerie: 52 lokale Verweise geprüft, keine defekt. Gestagte eigene Quelldateien/Diff geprüft.
+
+**Aufschlussreicher Fehlversuch:** Erster Inventartest: 46 Checks, vier Fehler. Zwei kamen aus einer Testvorbereitung, die die Wellenabschluss-Funktion im falschen Zustand aufrief; Fixture korrigiert. Die übrigen zeigten einen echten Fehler der neuen Profil-Versionsprüfung: Godot parst JSON-Zahlen als Float, strikte Array-Mitgliedschaft erkannte Version 1 nicht. Die gezielte Fehlermeldung grenzte das ein; numerischer Vergleich behoben, anschließend alle Suites erfolgreich. Keine Änderung an normalen Nutzersaves.
+
+**Medien:** Drei inszenierte native D3D12-Vorschauen, jeweils 1152 × 720, erzeugt mit `tests/capture_preview.gd -- --test-mode` und visuell geprüft: `Progress/captures/2026-10-16_inventory_v01.png`, `2026-10-16_ground_item_inv1.png`, `2026-10-16_item_tuning_inv1.png`. Die Inventaransicht zeigt bewusst den Tradeoff des Focus Grimoire: mehr Schaden, Splash ON → OFF. Keine neue Videoaufnahme oder menschliche Gameplay-Aufnahme. Vorher-Bild und alte Medien bewahrt.
+
+**Git / Herkunft:** Spiel-Commit `215f601645ba35b2765389fee0411c4dee7e23f1` auf `codex/inventory`: `Add run inventory equipment choices and item balancing`. Spiel-Arbeitsbaum nach Commit sauber. Chronik erhält diesen begleitenden Eintrag, aktualisierten Masterplan und Galerie samt drei Bildern. Aus dem alten Lootfall nur das Prinzip Tasche/Slots/Vergleich als Referenz genutzt; keine Komplettübernahme und keine Änderung am Original. Keine neuen Abhängigkeiten, kein Push/Upload.
+
+**Offen / nächster Spieltest:** Fund vor dem Ausrüsten erklären, beide Bücher und Zepter vergleichen, Wirkung im Kampf erkennen. Danach beurteilen, ob der Tausch interessant ist und wie häufig Loot fallen sollte. Andere Fenstergrößen, manueller Gesamtdurchlauf und Release-Export noch nicht geprüft. Dauerhafte Items, Affixe, Drag-and-drop, Hideout/Käufe und zusätzliche Progressionswege bleiben außerhalb des Pakets.
+
+---
+
 ## 2026-10-16 – Git-Checkpoint und Screenshot vor dem Inventar
 
 **Auftrag:** Nutzer bestätigt das vorgeschlagene INV1-Paket und bittet vor dem Weiterarbeiten um Git-Commit und aktuellen Screenshot fürs Archiv. Dieser Auftrag sichert den Stand; kein Inventar-/Gameplay-Code darin geändert.

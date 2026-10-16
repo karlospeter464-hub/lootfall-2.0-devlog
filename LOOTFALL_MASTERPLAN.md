@@ -282,41 +282,41 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
-### 8.4 Aktueller Vorschlag INV1 – Gegenstände bewusst ausrüsten
+### 8.4 INV1 – Gegenstände bewusst ausrüsten
 
 **Feedback vom 16.10.2026:** Nutzer bewertet Look and Feel positiv und berichtet, dass Echoes funktioniert. Dev-Konsole noch nicht selbst geprüft. Die Wirkung des Cinder Codex ist beim Fund unklar; sofortige automatische Aktivierung wirkt wie ein Run-Power-up. Gewünscht ist ein stärkeres Item-/Equipment-Gefühl mit Inventar und Ausrüstungswechsel während des Runs.
 
-**Status / Planbezug:** Paketinhalt vom Nutzer am 16.10.2026 bestätigt; zuerst den beauftragten Git-/Screenshot-Checkpoint erstellen. **Inventar noch nicht implementiert**. Erweitert den bisherigen P1-Test ausdrücklich über „ein Drop, kein Inventar“ hinaus: Aufheben bedeutet Besitz im Run, erst Ausrüsten aktiviert den Effekt. Karten nach Wellen und Echoes am Run-Ende bleiben erhalten. Das bestehende Run-Ende setzt Items weiterhin zurück; dauerhafte Item-Persistenz wird durch ein Inventar nicht automatisch beschlossen.
+**Status / Planbezug:** Vom Nutzer am 16.10.2026 bestätigt und nach Git-/Screenshot-Checkpoint implementiert, technisch geprüft; manuelle Spielabnahme offen. **Bestätigte Abweichung vom bisherigen Plan:** Erweitert den P1-Test über „ein Drop, kein Inventar“ hinaus: Aufheben bedeutet Besitz im Run, erst Ausrüsten aktiviert den Effekt. Karten nach Wellen und Echoes am Run-Ende bleiben erhalten. Beim nächsten Run werden Items weiterhin zurückgesetzt; dauerhafte Item-Persistenz ist damit nicht beschlossen.
 
 **Erlebnisziel:** Einen Fund verstehen und zwischen nachvollziehbaren Ausrüstungsoptionen wählen können. Erfolgskriterium: Spieler kann vor dem Ausrüsten erklären, was der Gegenstand macht, einen bewussten Tausch vornehmen und die Änderung im Kampf erkennen.
 
-**Vorgeschlagenes zusammenhängendes Paket:**
+**Umgesetztes bestätigtes Paket:**
 - Kleine Run-Tasche mit acht Feldern und zwei Ausrüstungsplätzen: Zepter und Buch, passend zum Apprentice. Slotzahl und Größe sind für das bestätigte INV1-Paket vorgesehen.
-- Vier feste Testgegenstände als Vorschlag: zwei Zepter mit Schwerpunkt Schaden beziehungsweise Zaubertempo sowie Cinder Codex (Flächenschaden) und ein alternatives Buch für direkten Einzelschaden. Werte/Namen/Tradeoffs und Dropverteilung noch abzugrenzen. Keine prozeduralen Affixe oder weitere Rarity-Stufen in diesem Paket.
+- Vier feste Testgegenstände: Ember Scepter (+30 % Schaden), Swift Scepter (20 % kürzeres Zauberintervall), Cinder Codex (Radius 85 / 60 % Splash) und Focus Grimoire (+40 % direkter Schaden statt Splash). Ausrüstungs-Schadensboni addieren sich und multiplizieren anschließend den kartengestützten Schaden; Swift multipliziert das Intervall nach Karten. Startwerte zum Testen, in F1 veränderbar. Codex weiterhin 2 % pro berechtigtem Kill und maximal ein natürlicher Fund pro Run; ohne Codex-Drop separater 10-%-Wurf, gleichverteilt auf die anderen drei Items. Bodenlimit 16; volle Tasche lässt Funde liegen. Keine prozeduralen Affixe oder weitere Rarity-Stufen.
 - Bodenfund zeigt beim Annähern Name, Gegenstandstyp und eine kurze Wirkung. Aufheben legt ihn in die Tasche, aktiviert ihn noch nicht und öffnet kein erzwungenes Kampffenster. Kurzer Fundhinweis verweist auf das Inventar.
 - Inventar zeigt Icon/Name, passende Slotart, verständliche Wirkung, Effektwerte und Vergleich mit dem ausgerüsteten Gegenstand. Ausgerüstete Slots bleiben sichtbar. Beispielbeschreibung: „Your fireballs deal splash damage to nearby enemies.“ Entdeckung bleibt im Experimentieren mit Kombinationen möglich.
-- I öffnet direkt das pausierte Inventar; das Escape-Pausenmenü erhält einen Equipment-Zugang. Escape schließt zunächst die aktuelle Oberfläche und kehrt in den vorherigen Zustand zurück. F1, Upgrade-Auswahl und Tod/Sieg dürfen dadurch nicht versehentlich fortgesetzt werden. Konkrete Bedienung noch als Vorschlag.
+- I öffnet direkt das pausierte Inventar; das Escape-Pausenmenü besitzt einen Equipment-Zugang. Escape schließt zunächst die aktuelle Oberfläche und kehrt in den vorherigen Zustand zurück. F1 über dem Inventar und ausstehende Wellenkarten bewahren den vorherigen Zustand; das Run-Ergebnis schließt das Inventar.
 - Ein-/Auswechseln und Ablegen mit klaren Schaltflächen; kein Drag-and-drop-Zwang. Volle Tasche lässt Bodenfunde liegen; Ausrüstungswechsel bewahrt das vorherige Item. Kein stilles Löschen.
 - Gemeinsame tatsächliche Werteberechnung für Karten + Ausrüstung + F1, Vergleich und Kampf. Bestehenden Codex-Effekt weiterverwenden. F1 um vorhandene Itemwerte und gezielte Testfunde ergänzen, aktuelle Profile kompatibel migrieren beziehungsweise verständlich validieren.
 
 **Bewusst außerhalb:** Permanente Item-Sammlung, Handel, Händler/Hideout, Crafting, mehrere Klassen, neue Gegner, weitere Währungen und XP-/Sammelfortschritt. Neue Gegenstände sollen vorhandene Kampfwirkungen nutzen.
 
-**Prüfung beim späteren Bauauftrag:** Aufnahme aktiviert nichts; nur ausgerüstete Gegenstände wirken; Wechsel entfernt alte Boni exakt; volle Tasche/Swap verursacht keinen Verlust; UI/Pause/F1-Zustände korrekt; Run-Ende leert Run-Items, Echoes/Bestwelle bleiben; beschädigte Save-/Profil-Daten bleiben geschützt. Zusätzlich native UI-Sichtprüfung und manueller Test des Verstehens/Entscheidens. Keine neue Grafikabnahme oder Tests allein durch diese Planung behaupten.
+**Prüfung:** 58 Arena- + 54 Loot/Konsole- + 46 Inventarprüfungen = 158 / 0 Fehler. Darunter Aufnahme ohne Aktivierung, echte Splash-Treffer nach Ausrüstung, exaktes Entfernen alter Boni, volle Tasche/Swap/Ablegen, Pause/F1/Karten, Neustart-Reset und Save-/Profilvalidierung einschließlich alter 28-Werte-Profile. Fünf geänderte Gameplay-Scripts durch Godot MCP validiert. Drei native D3D12-Vorschauen gesichtet und archiviert. Technische Checks ersetzen nicht den manuellen Test des Verstehens/Entscheidens.
 
-**Offen vor Implementierung:** Konkrete Itemwerte, Dropverteilung und Gegenstands-Unterschiede innerhalb des bestätigten Umfangs (acht Taschenfelder, zwei Slots, vier Testitems). Langfristige Item-Persistenz bleibt eine separate Produktentscheidung. Ältere Inventar-/Equipment-Dateien im früheren Lootfall sind eine Referenz; keine ungeprüfte Übernahme seines gesamten Systems.
+**Offen nach Implementierung:** Itemwerte und Dropverteilung im Spieltest abstimmen; versteht der Spieler den Fund vor dem Ausrüsten und fühlt sich der Tausch bedeutsam an? Langfristige Item-Persistenz bleibt eine separate Produktentscheidung. Das frühere Lootfall lieferte die Referenz für Tasche/Slots/Vergleich; sein komplettes Inventarsystem wurde nicht übernommen.
 
 ---
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** P0/P1 technisch, P2-Belohnung/Speichern als Teilstand; neues Nutzerfeedback führt zu geplantem Item-/Inventar-Test INV1.  
+**Projektphase:** P0/P1 technisch, P2-Belohnung/Speichern als Teilstand; bestätigtes INV1 technisch umgesetzt, Spielabnahme offen.  
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Zufälliger Run-Codex mit Flächentreffern, einmalige Echoes für abgeschlossene Wellen bei Tod/Sieg, Speicherung von Wallet/Bestwelle.  
-**Dev-Konsole:** F1, 28 Regler, Laufzeitmetriken/Testaktionen, Standard-Reset und separat validierte manuelle Profile; nur Debug-Builds.  
-**Umfang/Sprache:** Wellenkarten erhalten; Code/UI Englisch. Kein Hideout/Kauf, Inventar, dauerhafte Items, XP-Fortschritt oder neuer Gegnertyp.  
-**Prüfung:** Godot 4.7.2: 58 Arena- + 54 Loot/Konsole-Prüfungen = 112, keine Fehler; vier native D3D12-Vorschauen gesichtet.  
-**Material:** Frühere Engine-Vorschauen plus echter MCP-Laufzeit-Screenshot vor INV1 unter `Progress/captures/2026-10-16_before_inventory.png`; Quellsicherungen erhalten.  
-**Feedback/Offen:** Look/Feel positiv, Echoes laut Nutzer funktional; Codex unklar und zu Power-up-artig. F1 manuell noch ungeprüft; INV1-Umfang, Balance und Export offen.  
-**Nächster Schritt:** Nutzer bestätigt INV1-Paket; zunächst lokalen Git-/Screenshot-Checkpoint gesichert (Spiel `bc2877f`, Chronik eigener Commit). Danach Inventar/Equipment gemäß Abschnitt 8.4 umsetzen; in diesem Sicherungsauftrag kein Gameplay geändert.
+**Neu umgesetzt:** Acht Taschenfelder, Zepter/Buch, vier feste Items, Beschreibung/Vergleich und sichere Wechsel; Aufheben aktiviert nichts.  
+**Dev-Konsole:** F1, 33 Regler, Metriken/Testfunde, Standard-Reset, Profil v2 mit kompatiblem manuellem Laden alter v1-Profile; nur Debug-Builds.  
+**Umfang/Sprache:** Wellenkarten und Echoes-Regeln erhalten; Code/UI Englisch. Kein Hideout/Kauf, dauerhafte Items, XP-Fortschritt oder neuer Gegnertyp.  
+**Prüfung:** Godot 4.7.2: 58 Arena + 54 Loot/Konsole + 46 Inventar = 158, keine Fehler; fünf Scripts via MCP validiert.  
+**Material:** Drei neue native D3D12-Vorschauen unter `Progress/captures/`; Vorher-Screenshot und bisherige Historie erhalten.  
+**Feedback/Offen:** Bisheriges Look/Feel positiv, Echoes laut Nutzer funktional; INV1-Verständlichkeit, Balance, andere Fenstergrößen und Export noch manuell offen.  
+**Nächster Schritt:** INV1 spielen: Fund erklären, Bücher/Zepter vergleichen, bewusst wechseln; anhand dieses Feedbacks nächstes Paket festlegen.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -325,6 +325,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-16 | INV1 umgesetzt | Bestätigte Erweiterung des P1-Scopes: Run-Tasche und bewusstes Ausrüsten statt Aktivierung beim Aufheben; vier feste Items, F1-Erweiterung und alte Profile unterstützt. Wellenkarten/Echoes/Persistenz bewahrt | 158 Prüfungen ohne Fehler, MCP-Validierung, drei neue Engine-Vorschauen; manuelle Spielabnahme offen |
 | 2026-10-16 | Designrichtung | Build-Experimentieren + Herausforderung + seltene Loot-Überraschungen als Kernmotivation | Entwurf, zur weiteren Validierung |
 | 2026-10-16 | Konzept | Drei Loops: Kampf, Build-Run, Prestige/Hideout | Entwurf |
 | 2026-10-16 | Scope | P0 bewusst klein; Meta-Loop erst nach erstem Spielspaß-Test implementieren | Entwurf |
