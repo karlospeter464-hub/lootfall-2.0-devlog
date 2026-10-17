@@ -1,5 +1,73 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-17 – P2: Run → Emberhaven → Skilltree → nächster Run
+
+**Auftrag / Planabgleich:** Nutzer bestätigt das konkret vorgeschlagene Paket: Stadtmenü, 15 verbundene Knoten mit Power/Vitality/Flow und drei Abschlussboni, vollständiger Ausbau, kostenloser Reset, F1-Regler und Bodenloot nur mit Namen. Bezug Masterplan Loop C/P2, Details jetzt in Abschnitt 8.5. Bestätigte Scope-Erweiterung gegenüber dem ursprünglichen P2-Minimum zweier Verbesserungsreihen; keine weitere Gameplay-Abweichung im Paket. Klassenwahl und Item-Persistenz bleiben separat.
+
+**Loop geschlossen:** App startet im Stadtmenü Emberhaven. Start Run beginnt den Magier-Run; nach Tod/Sieg erhält man unverändert einmalig Echoes für abgeschlossene Wellen. Return to Town räumt den beendeten Run auf und führt zum Baum/erneuten Start. Karten, Tasche und Equipment werden zurückgesetzt, Wallet/Bestwelle/Talente bleiben gespeichert. Ein fehlgeschlagener Payout blockiert weiter die Rückkehr bis zum erfolgreichen Speichern. Stadt erzeugt keine eigene Auszahlung und ist keine begehbare Karte.
+
+**Baum / Startwerte:** Pro Ast drei kleine Knoten, ein stärkeres Zwischenziel und ein Abschlussbonus. Power: je +4 % Schaden, Zwischenziel +8 %, First Spark +35 % direkter Schaden gegen unversehrte Gegner. Vitality: je +5 % Maximalleben, Zwischenziel +10 %, Renewal einmal je abgeschlossener Welle 6 % Maximalleben heilen. Flow: je 3 % kürzeres Intervall, Zwischenziel 5 %, Second Wind nach nichttödlichem Lebensverlust weitere 20 % kürzeres Intervall für 3 s; erneuert Dauer, stapelt nicht. Querverbindungen erlauben Wechsel von Ast II zu benachbartem Ast III. Jede ausgewiesene Vorgänger-Verbindung genügt. Preise je Tiefe 30/45/65/90/130, Gesamtpreis aller 15 Knoten 1080 Echoes.
+
+**Gemeinsame Berechnung:** Grundwertboni eines Asts addieren sich, wirken anschließend mit Karten und Gear multiplikativ. Vollausbau +20 % Schaden, +25 % Leben, 14 % kürzeres Intervall plus drei Abschlussboni. Flow auf maximal 60 % Reduktion begrenzt. Effektives Maximalleben von der F1-Basis getrennt, kein Aufstapeln bei Neuberechnung. First Spark verstärkt nicht zusätzlich den Splash; Second Wind pausiert mit dem Spiel. Run-Start übernimmt eine Kopie des gekauften Talentbesitzes. F1-Effektwerte aktiver Talente sind live abstimmbar.
+
+**Speichern / Balancing:** Wallet und Talent→bezahlter-Preis-Ledger in einer gemeinsamen Progress-v2-Transaktion. Fehlgeschlagener Kauf oder Reset verändert keinen In-Memory-Besitz und kein Guthaben. Reset erstattet echte bezahlte Preise, auch nach F1-Preisänderung. Legacy-v1-Wallets laden mit leerem Baum und werden erst beim nächsten erfolgreichen Speichern migriert. Ungültige IDs, nicht verbundene Talente, ungültige Preise und Überlauf bei möglichem Refund werden abgewiesen; ungültige Originale bewahrt. F1 jetzt 48 Werte, neuer Skill-tree-Tab mit 15 Feldern; Profile v3 lesen alte v1/v2-Profile mit Defaults für neue Felder.
+
+**Tatsächliche Prüfung:** Godot 4.7.2, isoliertes APPDATA und `--test-mode`: Arena 59 + Loot/Konsole 54 + Inventar 46 + Stadt/Baum 69 = **228 Checks / 0 Fehler**, Exit 0. Stadt/Baum zusätzlich mit nativer D3D12-Ausgabe 69 / 0; ein Kauf durch simulierte Mausereignisse am Viewport, weitere Aktionen über Button-Signale. Echte Projektile prüfen Ersttreffer/Splash; reale Schadenssignale prüfen Second Wind und dessen Ablauf; Wellenabschluss prüft Heilung ohne Duplikation. Transaktionen, Legacy-Migration, alle 15 Käufe, Querverbindung, Reset nach Preisänderung, Roundtrip in neuer Store-Instanz, fehlerhafte/überlaufende Daten sowie Schreibfehler und Payout-Retry geprüft. Neun Gameplay-Scripts durch Godot MCP `script_check` ohne Diagnosen validiert. Kein menschlicher Gesamtdurchlauf oder Abnahme der Balance behauptet.
+
+**Fehlversuch / Umgebung:** Erster neuer Stadt-/Baumtest meldete drei fehlgeschlagene Checks: simulierte Mauskoordinaten wurden als Fensterkoordinaten statt lokale Viewport-Koordinaten übergeben (dadurch Folgezustand falsch); ein Dictionary-Gleichheitstest verglich gespeicherte JSON-Floats mit In-Memory-Integern. Testvorbereitung korrigiert, anschließend headless und nativ erfolgreich. Headless-Editor-Import erzeugte die neuen Godot-UIDs und endete mit Exit 0, meldete aber einen Safe-save-Fehler im Editor-Kontext. Deshalb nicht als vollständig fehlerfreien Editorstart ausgegeben. Spieleigene Schreibfehlerbehandlung wurde unabhängig in den Suites geprüft; keine Editor-Sicherheitsoption geändert.
+
+**Medien:** Vier native D3D12-Vorschauen unter `Progress/captures/2026-10-17_{town_v01,skilltree_v01,tree_tuning_v01,loot_name_only}.png`, jeweils 1152 × 720, gesichtet. Stadt/Baum inszenieren 500 Test-Echoes und vier Käufe; sichtbar bleiben 270 Echoes, Querverbindung Power II → Vitality III und das Ziel Renewal. Keine menschlich erspielte Progression und kein neuer Clip. Vorher-/Historienmaterial erhalten, Galerie aktualisiert; 63 lokale Verweise geprüft, keine defekt.
+
+**Git / Umfang:** Spiel-Commit `a1d2241342690a17f62c3cf1c1e04acdfe96a43d` auf `codex/town-skilltree`, `Close the run loop with town and permanent Echoes skill tree`. Quellen, Tests, README/Regeln und sechs von Godot erzeugte UID-Dateien versioniert (einschließlich drei bisher ungetrackter INV1-UIDs). Arbeitsbaum nach Commit sauber. Begleitender Chronik-Commit enthält auch die seit INV1 entstandene Planungs-/Recherchehistorie, ohne private Chattranskripte. Keine neuen Abhängigkeiten, kein Push/Upload, altes Lootfall unangetastet.
+
+**Offen / nächster Spieltest:** Ein regulärer Loop mit Kauf und Neustart; danach prüfen, ob die nächste Freischaltung motiviert, ob Querverbindungen verständlich sind und wann sechs Wellen zu leicht werden. Preise/Boni bleiben Testwerte. Weitere Fenstergrößen, Release-Export und langfristige Progression noch nicht manuell geprüft. Keine neuen Klassen, Items, aktiven Skillmechaniken oder begehbare Stadt gebaut.
+
+---
+
+## 2026-10-17 – Meta-Loop und Echoes-Skilltree verbindlich festgelegt
+
+**Nutzerentscheidung:** Das Spiel erhält einen dauerhaften vernetzten Passivbaum mit Grundwerten und besonderen Boni nach PoE-Vorbild; Klassenwahl bleibt separat. Jetzt den Kreislauf schließen: Run bei Tod/Sieg beenden → Ergebnis und Echoes → zur Stadt / ins Hideout zurück → Echoes für den Skilltree ausgeben → mit erworbenen Boni wieder starten. Die grundsätzliche Richtung ist bestätigt und nicht erneut zur Abstimmung zu stellen.
+
+**Planabgleich:** Loop C, P2-Umfang, aktuelle Richtung und Status/Entscheidungslog aktualisiert. Bestätigte Abweichung vom früheren P2-Minimum: vernetzter Baum statt lediglich zweier Verbesserungsreihen. Bestehende Echoes-Auszahlung, wellenbasierte Karten und Reset der Run-Ausrüstung bleiben bewahrt. Konkrete Boni/Kosten, kompletter Ausbau versus begrenzte Spezialisierung und Respec sind weiterhin offen. „Stadt“ legt noch keine begehbare Basis oder weitere NPC-/Handelssysteme fest.
+
+**Auftragsumfang / Prüfung:** Entscheidung auf ausdrücklichen Wunsch festgehalten. Nur Dokumentation geändert; kein neuer Gameplay-Code, keine Tests oder Medien. Nächstes Paket soll einen funktionsfähigen vollständigen Kreislauf liefern; technische Umsetzung ist noch ausstehend.
+
+---
+
+## 2026-10-17 – Spielerpräferenzen für einen dauerhaften Echoes-Baum
+
+Nutzer bevorzugt Grundwertfortschritt mit besonderen Boni in einem komplexeren Baum nach PoE-Vorbild; Klassenwahl ausdrücklich separat. Recherche um konkrete positive und negative Community-Berichte erweitert und Quellen/Selektionsgrenzen in `HIDEOUT_RESEARCH.md` dokumentiert. Ergebnis: erkennbare Zielgruppenunterschiede bei reinen Werteboni; interessante Zielknoten, Synergien und spürbares Tempo sind wiederkehrende Motive, teure Korrekturen und langes Wiederholen für kaum fühlbaren Fortschritt Gegenmotive. Keine repräsentative Aussage über alle Gamer. Masterplan hält die Präferenz und offene Regeln fest. Keine Gameplay-Änderung, neuen Tests oder Aufnahmen; keine Baum-Implementierung freigegeben.
+
+---
+
+## 2026-10-17 – Vergleichsrecherche zur Rolle des Hideouts
+
+Auf Nutzerwunsch Hades, Dead Cells, Rogue Legacy 2 und Halls of Torment anhand Entwicklerquellen und ergänzender Community-Wikis verglichen. Mechaniken, Quellen und Abrufgrenzen in `HIDEOUT_RESEARCH.md` festgehalten. Wesentliche Erkenntnis: Permanente Stärke, Entdeckung und Vorbereitung werden häufig kombiniert. Für Lootfall Forschungs-/Lootpool-Freischaltungen und Sammlung/Startauswahl als unterschiedliche Modelle diskutieren; konkrete Item-Persistenz bleibt unentschieden. Keine Änderung an Masterplan-Entscheidungen, Gameplay oder Belohnung; keine neuen Tests oder Aufnahmen. Rechercheergebnis ist kein eigener Spieltest.
+
+---
+
+## 2026-10-16 – Hauptangriff bewahren, Vielfalt später über Klassen
+
+**Entscheidung des Nutzers:** Vorerst keine zusätzliche Komplexität für den Hauptskill. Das Spiel mit dem vorhandenen Magier weiterentwickeln. Spätere Auswahl zwischen Krieger, Bogenschütze und Magier, zunächst je ein unterscheidbarer Build; Karten und Items bleiben die bestehenden Build-Systeme. Den vorgeschlagenen aufgeladenen Feuerball für jetzt verwerfen. Keine sofortige Umsetzung weiterer Klassen oder eines Klassenframeworks aus dieser Richtungsentscheidung ableiten.
+
+**Planpflege:** Masterplan 8.3 sowie Status/Entscheidungslog angepasst. Der Wunsch, am Boden nur den Itemnamen zu zeigen, bleibt für das nächste Paket vorgemerkt. P2-Hideout/Echoes-Ausgaben sind weiterhin offen; konkrete Käufe oder Klassenmechaniken wurden nicht festgelegt.
+
+**Prüfung / Umfang:** Git-Zustände und relevante Dokumentstellen gelesen; nur Dokumentation geändert, keine neuen Gameplay-Tests oder Medien. Die drei von Godot erzeugten ungetrackten UID-Dateien im Spielprojekt unverändert belassen.
+
+---
+
+## 2026-10-16 – Spieltestfeedback INV1 und Hauptskill-Idee
+
+**Nutzerbeobachtung:** Inventar und Ausrüstung erhöhen den Spielspaß deutlich; Systeme greifen gut ineinander und wirken im bisherigen Spieltest relativ ausbalanciert. Die Neugier auf weitere Items trägt. Das ist positives subjektives Feedback, keine vollständige Abnahme aller Randfälle oder der Balance.
+
+**UI-Wunsch:** Bodenloot soll seinen Namen zeigen; die Beschreibung darunter kann entfallen, weil im Kampf keine Zeit zum Lesen bleibt. Ausführliche Wirkung und Vergleich bleiben im pausierten Inventar sinnvoll. Für das nächste beauftragte Paket vormerken; in dieser Diskussionsrunde kein Gameplay geändert.
+
+**Diskussion / noch keine Freigabe:** Hauptskill interessanter machen. Zwei mögliche Richtungen: verändertes Projektilverhalten über bestehende Karten/Items oder zusätzliche aktive Entscheidung beim Zaubern. Kleinster vorgeschlagener Kampftest: optional aufgeladener Feuerball mit sichtbarem Aufladen und stärkerem Treffer; normales Feuern bleibt verfügbar, Aufladen kostet Angriffszeit. Vorhandene Ausrüstungseffekte sollen mit dem geladenen Treffer funktionieren. Eingabe, Werte und Priorität gegenüber dem noch offenen P2-Hideout sind nicht entschieden. Keine neue Ressource, Skilltree oder Fortschrittsleiste vorgesehen.
+
+**Prüfung / Grenzen:** Nur aktuellen Git-Stand, Angriff und Projektilcode sowie Masterplan gelesen; keine neuen Laufzeittests oder Aufnahmen. Godot hat nach dem letzten Commit drei neue `.gd.uid`-Dateien erzeugt; unverändert belassen. Kein neuer Hauptskill implementiert.
+
+---
+
 ## 2026-10-16 – INV1: Ein Fund wird zur Ausrüstungsentscheidung
 
 **Auftrag / Planabgleich:** Nutzer startet das zuvor bestätigte INV1-Paket nach dem Git-/Screenshot-Checkpoint. Bezug: Masterplan 8.4, gezielte Erweiterung des P1-Loot-Tests. Bestätigte Abweichung vom ursprünglichen „ein Drop, kein Inventar“: Aufheben aktiviert keinen Bonus mehr, sondern legt ein Run-Item in die Tasche. Karten bleiben wellenbasiert; Echoes-Auszahlung und dauerhafter Speicher bleiben unverändert. Keine weitere Scope-Abweichung im Abschlussdiff.

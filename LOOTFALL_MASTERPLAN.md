@@ -91,10 +91,12 @@ Kein Multiplayer, keine Online-Ökonomie, keine vollständige ARPG-Kampagne, kei
 *Qualitätsfrage:* Entstehen durch Kartenentscheidungen erkennbar verschiedene Spielstile? Hat man Lust, eine andere Kombination auszuprobieren?
 
 ### Loop C — Prestige / Meta-Fortschritt (viele Runs)
-**An die Grenze kommen / Run beenden → Ergebnis und Bestmarke sehen → zum Hideout zurückkehren → dauerhafte Ressource einsetzen → neue Spielmöglichkeiten/kleine Vorteile freischalten → neu starten → bisherigen Rekord schlagen.**
+**[ENTSCHEIDUNG, 17.10.2026] Run beenden (Tod oder Sieg) → Ergebnis und Echoes erhalten → zur Stadt / ins Hideout zurückkehren → Echoes im dauerhaften Skilltree ausgeben → mit den erworbenen Boni den nächsten Run starten.**
+
+- **[ENTSCHEIDUNG]** Der Hideout-Fortschritt erfolgt über einen vernetzten Passivbaum nach PoE-Vorbild: Grundwertknoten, größere benannte Zwischenziele und besondere spielstilprägende Boni. Klassenwahl bleibt ein separates späteres System. Ziel ist, dauerhafte Stärke und Vorfreude auf neue Baum-Boni mit dem bestehenden Karten-/Item-Run zu verbinden. Konkrete Knoten und Kaufregeln sind noch zu entwerfen.
 
 - **[ENTSCHEIDUNG]** Eine Meta-Ressource mit vorläufigem englischem Namen **„Echoes“** (Namenswahl für jetzt an Codex delegiert). Belohnung erfolgt am Run-Ende auf dem Ergebnisbildschirm, keine Ressourcen-/XP-Sammelleiste als Ersatz für die wellenbasierte Kartenauswahl. **[HYPOTHESE – erstes Belohnungsmodell]** Höherer Wellenfortschritt soll mehr Echoes ergeben; zufällige Run-Items helfen indirekt, diesen Fortschritt zu erreichen. Keine zusätzliche direkte Echoes-Belohnung für den bloßen Itemfund vorgesehen. Implementiertes Startmodell: 10 × Summe der abgeschlossenen Wellenstufen (1 + 2 + … + n), bei Sieg und Tod einmalig am Ergebnisbildschirm. Eine nur erreichte Welle zählt nicht zur Auszahlung; App-Schließen während des Runs zahlt nichts aus. Der Faktor ist in F1 einstellbar. Diese Werte sind Balancing-Startwerte, keine endgültige Balanceentscheidung.
-- **[HYPOTHESE]** Zunächst ein sehr simples Hideout als **Menü**: Portal / Altar / Archiv; keine begehbare Stadt nötig.
+- **[ENTSCHEIDUNG, P2]** Erste Stadt als Menü: Emberhaven, Skilltree und Run-Start. Keine begehbare Stadt, zusätzlichen NPCs, Händler oder Archiv-Freischaltungen in diesem Paket.
 - **[HYPOTHESE]** Meta-Fortschritt kombiniert **begrenzten vertikalen Fortschritt** (kleine dauerhafte Vorteile) und **horizontalen Fortschritt** (weitere Builds, Startoptionen, Relikte).
 - **[OFFEN – langfristig]** Ob seltene Items später dauerhaft ausrüstbar bleiben oder einen Archiv-/Freischalteintrag hinterlassen. Das vorläufige Testmodell verwendet ausschließlich Run-Items ohne Übernahme in den nächsten Run; spätere Persistenz ist damit nicht endgültig entschieden.
 - **[OFFEN]** Ob Reset nur beim Tod/Abschluss oder auch freiwillig möglich ist.
@@ -168,13 +170,13 @@ Die Zahlen, Items und Namen sind **Beispiele**, keine festgelegten Drops, Raten 
 
 **Hypothese:** Nach einem Reset motivieren dauerhafte, kontrollierte Verbesserungen zu einem weiteren Versuch.
 
-**Zusatzumfang:** 1 Meta-Währung, 1 einfacher Ergebnisbildschirm, 1 Hideout-Menü, 1–2 begrenzte permanente Verbesserungen, Speichern/Laden. Keine begehbare Basis.
+**Bestätigter Zusatzumfang, 17.10.2026:** 1 Meta-Währung, Ergebnisbildschirm, Rückkehr ins Stadtmenü Emberhaven, 15 verbundene Skilltree-Knoten mit Echoes-Käufen und gespeicherten Boni, erneuter Run-Start. **Bestätigte Abweichung vom ursprünglichen Plan:** Der Baum ersetzt den zunächst vorgeschlagenen Umfang von nur 1–2 permanenten Verbesserungen. Alle Knoten gleichzeitig ausbaubar; kostenloser vollständiger Reset erstattet tatsächlich gezahlte Preise. Details und Startwerte in Abschnitt 8.5. Keine begehbare Stadt oder weiteren Stadt-Systeme.
 
-**Erstes Belohnungsmodell (16.10.2026):** Echoes erst am Run-Ende vergeben; höherer Wellenfortschritt soll eine höhere Belohnung ergeben. Seltene Run-Items können durch ihre Kampfwirkung helfen, weiter zu kommen. Konkrete Auszahlungskurve und Abschlussregeln bleiben vor der Implementierung festzulegen.
+**Belohnungsmodell bewahrt:** Echoes bei Tod/Sieg einmalig am Ergebnis, 10 × Summe der abgeschlossenen Wellenstufen. Seltene Run-Items helfen indirekt, weiterzukommen. Die Stadt zahlt nicht erneut aus; bei fehlgeschlagener Belohnungsspeicherung bleibt die Rückkehr bis zum erfolgreichen Retry gesperrt.
 
 **Abnahme:** Run abschließen → Ressource erhalten → Verbesserung erwerben → neuer Run → Effekt nach Neustart tatsächlich vorhanden; keine fehlerhaften Doppelbelohnungen.
 
-**Teilstand:** Echoes-Auszahlung, dauerhafte Speicherung und Bestwelle vorhanden; Doppelbelohnungen, Datei-Roundtrip und Fehlerbehandlung geprüft. Hideout, Kaufmöglichkeiten und permanente Verbesserungen sind noch nicht umgesetzt; P2 ist damit nicht abgeschlossen.
+**Technischer Stand:** Vollständiger Loop samt Stadt, Käufen, kostenlosem Reset und nächstem Run umgesetzt und automatisiert geprüft. Alt-Wallets bleiben ladbar; Wallet und Talente werden gemeinsam gespeichert. P2 technisch geschlossen; manuelle Abnahme von Motivation, Baumverständnis und Schwierigkeit steht aus.
 
 ### P3 — Horizontale Entdeckung (erst nach erfolgreichem P2)
 
@@ -272,6 +274,10 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ### 8.3 Zukunfts-Backlog (ungeordnet, keine Implementierungsfreigabe)
 
+**Bestätigte Hideout-Richtung (17.10.2026):** Dauerhafter vernetzter Echoes-Passivbaum als Grundlage des Spiels: Grundwerte, größere Zwischenziele und besondere Boni, inspiriert von Path of Exile. Erstes P2-Paket gemäß Abschnitt 8.5 bestätigt und technisch umgesetzt. Klassenwahl separat. Aktuell direkter Echoes-Kauf, alle Knoten gleichzeitig ausbaubar, vollständiger kostenloser Reset. Langfristige Erweiterungen bleiben offen; Spielerrecherche und Quellen in `HIDEOUT_RESEARCH.md` sind keine zusätzliche Feature-Freigabe.
+
+**Bestätigte Klassenrichtung (16.10.2026):** Spätere Auswahl zwischen Krieger, Bogenschütze und Magier; zunächst je ein unterscheidbarer Build als Ausgangspunkt. Weitere Spielweisen und Komplexität sollen über diese Klassen und bestehende Karten/Items entstehen. Vorerst das Spiel mit dem Magier weiterentwickeln und seinen aktuellen Hauptangriff beibehalten. Der vorgeschlagene aufgeladene Feuerball wird für jetzt verworfen. Dies ist eine Richtungsentscheidung, kein Auftrag, die anderen Klassen oder ein Klassenframework sofort zu implementieren; konkrete Klassenmechaniken bleiben offen.
+
 - Modulare, zufällig aneinandergereihte Dungeon-Räume mit linearem Fortschritt.
 - Encounter Director mit Gegnerbudgets und Rollen.
 - Elite-Modifikatoren wie schnell, explosiv, vampirisch.
@@ -306,17 +312,35 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 **Offen nach Implementierung:** Itemwerte und Dropverteilung im Spieltest abstimmen; versteht der Spieler den Fund vor dem Ausrüsten und fühlt sich der Tausch bedeutsam an? Langfristige Item-Persistenz bleibt eine separate Produktentscheidung. Das frühere Lootfall lieferte die Referenz für Tasche/Slots/Vergleich; sein komplettes Inventarsystem wurde nicht übernommen.
 
 ---
+### 8.5 P2 – Stadt und erster dauerhafter Skilltree
+
+**Freigabe:** Nutzer bestätigt das konkret vorgeschlagene Paket mit „yes lets go“: Stadtmenü, 15 vernetzte Knoten, drei Äste/Abschlussboni, alle Knoten gleichzeitig nutzbar, kostenlose vollständige Rückerstattung, F1-Regler, Loot-Kürzung und Dokumentation/Git. Startwerte technisch innerhalb dieses Pakets gewählt, noch kein abgenommenes Balancing.
+
+**Implementiert:** App startet in Emberhaven → Start Run → Tod/Sieg/gespeicherte Echoes → Return to Town → Talente kaufen → Start Run. Pro Ast drei Grundwerte, ein stärkeres Zwischenziel und ein Abschlussbonus. Kauf eines Knotens verlangt einen beliebigen seiner ausgewiesenen Vorgänger; Querverbindungen Power II → Vitality III, Vitality II → Flow III und Flow II → Power III. Preise je Tiefe 30/45/65/90/130, vollständiger Baum 1080 Echoes.
+
+| Ast | Drei Grundwerte / Zwischenziel | Abschlussbonus |
+|---|---|---|
+| Power | Je +4 % Schaden / +8 % Schaden | First Spark: +35 % direkter Trefferschaden gegen unversehrte Gegner; kein zusätzlicher Splash-Multiplikator |
+| Vitality | Je +5 % Maximalleben / +10 % Maximalleben | Renewal: einmal pro abgeschlossener Welle 6 % des effektiven Maximallebens heilen, maximal bis voll |
+| Flow | Je 3 % kürzeres Angriffsintervall / 5 % kürzeres Intervall | Second Wind: nach nichttödlichem Lebensverlust für 3 s ein weiteres 20 % kürzeres Intervall; erneuter Treffer erneuert Dauer, stapelt nicht |
+
+**Verrechnung / Persistenz:** Vollausbau +20 % Schaden, +25 % Leben, 14 % kürzeres Intervall plus Abschlussboni. Boni innerhalb eines Asts addieren; Schaden/Intervall multiplizieren anschließend mit Karten und Gear. Flow gesamt auf 60 % Reduktion begrenzt. Kaufbesitz als Snapshot beim Run-Start übernehmen, F1-Werte aktiver Talente live abstimmbar. Zurücksetzen erstattet bezahlte Ledger-Preise, unabhängig von aktuellen Kosten. Progress v2 speichert Wallet/Bestwelle/Talente gemeinsam, liest v1-Wallets ohne automatische Umschreibung. Profile v3 (48 Werte) unterstützen v1/v2 mit Defaults für neue Felder. Run-Items bleiben ungespeichert.
+
+**Prüfung / offen:** 59 Arena + 54 Loot/Konsole + 46 Inventar + 69 Stadt/Baum = 228 / 0 Fehler; Stadt/Baum zusätzlich nativ unter D3D12 mit simuliertem Viewport-Mauskauf geprüft. Neun Gameplay-Scripts via Godot MCP validiert. Vier neue Engine-Vorschauen archiviert. Kostenkurve, Langzeitmotivation und die Stärke gegenüber sechs Wellen bleiben im menschlichen Spieltest zu beurteilen. Keine Klassen, neuen Items, zusätzlichen Angriffseingaben oder begehbare Stadt umgesetzt.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** P0/P1 technisch, P2-Belohnung/Speichern als Teilstand; bestätigtes INV1 technisch umgesetzt, Spielabnahme offen.  
+**Projektphase:** P0/P1/INV1 und P2 technisch; vollständiger Stadt-/Skilltree-Loop umgesetzt, manuelle P2-Abnahme offen.  
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Acht Taschenfelder, Zepter/Buch, vier feste Items, Beschreibung/Vergleich und sichere Wechsel; Aufheben aktiviert nichts.  
-**Dev-Konsole:** F1, 33 Regler, Metriken/Testfunde, Standard-Reset, Profil v2 mit kompatiblem manuellem Laden alter v1-Profile; nur Debug-Builds.  
-**Umfang/Sprache:** Wellenkarten und Echoes-Regeln erhalten; Code/UI Englisch. Kein Hideout/Kauf, dauerhafte Items, XP-Fortschritt oder neuer Gegnertyp.  
-**Prüfung:** Godot 4.7.2: 58 Arena + 54 Loot/Konsole + 46 Inventar = 158, keine Fehler; fünf Scripts via MCP validiert.  
-**Material:** Drei neue native D3D12-Vorschauen unter `Progress/captures/`; Vorher-Screenshot und bisherige Historie erhalten.  
-**Feedback/Offen:** Bisheriges Look/Feel positiv, Echoes laut Nutzer funktional; INV1-Verständlichkeit, Balance, andere Fenstergrößen und Export noch manuell offen.  
-**Nächster Schritt:** INV1 spielen: Fund erklären, Bücher/Zepter vergleichen, bewusst wechseln; anhand dieses Feedbacks nächstes Paket festlegen.
+**Neu umgesetzt:** Emberhaven, 15 verbundene Talente, echte Echoes-Käufe und exakte kostenlose Rückerstattung; Boni gelten im nächsten Run. Bodenloot zeigt nur Namen.  
+**Dev-Konsole:** F1, 48 Regler einschließlich Baum/Kosten; Profil v3 unterstützt v1/v2; Progress v2 unterstützt alte Wallets.  
+**Umfang/Sprache:** Karten und Echoes-Auszahlung bewahrt; Code/UI Englisch. Keine begehbare Stadt, weiteren Klassen, dauerhaften Items oder XP-Leiste.  
+**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 = 228, keine Fehler; neun Scripts via MCP validiert, Stadt/Baum auch nativ geprüft.  
+**Material:** Vier neue native Vorschauen vom 17.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.  
+**Feedback/Offen:** INV1-Spielgefühl positiv; P2-Kosten/Bonistärke, Motivation, weitere Fenstergrößen und Export noch manuell offen.  
+**Nächster Schritt:** Vollständigen Loop spielen, erste Kaufreihenfolge und Abschlussbonus testen; anhand dieses Feedbacks weiter abstimmen.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -325,6 +349,11 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-17 | P2 umgesetzt | Nach konkreter Freigabe Emberhaven und 15 vernetzte Talente, alle ausbaubar, exakter kostenloser Reset, sichere gemeinsame Speicherung, alte Wallets/Profile kompatibel; Bodenbeschreibung entfernt | 228 Checks ohne Fehler, neun MCP-Scriptprüfungen, vier native Vorschauen; manuelle P2-Abnahme offen |
+| 2026-10-17 | Verbindlicher Meta-Loop | Nutzer bestätigt dauerhaften Echoes-Skilltree mit Grundwerten und besonderen Boni als Spielgrundlage. Run beenden → Stadt/Hideout → Echoes im Baum ausgeben → neuer Run. Ersetzt P2-Minimalvorschlag mit nur 1–2 Verbesserungen; Klassenwahl separat | Richtung/Scope-Erweiterung bestätigt und dokumentiert; konkrete Baumregeln sowie Darstellung der Stadt offen, noch nicht implementiert |
+| 2026-10-17 | Hideout-Präferenz / Recherche | Nutzer bevorzugt komplexeren dauerhaften Echoes-Passivbaum mit Grundwerten und besonderen Boni; Klassenwahl separat. Qualitatives Spielerfeedback zu Zielknoten, Synergien, Wertefortschritt, Grind und Respec recherchiert | Aktuelle Designpräferenz, Regeln/Umfang offen; keine Implementierungsfreigabe |
+| 2026-10-16 | Klassenrichtung / Scope | Nutzer stellt zusätzliche Hauptskill-Komplexität zurück: aktueller Magier bleibt, spätere Vielfalt über Krieger/Bogenschütze/Magier und zunächst je einen Build. Aufladeangriff für jetzt verworfen | Richtung bestätigt; keine Implementierungsfreigabe für weitere Klassen oder Klassenframework |
+| 2026-10-16 | INV1-Spieltest / Folgeplanung | Nutzer berichtet deutlich mehr Spaß und bisher stimmige Balance; Bodenbeschreibung im Kampf zeitlich kaum lesbar, nur Namen gewünscht. Hauptskill soll als nächster möglicher Ansatz diskutiert werden | Feedback dokumentiert; UI-Anpassung vorgemerkt, neue Kampfmechanik noch nicht beauftragt |
 | 2026-10-16 | INV1 umgesetzt | Bestätigte Erweiterung des P1-Scopes: Run-Tasche und bewusstes Ausrüsten statt Aktivierung beim Aufheben; vier feste Items, F1-Erweiterung und alte Profile unterstützt. Wellenkarten/Echoes/Persistenz bewahrt | 158 Prüfungen ohne Fehler, MCP-Validierung, drei neue Engine-Vorschauen; manuelle Spielabnahme offen |
 | 2026-10-16 | Designrichtung | Build-Experimentieren + Herausforderung + seltene Loot-Überraschungen als Kernmotivation | Entwurf, zur weiteren Validierung |
 | 2026-10-16 | Konzept | Drei Loops: Kampf, Build-Run, Prestige/Hideout | Entwurf |
