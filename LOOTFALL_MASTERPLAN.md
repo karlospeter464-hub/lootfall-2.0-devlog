@@ -342,11 +342,24 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 **Offen:** Konkretes nächstes Paket und Entsorgungsregeln gemeinsam festlegen. Räume mit Hindernissen/Zielen und stärker situative Items als spätere Ideen; nicht gemeinsam automatisch implementieren. Skilltree-Richtung bleibt bestehen.
 
-### 8.7 Angefragte Seltenheitskaskade – Grundprinzip bestätigt, Regeln offen
+### 8.7 Seltenheitskaskade – bestätigt und technisch umgesetzt
 
-Legendary → Rare → Magic → Normal: jede Stufe separat nur nach Fehlschlag aller höheren prüfen; beim ersten Erfolg höchstens ein Item erzeugen. 2 % Legendary und beispielsweise 25 % Rare sind genannte Beispielwerte, fehlende Magic-/Normal-Werte noch nicht festgelegt. So ergibt ein 25-%-Rare-Wurf nach 2 % Legendary effektiv 0,98 × 0,25 = 24,5 % je Kaskadenversuch. Eine separate gesamte Itemchance würde diesen Wert nochmals multiplizieren.
+**Bestätigte Entscheidungen (18.10.2026):** Nutzer wählt separate Lootmenge und eine Seltenheitskaskade pro erfolgreichem Itemdrop sowie feste Itemtypen je Stufe. Keine Qualitätsvarianten oder zufälligen Affixe. **Bestätigte Abweichung vom bisherigen Lootmodell:** Die separate Codex-/Dreierpool-Regel wird dadurch ersetzt. Itemeffekte, Run-Reset, Karten und Echoes-Auszahlung bleiben bewahrt.
 
-**Noch zu klären:** Bezieht sich die Kaskade auf jeden Kill oder nur auf bereits erfolgreiche Itemdrops? Soll Normal garantierter Rest sein oder darf kein Item entstehen? Feste Itemtypen pro Seltenheit oder Qualitätsvarianten desselben Typs mit unterschiedlichen Werten? Zwei entsprechende Rückfragen im Chat gestellt; noch keine Antworten. Separater Lootmengen-Wurf und feste Typen zunächst nur empfohlen. **Abweichung vom bisherigen Lootplan:** Neue Seltenheitsverteilung ersetzt/erweitert die feste Codex-/Dreierpool-Regel; nicht stillschweigend implementieren. Bestehende Drop-/Codexregeln bis Klärung bewahrt, keine automatische Dublettenvernichtung.
+**Startwerte umgesetzt, in F1 änderbar:** 10 % Itemchance je berechtigtem Kill, danach Legendary 2 % → Rare 25 % → Magic 50 % → Normal als garantierter Rest. Jede Stufe erhält einen eigenen Wurf nur nach Fehlschlag höherer Stufen; erster Erfolg mit verfügbarem Pool gewinnt, höchstens ein Item pro Kill. Tatsächliche Anteile pro Item 2 / 24,5 / 36,75 / 36,75 %, pro Kill 0,2 / 2,45 / 3,675 / 3,675 %, solange der natürliche Codex verfügbar ist. Gesamterfolg an Bodenlimit und laufenden Kampf gebunden.
+
+| Seltenheit | Fester Itemtyp | Kennzeichnung |
+|---|---|---|
+| Normal | Ember Scepter | Weiß |
+| Magic | Swift Scepter | Blau |
+| Rare | Focus Grimoire | Gold |
+| Legendary | Cinder Codex | Orange |
+
+**Bewahrte Grenze:** Ein natürlicher Codex pro Run. Ist er bereits gespawnt, kann der Legendary-Pool nicht mehr gewinnen; die Kaskade geht zu Rare weiter. Dann Anteile 0 / 25 / 37,5 / 37,5 % pro Item. Debug-Drops können weiterhin Duplikate erzeugen. Kein automatisches Löschen. Der Codex fällt mit diesem neuen Modell deutlich seltener als unter der alten 2-%-pro-Kill-Regel; Spielbalance ist noch zu prüfen.
+
+**Darstellung / Profile:** Bodenname, Glühen, Icons und Inventartexte erhalten gemeinsame Rarity-Farben; Auswahl nennt die Seltenheit zusätzlich als Text. F1 jetzt 54 Felder und tatsächliche Anteile pro Item/pro Kill inklusive ausgeschöpftem Codex-Pool. Profile v5 lesen v1–v4 mit Defaults für Rare/Magic; alte Zahlen bleiben erhalten, der Hinweis erklärt den Wechsel zur Per-Item-Kaskade. Alte Profile stellen den alten Dropalgorithmus nicht wieder her. Walletformat unverändert.
+
+**Prüfung:** Insgesamt 275 Checks ohne Fehler, davon 28 neue Rarity-Prüfungen einschließlich exakter Reihenfolge, Abbruch, 0/100-%-Grenzen, 100.000 deterministisch geseedeter Zufallsziehungen, realer Drops und Legacy-Profilen. Fünf Gameplay-Scripts plus neue Suite via Godot MCP validiert. Drei neue native D3D12-Vorschauen gesichtet; menschlicher Balance-/Lootspieltest offen.
 
 **Quelle:** Nutzer nennt Candlesan. Recherche ordnet den Namen Wyatt Cheng zu (Eigenprofil https://x.com/candlesan/with_replies mit YouTube-Verweis); das konkrete Video über diese Kaskade wurde nicht identifiziert. Keine Aussage über eine exakte WoW-Implementierung aus dieser Referenz abgeleitet.
 
@@ -356,13 +369,13 @@ Legendary → Rare → Magic → Normal: jede Stufe separat nur nach Fehlschlag 
 
 **Projektphase:** P0/P1/INV1 und P2 technisch; vollständiger Stadt-/Skilltree-Loop umgesetzt, manuelle P2-Abnahme offen.  
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Cinder Seer mit festem Warnkreis ab Welle 2, Gesamtcap 12/Seercap 2; Destroy selected schafft Platz ohne Belohnung/Bodendrop.  
-**Dev-Konsole:** F1, 52 Regler einschließlich Seer-Werten; Profil v4 unterstützt v1/v2/v3; Walletformat unverändert v2.  
+**Neu umgesetzt:** Separate Itemchance und Legendary→Rare→Magic→Normal-Kaskade mit festen Pools, gemeinsamen Farben und textlicher Seltenheit; Itemeffekte unverändert.  
+**Dev-Konsole:** F1, 54 Regler und tatsächliche Rarity-Anteile; Profil v5 unterstützt v1–v4 mit Hinweis auf neue Wahrscheinlichkeitsbasis.  
 **Umfang/Sprache:** Karten und Echoes-Auszahlung bewahrt; Code/UI Englisch. Keine begehbare Stadt, weiteren Klassen, dauerhaften Items oder XP-Leiste.  
-**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 + 19 = 247, keine Fehler; vier Gameplay-Scripts und neuer Test via MCP validiert.  
-**Material:** Zwei neue native Vorschauen vom 18.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.  
+**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 + 19 + 28 = 275, keine Fehler; fünf Gameplay-Scripts und Rarity-Test via MCP validiert.  
+**Material:** Drei neue Rarity-Vorschauen vom 18.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.  
 **Feedback/Offen:** Nutzer bestätigt Spaß/Skilltree-Loop; langfristig mehr Kampftiefe gewünscht, Loot-Stau bei vollen Taschen beobachtet. Vollständige Balance/Fenstergrößen/Export weiter offen.  
-**Nächster Schritt:** Seltenheitsregeln aus 8.7 klären; Kaskade noch nicht implementiert. Begegnungstiefe/Warnlesbarkeit manuell prüfen; Magierangriff/Fortschrittsloop bewahrt.
+**Nächster Schritt:** Begegnungstiefe und Lootverteilung spielen; insbesondere Seltenheit des natürlichen Codex mit dem neuen Modell beurteilen. Magierangriff/Fortschrittsloop bewahrt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -371,6 +384,7 @@ Legendary → Rare → Magic → Normal: jede Stufe separat nur nach Fehlschlag 
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-18 | Seltenheiten umgesetzt | Nach Auswahl des Nutzers separate Itemchance und bedingte Rarity-Kaskade mit festen Itempools; bestehende Effekte/Run-Regeln und natürlicher Codex-Cap erhalten, F1/Legacy-Profile erklärt | 275 Checks ohne Fehler, fünf Gameplay-Scripts plus Suite via MCP, drei native Vorschauen; Balance offen |
 | 2026-10-18 | Begegnung / Loot | Nutzer bestätigt neuen Gegnerdruck und Entsorgung, ergänzt Wunsch nach Legendary→Rare→Magic→Normal-Kaskade. Seer und manueller Destroy-Button umgesetzt, keine automatische Vernichtung oder Lootregeländerung | 247 Checks ohne Fehler und zwei native Vorschauen; Kaskadenbasis/Qualitätsmodell offen |
 | 2026-10-17 | P2-Spieltest / Identität | Nutzer bestätigt Spaß und Skilltree, wünscht langfristig mehr Tiefe als Mengen-/Feuertempo-Eskalation; unerwünschte Items blockieren Tasche/Boden. Gegnerrollen und Entsorgung als nächste Diskussion | Feedback dokumentiert; kein neues Gegner-/Entsorgungspaket oder automatische Vernichtung freigegeben |
 | 2026-10-17 | P2 umgesetzt | Nach konkreter Freigabe Emberhaven und 15 vernetzte Talente, alle ausbaubar, exakter kostenloser Reset, sichere gemeinsame Speicherung, alte Wallets/Profile kompatibel; Bodenbeschreibung entfernt | 228 Checks ohne Fehler, neun MCP-Scriptprüfungen, vier native Vorschauen; manuelle P2-Abnahme offen |

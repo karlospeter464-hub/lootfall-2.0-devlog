@@ -1,5 +1,25 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-18 – Rarity-Kaskade nach separatem Itemwurf
+
+**Freigabe / Planabgleich:** Nutzer beantwortet beide Produktfragen: Seltenheitsprozente pro erfolgreichem Itemdrop, Lootmenge separat; feste Itemtypen pro Stufe statt Qualitätsvarianten. Die bestätigte Erweiterung ersetzt die alte separate Codex-/Dreierpool-Regel. Keine neuen Itemeffekte, Ressourcen, Affixe, Auto-Vernichtung oder Persistenzänderungen. Grundwerte als in F1 veränderbare Startwerte im Chat ausgewiesen.
+
+**Ablauf:** Berechtigter Kill → 10 % Itemchance → eigener Legendary-Wurf 2 % → bei Fehlschlag Rare 25 % → bei Fehlschlag Magic 50 % → Normal als Rest → Item aus passendem Pool. Erster verfügbarer Erfolg beendet die Kaskade. Normal Ember Scepter weiß, Magic Swift Scepter blau, Rare Focus Grimoire gold, Legendary Cinder Codex orange. Seltenheit in Icons, Bodenname/Glühen, Taschen-/Equipmenttext sowie ausgewähltem Item als ausgeschriebene Stufe sichtbar. Boden zeigt weiter nur den Namen. Itemeffekte unverändert.
+
+**Wahrscheinlichkeiten / bewahrte Regeln:** Vor dem Codex Anteile pro Item 2 / 24,5 / 36,75 / 36,75 %, je Kill bei 10 % Itemchance 0,2 / 2,45 / 3,675 / 3,675 %. Bestehendes Limit eines natürlichen Codex pro Run bewahrt: ausgeschöpfter Legendary-Pool fällt zur Rare-Prüfung durch, dann 0 / 25 / 37,5 / 37,5 % je Item. Debug-Drops bleiben gezielt möglich. Groundcap 16, kein Aufheben bei voller Tasche, Run-Reset, Karten und Echoes unverändert. Neuer Codex ist seltener als zuvor; bewusste Folge des bestätigten Per-Item-Modells, noch kein abgenommenes Balancing.
+
+**F1 / Profile:** Jetzt 54 Felder, Gesamt-Itemchance getrennt von drei Rarity-Würfen, Normal implizit als Rest. Metriken berechnen effektive Anteile pro Item und Chancen pro berechtigtem Kill für den aktuellen Codex-Pool. Profile v5 lesen v1–v4; alte Zahlen bleiben erhalten und neue Felder erhalten Startup-Defaults. Ein sichtbarer Status erklärt, dass Loot/Codex-Werte nun Per-Item-Kaskadenregeln verwenden. Kein stiller Anspruch, das frühere Dropverhalten durch Laden alter Zahlen wiederherzustellen. Wallet und gespeicherter Skilltree unverändert.
+
+**Echte Prüfung:** Godot 4.7.2, isoliertes APPDATA, zwingend `--test-mode`: Arena 59 + Loot/Konsole 54 + Inventar 46 + Stadt/Baum 69 + Begegnung 19 + Rarity 28 = **275 Checks / 0 Fehler**. Neue Suite prüft vorgegebene Zufallsfolgen/Abbruch nach erster erfolgreicher Stufe, 0-/100-%-Grenzen, 100.000 Ziehungen mit festem Seed gegen berechnete Häufigkeiten, reale Dropchance/Groundcap/Codex-Verfügbarkeit, inaktive Tasche, unveränderte Itemwirkung und v4-Profil-Roundtrip/Validierung. Fünf geänderte Gameplay-Scripts und neue Suite via Godot MCP ohne Diagnosen validiert. Kein menschlicher Run als bestanden behauptet.
+
+**Aufschlussreicher Fehlstart:** Der erste Rarity-Test versuchte eine native RNG-Methode zu überschreiben; Godot behandelt das als Fehler. Durch einen kleinen skriptbasierten Test-RNG ersetzt, sodass Reihenfolge und Endpunkte exakt geprüft werden können. Während parallel laufender alter Suites meldete das MCP-Addon einmal einen Registry-Tempdatei-Konflikt im isolierten Testordner; Spielprüfungen bestanden trotzdem. Betroffene Begegnungssuite anschließend allein ohne Warnung erneut bestanden. Keine Änderung am Addon oder an normalen Nutzersaves.
+
+**Medien / Git:** Drei native D3D12-Vorschauen, 1152 × 720, gesichtet: `Progress/captures/2026-10-18_rarity_inventory.png`, `2026-10-18_rarity_ground.png`, `2026-10-18_rarity_metrics.png`. Inventar/alle vier Bodenfunde sind inszenierte Testitems, keine zufällig erspielten Legendary-Funde. Metrikenaufnahme zeigt berechnete Raten, die kurze Aufnahme-FPS ist kein Benchmark. Kein neuer Clip. Spiel-Commit `5caea96b3393780ba1b616189a493e22979d0b44` auf `codex/rarity-cascade`; Spielbaum nach Commit sauber. Chronik referenziert diesen Stand, kein Upload.
+
+**Offen:** Menschlich prüfen, ob 10 % Lootmenge und die erheblich seltenere Codex-Begegnung für sechs Wellen passen. Derzeit genau ein Itemtyp je Stufe; künftige zusätzliche Legendaries benötigen auch eine allgemeinere Pool-Verfügbarkeitsberechnung der Metriken (im Code als shortcut markiert). Keine Qualitätsvarianten und keine neue Inhaltsmenge aus Rarity allein ableiten.
+
+---
+
 ## 2026-10-18 – Cinder Seer und Platz in der Tasche; Rarity-Kaskade angefragt
 
 **Auftrag / Abgrenzung:** Nutzer bestätigt das vorgeschlagene Begegnungs-/Entsorgungspaket und ergänzt kaskadierende Seltenheitswürfe. Fernkampfrolle und manueller Destroy-Button sind unabhängig umgesetzt. Vor der Seltenheitsänderung Rückfragen zur Bezugsgröße (pro Kill oder erfolgreichem Itemdrop) sowie festen Seltenheitspools versus Qualitätsvarianten gestellt. Noch keine Antworten, daher bisherige Dropregeln bewahrt. Automatisches Löschen bleibt aus; Varianten könnten trotz gleichen Namens verschieden wertvoll sein.
