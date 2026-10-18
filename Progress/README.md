@@ -51,3 +51,7 @@ Unter `snapshots/` liegen ausgewählte Spielquellen (Scripts, Szenen, Tests, pro
 ## P2 – Emberhaven und Skilltree, 17.10.2026
 
 Vier neue Bilder unter `captures/`: `2026-10-17_town_v01.png`, `2026-10-17_skilltree_v01.png`, `2026-10-17_tree_tuning_v01.png`, `2026-10-17_loot_name_only.png`. Native D3D12-Ausgabe aus `tests/capture_preview.gd -- --test-mode`, Ansichten `town`, `skilltree`, `tree_tuning`, `loot`, jeweils 1152 × 720, visuell geprüft. Stadt-/Baumansichten verwenden ausdrücklich inszenierte 500 Test-Echoes und vier Testkäufe, keine menschlich erspielte Progression. Sie zeigen die Querverbindung Power II → Vitality III und das Ziel Renewal. Kein neuer Clip; alle alten Medien bleiben erhalten. Zugehöriger Spiel-Commit im P2-Devlog-Eintrag.
+
+## Begegnungen und Entsorgung, 18.10.2026
+
+`captures/2026-10-18_encounter_v01.png` und `2026-10-18_destroy_v01.png`: native D3D12-Vorschauen mit `tests/capture_preview.gd -- --test-mode --view=encounter` beziehungsweise `--view=inventory`, 1152 × 720, gesichtet. Begegnung inszeniert zwei eingefrorene Seer-Warnkreise zur Darstellung der Mechanik; Inventar verwendet Testitems. Keine menschliche Gameplay-Aufnahme und kein Clip. Spiel-Commit `78dcaaf`. Seltenheitskaskade ist darin noch nicht implementiert.

@@ -1,5 +1,33 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-18 – Cinder Seer und Platz in der Tasche; Rarity-Kaskade angefragt
+
+**Auftrag / Abgrenzung:** Nutzer bestätigt das vorgeschlagene Begegnungs-/Entsorgungspaket und ergänzt kaskadierende Seltenheitswürfe. Fernkampfrolle und manueller Destroy-Button sind unabhängig umgesetzt. Vor der Seltenheitsänderung Rückfragen zur Bezugsgröße (pro Kill oder erfolgreichem Itemdrop) sowie festen Seltenheitspools versus Qualitätsvarianten gestellt. Noch keine Antworten, daher bisherige Dropregeln bewahrt. Automatisches Löschen bleibt aus; Varianten könnten trotz gleichen Namens verschieden wertvoll sein.
+
+**Umsetzung:** Cinder Seer als zweite Gegnerrolle ab Welle 2. Jede vierte Spawnposition kann bei freiem Cap ein Seer sein; maximal zwei, Gesamtcap als erster Balancingwert von 18 auf 12 reduziert. Wellenbudgets, Kartenereignisse und Echoes-Regeln unverändert. Seer hält Abstand, markiert die aktuelle Spielerposition fest, warnt 1,1 s und trifft danach einmal Radius 38 mit normalem Gegnerschaden; Erholung 2,8 s. Ausweichen oder vorheriges Ausschalten verhindert den Treffer. Inventar/Pause/F1-Freeze stoppen den Timer. Keine neue Angriffstaste, Klasse oder zusätzliche aktive Spielerfähigkeit.
+
+**Entsorgung / Debug:** Destroy selected im pausierten Inventar entfernt einen ausgewählten Taschenfund ohne Bodenitem oder Währung; ausgerüstete Slots sind geschützt. Fünf Schaltflächen passen nach Größenanpassung in die bestehende Ansicht. F1 jetzt 52 Regler einschließlich Seer-Cap/Warnzeit/Erholung/Radius, neue Profile v4; alte v1/v2/v3-Profile behalten Werte und bekommen Defaults für neue Felder. Bestehende Gegner werden durch Regler nicht gelöscht/verändert, neue Spawns übernehmen neue Werte.
+
+**Prüfung:** Isoliertes APPDATA und `--test-mode`, Godot 4.7.2: Arena 59 + Loot/Konsole 54 + Inventar 46 + Stadt/Baum 69 + Begegnung/Entsorgung 19 = 247 Checks / 0 Fehler. Neuer Test prüft reale Physik-Timer, feste Zielposition, Ausweichen, Einzeltreffer/Erholung, Abbruch beim Tod, Pause/Freeze, volle Tasche → Destroy → wartenden Fund aufnehmen, kein Währungsgewinn, Slot-/Index-/Zustandsschutz und v3-Profilmigration ohne Quelldatei-Umschreibung. Zufallsdrops im neuen Test ausgeschaltet, damit der Kill keine flüchtigen zusätzlichen Testitems erzeugt. Vier Gameplay-Scripts und neue Suite via Godot MCP validiert, keine Diagnosen. Noch kein menschlicher Test der neuen Begegnungen.
+
+**Medien / Git:** Zwei native D3D12-Vorschauen gesichtet: `Progress/captures/2026-10-18_encounter_v01.png` (inszenierte gemischte Welle mit festgehaltenen Warnkreisen) und `2026-10-18_destroy_v01.png` (Inventar mit Destroy selected), jeweils 1152 × 720. Kein neuer Clip. Spiel-Commit `78dcaaff214fc4e22d394859385885de17c4f4b6` auf `codex/encounters-disposal`. Bestehende Planungsänderungen und neue Medien im begleitenden Chronikstand erhalten.
+
+**Rarity-Plan:** Legendary zuerst, nur bei Fehlschlag Rare, dann Magic/Normal, beim ersten Erfolg stoppen. 2 % / beispielsweise 25 % sind keine gleichzeitigen absoluten Dropanteile: Rare effektiv 24,5 % je Kaskadenversuch. Magic/Normal, Gesamtlootmenge, Qualitätsmodell und Behandlung des bisherigen einmaligen Codex bleiben abzugrenzen. Candlesan als Wyatt Cheng über sein Eigenprofil mit YouTube-Verweis identifiziert (https://x.com/candlesan/with_replies); konkretes Kaskaden-Video nicht gefunden und keine WoW-Algorithmusbehauptung daraus gemacht. Keine Seltenheiten nur farblich vorgetäuscht.
+
+---
+
+## 2026-10-17 – P2-Spieltest: tragender Loop, fehlende Kampftiefe und Loot-Stau
+
+**Nutzerfeedback:** Spielspaß und Nutzung des Skilltrees funktionieren gut; der Kreislauf wirkt interessanter. Sorge bezüglich der langfristigen Richtung: immer mehr Gegner und immer schnelleres Schießen könnten in eine bekannte, oberflächliche Eskalation münden. Gewünscht sind mehr Tiefe und eigene Identität. Zusätzlich sammeln sich unerwünschte Items am Boden und in der vollen Tasche; Vernichten oder eine andere sinnvolle Entsorgung gewünscht. Dies ist keine Rücknahme des bestätigten Skilltrees.
+
+**Codebefund:** Aktuell ein Gegnertyp, der direkt verfolgt und bei Kontakt schadet. Wellen unterscheiden sich hauptsächlich durch Menge/Werte. Alle vier Itemtypen haben feste Werte; identische regelmäßige Drops bleiben möglich. Ablegen erzeugt denselben Gegenstand erneut am Boden, löst also den Stau nicht.
+
+**Planung, noch keine Umsetzung:** Nächster sinnvoller Test wäre gemischter Gegnerdruck mit einer neuen klar angekündigten Fernkampfrolle bei begrenzter gleichzeitiger Gegnerzahl. Erfolgskriterium: Zielpriorität und Positionierung ändern sich schon bei wenigen Gegnern; Magierangriff/Karten/Baum bleiben. Später kommen Räume/Ziele als mögliche weitere Tiefe infrage, aber nicht automatisch im selben Paket. Für Loot: Destroy selected ohne zusätzliche Währung als kleiner erster Schritt; eine optionale automatische Entsorgung exakt identischer Dubletten wäre gesondert zu bestätigen. Keine zufälligen Affixe, Crafting oder zusätzlichen Echoes für Itemvernichtung beschlossen.
+
+**Prüfung / Grenze:** Git-Zustände, Gegner-, Drop- und Inventarcode sowie aktuellen Masterplan gelesen. Nur Feedback/Planung dokumentiert; keine Gameplay-Änderung, neuen Tests oder Aufnahmen. Kein neues Paket aus dem Feedback allein als freigegeben behandelt.
+
+---
+
 ## 2026-10-17 – P2: Run → Emberhaven → Skilltree → nächster Run
 
 **Auftrag / Planabgleich:** Nutzer bestätigt das konkret vorgeschlagene Paket: Stadtmenü, 15 verbundene Knoten mit Power/Vitality/Flow und drei Abschlussboni, vollständiger Ausbau, kostenloser Reset, F1-Regler und Bodenloot nur mit Namen. Bezug Masterplan Loop C/P2, Details jetzt in Abschnitt 8.5. Bestätigte Scope-Erweiterung gegenüber dem ursprünglichen P2-Minimum zweier Verbesserungsreihen; keine weitere Gameplay-Abweichung im Paket. Klassenwahl und Item-Persistenz bleiben separat.

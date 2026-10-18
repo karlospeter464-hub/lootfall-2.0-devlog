@@ -330,17 +330,39 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.6 Folgeplanung nach P2-Spieltest – Entscheidungen im Kampf und Loot-Stau
+
+**Freigabe / Stand 18.10.2026:** Nutzer bestätigt das Begegnungs-/Entsorgungspaket und wünscht zusätzlich Seltenheiten mit kaskadierenden Würfen. Unabhängig umsetzbarer Teil fertig: Cinder Seer ab Welle 2, jede vierte Spawnposition wenn Cap erlaubt, maximal zwei gleichzeitig; Gesamtlimit als Testwert 12. Seer markiert eine feste Position für 1,1 s, trifft Radius 38 mit konfiguriertem Gegnerschaden und erholt sich 2,8 s. Bewegung aus dem Kreis vermeidet den Treffer, Tod cancelt den vorbereiteten Angriff, Pause/Freeze halten ihn an. Destroy selected entfernt ausschließlich ausgewählte Taschenitems ohne Bodenfund oder Belohnung. Keine automatische Vernichtung. F1 52 Regler, Profile v4 lesen v1/v2/v3. 247 Checks ohne Fehler; vier Scripts und neuer Test via MCP validiert, zwei native Vorschauen archiviert. Rarity-Erweiterung wartet auf offene Regeln.
+
+**Nutzerbeobachtung:** P2/Skilltree machen Spaß und greifen gut in den Loop. Für die langfristige Identität fehlt jedoch Tiefe jenseits größerer Gegnerzahlen und höheren Feuertempos. Unerwünschte Funde füllen Tasche und Boden; Entsorgung wird gewünscht.
+
+**Hypothese:** Kampfentscheidungen benötigen unterschiedliche Bedrohungen. Der aktuelle einzelne Verfolger erzeugt vor allem Abstandhalten und Dauerschießen; reine Zahlen-/Baumerweiterungen ändern das kaum. Vorschlag für ein nächstes abgegrenztes Paket: ein klar angekündigter Fernkampfgegner zusammen mit bestehenden Nahkämpfern, begrenzte gleichzeitige Gegnerzahl, Test der Zielpriorisierung/Positionierung. Bezug Loop A und spätere Gegnerrollen; noch keine Freigabe oder feste Einordnung der Folgephase.
+
+**Loot-Vorschlag:** Destroy selected im pausierten Inventar ohne direkte Echoes oder neue Ressource; Ablegen allein löst den Stau nicht. Weil alle vier Items feste Werte haben, sind identische Dubletten derzeit kein neuer Vergleich. Optional identische Dubletten beim Aufheben automatisch entsorgen, während mindestens ein Exemplar in Tasche/Ausrüstung erhalten bleibt. **Abweichung vom bisherigen Verhalten, noch nicht bestätigt:** Automatische Vernichtung würde bisher bewahrte Run-Items entfernen und verlangt eine bewusste Freigabe. Keine Item-Persistenz, neuen Belohnungsauslöser oder Crafting implizieren.
+
+**Offen:** Konkretes nächstes Paket und Entsorgungsregeln gemeinsam festlegen. Räume mit Hindernissen/Zielen und stärker situative Items als spätere Ideen; nicht gemeinsam automatisch implementieren. Skilltree-Richtung bleibt bestehen.
+
+### 8.7 Angefragte Seltenheitskaskade – Grundprinzip bestätigt, Regeln offen
+
+Legendary → Rare → Magic → Normal: jede Stufe separat nur nach Fehlschlag aller höheren prüfen; beim ersten Erfolg höchstens ein Item erzeugen. 2 % Legendary und beispielsweise 25 % Rare sind genannte Beispielwerte, fehlende Magic-/Normal-Werte noch nicht festgelegt. So ergibt ein 25-%-Rare-Wurf nach 2 % Legendary effektiv 0,98 × 0,25 = 24,5 % je Kaskadenversuch. Eine separate gesamte Itemchance würde diesen Wert nochmals multiplizieren.
+
+**Noch zu klären:** Bezieht sich die Kaskade auf jeden Kill oder nur auf bereits erfolgreiche Itemdrops? Soll Normal garantierter Rest sein oder darf kein Item entstehen? Feste Itemtypen pro Seltenheit oder Qualitätsvarianten desselben Typs mit unterschiedlichen Werten? Zwei entsprechende Rückfragen im Chat gestellt; noch keine Antworten. Separater Lootmengen-Wurf und feste Typen zunächst nur empfohlen. **Abweichung vom bisherigen Lootplan:** Neue Seltenheitsverteilung ersetzt/erweitert die feste Codex-/Dreierpool-Regel; nicht stillschweigend implementieren. Bestehende Drop-/Codexregeln bis Klärung bewahrt, keine automatische Dublettenvernichtung.
+
+**Quelle:** Nutzer nennt Candlesan. Recherche ordnet den Namen Wyatt Cheng zu (Eigenprofil https://x.com/candlesan/with_replies mit YouTube-Verweis); das konkrete Video über diese Kaskade wurde nicht identifiziert. Keine Aussage über eine exakte WoW-Implementierung aus dieser Referenz abgeleitet.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
 **Projektphase:** P0/P1/INV1 und P2 technisch; vollständiger Stadt-/Skilltree-Loop umgesetzt, manuelle P2-Abnahme offen.  
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Emberhaven, 15 verbundene Talente, echte Echoes-Käufe und exakte kostenlose Rückerstattung; Boni gelten im nächsten Run. Bodenloot zeigt nur Namen.  
-**Dev-Konsole:** F1, 48 Regler einschließlich Baum/Kosten; Profil v3 unterstützt v1/v2; Progress v2 unterstützt alte Wallets.  
+**Neu umgesetzt:** Cinder Seer mit festem Warnkreis ab Welle 2, Gesamtcap 12/Seercap 2; Destroy selected schafft Platz ohne Belohnung/Bodendrop.  
+**Dev-Konsole:** F1, 52 Regler einschließlich Seer-Werten; Profil v4 unterstützt v1/v2/v3; Walletformat unverändert v2.  
 **Umfang/Sprache:** Karten und Echoes-Auszahlung bewahrt; Code/UI Englisch. Keine begehbare Stadt, weiteren Klassen, dauerhaften Items oder XP-Leiste.  
-**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 = 228, keine Fehler; neun Scripts via MCP validiert, Stadt/Baum auch nativ geprüft.  
-**Material:** Vier neue native Vorschauen vom 17.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.  
-**Feedback/Offen:** INV1-Spielgefühl positiv; P2-Kosten/Bonistärke, Motivation, weitere Fenstergrößen und Export noch manuell offen.  
-**Nächster Schritt:** Vollständigen Loop spielen, erste Kaufreihenfolge und Abschlussbonus testen; anhand dieses Feedbacks weiter abstimmen.
+**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 + 19 = 247, keine Fehler; vier Gameplay-Scripts und neuer Test via MCP validiert.  
+**Material:** Zwei neue native Vorschauen vom 18.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.  
+**Feedback/Offen:** Nutzer bestätigt Spaß/Skilltree-Loop; langfristig mehr Kampftiefe gewünscht, Loot-Stau bei vollen Taschen beobachtet. Vollständige Balance/Fenstergrößen/Export weiter offen.  
+**Nächster Schritt:** Seltenheitsregeln aus 8.7 klären; Kaskade noch nicht implementiert. Begegnungstiefe/Warnlesbarkeit manuell prüfen; Magierangriff/Fortschrittsloop bewahrt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -349,6 +371,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-18 | Begegnung / Loot | Nutzer bestätigt neuen Gegnerdruck und Entsorgung, ergänzt Wunsch nach Legendary→Rare→Magic→Normal-Kaskade. Seer und manueller Destroy-Button umgesetzt, keine automatische Vernichtung oder Lootregeländerung | 247 Checks ohne Fehler und zwei native Vorschauen; Kaskadenbasis/Qualitätsmodell offen |
+| 2026-10-17 | P2-Spieltest / Identität | Nutzer bestätigt Spaß und Skilltree, wünscht langfristig mehr Tiefe als Mengen-/Feuertempo-Eskalation; unerwünschte Items blockieren Tasche/Boden. Gegnerrollen und Entsorgung als nächste Diskussion | Feedback dokumentiert; kein neues Gegner-/Entsorgungspaket oder automatische Vernichtung freigegeben |
 | 2026-10-17 | P2 umgesetzt | Nach konkreter Freigabe Emberhaven und 15 vernetzte Talente, alle ausbaubar, exakter kostenloser Reset, sichere gemeinsame Speicherung, alte Wallets/Profile kompatibel; Bodenbeschreibung entfernt | 228 Checks ohne Fehler, neun MCP-Scriptprüfungen, vier native Vorschauen; manuelle P2-Abnahme offen |
 | 2026-10-17 | Verbindlicher Meta-Loop | Nutzer bestätigt dauerhaften Echoes-Skilltree mit Grundwerten und besonderen Boni als Spielgrundlage. Run beenden → Stadt/Hideout → Echoes im Baum ausgeben → neuer Run. Ersetzt P2-Minimalvorschlag mit nur 1–2 Verbesserungen; Klassenwahl separat | Richtung/Scope-Erweiterung bestätigt und dokumentiert; konkrete Baumregeln sowie Darstellung der Stadt offen, noch nicht implementiert |
 | 2026-10-17 | Hideout-Präferenz / Recherche | Nutzer bevorzugt komplexeren dauerhaften Echoes-Passivbaum mit Grundwerten und besonderen Boni; Klassenwahl separat. Qualitatives Spielerfeedback zu Zielknoten, Synergien, Wertefortschritt, Grind und Respec recherchiert | Aktuelle Designpräferenz, Regeln/Umfang offen; keine Implementierungsfreigabe |
