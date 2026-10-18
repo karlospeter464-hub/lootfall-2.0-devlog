@@ -1,5 +1,35 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-18 – CE1: Combat Counterplay
+
+**Freigabe / Planabgleich:** Separater eingefügter CE1-Auftrag erteilt die ausdrückliche Umsetzung. Nutzerfassung des Masterplans 1.1 aus Downloads als aktuelle Konzeptbasis übernommen, einschließlich Nordstern/Soft-Counter und 8.9; eingebetteter historischer Startauftrag nicht ausgeführt. Vorhandene eigene Planungsnotizen aus 8.8 bleiben enthalten. Enger Scope: Guardian, Seer-Unterbrechung, vorhandene Builds und einfache Testbarkeit. Verwertung/Itemlevel geparkt.
+
+**Ist-Stand und Begründung:** Standard 0,36 s; Swift und zwei Quick-Karten 0,18432 s ohne Flow. Fünf direkte Treffer können das 1,1-s-Fenster unterscheiden, aber der alte Seer stirbt vor Treffer fünf. Daher konfigurierbares dreifaches Seer-Leben als transparenter CE1-Testwert; keine neue Fähigkeit und kein erfundener Unterbrechungsbonus.
+
+**Umsetzung:** Guardian verwendet den bestehenden Nahkampf, ab Welle 3 jeder achte Kandidat, maximal einer lebend im Gesamtcap, 4× HP und 55 % Geschwindigkeit. Flache Rüstung 8 mit 20-%-Minimum pro positivem Direkttreffer oder Splash; kein Primärziel-Doppelsplash. Direkte Projektile benutzen einen kleinen eigenen Trefferaufruf; Splash bleibt normaler Schaden. Fünfter direkter Treffer während Seer-Warnung cancelt einmalig und setzt volle Erholung, Trefferpunkte und BROKEN visualisieren den Zustand. Trefferzahl 0 deaktiviert; neue Warnung/Tod räumen den Zustand auf. Pause/Freeze bleiben erhalten.
+
+**Debug / Kompatibilität:** Neun neue F1-Gegnerwerte, insgesamt 63. Profile v6 akzeptieren v1–v5 validiert und ohne Umschreiben; neue Werte erhalten Startup-Defaults. Fortschrittsformat unverändert. F1-Testauswahl kombiniert drei vorhandene Builds mit drei Gegnerarrangements; nur `--test-mode`, Run-Neustart mit Seed 42, ohne aktive Talente oder Änderung am gespeicherten Besitz. Bestehendes Tuning, Budget und Caps bleiben wirksam. Normale Wellen laufen nach dem isolierten Encounter weiter. Debug-Defeat berücksichtigt die tatsächlich gespawnte Guardian-Rüstung, auch nach späterer Regleränderung.
+
+**Echte Prüfung:** Alle sieben Suites seriell mit isoliertem APPDATA und `-- --test-mode`: 59 Arena + 54 Loot/Konsole + 46 Inventar + 69 Stadt/Baum + 19 Begegnungen + 28 Rarity + 67 Counterplay = **342 Checks, 0 Fehler**. Neue Suite prüft direkte/Splash-Rüstung und Minimum, Nonpositivschaden, Gruppen-Splash, Unterbrechungsfenster/Counter/Recovery, Pause/Freeze/Tod/Run-Neustart, frühe/späte Wellen, Rollen-/Gesamtcaps, v5/v6-Profile und alle neun Arrangements. Echte Player-Cooldowns und gesweepte Projektile: Rapid unterbricht lebenden Seer bei fünf Treffern/32 Rest-HP, Heavy tötet mit drei Treffern; Standard unterbricht nicht. Sechs Gameplay-Scripts via Godot MCP `script_check` ohne Diagnosen. Zwei native D3D12-Vorschauen (1152×720) gesichtet: Guardian/Seer-Trefferpunkte und F1-Testauswahl. Kein menschlicher Durchlauf und kein neuer Clip.
+
+**Aufschlussreiche Fehlversuche:** Ein kurz verwendeter `in`-Versionsvergleich lehnte aus JSON gelesene numerische Legacy-Versionen ab; durch bestehende explizite numerische Vergleiche ersetzt, Legacy-Suite danach bestanden. Erstes Testarrangement wollte nach verbrauchtem Budget einen Guardian spawnen und hielt anschließend eine Chaser-Referenz; Fixture korrigiert. Ein Heavy-Projektiltest griff nach erfolgreichem Kill auf den freigegebenen Seer zu; Test beendet nun bei Tod. Kein Gameplay-Workaround für Testfehler.
+
+**Umfang / offen:** Kein neuer Spielerangriff, Gear, Armor Penetration, Statussystem oder Änderung an Karten, Inventar, Loot, Echoes, Hideout, Run-Länge und Persistenz. Soft-Counter, Lesbarkeit, ungünstige Matchups und Build-Dominanz erfordern menschliche Spieltests; Kostenkurve/Langzeitbalance weiterhin offen. Spiel-Commit `da58b4327e7ba82a5035d1ad7c3cf8503e41fe7c` auf `codex/combat-counterplay`; Spielbaum danach sauber. Chronik-Checkpoint enthält auch die zuvor noch uncommitteten eigenen Verwertungs-/Recherche-Notizen; keine privaten Chat-Transkripte aufgenommen.
+
+---
+
+## 2026-10-18 – Standortbestimmung, Verwertungsentwurf und Wyatt-Cheng-Recherche
+
+**Auftrag / Feedback:** Nutzer bewertet Fernkämpfer und Seltenheiten positiv, wünscht statt ersatzloser Vernichtung Echoes abhängig von Seltenheit und später eventuell Itemlevel. Jetzt Fazit, Planabgleich und weitere recherchierte Entwicklertipps; keine Gameplay-Implementierung.
+
+**Planung:** Masterplan 8.8 hält die gewünschte Richtung fest. Direkter Item-Ertrag ausdrücklich als Abweichung vom bisherigen wellenbasierten Echoes-Modell markiert. 1/2/4/10 Echoes und vorgemerkte Auszahlung am Run-Ende sind Vorschläge. Timing, App-Schließen und Restitems offen. Keine automatische Verwertung, Itemlevel-Implementierung oder neue XP-Fortschrittsregel beschlossen.
+
+**Recherche:** Veröffentlichte GDC-Transkripte und direktes Diablo-Interview von Wyatt Cheng gelesen; Quellen und eigene Lootfall-Ableitungen in `WYATT_CHENG_NOTES.md` getrennt. Besonders relevant: ausgelöstes statt beabsichtigtes Spielverhalten, buildabhängige ideale Items, frühe Spieltests und verlässliche Kontrolle. Das konkrete Kaskaden-Short weiter nicht identifiziert.
+
+**Prüfung / Umfang:** Vorhandenen Masterplan und Repository-Status geprüft, keine Gameplay-Dateien geändert. Keine neuen Spieltests oder Aufnahmen; zuvor dokumentierte 275 Checks bleiben der letzte technische Teststand. Galerie unverändert, da kein sichtbarer Spielmeilenstein. Neue Zahlen sind ungetestete Balancing-Hypothesen.
+
+---
+
 ## 2026-10-18 – Rarity-Kaskade nach separatem Itemwurf
 
 **Freigabe / Planabgleich:** Nutzer beantwortet beide Produktfragen: Seltenheitsprozente pro erfolgreichem Itemdrop, Lootmenge separat; feste Itemtypen pro Stufe statt Qualitätsvarianten. Die bestätigte Erweiterung ersetzt die alte separate Codex-/Dreierpool-Regel. Keine neuen Itemeffekte, Ressourcen, Affixe, Auto-Vernichtung oder Persistenzänderungen. Grundwerte als in F1 veränderbare Startwerte im Chat ausgewiesen.

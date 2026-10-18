@@ -58,4 +58,6 @@ Vier neue Bilder unter `captures/`: `2026-10-17_town_v01.png`, `2026-10-17_skill
 
 ## Seltenheitskaskade, 18.10.2026
 
+Nachfolgender CE1-Meilenstein: `captures/2026-10-18_ce1_encounter.png` und `2026-10-18_ce1_tools.png`, erzeugt mit `tests/capture_preview.gd -- --test-mode --view=ce1` beziehungsweise `--view=ce1_tools`. Native D3D12-Ausgabe, 1152 × 720, beide gesichtet. Gestellte Welle 3 mit Guardian und eingefrorenem Seer-Warnkreis/drei Trefferpunkten sowie F1-Testauswahl; keine menschliche Gameplay-Aufnahme. Kein neuer Clip. Frühere Aufnahmen bleiben historisch unverändert.
+
 `captures/2026-10-18_rarity_inventory.png`, `2026-10-18_rarity_ground.png`, `2026-10-18_rarity_metrics.png`: native D3D12-Vorschauen aus `tests/capture_preview.gd -- --test-mode` mit `inventory`, `rarity_loot`, `rarity_metrics`, 1152 × 720, gesichtet. Alle vier Items/ausgerüsteten Gegenstände sind gestellte Testfunde, kein Nachweis menschlich erspielter Legendary-Drops. Die Konsole zeigt berechnete bedingte Anteile und Chancen pro Kill; kurze Start-FPS nicht als Benchmark verwenden. Spiel-Commit `5caea96`. Kein neuer Clip, Vorversionen erhalten.

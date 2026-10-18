@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.0 · **Stand:** 16. Oktober 2026  
+**Version:** 1.1 · **Stand:** 18. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -68,6 +68,12 @@ In **Lootfall** baut der Spieler während eines kurzen, zunehmend intensiven Act
 
 **Übergreifende Qualität:** Treffer, Machtanstieg, Item-Drops und Rekorde brauchen klares **Game Feel** (visuelles und akustisches Feedback), ohne unnötige Effektflut.
 
+**[ENTSCHEIDUNG, 18.10.2026] Design-Nordstern / Systeminteraktion:** *„Jeder Run ermöglicht eine eigene Strategie, deren Stärken und Schwächen ich gegen unterschiedliche Gegner auf die Probe stelle.“* Karten, Equipment, Gegnerrollen und dauerhaftes Talentwachstum sollen **situationsabhängige Entscheidungen** erzeugen, nicht nur parallel Zahlen erhöhen.
+
+**[ENTSCHEIDUNG] Soft-Counter statt harter Immunitäten (A mit Elementen von B):** Unterschiedliche Builds dürfen klare Stärken/Schwächen haben; alle sollen mit Geschick, Positionierung und klugen Entscheidungen grundsätzlich spielbar bleiben. Spezialisierung ist erwünscht, Misch-Builds sind eine Option, keine Pflicht. Kein einzelner Build soll **unter allen Testbedingungen** offensichtlich überlegen sein. Das ist ein **Designziel**, kein bereits bestätigter Balancing-Zustand.
+
+**[ENTSCHEIDUNG] Vorgehensweise:** Erst vorhandene Wirkungsklassen (Schaden/Treffer, Angriffstakt, Fläche) gegen konkrete Gegnerrollen testen. **Kein umfassendes Kampfstatistik-/Resistenz-/Rüstungsdurchdringungs-System vor dem Ergebnis dieses Tests.** Weitere Werte nur ergänzen, wenn dadurch eine nachweisbar neue Entscheidung entsteht.
+
 ### 1.3 Nicht-Ziele für den Anfang
 
 Kein Multiplayer, keine Online-Ökonomie, keine vollständige ARPG-Kampagne, keine neun Klassen-/Spezialisierungsbäume, keine große Crafting-Ökonomie, kein ausgebautes Life-Skilling. Diese Ideen dürfen die ersten Experimente nicht verzögern.
@@ -85,7 +91,7 @@ Kein Multiplayer, keine Online-Ökonomie, keine vollständige ARPG-Kampagne, kei
 **1–3 Wellen bestehen → 1 aus 3 Belohnungskarten wählen → den Build verändern → stärkere Wellen bewältigen → seltenen Loot finden → eigenen Rekord herausfordern.**
 
 - **[HYPOTHESE]** Drei Kartentypen: **Statuswerte**, **Fähigkeiten/Skill-Modifikatoren**, **Items**. Nicht zwingend in jeder Auswahl eine Karte jeder Art; zunächst verständlich präsentieren.
-- **[HYPOTHESE – vorläufiges Testmodell, 16.10.2026]** Seltene Items droppen zufällig während des Runs und verstärken den aktuellen Build. Sie sollen helfen, höhere Wellen zu erreichen und dadurch am Run-Ende mehr Echoes zu erhalten. Für diesen ersten Entwurf gelten die Items nur im aktuellen Run; sie werden nicht als Ausrüstung in den nächsten Run übernommen. Sie bleiben **zusätzliche Überraschungen** neben den wellenbasierten Kartenentscheidungen. Technischer Teststand: Cinder Codex, 2 % Dropchance pro berechtigtem Kill, maximal ein Exemplar pro Run. Aufheben ergänzt Feuerball-Explosionen (Radius 85, 60 % Geschossschaden an benachbarte Gegner, kein doppelter Primärtreffer). Startwerte in F1 einstellbar; spielerische Abnahme offen.
+- **[IMPLEMENTIERT – aktueller Stand 18.10.2026]** Zufällige Run-Items ergänzen die wellenbasierten Kartenentscheidungen. Gegenstände werden in einer Run-Tasche gesammelt und erst beim bewussten Ausrüsten aktiv; beim Neustart werden sie zurückgesetzt. Vier feste Testgegenstände (Ember Scepter, Swift Scepter, Focus Grimoire, Cinder Codex) mit Rarity-Kaskade und einem Itemwurf von 10 % pro berechtigtem Kill gemäß §8.4/§8.7. Die frühere isolierte 2-%-Codex-Dropregel wurde **abgelöst** und darf nicht erneut verwendet werden. Langfristige Item-Persistenz bleibt offen. Seltene Funde können helfen, mehr Wellen zu schaffen und so am Run-Ende mehr Echoes zu erhalten.
 - **[ENTSCHEIDUNG]** Entdeckung und Herausforderung sind wichtiger als endloses numerisches Grinden.
 
 *Qualitätsfrage:* Entstehen durch Kartenentscheidungen erkennbar verschiedene Spielstile? Hat man Lust, eine andere Kombination auszuprobieren?
@@ -93,7 +99,7 @@ Kein Multiplayer, keine Online-Ökonomie, keine vollständige ARPG-Kampagne, kei
 ### Loop C — Prestige / Meta-Fortschritt (viele Runs)
 **[ENTSCHEIDUNG, 17.10.2026] Run beenden (Tod oder Sieg) → Ergebnis und Echoes erhalten → zur Stadt / ins Hideout zurückkehren → Echoes im dauerhaften Skilltree ausgeben → mit den erworbenen Boni den nächsten Run starten.**
 
-- **[ENTSCHEIDUNG]** Der Hideout-Fortschritt erfolgt über einen vernetzten Passivbaum nach PoE-Vorbild: Grundwertknoten, größere benannte Zwischenziele und besondere spielstilprägende Boni. Klassenwahl bleibt ein separates späteres System. Ziel ist, dauerhafte Stärke und Vorfreude auf neue Baum-Boni mit dem bestehenden Karten-/Item-Run zu verbinden. Konkrete Knoten und Kaufregeln sind noch zu entwerfen.
+- **[ENTSCHEIDUNG / IMPLEMENTIERT]** Der Hideout-Fortschritt erfolgt über einen vernetzten dauerhaften Passivbaum nach PoE-Vorbild mit Grundwertknoten, größeren Zwischenzielen und spielstilprägenden Boni. Eine erste Fassung mit **15 vernetzten Knoten** und kostenlosen Resets ist umgesetzt (§8.5); ihre langfristige Balance/spielerische Wirkung bleibt zu prüfen. Klassenwahl ist ein separates späteres System.
 
 - **[ENTSCHEIDUNG]** Eine Meta-Ressource mit vorläufigem englischem Namen **„Echoes“** (Namenswahl für jetzt an Codex delegiert). Belohnung erfolgt am Run-Ende auf dem Ergebnisbildschirm, keine Ressourcen-/XP-Sammelleiste als Ersatz für die wellenbasierte Kartenauswahl. **[HYPOTHESE – erstes Belohnungsmodell]** Höherer Wellenfortschritt soll mehr Echoes ergeben; zufällige Run-Items helfen indirekt, diesen Fortschritt zu erreichen. Keine zusätzliche direkte Echoes-Belohnung für den bloßen Itemfund vorgesehen. Implementiertes Startmodell: 10 × Summe der abgeschlossenen Wellenstufen (1 + 2 + … + n), bei Sieg und Tod einmalig am Ergebnisbildschirm. Eine nur erreichte Welle zählt nicht zur Auszahlung; App-Schließen während des Runs zahlt nichts aus. Der Faktor ist in F1 einstellbar. Diese Werte sind Balancing-Startwerte, keine endgültige Balanceentscheidung.
 - **[ENTSCHEIDUNG, P2]** Erste Stadt als Menü: Emberhaven, Skilltree und Run-Start. Keine begehbare Stadt, zusätzlichen NPCs, Händler oder Archiv-Freischaltungen in diesem Paket.
@@ -365,17 +371,72 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.8 Feedback und Verwertung – Entwurf, noch keine Umsetzung
+
+**Nutzerfeedback (18.10.2026):** Fernkämpfer und Seltenheiten machen den Run interessanter. Unerwünschte Items sollen künftig Echoes statt ersatzloser Vernichtung geben; seltenere Items sollen mehr wert sein. Itemlevel als spätere Wertdimension mitdenken, jetzt noch nicht implementieren.
+
+**Abweichung vom Plan:** Verwertung ergänzt einen direkten Echoes-Ertrag aus Items; bisher zahlen ausschließlich abgeschlossene Wellen am Run-Ende. Richtung vom Nutzer gewünscht, konkrete Beträge und Auszahlungs-/Resetregeln noch offen. Bestehendes Spielverhalten bleibt bis zum abgegrenzten Implementierungsauftrag erhalten.
+
+**[HYPOTHESE] Kleinster nächster Test:** Manuelle Verwertung eines ausgewählten Taschenitems ersetzt Destroy; ausgerüstete Items bleiben geschützt. Startwerte Normal 1 / Magic 2 / Rare 4 / Legendary 10 Echoes. Verwertungsertrag im Run vormerken und beim regulären Ergebnis einmalig zusätzlich auszahlen; keine automatische Verwertung und kein Ertrag allein durch Aufheben. Verhalten bei App-Schließen und nicht verwerteten Restitems ausdrücklich vor Umsetzung festlegen. Werte/Auszahlungszeitpunkt sind Vorschläge, keine bestätigte Balance.
+
+**[SPÄTER] Itemlevel:** Seltenheit und Itemlevel getrennt behandeln. Denkmodell: Rarity-Grundwert × Itemlevel-Faktor; Level/Wert an die Fundquelle beim Drop binden, nicht an spätere Spielerwerte beim Verwerten. Keine Formel oder Zuordnung zu Wellen/Gebieten beschlossen; kein neues Spieler-XP-System, keine Affixe oder Qualitätsvarianten daraus ableiten.
+
+**Prüffragen:** Wird Verwertung zur lästigen Pflicht, jeden Fund einzusammeln? Bleibt höhere Wellen schaffen attraktiver als leichte Wellen abzufarmen? Wie viele Runs soll der aktuelle Baum tragen? Unterschiedliche Item-Synergien und Begegnungen als folgende Vertiefung diskutieren. Recherche und eigene Ableitungen: `WYATT_CHENG_NOTES.md`.
+
+---
+
+### 8.9 CE1 – Combat Counterplay: Build-Stärken × Gegnerrollen
+
+**Umsetzung nach separater ausdrücklicher CE1-Freigabe (18.10.2026): [IMPLEMENTIERT – technisch geprüft].** Rune Guardian ab Welle 3, jeder achte Spawnkandidat, maximal einer lebend innerhalb des Gesamtcaps. Bestehender Nahkampf, 4× Wellenleben, 0,55× Geschwindigkeit, Schaden `max(Eingang − 8, Eingang × 0,2)` einmalig auf direkte und Splash-Treffer. Seer: fünf direkte Projektiltreffer innerhalb der bisherigen 1,1 s brechen den Zauber ab; Splash zählt nicht, voller Erholungstimer 2,8 s, Trefferpunkte und BROKEN-Feedback. Seer-Leben als expliziter CE1-Testwert 3×: bisher wäre er vor fünf Treffern gestorben. Keine neuen Player-Stats oder Belohnungsregeln.
+
+**Machbarkeit / Testbarkeit:** Ohne Talente 0,36 s Standard gegen 0,18432 s mit Swift + zwei Quick-Karten. Echter Projektiltest gegen Welle-3-Seer (102 HP): Rapid trifft fünfmal, unterbricht einmal, Seer lebt mit 32 HP; Heavy (40,46 Schaden, 0,36 s) tötet mit drei Treffern; Standard unterbricht nicht. F1 bietet alle neun Kombinationen aus bestehenden Builds und drei Gegnerarrangements nur mit isoliertem `--test-mode`, behält aktuelles Tuning und nutzt bestehendes Spawnbudget/Caps. Keine dauerhafte Talentänderung. F1 63 Werte, Profile v6 lesen v1–v5; neun neue Gegnerwerte gelten für neue Spawns.
+
+**Verifikation:** 275 bisherige + 67 neue Checks = 342, keine Fehler. Rüstung/Minimum/Splash, echte Projektiltreffer, unzureichende Treffer, Pause/Freeze/Tod/Neustart, Caps, neun Arrangements und Legacy-Profile geprüft. Sechs Gameplay-Scripts via MCP gültig. Zwei native D3D12-Testvorschauen gesichtet und archiviert. **Offen:** Menschliche Abnahme der neun Matchups, Warnungslesbarkeit und ob Bewegung ungünstige Builds ausreichend ausgleicht. Technische Machbarkeit ist kein Nachweis, dass kein Build alle Begegnungen dominiert. Die nachfolgenden Designhypothesen bleiben Prüfziele.
+
+**Status (18.10.2026): [ENTSCHEIDUNG – Designrichtung und Freigabe des eng begrenzten nächsten Experiments]; [HYPOTHESE – Matchups und Balancing].** Keine dieser Mechaniken ist allein durch diesen Eintrag bereits implementiert. Die einmalige konkrete Codex-Umsetzungsanweisung wird vom Creative Director separat erteilt; §0 und das Scope-Gate gelten weiterhin.
+
+**Spielerlebnis / Hypothese:** Bei gleicher grundsätzlicher Spielbarkeit sollen drei aus **vorhandenen** Run-Karten/Gegenständen/Talenten gebildete Spielweisen in drei Kampfsituationen erkennbar unterschiedliche Vor- und Nachteile haben. Der Spieler versteht, wann und **warum** seine Entscheidungen einen Unterschied machen. Spielskill muss ungünstige Matchups kompensieren können (Soft-Counter), kein Gegner ist gegen eine Angriffsklasse immun.
+
+**Build-Profile – Testfälle, keine neuen Klassen:**
+- **Schnellfeuer:** kurze Angriffsintervalle und viele direkte Treffer, z. B. Swift Scepter / Flow; Stärke als Testhypothese: Zauber eines Seers unter Druck setzen.
+- **Schwerer Einzeltreffer:** hoher direkter Schaden pro Treffer, z. B. Ember Scepter / Focus Grimoire / Power; Stärke: wirksam gegen Treffer-Rüstung.
+- **Flächenschaden:** Cinder Codex / Explosionen gegen dicht stehende Gegner; Stärke: Schwärme. Legendärer Drop darf **nicht** als zufällige Voraussetzung für reproduzierbare Entwicklungstests fungieren – vorhandene F1-Testdrops nutzen.
+
+| Begegnung / Gegnerrolle | Schnellfeuer | Einzeltreffer | Fläche | Status |
+|---|---|---|---|---|
+| **Verfolger-Schwarm**: viele kleine Gegner, Überkill bei Einzeltreffern | mittel | eher schwach | **stark** | Verfolger vorhanden; Schwarmkonfiguration zu testen |
+| **Cinder Seer**: gefährlicher, angekündigter Zauber | **stark, falls unterbrechbar** | mittel (Tötung/Ausweichen) | eher schwach | Seer vorhanden; Unterbrechung als CE1-Test |
+| **Runenwächter**: langsam, klar lesbare Treffer-Rüstung | eher schwach | **stark** | mittel / isoliert schwächer | **neuer** Gegner als CE1-Test |
+
+**[HYPOTHESE] Kleinster mechanischer Entwurf:**
+1. **Treffer-Rüstung beim Runenwächter:** Ein kleiner *flacher Abzug pro eingehendem Schadensereignis* (nicht pauschal % Schadensreduktion). Gegen kleine Treffer relativ stark, gegen große Treffer schwächer. **Kein Nullschaden:** Mindestrestdamage (z. B. 20 % des eingehenden Schadens) als konfigurierbare Testschranke. Konsistente Berechnung über direkte Treffer und Splash sicherstellen; keine Doppelberechnung und kein genereller Umbau aller Gegner/Schadensarten.
+2. **Konzentrationsbruch beim Cinder Seer:** Eine ausreichende Anzahl **direkter** Projektiltreffer innerhalb seiner schon vorhandenen Angriffsvorbereitung kann einen angekündigten Zauber **einmalig abbrechen**. Splash zählt nicht als zusätzlicher Projektiltreffer; neue Angriffszyklen beginnen sauber von vorn. Schnellfeuer soll durch kürzere Intervalle im Vorteil sein, während andere Builds durch Töten, Ausweichen oder Positionieren bestehen. Vor Festlegung von Trefferzahl/Zeitfenster anhand **realer aktueller** Feuerintervalle prüfen, ob Standard- und Schnellfeuer damit tatsächlich unterscheidbar sind; bei unlösbarer Abstimmung als Blocker melden statt Zahlen zu erzwingen.
+3. **Runenwächter-Spawn:** Frühestens in einer späteren Welle, niedrige Häufigkeit, höchstens einer gleichzeitig, existierendes Spawn-/Gesamtgegnerlimit, keine komplette Encounter-Director-Architektur. Seine Rolle und Rüstung müssen ohne aufwendige Assets durch Silhouette/Farbe/Trefferfeedback erkennbar sein.
+4. **Parametrisierung:** Nur die tatsächlich nötigen Werte über vorhandene `@export`-/F1-Mechanismen konfigurierbar machen (Rüstungsabzug/Mindestrestdamage; Wächter-Spawn/Cap; Seer-Unterbrechungs-Trefferzahl/Zeitfenster/Schalter). Keine separate universelle Statistik-Engine.
+
+**Bewusst NICHT Teil von CE1:** neuer Spielerwert `Armor Penetration`, Schadenstypen/Elementarresistenzen, Schilde, Status-Effekt-System, zusätzliche Skills/Klassen/Karten/Items, dauerhafte Talentänderungen, neue Währung oder Verwertungs-Echoes (§8.8 bleibt geparkt), Änderungen an Dropchance/Seltenheitskaskade, Inventar, Echoes-Auszahlung, Hideout, Run-Länge oder Persistenz. Auch kein generischer KI-/Rüstungs-/Effektbaukasten auf Verdacht.
+
+**Validierung: zwei Ebenen**
+- **Technisch:** Neue Schutzrechnung inkl. Minimum und Splash ohne doppelten Treffer; Seer unterbricht nur bei ausreichenden direkten Treffern im richtigen Zeitfenster und nur einmal; Nicht-Unterbrechung bei zu wenigen Treffern; Pausieren/Tod/Neustart setzen den Zustand sauber zurück; Spawn-Cap, bestehende F1-/Loot-/Save-/Run-Regeln bleiben intakt. Godot-Start/Parse- und fokussierte Regressionstests.
+- **Spielerisch:** Möglichst gleiche Ausgangslage ohne Zufallsloot mittels vorhandenen Debug-Tools herstellen. Drei Build-Profile gegen Schwarm, Seer und Wächter spielen. Notieren: (a) ungefähre Kampfzeit bzw. Kills, (b) Schaden erlitten, (c) wie oft Seer unterbrochen wurde, (d) ob die Stärke/Schwäche sichtbar und verständlich war. **Erfolg:** unterschiedliche Vorteile werden spürbar, kein unlösbarer Konter, kein Build gewinnt alle drei Situationen offensichtlich. Ist dies nicht erfüllt, erst Parameter oder Begegnungen ändern, **keine** zusätzliche Stat-Ebene einführen.
+
+**Arbeitsreihenfolge:** (1) Bestehende tatsächliche Combat-/Spawn-Berechnung kurz prüfen und Build-Werte ableiten; (2) minimalen Wächter und Rüstung integrieren; (3) Seer-Unterbrechung nur mit nachgewiesener Feasibility für Schnellfeuer implementieren; (4) Tests, manuelle Spieltest-Anleitung und Ergebnisse. Bei größerer Architekturabweichung oder neuen Player-Stats stoppen und Rücksprache halten. Alle vorgeschlagenen Defaultwerte sind reine Testwerte, nicht endgültige Balance.
+
+**Nächste Entscheidung NACH dem Playtest:** Welche Interaktion erzeugte tatsächlich neue Entscheidungen? Erst dann über Armor Penetration, Rüstungsbruch, weitere Gegner, Encounter-Mixes oder horizontale Talente nachdenken.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
 **Projektphase:** P0/P1/INV1 und P2 technisch; vollständiger Stadt-/Skilltree-Loop umgesetzt, manuelle P2-Abnahme offen.  
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Separate Itemchance und Legendary→Rare→Magic→Normal-Kaskade mit festen Pools, gemeinsamen Farben und textlicher Seltenheit; Itemeffekte unverändert.  
-**Dev-Konsole:** F1, 54 Regler und tatsächliche Rarity-Anteile; Profil v5 unterstützt v1–v4 mit Hinweis auf neue Wahrscheinlichkeitsbasis.  
+**Neu umgesetzt:** CE1: Rune Guardian mit flacher Trefferrüstung und Schadensminimum; Seer-Unterbrechung durch direkte Projektiltreffer, dreifaches Seer-Leben als Testwert.
+**Dev-Konsole:** F1, 63 Regler und neun isolierte CE1-Arrangements; Profil v6 unterstützt v1–v5.
 **Umfang/Sprache:** Karten und Echoes-Auszahlung bewahrt; Code/UI Englisch. Keine begehbare Stadt, weiteren Klassen, dauerhaften Items oder XP-Leiste.  
-**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 + 19 + 28 = 275, keine Fehler; fünf Gameplay-Scripts und Rarity-Test via MCP validiert.  
-**Material:** Drei neue Rarity-Vorschauen vom 18.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.  
-**Feedback/Offen:** Nutzer bestätigt Spaß/Skilltree-Loop; langfristig mehr Kampftiefe gewünscht, Loot-Stau bei vollen Taschen beobachtet. Vollständige Balance/Fenstergrößen/Export weiter offen.  
-**Nächster Schritt:** Begegnungstiefe und Lootverteilung spielen; insbesondere Seltenheit des natürlichen Codex mit dem neuen Modell beurteilen. Magierangriff/Fortschrittsloop bewahrt.
+**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 + 19 + 28 + 67 = 342, keine Fehler; sechs Gameplay-Scripts via MCP validiert.
+**Material:** Zwei neue native CE1-Vorschauen vom 18.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.
+**Feedback/Offen:** Nutzer bestätigt Spaß/Skilltree und jetzt Mehrwert der Fernkämpfer/Seltenheiten; Langzeitbalance, Fenstergrößen/Export offen.
+**Nächster Schritt:** CE1-Matchups menschlich testen (§8.9); Verwertung (§8.8) und Itemlevel geparkt. Magierangriff, Karten, Item-Rarities und Meta-Loop bewahrt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -384,6 +445,9 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-18 | CE1 umgesetzt | Separater CE1-Auftrag: Rune Guardian, flache Rüstung mit Minimum, direkte Seer-Unterbrechung; 3× Seer-HP macht fünf Treffer erreichbar. Neun isolierte Testarrangements mit bestehendem Gear/Karten, F1 63 Werte, Profile v6 abwärtskompatibel | 342 Checks ohne Fehler, sechs MCP-Scriptprüfungen, zwei native Vorschauen; menschliche Matchups offen |
+| 2026-10-18 | CE1 Design / Priorität | Soft-Counter als Spielphilosophie, bestehende Build-Stärken gegen Gegnerrollen prüfen; Runenwächter mit Trefferrüstung und konditionale Seer-Unterbrechung als enges Experiment. Erst testen, keine Armor Penetration/Stat-Engine. Verwertung nachrangig. | Konzept/Experiment freigegeben; **noch nicht implementiert**, Matchups hypothetisch, manuelle Tests folgen |
+| 2026-10-18 | Feedback / Verwertungsrichtung | Nutzer bestätigt Fernkämpfer und Seltenheiten, wünscht Echoes nach Rarity statt Vernichtung; spätere Itemlevel mitdenken. Direkter Item-Ertrag ist eine Abweichung vom bisherigen Belohnungsmodell | Planung 8.8 und Wyatt-Cheng-Recherche; Werte/Timing/Reset offen, kein Gameplay geändert |
 | 2026-10-18 | Seltenheiten umgesetzt | Nach Auswahl des Nutzers separate Itemchance und bedingte Rarity-Kaskade mit festen Itempools; bestehende Effekte/Run-Regeln und natürlicher Codex-Cap erhalten, F1/Legacy-Profile erklärt | 275 Checks ohne Fehler, fünf Gameplay-Scripts plus Suite via MCP, drei native Vorschauen; Balance offen |
 | 2026-10-18 | Begegnung / Loot | Nutzer bestätigt neuen Gegnerdruck und Entsorgung, ergänzt Wunsch nach Legendary→Rare→Magic→Normal-Kaskade. Seer und manueller Destroy-Button umgesetzt, keine automatische Vernichtung oder Lootregeländerung | 247 Checks ohne Fehler und zwei native Vorschauen; Kaskadenbasis/Qualitätsmodell offen |
 | 2026-10-17 | P2-Spieltest / Identität | Nutzer bestätigt Spaß und Skilltree, wünscht langfristig mehr Tiefe als Mengen-/Feuertempo-Eskalation; unerwünschte Items blockieren Tasche/Boden. Gegnerrollen und Entsorgung als nächste Diskussion | Feedback dokumentiert; kein neues Gegner-/Entsorgungspaket oder automatische Vernichtung freigegeben |
@@ -412,9 +476,9 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
-## 11. Startauftrag für das neue Codex-Projekt (einmalig)
+## 11. Ursprünglicher Startauftrag für das neue Codex-Projekt (historisch, nicht erneut ausführen)
 
-> Lies `LOOTFALL_MASTERPLAN.md` und verwende die dort definierten Statuskennzeichnungen. Inspiziere zunächst das tatsächlich geöffnete Godot-Projekt beziehungsweise den leeren Projektordner. **Schreibe noch keinen Gameplay-Code.** Gib mir eine knappe Bestandsaufnahme: Was existiert, was fehlt für P0, welche zwei bis drei kleinsten nächsten Arbeitspakete schlägst du vor und welche Risiken siehst du? Bevor du neue Systeme implementierst, warte auf meine Freigabe. Ändere die Vision und die offenen Produktentscheidungen nicht selbstständig. Pflege anschließend dieses Masterdokument ausschließlich mit nachgewiesenen Projektfortschritten und freigegebenen Änderungen. Keine kostenpflichtigen Dienste.
+> **Archivierter Erststart-Prompt, bei laufendem Projekt nicht erneut verwenden.** Lies `LOOTFALL_MASTERPLAN.md` und verwende die dort definierten Statuskennzeichnungen. Inspiziere zunächst das tatsächlich geöffnete Godot-Projekt beziehungsweise den leeren Projektordner. **Schreibe noch keinen Gameplay-Code.** Gib mir eine knappe Bestandsaufnahme: Was existiert, was fehlt für P0, welche zwei bis drei kleinsten nächsten Arbeitspakete schlägst du vor und welche Risiken siehst du? Bevor du neue Systeme implementierst, warte auf meine Freigabe. Ändere die Vision und die offenen Produktentscheidungen nicht selbstständig. Pflege anschließend dieses Masterdokument ausschließlich mit nachgewiesenen Projektfortschritten und freigegebenen Änderungen. Keine kostenpflichtigen Dienste.
 
 ---
 
