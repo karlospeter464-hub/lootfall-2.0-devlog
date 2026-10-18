@@ -1,5 +1,7 @@
 # Lootfall 2.0
 
+**GitHub (öffentlich, auf ausdrücklichen Nutzerauftrag eingerichtet):** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). Beide lokalen Repositories bleiben getrennt. Hauptbranch auf GitHub: `main`; Spielentwicklung derzeit auf `codex/counterplay-feedback`. Neue lokale Commits werden nicht automatisch hochgeladen.
+
 **CE1-Spieltest nachgeschärft:** Zwei Guardians, mehr Leben und echte BLOCKED-Anzeige; Seer-Unterbrechung schon mit Swift + einer Quick-Karte technisch nachgewiesen. 349 Checks ohne Fehler, neue native Vorschau in der Galerie. Spiel-Commit `ce3744d`, Branch `codex/counterplay-feedback`. Bei altem geladenem F1-Profil **Reset defaults** verwenden, um neue Startwerte zu testen; alte Profile werden nicht stillschweigend verändert.
 
 **Aktuell: CE1 – Combat Counterplay.** Rune Guardian ab Welle 3, maximal zwei gleichzeitig, 6× Wellenleben: flache Rüstung mit Schadensminimum und sichtbaren BLOCKED-Zahlen. Cinder Seer mit 6× Test-Leben, fünf direkte Treffer während seiner 1,4-s-Warnung unterbrechen den Zauber. Er hält weniger Abstand und erholt sich 2 s. F1 → Enemies enthält die neuen Werte; sie gelten für neue Gegner. Verwertung/Itemlevel bleiben geparkt.

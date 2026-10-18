@@ -1,5 +1,15 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-18 – Spiel und Chronik mit GitHub verbunden
+
+**Auftrag:** Nutzer wünscht öffentliche GitHub-Repositories für Spiel und Chronik. Kontoname nach Klärung `karlospeter464-hub`; Geräteanmeldung durch Nutzer selbst bei GitHub bestätigt. Beide Repositories über authentifizierte GitHub-API neu öffentlich angelegt: `lootfall-2.0` und `lootfall-2.0-devlog`. Keine Zugangsdaten in Dateien oder Protokolle übernommen.
+
+**Prüfung / Veröffentlichung:** Vor Upload beide Arbeitsverzeichnisse sauber, keine bisherigen Remotes. Historische versionierte Pfade auf private Konfigurationen geprüft; 399 Spiel-Blobs und 70 Chronik-Blobs samt zwei ZIP-Sicherungen auf ausgewählte Zugangsdatenmuster geprüft, ohne Treffer. Das ist keine vollständige Geheimnis-/Medienprüfung. Spiel-README um Repository-Links ergänzt, Commit `4c4f917753ecb7f216d03cc9250447eddf290f1a`. Spiel nach `origin/main` und `origin/codex/counterplay-feedback` gepusht; remote Commit-IDs stimmen exakt überein. Chronik veröffentlicht diesen begleitenden Checkpoint auf `main`; abschließender Remote-Abgleich erfolgt nach Push.
+
+**Umfang:** Vorhandene Git-Historie und versionierte Chronikmedien veröffentlicht; ignorierte Spielstände, Caches und lokale Codex-/MCP-Konfigurationen ausgeschlossen. Keine Gameplay-Änderungen, keine neuen Spieltests oder Aufnahmen. Letzter Gameplay-Teststand bleibt 349 Checks. Lokale Repositories/Projektpfade unverändert. Keine automatische Synchronisierung oder pauschale Freigabe künftiger Pushes eingerichtet.
+
+---
+
 ## 2026-10-18 – CE1-Spieltest: Unterbrechung zugänglich, Rüstung sichtbar
 
 **Grund / Auftrag:** Nutzer bestätigt Guardian-Spielspaß, vermisst aber erkennbare Build-Wechselwirkungen. Seer sterben zu früh oder sind zu schwer häufig zu treffen. Zwei zähere Guardians und Zahlen für abgefangenen Schaden gewünscht. Umsetzung als Abstimmung von CE1 (Masterplan 8.10), ohne weitere Kampfstatistik oder neues Schild-HP-System. Ponytail-Workflow weiter angewandt.
