@@ -426,16 +426,28 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.10 CE1-Spieltest – Mechaniken früher erfahrbar und lesbarer machen
+
+**Nutzerfeedback / Freigabe (18.10.2026):** Guardian funktioniert und macht den Kampf interessanter. Unterbrechung bleibt kaum erkennbar, weil Seer zu schnell sterben und schwer genug zu treffen sind. Zwei stärkere Guardians und sichtbarer abgeblockter Schaden gewünscht. Dies konkretisiert CE1; keine neuen Belohnungs-/Persistenzregeln.
+
+**[IMPLEMENTIERT – technisch geprüft] Neue Testwerte, ersetzen die initialen Werte aus 8.9:** Guardian-Cap 2 (F1 0–2), jeder sechste Kandidat statt jedem achten, 6× statt 4× Wellenleben; Gesamtcap 12 bewahrt. Seer 6× statt 3× Wellenleben, Vorbereitung 1,4 statt 1,1 s, Erholung 2 statt 2,8 s, erste Vorbereitung nach 0,35 statt 1 s, bevorzugter Abstand 210 statt 280. Schwelle bleibt fünf direkte Treffer; Splash zählt nicht. Swift plus eine Quick-Karte kann nun bereits vor der zweiten Kartenwahl unterbrechen. INTERRUPT n/5 und einsekündiges BROKEN machen den Zusammenhang deutlicher.
+
+**Schilddarstellung:** Bestehende flache Rüstung, kein neues Schild-HP-/Aufladesystem. Kontur leuchtet bei Treffern auf. Getrennte Zahlen zeigen tatsächlichen Schaden und absorbierten Anteil (14 Eingang → 6 Leben / 8 BLOCKED; 4 Eingang am Minimum → 0,8 Leben / 3,2 BLOCKED). Keine falsche Block-Zahl durch Overkill, keine zusätzlichen Treffer oder Ertragsmetriken. F1 weiterhin 63 Werte, Profile v6 unverändert und bestehende Werte bleiben beim Laden erhalten; Reset defaults stellt neue Startwerte her.
+
+**Prüfung:** Alle sieben Suites: 275 bisherige + 74 Counterplay = 349 Checks ohne Fehler; vier geänderte Gameplay-Scripts via MCP gültig. Echter Projektiltest bei Welle 3 / 204 Seer-HP: Rapid unterbricht, sieben Treffer gesamt / 106 Restleben; Swift + eine Quick unterbricht, sechs Treffer / 120 Restleben; Heavy und Standard vier Treffer ohne Unterbrechung. Zwei natürliche Guardians unter Gesamtcap nachgewiesen; Block-Anzeige, Minimum und unveränderte dealt-damage-Metrik geprüft. Neue native D3D12-Vorschau gesichtet. Spielerische Wirkung bleibt erneut zu testen: weniger frühe Seer-Tode, erreichbare Unterbrechung unter Gegnerdruck, zwei Guardians ohne bloßen Zähigkeits-Grind.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
 **Projektphase:** P0/P1/INV1 und P2 technisch; vollständiger Stadt-/Skilltree-Loop umgesetzt, manuelle P2-Abnahme offen.  
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** CE1: Rune Guardian mit flacher Trefferrüstung und Schadensminimum; Seer-Unterbrechung durch direkte Projektiltreffer, dreifaches Seer-Leben als Testwert.
+**Neu umgesetzt:** CE1-Feedback (8.10): zwei zähere Guardians mit sichtbarer Schadensabsorption; Seer näher, länger am Leben, besser erreichbares Interrupt-Fenster.
 **Dev-Konsole:** F1, 63 Regler und neun isolierte CE1-Arrangements; Profil v6 unterstützt v1–v5.
 **Umfang/Sprache:** Karten und Echoes-Auszahlung bewahrt; Code/UI Englisch. Keine begehbare Stadt, weiteren Klassen, dauerhaften Items oder XP-Leiste.  
-**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 + 19 + 28 + 67 = 342, keine Fehler; sechs Gameplay-Scripts via MCP validiert.
-**Material:** Zwei neue native CE1-Vorschauen vom 18.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.
-**Feedback/Offen:** Nutzer bestätigt Spaß/Skilltree und jetzt Mehrwert der Fernkämpfer/Seltenheiten; Langzeitbalance, Fenstergrößen/Export offen.
+**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 + 19 + 28 + 74 = 349, keine Fehler; vier geänderte Gameplay-Scripts via MCP validiert.
+**Material:** Neue native CE1-Feedback-Vorschau vom 18.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.
+**Feedback/Offen:** Guardian positiv; Builds/Seer-Unterbrechung bislang zu wenig erkennbar. Neue Abstimmung menschlich prüfen; Langzeitbalance/Export offen.
 **Nächster Schritt:** CE1-Matchups menschlich testen (§8.9); Verwertung (§8.8) und Itemlevel geparkt. Magierangriff, Karten, Item-Rarities und Meta-Loop bewahrt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
@@ -445,6 +457,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-18 | CE1-Spieltest / Nachschärfung | Nutzer wünscht zwei stärkere Guardians, sichtbare Absorption und erfahrbare Seer-Unterbrechung. Cap 2, 6× HP beider Rollen; Seer näher, 1,4-s-Warnung, 2-s-Erholung; echter Block-Anteil als Feedback der bestehenden Rüstung | 349 Checks ohne Fehler, vier MCP-Checks, eine native Vorschau; Spielabnahme offen |
 | 2026-10-18 | CE1 umgesetzt | Separater CE1-Auftrag: Rune Guardian, flache Rüstung mit Minimum, direkte Seer-Unterbrechung; 3× Seer-HP macht fünf Treffer erreichbar. Neun isolierte Testarrangements mit bestehendem Gear/Karten, F1 63 Werte, Profile v6 abwärtskompatibel | 342 Checks ohne Fehler, sechs MCP-Scriptprüfungen, zwei native Vorschauen; menschliche Matchups offen |
 | 2026-10-18 | CE1 Design / Priorität | Soft-Counter als Spielphilosophie, bestehende Build-Stärken gegen Gegnerrollen prüfen; Runenwächter mit Trefferrüstung und konditionale Seer-Unterbrechung als enges Experiment. Erst testen, keine Armor Penetration/Stat-Engine. Verwertung nachrangig. | Konzept/Experiment freigegeben; **noch nicht implementiert**, Matchups hypothetisch, manuelle Tests folgen |
 | 2026-10-18 | Feedback / Verwertungsrichtung | Nutzer bestätigt Fernkämpfer und Seltenheiten, wünscht Echoes nach Rarity statt Vernichtung; spätere Itemlevel mitdenken. Direkter Item-Ertrag ist eine Abweichung vom bisherigen Belohnungsmodell | Planung 8.8 und Wyatt-Cheng-Recherche; Werte/Timing/Reset offen, kein Gameplay geändert |

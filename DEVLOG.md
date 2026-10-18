@@ -1,5 +1,21 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-18 – CE1-Spieltest: Unterbrechung zugänglich, Rüstung sichtbar
+
+**Grund / Auftrag:** Nutzer bestätigt Guardian-Spielspaß, vermisst aber erkennbare Build-Wechselwirkungen. Seer sterben zu früh oder sind zu schwer häufig zu treffen. Zwei zähere Guardians und Zahlen für abgefangenen Schaden gewünscht. Umsetzung als Abstimmung von CE1 (Masterplan 8.10), ohne weitere Kampfstatistik oder neues Schild-HP-System. Ponytail-Workflow weiter angewandt.
+
+**Änderung:** Guardian-Cap 2 statt 1, alle sechs statt acht Spawnkandidaten, Leben 6× statt 4× Wellenbasis. Gesamtcap 12 erhalten. Seer-Leben 6× statt 3×, Vorbereitungsfenster 1,4 statt 1,1 s, Erholung 2 statt 2,8 s; Start-Cooldown 0,35 statt 1 s, bevorzugter Abstand 210 statt 280. Fünf direkte Treffer bleiben erforderlich; Splash bleibt ausgeschlossen. Das soll Swift + eine Quick-Karte bereits nach erster Kartenauswahl nutzbar machen. Sichtbares INTERRUPT n/5 plus längeres BROKEN. Weitere Angriffstasten, Karten und Items unverändert.
+
+**Rüstungsfeedback:** Guardian meldet den tatsächlich absorbierten Betrag nach Mindestschadenberechnung. Gesonderte blaue BLOCKED-Zahl und Schildkontur, echte HP-Schadenszahl daneben mit Zehnteln statt Aufrunden. 14 → 6 + 8 blocked; 4 → 0,8 + 3,2 blocked. Kein zusätzlicher Schaden, kein falscher voller Rüstungsabzug bei Floor/Overkill, keine Änderung an Metriken oder Loot. Dead-/Null-/Negativtreffer ohne Feedback. 63 F1-Werte, Profile v6 und Legacy-Validierung erhalten; alte geladene Werte bleiben bewusst erhalten, Reset defaults stellt neue Startwerte her.
+
+**Echte Prüfung:** Sieben Suites seriell, isoliertes APPDATA und `-- --test-mode`: 59 + 54 + 46 + 69 + 19 + 28 + 74 = **349 Checks, 0 Fehler**. Neue Assertions für absorbierten Anteil, Minimum, Nulltreffer, Metriktrennung und frühes Schnellfeuer; natürliche zwei-Guardian-Cap unter Gesamtlimit geprüft. Echtprojektile im neuen Fenster gegen 204 HP: Rapid sieben Treffer / ein Interrupt / 106 HP; Swift + nur eine Quick sechs Treffer / ein Interrupt / 120 HP; Heavy vier Treffer / kein Interrupt / 42,16 HP; Standard vier Treffer / kein Interrupt / 148 HP. Vier geänderte Gameplay-Scripts via MCP gültig. Native D3D12-Vorschau 1152×720 gesichtet; keine menschliche Matchup-Abnahme.
+
+**Aufnahme / Lernpunkt:** `Progress/captures/2026-10-18_ce1_feedback.png` zeigt zwei Guardians mit echten inszenierten 14-Schadens-Testtreffern sowie gestellten Seer-Konzentrations-/BROKEN-Zuständen. Im ersten Capture fehlten Zahlen, weil der eingefrorene Preview-Aufbau nach Signaländerungen keinen neuen Arena-Draw anforderte. Capture fordert jetzt einmal queue_redraw an; native Neuaufnahme zeigt 6.0 und 8.0 BLOCKED. Keine reale Gameplay-Aufnahme oder neuer Clip; alte Aufnahmen erhalten.
+
+**Offen / Git:** Menschlich prüfen, ob Unterbrechung unter Nahkämpferdruck gelingt, die Schildzahlen lesbar bleiben und mehr Leben nicht nur den Run verlangsamt. Keine Verwertung, neuen Belohnungen, Itemlevel oder Save-Änderungen. Die zwei nachträglich vom Godot-Editor erzeugten UID-Dateien des initialen CE1-Pakets mit übernommen. Spiel-Commit `ce3744d00eaa3279ce7ae0e9397c76fd18dc1303` auf `codex/counterplay-feedback`, Spielbaum danach sauber.
+
+---
+
 ## 2026-10-18 – CE1: Combat Counterplay
 
 **Freigabe / Planabgleich:** Separater eingefügter CE1-Auftrag erteilt die ausdrückliche Umsetzung. Nutzerfassung des Masterplans 1.1 aus Downloads als aktuelle Konzeptbasis übernommen, einschließlich Nordstern/Soft-Counter und 8.9; eingebetteter historischer Startauftrag nicht ausgeführt. Vorhandene eigene Planungsnotizen aus 8.8 bleiben enthalten. Enger Scope: Guardian, Seer-Unterbrechung, vorhandene Builds und einfache Testbarkeit. Verwertung/Itemlevel geparkt.

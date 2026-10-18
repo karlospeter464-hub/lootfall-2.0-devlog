@@ -1,6 +1,8 @@
 # Lootfall 2.0
 
-**Aktuell: CE1 – Combat Counterplay.** Rune Guardian ab Welle 3, maximal einer gleichzeitig: flache Rüstung mit Schadensminimum. Cinder Seer mit dreifachem Test-Leben, fünf direkte Treffer während seiner 1,1-s-Warnung unterbrechen den Zauber. F1 → Enemies enthält die neuen Werte; sie gelten für neue Gegner. Verwertung/Itemlevel bleiben geparkt.
+**CE1-Spieltest nachgeschärft:** Zwei Guardians, mehr Leben und echte BLOCKED-Anzeige; Seer-Unterbrechung schon mit Swift + einer Quick-Karte technisch nachgewiesen. 349 Checks ohne Fehler, neue native Vorschau in der Galerie. Spiel-Commit `ce3744d`, Branch `codex/counterplay-feedback`. Bei altem geladenem F1-Profil **Reset defaults** verwenden, um neue Startwerte zu testen; alte Profile werden nicht stillschweigend verändert.
+
+**Aktuell: CE1 – Combat Counterplay.** Rune Guardian ab Welle 3, maximal zwei gleichzeitig, 6× Wellenleben: flache Rüstung mit Schadensminimum und sichtbaren BLOCKED-Zahlen. Cinder Seer mit 6× Test-Leben, fünf direkte Treffer während seiner 1,4-s-Warnung unterbrechen den Zauber. Er hält weniger Abstand und erholt sich 2 s. F1 → Enemies enthält die neuen Werte; sie gelten für neue Gegner. Verwertung/Itemlevel bleiben geparkt.
 
 **Build-Vergleich:** Spiel mit `-- --test-mode` starten, dann F1 → Rewards & tools → Rapid / Heavy / Area sowie Chaser group / Cinder Seer / Rune Guardian wählen → Start CE1 test → F1 schließen und nach rechts zielen. Das setzt nur den isolierten Testrun zurück, benutzt bestehende Karten/Items, Seed 42 und keine aktiven Talente. Tuning bleibt erhalten, normale Wellen laufen nach dem Encounter weiter. Vollständiger Startbefehl und neun Testkombinationen im englischen Spiel-README: `C:/Users/elias/Lootfall 2.0/lootfall-2.0/README.md`, Abschnitt CE1. Lokal gesichert als `da58b43` auf `codex/combat-counterplay`.
 
@@ -20,7 +22,7 @@
 
 Steuerung: WASD bewegen, Maus zielen, linke Maustaste halten zaubern, **I** Equipment, **Escape** aktuelles Fenster schließen oder pausieren. Zum Loot-Test: F1 → Rewards & tools → Item wählen → Drop selected item → schließen und aufheben → I → vergleichen und ausrüsten. Erst ausgerüstete Items wirken. Volle Tasche lässt Bodenfunde liegen; Wechsel bewahrt das vorherige Item. Profile speichern keine Items, Testschalter oder Währung.
 
-**Prüfung:** Godot 4.7.2: 342 automatisierte Prüfungen ohne Fehler, darunter 67 CE1- und 28 Rarity-Checks und eine Verteilungsprüfung mit 100.000 Ziehungen. Sechs Gameplay-Scripts via Godot MCP validiert, zwei neue CE1-Vorschauen gesichtet. Manuelle Begegnungstiefe/Lootbalance, andere Fenstergrößen und Export bleiben offen; keine Qualitätsvarianten oder dauerhaften Run-Items.
+**Prüfung:** Godot 4.7.2: 349 automatisierte Prüfungen ohne Fehler, darunter 74 CE1- und 28 Rarity-Checks und eine Verteilungsprüfung mit 100.000 Ziehungen. Vier geänderte Gameplay-Scripts via Godot MCP validiert, neue CE1-Feedback-Vorschau gesichtet. Manuelle Begegnungstiefe/Lootbalance, andere Fenstergrößen und Export bleiben offen; keine Qualitätsvarianten oder dauerhaften Run-Items.
 
 - [Entwicklungschronik](Progress/index.html): neue Vorschauen und gekennzeichnete Vorgeschichte.
 - [Masterplan](LOOTFALL_MASTERPLAN.md): Konzept, aktueller Stand und wesentliche Entscheidungen.
