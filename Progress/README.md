@@ -93,3 +93,14 @@ Kaufanordnung/Guthaben bewusst im isolierten Testspiel aufgebaut; kein echter Sp
 ## Windows-Playtest v0.1 – 19.10.2026
 
 Lokales Release-ZIP außerhalb Git erstellt. Native EXE visuell geprüft; keine neue Aufnahme archiviert, da Computer Use per Nutzer-Escape beendet wurde. CE5-Bilder bleiben vorherige Vorschauen und werden nicht als Release-Nachweis umgedeutet. Prüfgrenzen und Paketpfad in DEVLOG.md und WINDOWS_PLAYTEST.md im Spielprojekt. Kein neuer Clip, Upload oder Versand.
+
+## Art Vertical Slice 01 – 19.10.2026
+
+Vier tatsächliche Godot-D3D12-Captures 1152×720, aus dem lokalen Spiel (Commit 5691976), jeweils mit -- --test-mode und getrenntem APPDATA erzeugt, anschließend gesichtet:
+
+- `captures/2026-10-19_art_before.png`: alter Draw-Körper, kontrollierte 12-Gegner-Anordnung mit Guardians und Seer-Warnung in Welle 3.
+- `captures/2026-10-19_art_mage.png`: identischer Aufbau mit neuem Sprite2D, linearer Mipmap-Filter und Fußanker. Kein nachträglicher Bildaustausch/Compositing.
+- `captures/2026-10-19_art_live.png`: separater Seed-42-Aufbau mit Fan/Codex, realer Bewegung per Inputaktion und zwei tatsächlichen Projektiltreffern auf einen Seer. Angriffe skriptgesteuert über die bestehende attack()-Funktion; Gegner/Projektile liefen bis zum Aufnahmezeitpunkt in der normalen Physik. Kein menschlicher Run und keine natürliche Buildentdeckung.
+- `captures/2026-10-19_art_boss.png`: gestellte Solo-Champion-Ansturmwarnung mit neuer Spielerfigur, normale Fähigkeiten und Geometrie unverändert.
+
+Nutzer-PNG unverändert übernommen, Originaldownload erhalten. Frontalperspektive und Detailverlust im kleinen Maßstab bleiben Prototypgrenzen. Kein neues Video oder generiertes Ersatzbild, kein Upload. Das vorherige Windows-v0.1-ZIP wurde nicht aktualisiert.

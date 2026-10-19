@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.7 · **Stand:** 19. Oktober 2026
+**Version:** 1.8 · **Stand:** 19. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -536,17 +536,27 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.17 Art Vertical Slice 01 – First Anime Mage
+
+**Freigabe:** Separater Nutzerauftrag nach Windows-v0.1-Export, nur Apprentice-Darstellung gemäß Style C (ART_DIRECTION.md / ASSET_ROADMAP.md). Bewusst zugelassene Versuchsausnahme: geliefertes frontales Character-Artwork statt fertigem Top-down-Sprite. Keine neue Gameplay-/Balancefreigabe, volle Roadmap A1 bleibt offen.
+
+**Umsetzung:** Nutzer-PNG bytegleich erhalten (1086×1448 RGBA, echte Transparenz). Sprite2D in bestehender Player-Szene, ungefähr 63×84 logische Pixel inkl. Rand, Fußanker auf Spielerposition; lineare Mipmaps glätten Details. Keine Körperrotation nach Maus. Alte Draw-Darstellung als Inspector-Fallback; kleine Atmung, Cast-/Hurt-Rückmeldung, bestehende Buff-/Aim-Effekte erhalten. Kollision, Bewegung, Projektilursprung und sämtliche Kampf-/Progressionsregeln unverändert. Buch und Stab der Illustration sind kosmetisch.
+
+**Nachweis / Grenzen:** 917 Checks ohne Fehler, drei MCP-Scriptprüfungen, vier native gesichtete Bilder einschließlich identischer Vorher-/Nachher-Szene, echter Bewegung mit zwei Projektiltreffern und Champion-Warnstreifen. Keine vollständige menschliche Abnahme. Für finale Gameplay-Art bleiben erhöhte 3/4-Perspektive, reduzierte Details und konsistente Richtungs-/Castbilder nötig. Kein weiterer Charakter, Boden-/VFX-Skin, neues Exportpaket oder Push. Vorhandenes Windows-v0.1-ZIP enthält weiterhin die ältere Figur.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** Erster Windows-Playtest v0.1 lokal exportiert; Feature-Freeze, Gameplay weiter CE5/00e378d.
-**Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat, keine Gameplay-/Balanceänderung für Export.
-**Paket:** `C:/Users/elias/Lootfall 2.0/Exports/Playtest_v0.1/Lootfall_Prototype_Playtest_v0.1_Windows.zip`, ca. 37,6 MiB; EXE/PCK/README/Lizenzen, außerhalb Git.
-**Build / Daten:** Godot 4.7.2 Windows x86_64 Release; F1 nicht zugänglich, MCP-Autoload/Tests/private Daten ausgeschlossen, normale Spielstände bewahrt.
-**Prüfung:** 898 Source-Checks, 688 Checks gegen exportiertes PCK unter Testlaufzeit, sechs Paket-Audits ohne Fehler; ZIP neu entpackt bytegleich, Details in WINDOWS_PLAYTEST.md.
-**Native EXE:** Frischer Stadtstart, F1, Run, Bewegung/Feuerbälle/Gegner/Lootdrop, Tod/Ergebnis/Rückkehr und isolierte gespeicherte Bestwelle beobachtet; kein vollständiger nativer Progressionslauf.
-**Offen:** Native Karten/Ausrüsten/Bosse/neue Effekte/positive Auszahlung/Talentkauf/Neustart noch manuell abnehmen, breitere Hardware/Balance offen. Computer Use durch Nutzer-Escape beendet.
-**Material:** Keine neue archivierte Aufnahme für Export; vorhandene CE5-Stadt-/Baumvorschauen bleiben historisch. ZIP nur lokal, kein Versand/Upload.
-**Git / Nächster Schritt:** Quell-Checkpoint-Tags playtest-v0.1-source-2026-10-19 in beiden Repos; Spiel lokal 3010a95. GitHub bleibt 00e378d. Nutzer kann ZIP selbst weitergeben, keine automatische Veröffentlichung.
+**Projektphase:** Art Vertical Slice 01 technisch umgesetzt; A1 nur Apprentice-Teilversuch, Style-Abnahme offen.
+**Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Code/UI Englisch, Chronik separat.
+**Neu:** Nutzer-Anime-Mage als Sprite2D mit echter Alpha, Fußpivot, Mipmaps, kleinen visuellen Reaktionen; alter Körper als Fallback (§8.17).
+**Planbindung:** ART_DIRECTION.md und ASSET_ROADMAP.md aus GitHub gelesen/lokal integriert; frontale Illustration nur für diesen Versuch freigegeben. Gameplay/Hitbox/Aim/Schussursprung unverändert.
+**Prüfung:** Godot 4.7.2: 917 Checks ohne Fehler, drei MCP-Scripts gültig; native Bewegung/zwei Projektiltreffer, Seer-Kreis und Champion-Warnung gesichtet.
+**Material:** Vier neue native Engine-Captures vom 19.10.2026: art_before, art_mage, art_live, art_boss; keine neue Videoaufnahme.
+**Offen:** Finale Top-down-/3/4-Perspektive, reduzierte Details, sparsame Richtungs-/Castbilder und menschliche Stilabnahme; übrige A1-Assets nicht beauftragt.
+**Export / Daten:** Windows-v0.1-ZIP bleibt unveränderter vorheriger Stand außerhalb Git; keine erneute Export-/Uploadfreigabe und keine normalen Spielstände verändert.
+**Git / Nächster Schritt:** Spiel lokal 5691976 auf codex/art-mage-vertical-slice; Chronik integriert remote Art-Dokumente ohne Verlust lokaler Exportnotizen. F5 im Godot-Projekt zum eigenen Test; kein Push.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -555,6 +565,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | Art Vertical Slice 01 | Nutzer liefert ersten Mage und erlaubt engen frontalen Prototyp: Sprite2D/Alpha/Pivot/Mipmaps/Fallback statt neuer Gameplaylogik; nur Apprentice-Teil von A1 | Spiel lokal 5691976; 917 Checks, drei MCP-Prüfungen, vier native Captures; Perspektiv-/Stilabnahme offen, kein Export/Push |
 | 2026-10-19 | Erster externer Windows-Playtest | Expliziter Release-Auftrag unter Feature-Freeze: x86_64-Release-ZIP mit Anleitung/Lizenzen außerhalb Git; keine Gameplay-/Balanceänderung oder Veröffentlichung | 898 Source- + 688 PCK-Checks, sechs Audits, ZIP bytegleich; nativer Start/Run/Tod gesehen, vollständige Release-Abnahme offen; Spiel lokal 3010a95, kein Push |
 | 2026-10-19 | GitHub-Synchronisierung | Nutzer beauftragt Upload des aktuellen Stands; Spiel CE3–CE5 bis 00e378d auf main, passende Chronik und Screenshots nachgeführt. Kein Force-Push, keine automatische Synchronisierung | Spiel-Remote-Hash verifiziert; Chronik-Sync separat committed |
 | 2026-10-19 | CE5 – Skill Tree / Early Progression | Bestätigter Ersatz der drei Wurzel-Grundwerte durch Kindling/Emberguard/Momentum; 15 IDs/Wege/Kosten/Reset/Snapshot erhalten. Neuer Baum und bezahlbare Ziele. Ab zwei geklärten Wellen erster Kauf, keine Zusatzbelohnung | 898 Checks ohne Fehler, sechs MCP-Prüfungen, vier native Vorschauen; menschliche Balance offen, lokal gesichert, kein Push/Export |
