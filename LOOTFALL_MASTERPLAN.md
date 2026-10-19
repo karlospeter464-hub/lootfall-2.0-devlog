@@ -546,7 +546,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 **Prüfung:** Godot 4.7.2: 898 Checks ohne Fehler; sechs CE5-Scripts via MCP gültig, Tastatur/Maus/Detail-Platz geprüft.
 **Material:** Vier native gestellte CE5-Stadt-/Baumvorschauen vom 19.10.2026 in `Progress/captures/`; kein neuer Clip.
 **Offen:** CE5_PLAYTEST.md menschlich prüfen: spürbare Wurzeleffekte/frühe Motivation, dazu natürliche CE4-Vielfalt und Balance. Verwertung/Itemlevel und Seer-Gewichtung separat.
-**Git / Nächster Schritt:** Lokal auf codex/skill-tree-early-progression, vorab Tag ce4-before-ce5 in beiden Repositories; Spiel-Commit 00e378d. GitHub weiter CE2 3ccb604 bis neuer Push-Freigabe. Kein Export beauftragt.
+**Git / Nächster Schritt:** Lokal auf codex/skill-tree-early-progression, vorab Tag ce4-before-ce5 in beiden Repositories; Spiel-Commit 00e378d. GitHub-main nach ausdrücklicher Freigabe am 19.10.2026 auf Spiel 00e378d aktualisiert; Chronik wird mit diesem Sync-Commit nachgeführt. Kein Export beauftragt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -555,6 +555,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | GitHub-Synchronisierung | Nutzer beauftragt Upload des aktuellen Stands; Spiel CE3–CE5 bis 00e378d auf main, passende Chronik und Screenshots nachgeführt. Kein Force-Push, keine automatische Synchronisierung | Spiel-Remote-Hash verifiziert; Chronik-Sync separat committed |
 | 2026-10-19 | CE5 – Skill Tree / Early Progression | Bestätigter Ersatz der drei Wurzel-Grundwerte durch Kindling/Emberguard/Momentum; 15 IDs/Wege/Kosten/Reset/Snapshot erhalten. Neuer Baum und bezahlbare Ziele. Ab zwei geklärten Wellen erster Kauf, keine Zusatzbelohnung | 898 Checks ohne Fehler, sechs MCP-Prüfungen, vier native Vorschauen; menschliche Balance offen, lokal gesichert, kein Push/Export |
 | 2026-10-19 | CE4 umgesetzt | Nutzer entdeckt Fan/Pierce/Overcharge; vier neue Items vertiefen Synergien. 5 % Loot bei gleicher Kaskade, Champion-Timing über F1, neuer Cooldown 2 s nach Erholung. Slots/Seer/Ökonomie/Persistenz bewahrt | Spiel lokal de56637; 835 Checks, sechs MCP-Prüfungen, zwei native Vorschauen; natürliche Vielfalt/Balance offen, kein Push |
 | 2026-10-19 | CE3 Follow-up umgesetzt | Separater Auftrag nach positivem CE3-Spieltest: Burst 105/70 %, freigegebener Champion-Ansturm erst nach Escorts, Inventar-Buildübersicht. Seer/Ökonomie/Persistenz bewahrt | Spiel lokal 335327e; 766 Checks, vier MCP-Prüfungen, drei native Vorschauen; neue Balance/UI menschlich offen, nur lokale Commits |

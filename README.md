@@ -8,7 +8,7 @@
 
 **CE2 bleibt erhalten:** Aufstieg bis Tod oder technischem Sicherheitsstopp 100, Karten 2/4/5 je Fünferblock, Champion/Prophet 5/10. Echoes, Baum und Inventar bleiben erhalten. Seer-Relevanz bleibt separat offen (§8.12); das Follow-up ergänzt den Solo-Champion-Ansturm.
 
-**GitHub:** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). CE2 wurde auf ausdrücklichen Auftrag auf main hochgeladen (Spiel 3ccb604). CE3, Follow-up, CE4 und CE5 werden lokal gesichert; kein neuer Upload oder automatische Synchronisierung beauftragt. Beide Repositories bleiben getrennt.
+**GitHub:** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). Am 19.10.2026 auf ausdrücklichen Nutzerauftrag aktualisiert: Spiel-main enthält CE3, Follow-up, CE4 und CE5 bis `00e378d`; Chronik-main erhält Masterplan, Devlog und zugehörige Screenshots einschließlich CE5. Beide Repositories bleiben getrennt; keine automatische Synchronisierung eingerichtet.
 
 **CE1-Spieltest nachgeschärft:** Zwei Guardians, mehr Leben und echte BLOCKED-Anzeige; Seer-Unterbrechung schon mit Swift + einer Quick-Karte technisch nachgewiesen. 349 Checks ohne Fehler, neue native Vorschau in der Galerie. Spiel-Commit `ce3744d`, Branch `codex/counterplay-feedback`. Bei altem geladenem F1-Profil **Reset defaults** verwenden, um neue Startwerte zu testen; alte Profile werden nicht stillschweigend verändert.
 

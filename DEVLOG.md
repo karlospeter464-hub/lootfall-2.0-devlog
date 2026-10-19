@@ -1,5 +1,9 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-19 – GitHub-Synchronisierung nach CE5
+
+Auf ausdrücklichen Nutzerauftrag beide sauberen Repositories und ihre Remotes geprüft, GitHub-Stände abgerufen und Fast-forward-Abstammung bestätigt. Spiel-main von 3ccb604 auf **00e378d** aktualisiert, Remote-Hash gegen lokalen HEAD verifiziert. Enthalten sind CE3, Combat-Polish, CE4 und CE5; die zugehörige Chronik samt Masterplan und Screenshots wird mit diesem Dokumentationscommit auf main synchronisiert. Keine Spieländerungen, neuen Tests, Caches, Spielstände oder Konfigurationen hinzugefügt; kein Force-Push, Export oder automatische Synchronisierung. Vorherige Paket-Einträge beschreiben ihren damaligen lokalen Status.
+
 ## 2026-10-19 – CE5: Skill Tree Refresh & Early Progression
 
 **Auftrag / Planabgleich:** Lokalen CE4-Stand de56637, Masterplan §9 und beide AGENTS geprüft. Beide Repositories sauber; vor Änderungen jeweils lokalen Tag `ce4-before-ce5` gesetzt (Spiel de56637, Chronik cd64d6a), Spielbranch `codex/skill-tree-early-progression`. Bestätigte Abweichung: drei Wurzel-Grundwerte durch Effekte ersetzen. 15 IDs/Verbindungen/Querverbindungen, zwölf Folgeknoten, Tierkosten, Run-Ende-Echoes, Snapshot, gemeinsamer Progress v2 und exakter kostenloser Reset bleiben. Ponytail-Workflow; keine allgemeine Effekt-Engine, neuen Gegner/Items/Karten/Klassen oder zusätzliche Belohnungen.
