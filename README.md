@@ -1,12 +1,12 @@
 # Lootfall 2.0
 
-**Aktuell: CE3 Follow-up – Combat Polish & Build Overview (19.10.).** Nach positivem CE3-Spieltest: Burst 105 Radius / 70 %, angekündigter Champion-Ansturm ohne Escorts und Inventar als Build-Übersicht. Masterplan §8.14 dokumentiert Umfang und Grenzen. **766 Checks ohne Fehler**, vier MCP-Scriptprüfungen und drei native gestellte Vorschauen. Neue Balance/UI noch menschlich offen.
+**Aktuell: CE4 – Item Discovery & Synergy Expansion (19.10.).** Acht Items: Echo/Hunter-Scepter und Storm/Phoenix-Bücher ergänzen die bestehenden vier. 5 % Itemchance bei gleicher Rarity-Kaskade. Champion-Walk-Cooldown 2 s nach Erholung, Timing in F1. Masterplan §8.15. **835 Checks ohne Fehler**, sechs MCP-Scriptprüfungen und zwei native gestellte Vorschauen; natürliche Itemvielfalt/Balance offen.
 
-**Follow-up testen:** F5 für natürliche Runs; I öffnet die Build-Übersicht, mit dem Mausrad beziehungsweise Tab/Pfeilen Vergleichsdetails und Karten/Effekte scrollen. Champion nach Minions beobachten: Warnung → seitlich ausweichen → Erholung nutzen. Für Burst/Builds bleiben die isolierten F1-CE3-Presets. Anleitung im Spielprojekt: COMBAT_POLISH_PLAYTEST.md. 74 F1-Werte und Profile v8 bleiben erhalten; Reset defaults für neue Burst-Startwerte.
+**CE4 testen:** F5 → F1 → Rewards & tools → eines von acht Items wählen → Drop selected item → aufheben und mit I ausrüsten. Isoliert mit -- --test-mode zusätzlich CE4-Einzel-/Gruppentest auswählbar. Anleitung im Spielprojekt: CE4_PLAYTEST.md. 87 F1-Werte, Profile v9 lesen v1–v8; Reset defaults für neue 5-%-Itemchance.
 
 **CE2 bleibt erhalten:** Aufstieg bis Tod oder technischem Sicherheitsstopp 100, Karten 2/4/5 je Fünferblock, Champion/Prophet 5/10. Echoes, Baum und Inventar bleiben erhalten. Seer-Relevanz bleibt separat offen (§8.12); das Follow-up ergänzt den Solo-Champion-Ansturm.
 
-**GitHub:** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). CE2 wurde auf ausdrücklichen Auftrag auf main hochgeladen (Spiel 3ccb604). CE3 und Follow-up werden lokal gesichert; kein neuer Upload oder automatische Synchronisierung beauftragt. Beide Repositories bleiben getrennt.
+**GitHub:** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). CE2 wurde auf ausdrücklichen Auftrag auf main hochgeladen (Spiel 3ccb604). CE3, Follow-up und CE4 werden lokal gesichert; kein neuer Upload oder automatische Synchronisierung beauftragt. Beide Repositories bleiben getrennt.
 
 **CE1-Spieltest nachgeschärft:** Zwei Guardians, mehr Leben und echte BLOCKED-Anzeige; Seer-Unterbrechung schon mit Swift + einer Quick-Karte technisch nachgewiesen. 349 Checks ohne Fehler, neue native Vorschau in der Galerie. Spiel-Commit `ce3744d`, Branch `codex/counterplay-feedback`. Bei altem geladenem F1-Profil **Reset defaults** verwenden, um neue Startwerte zu testen; alte Profile werden nicht stillschweigend verändert.
 
@@ -26,11 +26,11 @@
 
 **Weiter vorhanden:** Acht Taschenfelder und Zepter-/Buchslot mit vier festen Items, die erst beim Ausrüsten wirken. Run-Items/Karten werden beim neuen Versuch zurückgesetzt. Wellenkarten nach 2/4/5 je Fünferblock; Echoes weiterhin nur einmal am Run-Ende für abgeschlossene Wellen. Bodenloot zeigt nur den Namen, Beschreibungen stehen im pausierten Inventar.
 
-**Dev-Konsole: F1.** 74 einstellbare Werte einschließlich separater Item-/Rarity-Chancen, tatsächlicher Dropanteile, Seer-Werten und Baum. Neue Profile v8 lesen v1–v7; alte Zahlen werden mit sichtbarem Hinweis unter dem neuen Lootmodell verwendet, neue Felder erhalten Defaults. Baumpreise gelten für neue Käufe, Rückerstattung nutzt bezahlte Preise. Testaktionen können echte Echoes beeinflussen. Vollständige englische Anleitung und Testbefehle: `README.md` im Spielordner.
+**Dev-Konsole: F1.** 87 einstellbare Werte einschließlich separater Item-/Rarity-Chancen, tatsächlicher Dropanteile, Seer-Werten und Baum. Neue Profile v9 lesen v1–v8; alte Zahlen werden mit sichtbarem Hinweis unter dem neuen Lootmodell verwendet, neue Felder erhalten Defaults. Baumpreise gelten für neue Käufe, Rückerstattung nutzt bezahlte Preise. Testaktionen können echte Echoes beeinflussen. Vollständige englische Anleitung und Testbefehle: `README.md` im Spielordner.
 
 Steuerung: WASD bewegen, Maus zielen, linke Maustaste halten zaubern, **I** Equipment, **Escape** aktuelles Fenster schließen oder pausieren. Zum Loot-Test: F1 → Rewards & tools → Item wählen → Drop selected item → schließen und aufheben → I → vergleichen und ausrüsten. Erst ausgerüstete Items wirken. Volle Tasche lässt Bodenfunde liegen; Wechsel bewahrt das vorherige Item. Profile speichern keine Items, Testschalter oder Währung.
 
-**Prüfung:** Godot 4.7.2: 766 Checks ohne Fehler (35 Follow-up + 731 bestehende). Vier Follow-up-Gameplay-Scripts via MCP gültig, drei native Follow-up-Vorschauen gesichtet. Der kurze 256-Projektil-/64-Gegner-Test ist kein Langzeitbenchmark. Menschliche Build-Vielfalt, Balance und Export bleiben offen.
+**Prüfung:** Godot 4.7.2: 835 Checks ohne Fehler (770 bestehende einschließlich acht Icons + 65 Item-Synergien). Sechs CE4-Gameplay-Scripts via MCP gültig; zwei native Vorschauen gesichtet. Kurzer 256-Projektil-/64-Ziel-Batch, kein Langzeitbenchmark. Natürliche Vielfalt, Lootfrequenz, Phoenix-Überleben und Build-Balance bleiben offen.
 
 - [Entwicklungschronik](Progress/index.html): neue Vorschauen und gekennzeichnete Vorgeschichte.
 - [Masterplan](LOOTFALL_MASTERPLAN.md): Konzept, aktueller Stand und wesentliche Entscheidungen.
@@ -38,7 +38,7 @@ Steuerung: WASD bewegen, Maus zielen, linke Maustaste halten zaubern, **I** Equi
 - [Chronik pflegen](Progress/README.md): Medienherkunft und Quellsicherungen.
 - [Projektregeln](AGENTS.md): Planabgleich für nächste Pakete.
 
-Das alte Projekt `C:/Users/elias/lootfall` und die Downloads-Kopie des Masterplans bleiben unverändert. Nächster Schritt: Follow-up nach COMBAT_POLISH_PLAYTEST.md auf Burst-Wirkung, faire Solo-Champion-Gefahr und verständliche Inventarinfos prüfen.
+Das alte Projekt `C:/Users/elias/lootfall` und die Downloads-Kopie des Masterplans bleiben unverändert. Nächster Schritt: mehrere natürliche Runs nach CE4_PLAYTEST.md auf überraschende Item-/Kartenkombinationen und ausreichende Lootvielfalt bei 5 % prüfen.
 
 ## Lokale Git-Checkpoints
 

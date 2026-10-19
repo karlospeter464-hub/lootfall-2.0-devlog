@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.4 · **Stand:** 19. Oktober 2026
+**Version:** 1.5 · **Stand:** 19. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -503,17 +503,36 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 **Offen:** Menschlich prüfen, ob der größere Burst lesbar/wirkungsvoll ist, 850 Geschwindigkeit und 340 Reichweite Solo-Kiting ausreichend erschweren und das Inventar im echten Run verständlich bleibt. Weitere Fenstergrößen, Export und Langzeitperformance ungeprüft. Seer-Experimente/trefferbasierte Schilde bleiben separat; keine neuen Karten/Items/Gegner oder Änderung der Ökonomie/Persistenz. Nur lokale Git-Checkpoints, neuer Push erfordert ausdrückliche Freigabe.
 
+### 8.15 CE4 – Item Discovery & Synergy Expansion
+
+**Freigabe / Ziel:** Separater Nutzerauftrag bestätigt positive eigene Entdeckung Fire Fan + Piercing Flame + Overcharge. Dieses Improvisieren wird durch vier neue Items vertieft. **Bestätigte Abweichungen vom bisherigen Scope/Balancing:** vier auf acht Items, Itemchance 10 % → 5 %, Champion-Cooldown 3 → 2 s mit F1-Reglern. Rarity-Kaskade, zwei Slots, acht Taschenfelder, Wellenkarten, Echoes, Seer und dauerhafter Fortschritt unverändert. Keine zusätzlichen Lootgarantien.
+
+| Neues Item | Seltenheit / Slot | Aktuelle Testregel |
+|---|---|---|
+| Echo Scepter | Magic / Scepter | Jeder vierte reguläre Angriff: nach 0,15 s ein zentraler Echo-Schuss für 60 % normalen, unverstärkten Projektilschaden |
+| Hunter's Scepter | Rare / Scepter | Direkte Treffer pro Ziel: erster Treffer ohne Bonus, danach +8 % je Stufe bis +40 %; nach 3 s ohne direkten Treffer verfallen |
+| Storm Grimoire | Magic / Book | Erster tatsächlicher direkter Treffer eines Angriffs versucht einen Blitz auf den nächsten anderen lebenden Gegner: 150 Reichweite, 45 % Projektilschaden |
+| Phoenix Grimoire | Rare / Book | 10 direkte Treffer außerhalb des Cooldowns: 3 % Max-HP-Heilung; mindestens 4 s Abstand, keine Treffer-/Heilungsspeicherung währenddessen |
+
+**Auslegung / Grenzen:** Echo startet am dann aktuellen Spielerort entlang der ursprünglichen Hauptrichtung. Keine Echo-Rekursion, kein kopierter Overcharge-Bonus oder Verbrauch einer neuen Ladung; eigene direkte Treffer zählen normal für Karten. Hunter-Stufen separat mit schwachen Zielreferenzen, nie auf andere Ziele übertragen; nur direkter Zielschaden, kein Verteilen des Zielbonus über Burst/Storm/Codex. Storm hat eine gemeinsame Freigabe für Fächer, Piercing und zugehöriges Echo; erster Treffer ohne erreichbares zweites Ziel verbraucht den Versuch trotzdem. Indirekter Blitz kann nicht ketten oder direkte Treffer simulieren. Phoenix zählt nur echte Treffer, ignoriert sie im Cooldown und verbraucht auch bei vollem Leben einen erreichten Versuch. Buchwechsel löscht Teiltreffer, erhält aber den Cooldown, damit der geforderte Mindestabstand nicht umgangen wird. Neue Runs setzen alle neuen temporären Zustände zurück; keine Persistenzänderung. Gearwechsel deaktiviert passende alte Projektil-Kontexte auch nach Zurückwechseln, bestehende Karten bleiben wirksam.
+
+**Loot:** Pools: Normal Ember; Magic Swift/Echo/Storm; Rare Focus/Hunter/Phoenix; Legendary Codex. Auswahl innerhalb einer Stufe gleichverteilt, Kaskade unverändert. Vor Codex-Erschöpfung weiter 2/24,5/36,75/36,75 % je Item; jetzt 0,1/1,225/1,8375/1,8375 % je Kill. Codex weiterhin höchstens einmal natürlich pro Run, danach bestehender Fallthrough. Alle acht Items in bisherigen F1-Dropwerkzeugen. Modell vollständig geklärter Standardbudgets: Welle 5/10/15/20 = 61/173/290/407 berechtigte Kills → erwartet 3,05/8,65/14,50/20,35 Items **vor Bodenlimit**. Welle 5 noch ca. 4,38 % Wahrscheinlichkeit für null Items; rund 41 % der Itemwürfe betreffen neue Typen. Keine gemessenen typischen menschlichen Runs und kein garantierter Fund; mehrere natürliche Runs auf ausreichende Entdeckung prüfen.
+
+**Timing / Debug / UI:** Champion-Cooldown **2 s ab Ende der Erholung**, regulär etwa 3,9 s zwischen Warnstarts (0,7 + 0,4 + 0,8 + 2). F1: Warnzeit, Rushdauer, Erholung, Cooldown; aktuelle Warnung/Route bleibt verlässlich, neue Werte zur nächsten Warnung. Insgesamt 13 neue Regler einschließlich Itemwerten, **87 Felder / Profile v9**, v1–v8 weiterhin validiert ohne Umschreiben. Alte gespeicherte Itemchance bleibt numerisch erhalten, Reset defaults für 5 %. Vorhandene Seed-42-Anordnung als CE4-Einzel-/Gruppentest mit ausgewähltem neuem Item wiederverwendet. Inventar zeigt neue Regeln/Zahlen, Gear-Vergleich und Echo-/Phoenix-Zustand; Hunter-Bonus als bedingt, nicht als garantierte DPS. Anleitung CE4_PLAYTEST.md im Spielprojekt.
+
+**Verifikation / offen:** Elf Suites mit **835 Checks ohne Fehler** (770 bestehende inklusive acht Item-Icons + 65 CE4), sechs Gameplay-Scripts via Godot MCP gültig. Echte Echo-/Fächer-/Piercing-Treffer, Hunter-Kappung/Zielwechsel/Verfall, Storm-Reichweite/eine Freigabe, Phoenix-Heilgrenze/Cooldown/Wechsel, Profile, spätere Boss-/Echoes-Regression und kurzer 256-Projektil-/64-Ziel-Batch geprüft. Zwei native D3D12-Vorschauen archiviert, inszeniert; Blitz über tatsächlichen kontrollierten Projektiltreffer, Echo für Darstellung zusätzlich gestellt. Menschliche Vielfalt, Phoenix-Überleben, Lootfrequenz und dauerhafte Performance offen; kein Windows-Export/Deployment oder GitHub-Push.
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** CE3-Spielspaß vom Nutzer bestätigt; Follow-up technisch umgesetzt, manuelle Abnahme der neuen Balance/UI offen.
+**Projektphase:** CE4 technisch umgesetzt, positive CE3-Mixed-Build-Entdeckung als Grundlage; natürliche Itemvielfalt/Balance noch offen.
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Burst 105/70 %, Champion-Ansturm nach Escorts, Inventar als Build-Übersicht mit Karten-/Effektliste und erweitertem Vergleich (§8.14).
-**Dev-Konsole:** F1 74 Werte, drei isolierte CE3-Builds, Wave-Jump und Run-/Wellenzeiten; Profile v8 lesen v1–v7, Progress v2 bewahrt.
+**Neu umgesetzt:** Echo/Hunter-Scepter und Storm/Phoenix-Bücher, 5 % Itemchance, Champion-Cooldown 2 s nach Erholung (§8.15).
+**Dev-Konsole:** F1 87 Werte, CE4-Einzel-/Gruppentests, CE3-Builds und Wave-Jump; Profile v9 lesen v1–v8, Progress v2 bewahrt.
 **Umfang/Sprache:** Wellenkarten und einmalige Run-Ende-Auszahlung bewahrt; Code/UI Englisch. Kein neuer Spieler-Aktivskill, neue Klasse, dauerhafte Items oder XP-Leiste.
-**Prüfung:** Godot 4.7.2: 766 Checks ohne Fehler; vier Follow-up-Gameplay-Scripts via MCP gültig. Kein Langzeitbenchmark.
-**Material:** Drei native gestellte Follow-up-Vorschauen vom 19.10.2026 in `Progress/captures/`; frühere Medien erhalten, kein neuer Clip.
-**Feedback/Offen:** Burst-Wirkung, Solo-Champion und Informationsdesign menschlich prüfen; Seer-Gewichtung, Dauer, Baumtempo und Export offen.
-**Nächster Schritt:** Follow-up nach COMBAT_POLISH_PLAYTEST.md testen; Spiel lokal 335327e auf codex/combat-polish-build-overview. GitHub bleibt CE2 3ccb604 bis ausdrücklicher Push-Freigabe. Verwertung/Itemlevel geparkt.
+**Prüfung:** Godot 4.7.2: 835 Checks ohne Fehler; sechs CE4-Gameplay-Scripts via MCP gültig. Kurzer Batch, kein Langzeitbenchmark.
+**Material:** Zwei native gestellte CE4-Vorschauen vom 19.10.2026 in `Progress/captures/`; frühere Medien erhalten, kein neuer Clip.
+**Feedback/Offen:** Natürliche Itemvielfalt bei 5 %, Phoenix-Überleben, gemischte Builds und Champion-Rhythmus menschlich prüfen. Seer separat, Export ausgeschlossen.
+**Nächster Schritt:** CE4_PLAYTEST.md mit mehreren natürlichen Runs prüfen; Spiel lokal de56637 auf codex/item-discovery-synergies. GitHub bleibt CE2 3ccb604 bis ausdrücklicher Push-Freigabe. Verwertung/Itemlevel geparkt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -522,6 +541,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | CE4 umgesetzt | Nutzer entdeckt Fan/Pierce/Overcharge; vier neue Items vertiefen Synergien. 5 % Loot bei gleicher Kaskade, Champion-Timing über F1, neuer Cooldown 2 s nach Erholung. Slots/Seer/Ökonomie/Persistenz bewahrt | Spiel lokal de56637; 835 Checks, sechs MCP-Prüfungen, zwei native Vorschauen; natürliche Vielfalt/Balance offen, kein Push |
 | 2026-10-19 | CE3 Follow-up umgesetzt | Separater Auftrag nach positivem CE3-Spieltest: Burst 105/70 %, freigegebener Champion-Ansturm erst nach Escorts, Inventar-Buildübersicht. Seer/Ökonomie/Persistenz bewahrt | Spiel lokal 335327e; 766 Checks, vier MCP-Prüfungen, drei native Vorschauen; neue Balance/UI menschlich offen, nur lokale Commits |
 | 2026-10-19 | CE3 umgesetzt | Separater Auftrag bestätigt sechs Karten, zufällige gültige Angebote statt fixer Dreierauswahl sowie Burst/Piercing/Overcharge. Bestehende Wellenbelohnungen und Meta-Regeln bleiben | Spiel lokal 715a344; 731 Checks, vier MCP-Scriptprüfungen, zwei native Vorschauen; menschliche Build-Vielfalt offen, kein neuer Push |
 | 2026-10-19 | Spieltest / GitHub-Abgleich | Nutzerfeedback zu Seer-Relevanz, Boss-Kiting, Ausrüstungswechsel und Bewegung in §8.12 festgehalten; ausdrücklich beide Repositories für weitere ChatGPT-Planung hochladen | Keine Gameplay-Änderung; Spiel 3ccb604 auf main und CE2-Branch veröffentlicht, Chronik begleitet auf main. Weitere Mechaniken offen |
