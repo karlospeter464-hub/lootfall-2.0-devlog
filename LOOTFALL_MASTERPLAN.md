@@ -464,6 +464,17 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.12 CE2-Spieltest – offene Planung nach Nutzerfeedback
+
+**Beobachtungen vom 19.10.2026, keine Implementierungsfreigabe:**
+- Seer-Unterbrechung motiviert Schnellfeuer noch zu wenig: Nahkämpfer erzeugen die unmittelbare Gefahr, beim Weglaufen verlässt man nebenbei auch Seer-Angriffsflächen. Gegnergewichtung und alternativ eine andere Motivation für schnelle Treffer gemeinsam planen; noch keine neue Mechanik beschlossen.
+- Direktes Zielen mit der Maus auf Gegner wird häufiger genutzt, um nicht zu verfehlen. Reine Beobachtung; ausdrücklich vorerst keine Aktion.
+- Ausrüstungswechsel für den zähen Champion macht Spaß, etwa zum Ember Scepter für mehr Schaden. Sorge: Die feste Bossfolge könnte mit der Zeit eine immer gleiche Ausrüstungsroutine erzeugen. Abwechslung planen, keine Änderung an Wechsel-/Inventarregeln beschlossen.
+- Champion allein nach dem Tod der Begleiter lässt sich zu leicht umlaufen und beschießen. Eine zusätzliche Gefahr beziehungsweise Fähigkeit gegen dieses Verhalten ist zu diskutieren; konkrete Ausführung offen.
+- Bewegungsgeschwindigkeit als spätere Wahl erwägen. Schießen während des Laufens ist bereits möglich; ein direkter Mehrschaden durch schnelleres Laufen ist deshalb nicht belegt. Taktischen Nutzen und Komfort im Spieltest unterscheiden.
+
+**Planungsauftrag:** Gegenmaßnahmen und kleinsten nächsten Test gemeinsam festlegen. Keine dieser Beobachtungen ändert bisher Gameplay, Belohnungen, Fortschritt oder Persistenz. Aktueller Code und englische Testanleitung liegen im Spiel-Repository; dieser Abschnitt liefert ChatGPT den offenen Designkontext ohne private Chat-Transkripte.
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
 **Projektphase:** CE2 technisch umgesetzt; längerer Aufstieg mit wiederkehrenden Bossen, menschliche Abnahme offen.
@@ -473,8 +484,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 **Umfang/Sprache:** Wellenkarten und einmalige Run-Ende-Auszahlung bewahrt; Code/UI Englisch. Kein neuer Skill, neue Klasse, dauerhafte Items oder XP-Leiste.
 **Prüfung:** Godot 4.7.2: 603 Checks ohne Fehler; sechs geänderte Gameplay-Scripts via MCP gültig.
 **Material:** Vier native CE2-Vorschauen vom 19.10.2026 in `Progress/captures/`; Vorgeschichte erhalten.
-**Feedback/Offen:** Drei Treffer erleichtern allen Testbuilds Unterbrechung; 15–20 Minuten, Schwierigkeit, Baumtempo und Export ungeprüft.
-**Nächster Schritt:** Menschlicher CE2-Spieltest 1–20 nach `CE2_PLAYTEST.md`; Verwertung/Itemlevel geparkt. Kein neuer GitHub-Push ohne Auftrag.
+**Feedback/Offen:** Erster Nutzer-Spieltest: Ausrüstungswechsel motiviert, Seer zu wenig relevant, Champion allein zu harmlos; Details §8.12. Dauer, Baumtempo und Export weiter offen.
+**Nächster Schritt:** Gegenmaßnahmen gemeinsam planen; keine neue Gameplay-Freigabe. Aktueller Stand auf ausdrücklichen Auftrag auf GitHub main synchronisiert (Spiel 3ccb604); keine automatische Synchronisierung. Verwertung/Itemlevel geparkt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -483,6 +494,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | Spieltest / GitHub-Abgleich | Nutzerfeedback zu Seer-Relevanz, Boss-Kiting, Ausrüstungswechsel und Bewegung in §8.12 festgehalten; ausdrücklich beide Repositories für weitere ChatGPT-Planung hochladen | Keine Gameplay-Änderung; Spiel 3ccb604 auf main und CE2-Branch veröffentlicht, Chronik begleitet auf main. Weitere Mechaniken offen |
 | 2026-10-19 | CE2 umgesetzt | Separater Auftrag ersetzt CE2A: Aufstieg bis Tod/Sicherheitsstopp, wiederkehrende Bossbegegnungen/Karten, begrenzte Skalierung, neue späte Echoes-Kurve, 3-Hit-Seer und Anti-Dauerinterrupt beim Boss | 603 Checks ohne Fehler, sechs MCP-Scripts, vier native Vorschauen; Dauer/Balance offen. Spiel f6d1be7 lokal, kein Push beauftragt |
 | 2026-10-18 | GitHub / Veröffentlichung | Nutzer autorisiert öffentliche Repositories für Spiel und Chronik, Konto nach Klärung karlospeter464-hub. lootfall-2.0 und lootfall-2.0-devlog angelegt; lokale Trennung und Ausschluss privater Konfigurationen bleiben erhalten | Spiel 4c4f917 auf main/aktuellem Entwicklungsbranch veröffentlicht und Remote-Hashes geprüft; begleitender Chronik-Checkpoint folgt auf main. Künftige Pushes benötigen passenden Auftrag |
 | 2026-10-18 | CE1-Spieltest / Nachschärfung | Nutzer wünscht zwei stärkere Guardians, sichtbare Absorption und erfahrbare Seer-Unterbrechung. Cap 2, 6× HP beider Rollen; Seer näher, 1,4-s-Warnung, 2-s-Erholung; echter Block-Anteil als Feedback der bestehenden Rüstung | 349 Checks ohne Fehler, vier MCP-Checks, eine native Vorschau; Spielabnahme offen |

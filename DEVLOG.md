@@ -1,5 +1,15 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-19 – CE2 auf GitHub und Spieltestfeedback für die weitere Planung
+
+**Auftrag / Änderung:** Nutzer beauftragt Commit und Upload des aktuellen Stands beider Repositories, damit ChatGPT auf GitHub mitplanen kann. CE2-Spiel-Commit `f6d1be7` um die nachträglich vom Editor erzeugte Script-UID der Ascent-Tests ergänzt: `3ccb604`. Spiel-main per Fast-forward aktualisiert und beide Branches main / codex/ascent-boss-milestones gepusht. Keine Gameplay-Änderung, keine Caches, Spielstände oder lokalen Zugangskonfigurationen aufgenommen.
+
+**Planung:** Masterplan §8.12 bündelt die jüngsten Nutzerbeobachtungen: Seer zu wenig relevant für Schnellfeuer, gezieltes Maus-Aiming ohne Änderungswunsch, motivierender Gearwechsel mit Risiko einer festen Routine, Champion allein zu leicht und Bewegungsgeschwindigkeit als offene Idee. Keine neue Mechanik beschlossen oder implementiert. §§9/10 aktualisiert; kein sichtbarer Meilenstein und keine neue Aufnahme.
+
+**Prüfung / Grenzen:** Beide Repository-Zustände geprüft, neue UID mit bestehender UID-Konvention verglichen, staged Diff und Whitespace geprüft. Spiel-Push erfolgreich; abschließender Remote-Hash-Abgleich beider main-Branches nach Chronik-Push. Keine neuen Gameplay-Tests; letzter technischer Stand bleibt 603 bestandene Checks. Spielbalance bleibt nach dem Nutzerfeedback offen. Keine automatische Synchronisierung eingerichtet.
+
+---
+
 ## 2026-10-19 – CE2: Ascent & Boss Milestones
 
 **Auftrag / Planabgleich:** Separater eingefügter CE2-Auftrag erteilt die Umsetzung und ersetzt den erwähnten CE2A-Entwurf. Bestätigte Abweichungen: regulärer Sechs-Wellen-Sieg entfällt, Karten wiederholen sich, Bosse alle fünf Wellen, neue Echoes-Kurve nach Welle 6. Ziel 15–20 Minuten als Hypothese, kein Zeitlimit. Scope bewahrt: vorhandene drei Karten und Gegnermechaniken, kein neuer Skill, keine Klasse, Währung, Verwertung oder neue Boss-KI. Ponytail-Workflow genutzt. Zwei Git-Bäume vor Beginn sauber; kein neuer Push beauftragt.
