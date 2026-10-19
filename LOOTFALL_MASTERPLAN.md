@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.3 · **Stand:** 19. Oktober 2026
+**Version:** 1.4 · **Stand:** 19. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -489,17 +489,31 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 **Offen / Scope-Abgleich:** Erfolgskriterium bleibt menschlich zu prüfen: drei bis fünf natürliche Runs mit tatsächlich anderen Spielweisen statt nur anderen Zahlen. Seer-Gewichtung, neuer Schnellfeuer-Gegner, Champion-Ansturm, neue Items/Klassen, Verwertung und Echoes-Ökonomie ausdrücklich nicht umgesetzt. Keine ungefragte Scope-Erweiterung und kein automatischer GitHub-Push.
 
+### 8.14 CE3 Follow-up – Combat Polish & Build Overview
+
+**Freigabe / Planabgleich:** Separater Nutzerauftrag nach positivem CE3-Spieltest: stärkerer Burst, Champion-Ansturm und übersichtlicheres Inventar. **Bestätigte Abweichung vom bisherigen Plan:** Der in CE3 ausdrücklich ausgeschlossene Ansturm wird jetzt für den allein verbleibenden Rune Champion freigegeben. Keine weiteren Fortschritts-/Belohnungs-/Resetänderungen; Seer bleiben ausdrücklich unverändert. Lokaler CE3-Stand ist Grundlage, kein Rücksetzen auf den älteren GitHub-Stand.
+
+**Ember Burst:** Aktuelle Startwerte **105 Radius / 70 % Projektilschaden**, ersetzt die initialen 65/40 aus §8.13. Power, Ausrüstung und Overcharge skalieren über denselben Projektilschaden. First Spark bleibt ausdrücklich direkt-only. Sofortiger kurzer Flächenimpuls plus heller Rand, Trefferblitze/-zahlen aus vorhandener Darstellung. Keine rekursiven oder doppelten Auslösungen, bestehendes Effektlimit bewahrt. Bestehende F1-Regler erhalten; gespeicherte Profile bewahren ihre Zahlen, Reset defaults lädt neue Startwerte.
+
+**Champion:** Nur bei 5/15/etc. und erst ohne lebende oder ausstehende Escorts: Richtung zur aktuellen Spielerposition festhalten → 0,7 s Warnlinie → bis 0,4 s gerader Ansturm → 0,8 s stationäre Erholung → langsame Verfolgung mit 3 s Cooldown nach Erholung. Startwert 850 Einheiten/s, höchstens 340 Reichweite, an Arena-Kante früher beendet; kein Nachzielen/Wandgleiten. Warnstreifen berücksichtigt bestehende Kontaktdistanz, Bewegungssegment prüft übersprungene Kontakte. Höchstens ein Kontaktversuch pro Ansturm, vorhandener Schaden/Trefferschutz; Warnung/Erholung ohne Kontaktschaden. Rüstung und langsame Grundbewegung bleiben, normale Guardians unverändert. Pause/Freeze/Tod stoppen Verarbeitung. Fünf lokale charge_*-Inspector-Werte statt neuer Boss-KI oder Profilerweiterung.
+
+**Inventar:** Zusammenhängendes pausiertes Fenster. Links feste Equipment-Slots und acht Taschenfelder, darunter scrollbar Vergleich/Details; Aktionen im festen Footer. Rechts tatsächliche direkte Projektilschäden, effektives Intervall inklusive Second Wind, Projektile, aktuelle/maximale HP und Codex-Splash mit Schaden/Radius. Scrollbare Kartenliste mit Stacks und verständlichen Regeln, getrennte Gear-/Talent-/Triggerangaben, Overcharge-Ladung und temporäre Buffdauer. Bedingte Effekte erscheinen nicht als bereits ausgelöst. Keine theoretische DPS-Anzeige. Itemvergleich nennt hinzugewonnene/verlorene Itemeffekte, unverändert aktive Karten/Talente und davon abhängige Burst-/Overcharge-Schäden. Vorhandene Build-/Haste-Funktionen gemeinsam verwendet, kein zweites Build-Modell. Maus/Tastatur, Inventaraktionen und Pause erhalten.
+
+**Verifikation:** 35 neue Combat-Polish-Checks + 731 bestehende = **766 Checks ohne Fehler**, vier geänderte Gameplay-Scripts via Godot MCP gültig. Direkte Burst-/Flächen-/Stressprüfungen unter neuen Defaults, Champion mit lebenden/ausstehenden Escorts, 5/15, festem Ziel, Sidestep, Pause/Freeze, Swept-Kontakt, Erholung/Rüstung, Arena-Kante/Tod, normale Guardians sowie tatsächliche Inventarwerte/Stacks/Swaps/Scroll/Reset. Drei native D3D12-Vorschauen für Inventar, gescrollte Effekte und Warnlinie, gestellte Testaufbauten ohne menschlichen Sieg. Spielauflösung 1280×800 logisch, Aufnahmen 1152×720. Anleitung: COMBAT_POLISH_PLAYTEST.md im Spielprojekt.
+
+**Offen:** Menschlich prüfen, ob der größere Burst lesbar/wirkungsvoll ist, 850 Geschwindigkeit und 340 Reichweite Solo-Kiting ausreichend erschweren und das Inventar im echten Run verständlich bleibt. Weitere Fenstergrößen, Export und Langzeitperformance ungeprüft. Seer-Experimente/trefferbasierte Schilde bleiben separat; keine neuen Karten/Items/Gegner oder Änderung der Ökonomie/Persistenz. Nur lokale Git-Checkpoints, neuer Push erfordert ausdrückliche Freigabe.
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** CE3 technisch umgesetzt; zufällige Build-Entwicklung auf dem CE2-Aufstieg, menschliche Abnahme offen.
+**Projektphase:** CE3-Spielspaß vom Nutzer bestätigt; Follow-up technisch umgesetzt, manuelle Abnahme der neuen Balance/UI offen.
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Bis zu drei zufällige Angebote aus sechs Karten; Ember Burst, Piercing Flame und Overcharge als einmal wählbare Run-Mechaniken (§8.13).
+**Neu umgesetzt:** Burst 105/70 %, Champion-Ansturm nach Escorts, Inventar als Build-Übersicht mit Karten-/Effektliste und erweitertem Vergleich (§8.14).
 **Dev-Konsole:** F1 74 Werte, drei isolierte CE3-Builds, Wave-Jump und Run-/Wellenzeiten; Profile v8 lesen v1–v7, Progress v2 bewahrt.
-**Umfang/Sprache:** Wellenkarten und einmalige Run-Ende-Auszahlung bewahrt; Code/UI Englisch. Kein neuer Skill, neue Klasse, dauerhafte Items oder XP-Leiste.
-**Prüfung:** Godot 4.7.2: 731 Checks ohne Fehler; vier CE3-Gameplay-Scripts via MCP gültig. Kurzer Stress-Test ersetzt keinen Langzeittest.
-**Material:** Zwei native gestellte CE3-Vorschauen vom 19.10.2026 in `Progress/captures/`; frühere Medien erhalten, kein neuer Clip.
-**Feedback/Offen:** Drei bis fünf natürliche Runs auf unterschiedliche Spielweisen prüfen; Seer-Gewichtung/Champion allein (§8.12), Dauer, Baumtempo, Export offen.
-**Nächster Schritt:** CE3-Spieltest nach englischem CE3_PLAYTEST.md. Spiel lokal 715a344 auf codex/build-discovery-card-synergies; GitHub bleibt auf CE2 3ccb604 bis passendem Push-Auftrag. Verwertung/Itemlevel geparkt.
+**Umfang/Sprache:** Wellenkarten und einmalige Run-Ende-Auszahlung bewahrt; Code/UI Englisch. Kein neuer Spieler-Aktivskill, neue Klasse, dauerhafte Items oder XP-Leiste.
+**Prüfung:** Godot 4.7.2: 766 Checks ohne Fehler; vier Follow-up-Gameplay-Scripts via MCP gültig. Kein Langzeitbenchmark.
+**Material:** Drei native gestellte Follow-up-Vorschauen vom 19.10.2026 in `Progress/captures/`; frühere Medien erhalten, kein neuer Clip.
+**Feedback/Offen:** Burst-Wirkung, Solo-Champion und Informationsdesign menschlich prüfen; Seer-Gewichtung, Dauer, Baumtempo und Export offen.
+**Nächster Schritt:** Follow-up nach COMBAT_POLISH_PLAYTEST.md testen; Spiel lokal 335327e auf codex/combat-polish-build-overview. GitHub bleibt CE2 3ccb604 bis ausdrücklicher Push-Freigabe. Verwertung/Itemlevel geparkt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -508,6 +522,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | CE3 Follow-up umgesetzt | Separater Auftrag nach positivem CE3-Spieltest: Burst 105/70 %, freigegebener Champion-Ansturm erst nach Escorts, Inventar-Buildübersicht. Seer/Ökonomie/Persistenz bewahrt | Spiel lokal 335327e; 766 Checks, vier MCP-Prüfungen, drei native Vorschauen; neue Balance/UI menschlich offen, nur lokale Commits |
 | 2026-10-19 | CE3 umgesetzt | Separater Auftrag bestätigt sechs Karten, zufällige gültige Angebote statt fixer Dreierauswahl sowie Burst/Piercing/Overcharge. Bestehende Wellenbelohnungen und Meta-Regeln bleiben | Spiel lokal 715a344; 731 Checks, vier MCP-Scriptprüfungen, zwei native Vorschauen; menschliche Build-Vielfalt offen, kein neuer Push |
 | 2026-10-19 | Spieltest / GitHub-Abgleich | Nutzerfeedback zu Seer-Relevanz, Boss-Kiting, Ausrüstungswechsel und Bewegung in §8.12 festgehalten; ausdrücklich beide Repositories für weitere ChatGPT-Planung hochladen | Keine Gameplay-Änderung; Spiel 3ccb604 auf main und CE2-Branch veröffentlicht, Chronik begleitet auf main. Weitere Mechaniken offen |
 | 2026-10-19 | CE2 umgesetzt | Separater Auftrag ersetzt CE2A: Aufstieg bis Tod/Sicherheitsstopp, wiederkehrende Bossbegegnungen/Karten, begrenzte Skalierung, neue späte Echoes-Kurve, 3-Hit-Seer und Anti-Dauerinterrupt beim Boss | 603 Checks ohne Fehler, sechs MCP-Scripts, vier native Vorschauen; Dauer/Balance offen. Spiel f6d1be7 lokal, kein Push beauftragt |
