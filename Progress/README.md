@@ -65,3 +65,7 @@ Nachfolgender CE1-Meilenstein: `captures/2026-10-18_ce1_encounter.png` und `2026
 ## CE1 nach Spieltest, 18.10.2026
 
 `captures/2026-10-18_ce1_feedback.png`: native D3D12-Vorschau aus `tests/capture_preview.gd -- --test-mode --view=ce1_feedback`, 1152 × 720, visuell geprüft. Zwei natürliche Guardians im inszenierten Welle-3-Aufbau, jeweils echter 14-Schadens-Testtreffer mit 6.0 Lebensverlust und 8.0 BLOCKED. Seer-Konzentrationspunkte und BROKEN sind gestellte eingefrorene Darstellungszustände. Kein menschlicher Playthrough oder Clip. Frühere CE1-Aufnahmen zeigen die initiale Fassung und bleiben erhalten.
+
+## CE2 – Ascent & Boss Milestones, 19.10.2026
+
+`captures/2026-10-19_ce2_intro.png`, `2026-10-19_ce2_champion.png`, `2026-10-19_ce2_prophet.png`, `2026-10-19_ce2_reward.png`: native D3D12-Aufnahmen aus dem aktiven Godot-Projekt mit `tests/capture_preview.gd -- --test-mode` und Ansichten ce2_intro / ce2_boss5 / ce2_boss10 / ce2_reward. Je 1152 × 720, visuell geprüft. Gestellte, eingefrorene Begegnungen; Prophet STEADY CAST bewusst gesetzt, Bosskarte über bereinigtes Testbudget erzeugt. Kein menschlich besiegter Boss, keine echte 15–20-Minuten-Session und kein neuer Clip. Frühere Aufnahmen bleiben unverändert als Historie erhalten. Zugehöriger Spiel-Commit steht im CE2-Devlog-Eintrag.

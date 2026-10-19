@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.1 · **Stand:** 18. Oktober 2026
+**Version:** 1.2 · **Stand:** 19. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -90,6 +90,8 @@ Kein Multiplayer, keine Online-Ökonomie, keine vollständige ARPG-Kampagne, kei
 ### Loop B — Build-Run (Minuten)
 **1–3 Wellen bestehen → 1 aus 3 Belohnungskarten wählen → den Build verändern → stärkere Wellen bewältigen → seltenen Loot finden → eigenen Rekord herausfordern.**
 
+**[ENTSCHEIDUNG / IMPLEMENTIERT – CE2, 19.10.2026]** Kein regulärer Sieg nach Welle 6. Aufstieg bis Tod oder technischem Sicherheitsstopp (Standard 100), Boss bei jeder fünften Welle. Karten nach Stufe 2/4/5 jedes Fünferblocks; Bosskarten nutzen vorerst dieselben drei Mechaniken. Ziel ungefähr 15–20 Minuten pro typischem Run, keine Zeitgrenze und noch kein gemessener Balancezustand. Details und bestätigte Abweichungen in §8.11.
+
 - **[HYPOTHESE]** Drei Kartentypen: **Statuswerte**, **Fähigkeiten/Skill-Modifikatoren**, **Items**. Nicht zwingend in jeder Auswahl eine Karte jeder Art; zunächst verständlich präsentieren.
 - **[IMPLEMENTIERT – aktueller Stand 18.10.2026]** Zufällige Run-Items ergänzen die wellenbasierten Kartenentscheidungen. Gegenstände werden in einer Run-Tasche gesammelt und erst beim bewussten Ausrüsten aktiv; beim Neustart werden sie zurückgesetzt. Vier feste Testgegenstände (Ember Scepter, Swift Scepter, Focus Grimoire, Cinder Codex) mit Rarity-Kaskade und einem Itemwurf von 10 % pro berechtigtem Kill gemäß §8.4/§8.7. Die frühere isolierte 2-%-Codex-Dropregel wurde **abgelöst** und darf nicht erneut verwendet werden. Langfristige Item-Persistenz bleibt offen. Seltene Funde können helfen, mehr Wellen zu schaffen und so am Run-Ende mehr Echoes zu erhalten.
 - **[ENTSCHEIDUNG]** Entdeckung und Herausforderung sind wichtiger als endloses numerisches Grinden.
@@ -97,11 +99,11 @@ Kein Multiplayer, keine Online-Ökonomie, keine vollständige ARPG-Kampagne, kei
 *Qualitätsfrage:* Entstehen durch Kartenentscheidungen erkennbar verschiedene Spielstile? Hat man Lust, eine andere Kombination auszuprobieren?
 
 ### Loop C — Prestige / Meta-Fortschritt (viele Runs)
-**[ENTSCHEIDUNG, 17.10.2026] Run beenden (Tod oder Sieg) → Ergebnis und Echoes erhalten → zur Stadt / ins Hideout zurückkehren → Echoes im dauerhaften Skilltree ausgeben → mit den erworbenen Boni den nächsten Run starten.**
+**[ENTSCHEIDUNG, aktualisiert CE2] Run beenden (Tod oder ausdrücklich technischer Sicherheitsstopp) → Ergebnis und Echoes erhalten → zur Stadt / ins Hideout zurückkehren → Echoes im dauerhaften Skilltree ausgeben → nächster Run ab Welle 1.**
 
 - **[ENTSCHEIDUNG / IMPLEMENTIERT]** Der Hideout-Fortschritt erfolgt über einen vernetzten dauerhaften Passivbaum nach PoE-Vorbild mit Grundwertknoten, größeren Zwischenzielen und spielstilprägenden Boni. Eine erste Fassung mit **15 vernetzten Knoten** und kostenlosen Resets ist umgesetzt (§8.5); ihre langfristige Balance/spielerische Wirkung bleibt zu prüfen. Klassenwahl ist ein separates späteres System.
 
-- **[ENTSCHEIDUNG]** Eine Meta-Ressource mit vorläufigem englischem Namen **„Echoes“** (Namenswahl für jetzt an Codex delegiert). Belohnung erfolgt am Run-Ende auf dem Ergebnisbildschirm, keine Ressourcen-/XP-Sammelleiste als Ersatz für die wellenbasierte Kartenauswahl. **[HYPOTHESE – erstes Belohnungsmodell]** Höherer Wellenfortschritt soll mehr Echoes ergeben; zufällige Run-Items helfen indirekt, diesen Fortschritt zu erreichen. Keine zusätzliche direkte Echoes-Belohnung für den bloßen Itemfund vorgesehen. Implementiertes Startmodell: 10 × Summe der abgeschlossenen Wellenstufen (1 + 2 + … + n), bei Sieg und Tod einmalig am Ergebnisbildschirm. Eine nur erreichte Welle zählt nicht zur Auszahlung; App-Schließen während des Runs zahlt nichts aus. Der Faktor ist in F1 einstellbar. Diese Werte sind Balancing-Startwerte, keine endgültige Balanceentscheidung.
+- **[ENTSCHEIDUNG]** Eine Meta-Ressource mit vorläufigem englischem Namen **„Echoes“** (Namenswahl für jetzt an Codex delegiert). Belohnung erfolgt am Run-Ende auf dem Ergebnisbildschirm, keine Ressourcen-/XP-Sammelleiste als Ersatz für die wellenbasierte Kartenauswahl. **[HYPOTHESE – erstes Belohnungsmodell]** Höherer Wellenfortschritt soll mehr Echoes ergeben; zufällige Run-Items helfen indirekt, diesen Fortschritt zu erreichen. Keine zusätzliche direkte Echoes-Belohnung für den bloßen Itemfund vorgesehen. Aktuelles CE2-Modell: Bis Welle 6 unverändert 10 × Summe der abgeschlossenen Wellenstufen; danach zusätzliche 25 Echoes je Welle mit +2 je Folgewelle (§8.11), einmalig bei Tod oder technischem Sicherheitsstopp am Ergebnisbildschirm. Eine nur erreichte Welle zählt nicht zur Auszahlung; App-Schließen während des Runs zahlt nichts aus. Der Faktor ist in F1 einstellbar. Diese Werte sind Balancing-Startwerte, keine endgültige Balanceentscheidung.
 - **[ENTSCHEIDUNG, P2]** Erste Stadt als Menü: Emberhaven, Skilltree und Run-Start. Keine begehbare Stadt, zusätzlichen NPCs, Händler oder Archiv-Freischaltungen in diesem Paket.
 - **[HYPOTHESE]** Meta-Fortschritt kombiniert **begrenzten vertikalen Fortschritt** (kleine dauerhafte Vorteile) und **horizontalen Fortschritt** (weitere Builds, Startoptionen, Relikte).
 - **[OFFEN – langfristig]** Ob seltene Items später dauerhaft ausrüstbar bleiben oder einen Archiv-/Freischalteintrag hinterlassen. Das vorläufige Testmodell verwendet ausschließlich Run-Items ohne Übernahme in den nächsten Run; spätere Persistenz ist damit nicht endgültig entschieden.
@@ -438,17 +440,41 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.11 CE2 – Ascent & Boss Milestones
+
+**Freigabe:** Separater Nutzerauftrag vom 19.10.2026 erteilt die Umsetzung und ersetzt den dort erwähnten CE2A-Entwurf (kein eigener CE2A-Eintrag im lokalen Plan). **Bestätigte Abweichungen vom bisherigen Modell:** Sechs-Wellen-Sieg entfällt, wiederkehrende Karten/Bosse, zusätzliche Konfiguration und neue Echoes-Kurve nach Welle 6. Keine pauschale Freigabe anderer Masterplan-Features oder eines GitHub-Pushes.
+
+**[IMPLEMENTIERT – technisch geprüft] Ablauf:** Standard-Sicherheitsgrenze 100, F1 5–100. Erreichen zeigt PROTOTYPE LIMIT REACHED / ausdrücklich kein Sieg; sichere einmalige Ergebnis-Auszahlung bleibt erhalten. Maximalstand weiterhin im vorhandenen Progress v2 (bis 100) am Run-Ende gespeichert, alte Wallets bleiben ladbar. Tod → Ergebnis → Emberhaven → bestehender Baum → Start bei Welle 1; alle bisherigen Reset-/Inventar-/Lootregeln erhalten.
+
+**Karten / Grenzen:** Normal nach 2/4, Bosskarte nach 5 jedes Fünferblocks (bis 20: 2,4,5,7,9,10,12,14,15,17,19,20). Nur Power, Quick, Fan, Bosspräsentation ausdrücklich benannt. Effektives Intervall mindestens 0,08 s einschließlich Second Wind; höchstens neun Projektile pro Cast und 256 gleichzeitig. Quick/Fan am Limit gesperrt statt nutzloser Auswahl; Power bleibt verfügbar. Keine zusätzliche Kartenrarity.
+
+**Bossrhythmus:** Rune Champion bei 5/15/25 usw. mit Guardian-Verhalten, Ash Prophet bei 10/20/30 usw. mit Seer-Verhalten. Zwei Sekunden Ankündigung, Krone/größere Figur, goldener Lebensbalken. Je ein Boss plus vier Begleiter als Standardbudget; derselbe Gesamtcap gilt auch bei 1. Rollen-Caps betreffen Begleiter, der Pflichtboss bleibt bei Rollen-Cap 0 vorhanden. Abschluss erst nach vollständigem Budget und allen Gegnern. Keine Extra-Echoes, garantierten Bossdrops oder zusätzliche Lootwürfe. Bosskill ist ein regulärer berechtigter Kill im bestehenden Lootmodell.
+
+**Bosswerte / Anti-Dauerunterbrechung:** Champion 6× Guardian-Wellenleben, Prophet 9× Seer-Wellenleben; Bossangriff 1,5× Wellenwert (höchstens 200). Prophet-Radius 1,4× normal; Warnzeichnung gleicht Figurenskalierung aus, damit sichtbarer Kreis und Welt-Trefferradius übereinstimmen. Nach einem unterbrochenen Bosszauber ist der nächste angekündigte Cast als STEADY CAST geschützt, bleibt aber ausweichbar und durch Tod abbrechbar. Nach dessen Auflösung wieder unterbrechbar. Kleine Boss-Sonderregel, kein neues Statussystem.
+
+**Schwierigkeitsmodell / Testwerte:** Normalbudget höchstens 28 (bestehende Basis 8 + 4 je Welle). Wellen 6/11/16/... verwenden Erholungsfaktor 0,8 auf Budget/Leben/Schaden und größeren Abstand zwischen Rollen-Kandidaten; Pause nach Boss doppelt. HP = (Basis + früher linearer Zuwachs bis Welle 6) × 1,14 je Folgewelle × Erholung; Seer/Guardian weiterhin 6× Rollenleben. Schaden +4 % je Welle; Spawnintervall ×0,97 je Welle, mindestens 0,18 s. Seer-/Guardian-Kandidaten in Zehnerblöcken häufiger, aktive Caps weiterhin 2/2 und Gesamtcap 12. Geschwindigkeit höchstens 200, Gesundheit höchstens 1.000.000 auch bei Bossmultiplikatoren; keine unbegrenzte Gegnerwarteschlange.
+
+**Echoes:** Bis 6 unverändert 10/30/60/100/150/210 bei Defaultfaktor 10. Ab 7 zusätzliche 25, 27, 29, ... je abgeschlossener Welle; Grundbetrag und Zuwachs in F1 einstellbar. Insgesamt Welle 10 = 322, 15 = 507, 20 = 742. Keine Auszahlung für nur erreichte Wellen, während Kartenwahlen oder beim App-Schließen. Ertragskurve des längeren Runs muss gegen den vorhandenen 1080-Echoes-Baum geprüft werden; Baumkosten nicht eigenmächtig verändert.
+
+**Seer-Vergleich:** Neuer Standard drei direkte Treffer, sechsfaches Leben erhalten. Kontrollierte Echtprojektile mit Rapid/Heavy/Area bei 3,4,5: Alle drei unterbrechen bei 3 und im getesteten Timing auch bei 4; bei 5 nur Rapid. Vier ist eine Timinggrenze, keine allgemeine Zusage. **Beobachtung:** Drei erleichtert die Mechanik, schwächt aber den ursprünglichen Schnellfeuer-Soft-Counter. Kein neuer Stat als Kompensation eingeführt; weitere Entscheidung nach menschlichem Spieltest.
+
+**Debug / Metriken:** F1 71 Werte, Profile v7 lesen v1–v6 vorab validiert und ohne Umschreiben. Neue acht Felder für HP-Skalierung, Schadenswachstum, Budgetcap, Spawntakt, Bossleben/Begleiter und späte Echoes. Alte numerische Wellenlimits bleiben erhalten und bedeuten jetzt Sicherheitsstopp; Ladehinweis/Reset defaults erklären das. Isolierter Wave-Jump mit Seed 42, keine Belohnung für übersprungene Wellen. Wall-Zeit umfasst Karten, Inventar, Pause und F1; aktive Zeit separat. Pro Welle Combatzeit, HP-Verlust, Rollenmix, letzte fünf Zeilen in F1, nur im Run-Speicher.
+
+**Verifikation:** 64 Arena + 54 Loot/Konsole + 46 Inventar + 69 Stadt/Baum + 19 Begegnung + 28 Rarity + 74 Counterplay + 249 Ascent = **603 Checks ohne Fehler**. Vollständige beschleunigte Abfolge 1–20 samt Bossen/Karten; Weiterlauf, Cap 1/0, Schutzcast, Pause/Inventar/F1, Maximalwerte, Projektilgrenzen, Legacy-v6-Profil, langfristige Auszahlung/Persistenz/Rückkehr geprüft. Sechs Gameplay-Scripts via MCP gültig. Vier native D3D12-Vorschauen für Ankündigung, Champion, Prophet und Bosskarte archiviert. Anleitung und Werte: englisches `CE2_PLAYTEST.md` im Spielprojekt. **Offen:** menschliche Run-Dauer 15–20 Minuten, Langzeitperformance, faire Todesursachen, Aufstiegskurve und Baumtempo; technische Tests belegen keine Spielbalance.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** P0/P1/INV1 und P2 technisch; vollständiger Stadt-/Skilltree-Loop umgesetzt, manuelle P2-Abnahme offen.  
+**Projektphase:** CE2 technisch umgesetzt; längerer Aufstieg mit wiederkehrenden Bossen, menschliche Abnahme offen.
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** CE1-Feedback (8.10): zwei zähere Guardians mit sichtbarer Schadensabsorption; Seer näher, länger am Leben, besser erreichbares Interrupt-Fenster.
-**Dev-Konsole:** F1, 63 Regler und neun isolierte CE1-Arrangements; Profil v6 unterstützt v1–v5.
-**Umfang/Sprache:** Karten und Echoes-Auszahlung bewahrt; Code/UI Englisch. Keine begehbare Stadt, weiteren Klassen, dauerhaften Items oder XP-Leiste.  
-**Prüfung:** Godot 4.7.2: 59 + 54 + 46 + 69 + 19 + 28 + 74 = 349, keine Fehler; vier geänderte Gameplay-Scripts via MCP validiert.
-**Material:** Neue native CE1-Feedback-Vorschau vom 18.10.2026 in `Progress/captures/`; bisherige Historie bewahrt.
-**Feedback/Offen:** Guardian positiv; Builds/Seer-Unterbrechung bislang zu wenig erkennbar. Neue Abstimmung menschlich prüfen; Langzeitbalance/Export offen.
-**Nächster Schritt:** CE1-Matchups menschlich testen (§8.9); Verwertung (§8.8) und Itemlevel geparkt. Magierangriff, Karten, Item-Rarities und Meta-Loop bewahrt.
+**Neu umgesetzt:** Kein regulärer Sieg nach 6; Boss 5/10 wiederholt, Karten 2/4/5 je Block, moderatere Echoes nach 6, Seer-Schwelle 3.
+**Dev-Konsole:** F1 71 Werte, Wave-Jump und Run-/Wellenzeiten; Profile v7 unterstützen v1–v6; Progress v2 bewahrt.
+**Umfang/Sprache:** Wellenkarten und einmalige Run-Ende-Auszahlung bewahrt; Code/UI Englisch. Kein neuer Skill, neue Klasse, dauerhafte Items oder XP-Leiste.
+**Prüfung:** Godot 4.7.2: 603 Checks ohne Fehler; sechs geänderte Gameplay-Scripts via MCP gültig.
+**Material:** Vier native CE2-Vorschauen vom 19.10.2026 in `Progress/captures/`; Vorgeschichte erhalten.
+**Feedback/Offen:** Drei Treffer erleichtern allen Testbuilds Unterbrechung; 15–20 Minuten, Schwierigkeit, Baumtempo und Export ungeprüft.
+**Nächster Schritt:** Menschlicher CE2-Spieltest 1–20 nach `CE2_PLAYTEST.md`; Verwertung/Itemlevel geparkt. Kein neuer GitHub-Push ohne Auftrag.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -457,6 +483,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | CE2 umgesetzt | Separater Auftrag ersetzt CE2A: Aufstieg bis Tod/Sicherheitsstopp, wiederkehrende Bossbegegnungen/Karten, begrenzte Skalierung, neue späte Echoes-Kurve, 3-Hit-Seer und Anti-Dauerinterrupt beim Boss | 603 Checks ohne Fehler, sechs MCP-Scripts, vier native Vorschauen; Dauer/Balance offen. Spiel f6d1be7 lokal, kein Push beauftragt |
 | 2026-10-18 | GitHub / Veröffentlichung | Nutzer autorisiert öffentliche Repositories für Spiel und Chronik, Konto nach Klärung karlospeter464-hub. lootfall-2.0 und lootfall-2.0-devlog angelegt; lokale Trennung und Ausschluss privater Konfigurationen bleiben erhalten | Spiel 4c4f917 auf main/aktuellem Entwicklungsbranch veröffentlicht und Remote-Hashes geprüft; begleitender Chronik-Checkpoint folgt auf main. Künftige Pushes benötigen passenden Auftrag |
 | 2026-10-18 | CE1-Spieltest / Nachschärfung | Nutzer wünscht zwei stärkere Guardians, sichtbare Absorption und erfahrbare Seer-Unterbrechung. Cap 2, 6× HP beider Rollen; Seer näher, 1,4-s-Warnung, 2-s-Erholung; echter Block-Anteil als Feedback der bestehenden Rüstung | 349 Checks ohne Fehler, vier MCP-Checks, eine native Vorschau; Spielabnahme offen |
 | 2026-10-18 | CE1 umgesetzt | Separater CE1-Auftrag: Rune Guardian, flache Rüstung mit Minimum, direkte Seer-Unterbrechung; 3× Seer-HP macht fünf Treffer erreichbar. Neun isolierte Testarrangements mit bestehendem Gear/Karten, F1 63 Werte, Profile v6 abwärtskompatibel | 342 Checks ohne Fehler, sechs MCP-Scriptprüfungen, zwei native Vorschauen; menschliche Matchups offen |
