@@ -1,12 +1,14 @@
 # Lootfall 2.0
 
-**Aktuell: CE4 – Item Discovery & Synergy Expansion (19.10.).** Acht Items: Echo/Hunter-Scepter und Storm/Phoenix-Bücher ergänzen die bestehenden vier. 5 % Itemchance bei gleicher Rarity-Kaskade. Champion-Walk-Cooldown 2 s nach Erholung, Timing in F1. Masterplan §8.15. **835 Checks ohne Fehler**, sechs MCP-Scriptprüfungen und zwei native gestellte Vorschauen; natürliche Itemvielfalt/Balance offen.
+**Aktuell – CE5:** Kindling, Emberguard und Arcane Momentum ersetzen die drei reinen Einstiegs-Grundwerte. Neuer farbiger Skilltree mit Kaufzuständen, Details und Tastaturnavigation; Emberhaven zeigt bezahlbare Ziele. 15 IDs, Verbindungen, Kosten, exakte kostenlose Erstattung und Run-Snapshot bleiben erhalten. Alte Käufe erhalten die neuen Effekte im folgenden Run. F1: 92 Werte / Profil v10; Progress weiter v2. 898 Checks ohne Fehler, vier native Bilder in der Galerie. Menschliche Abnahme offen. Ohne Startguthaben ermöglichen zwei geklärte Wellen den ersten Kauf (30 Echoes); kürzere Runs garantieren ihn nicht. Siehe englisches CE5_PLAYTEST.md im Spielprojekt.
+
+**Vorheriges Paket: CE4 – Item Discovery & Synergy Expansion (19.10.).** Acht Items: Echo/Hunter-Scepter und Storm/Phoenix-Bücher ergänzen die bestehenden vier. 5 % Itemchance bei gleicher Rarity-Kaskade. Champion-Walk-Cooldown 2 s nach Erholung, Timing in F1. Masterplan §8.15. **835 Checks ohne Fehler**, sechs MCP-Scriptprüfungen und zwei native gestellte Vorschauen; natürliche Itemvielfalt/Balance offen.
 
 **CE4 testen:** F5 → F1 → Rewards & tools → eines von acht Items wählen → Drop selected item → aufheben und mit I ausrüsten. Isoliert mit -- --test-mode zusätzlich CE4-Einzel-/Gruppentest auswählbar. Anleitung im Spielprojekt: CE4_PLAYTEST.md. 87 F1-Werte, Profile v9 lesen v1–v8; Reset defaults für neue 5-%-Itemchance.
 
 **CE2 bleibt erhalten:** Aufstieg bis Tod oder technischem Sicherheitsstopp 100, Karten 2/4/5 je Fünferblock, Champion/Prophet 5/10. Echoes, Baum und Inventar bleiben erhalten. Seer-Relevanz bleibt separat offen (§8.12); das Follow-up ergänzt den Solo-Champion-Ansturm.
 
-**GitHub:** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). CE2 wurde auf ausdrücklichen Auftrag auf main hochgeladen (Spiel 3ccb604). CE3, Follow-up und CE4 werden lokal gesichert; kein neuer Upload oder automatische Synchronisierung beauftragt. Beide Repositories bleiben getrennt.
+**GitHub:** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). CE2 wurde auf ausdrücklichen Auftrag auf main hochgeladen (Spiel 3ccb604). CE3, Follow-up, CE4 und CE5 werden lokal gesichert; kein neuer Upload oder automatische Synchronisierung beauftragt. Beide Repositories bleiben getrennt.
 
 **CE1-Spieltest nachgeschärft:** Zwei Guardians, mehr Leben und echte BLOCKED-Anzeige; Seer-Unterbrechung schon mit Swift + einer Quick-Karte technisch nachgewiesen. 349 Checks ohne Fehler, neue native Vorschau in der Galerie. Spiel-Commit `ce3744d`, Branch `codex/counterplay-feedback`. Bei altem geladenem F1-Profil **Reset defaults** verwenden, um neue Startwerte zu testen; alte Profile werden nicht stillschweigend verändert.
 
@@ -22,7 +24,7 @@
 
 **Bestehender Meta-Loop P2:** Start in Emberhaven → Run → Tod/Sicherheitsstopp und Echoes → **Return to Town** → **Awaken the Skill Tree** → investieren → **Start Run**. 15 verbundene Knoten für Power/Vitality/Flow mit drei besonderen Abschlussboni. Alle Knoten gleichzeitig nutzbar; **Reset all** erstattet kostenlos die tatsächlich gezahlten Echoes. Talentbesitz gilt ab dem nächsten Run und bleibt mit Echoes/Bestwelle gespeichert. Alter Spielstand bleibt ladbar.
 
-**Startwerte:** Je Ast drei kleine Grundwerte, ein stärkeres Zwischenziel und ein Abschlussbonus: First Spark verstärkt Ersttreffer gegen volle Gegnerleben; Renewal heilt nach einer abgeschlossenen Welle; Second Wind verkürzt nach echtem Schaden kurz das Angriffsintervall. Kosten je Tiefe 30/45/65/90/130 Echoes, gesamter Baum 1080. Details stehen im englischen Spiel-README und Masterplan 8.5.
+**Historische P2-Startwerte (CE5 ersetzt die Einstiege):** Je Ast drei kleine Grundwerte, ein stärkeres Zwischenziel und ein Abschlussbonus: First Spark verstärkt Ersttreffer gegen volle Gegnerleben; Renewal heilt nach einer abgeschlossenen Welle; Second Wind verkürzt nach echtem Schaden kurz das Angriffsintervall. Kosten je Tiefe 30/45/65/90/130 Echoes, gesamter Baum 1080. Details stehen im englischen Spiel-README und Masterplan 8.5.
 
 **Weiter vorhanden:** Acht Taschenfelder und Zepter-/Buchslot mit vier festen Items, die erst beim Ausrüsten wirken. Run-Items/Karten werden beim neuen Versuch zurückgesetzt. Wellenkarten nach 2/4/5 je Fünferblock; Echoes weiterhin nur einmal am Run-Ende für abgeschlossene Wellen. Bodenloot zeigt nur den Namen, Beschreibungen stehen im pausierten Inventar.
 

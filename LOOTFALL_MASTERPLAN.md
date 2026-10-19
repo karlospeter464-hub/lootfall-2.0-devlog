@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.5 · **Stand:** 19. Oktober 2026
+**Version:** 1.6 · **Stand:** 19. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -522,17 +522,31 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 **Verifikation / offen:** Elf Suites mit **835 Checks ohne Fehler** (770 bestehende inklusive acht Item-Icons + 65 CE4), sechs Gameplay-Scripts via Godot MCP gültig. Echte Echo-/Fächer-/Piercing-Treffer, Hunter-Kappung/Zielwechsel/Verfall, Storm-Reichweite/eine Freigabe, Phoenix-Heilgrenze/Cooldown/Wechsel, Profile, spätere Boss-/Echoes-Regression und kurzer 256-Projektil-/64-Ziel-Batch geprüft. Zwei native D3D12-Vorschauen archiviert, inszeniert; Blitz über tatsächlichen kontrollierten Projektiltreffer, Echo für Darstellung zusätzlich gestellt. Menschliche Vielfalt, Phoenix-Überleben, Lootfrequenz und dauerhafte Performance offen; kein Windows-Export/Deployment oder GitHub-Push.
 
+### 8.16 CE5 – Skill Tree Refresh & Early Progression
+
+**Freigabe / Planabgleich:** Expliziter CE5-Nutzerauftrag vor externem Playtest. Bestätigte **Abweichung vom Plan:** Die bisherigen Einstiegs-Grundwerte werden durch drei Effekte ersetzt. Kein zusätzlicher Fortschrittsweg: dieselben 15 IDs, Verbindungen/Querverbindungen, Tierpreise 30/45/65/90/130 (1080 gesamt), alle zwölf Folgeknoten und kostenloser exakter Reset bleiben. §8.5 beschreibt die ursprünglichen Wurzeln; für diese gilt jetzt dieser Abschnitt.
+
+**Einstiegseffekte (je 30 Echoes):** `power_1` **Kindling**: Kill macht nächsten regulären zentralen Feuerball innerhalb 5 s bereit, +25 % direkten Schaden. Kein Stapeln, weitere Kills erneuern; kein Fan-Seitenschuss/Echo-Bonus, kein Verbrauch bei nicht erzeugtem Projektil. First Spark/Overcharge multiplizieren am direkten Treffer; Pierce darf beide unterschiedlichen Ziele dieses einen Feuerballs treffen. Burst kann durch direkten Kill entstehen, Kindling verstärkt keinen indirekten Schaden. Orange Bereitschafts-/Projektilringe. `vitality_1` **Emberguard**: Erster tatsächlicher nichttödlicher Gegnertreffer pro Welle heilt 8 % effektive Max-HP, höchstens volles Leben. Kein Auslösen durch Schutz/Debug-Heilen, keine Wiederbelebung. Grünes Heilfeedback; Phoenix/Renewal/Second Wind bleiben kombinierbar. `flow_1` **Arcane Momentum**: Alle vier tatsächlichen direkten Projektiltreffer +12 % Bewegung für 3 s, erneuert statt gestapelt. Fan, verschiedene Pierce- und echte Echo-Treffer zählen, Burst/Codex/Storm nicht. Aus Basisgeschwindigkeit abgeleitet, blauer Fußbogen; Pause stoppt Timer, Neustart entfernt alte Zustände.
+
+**Bestehende Käufe / Tuning:** IDs und tatsächliche bezahlte Preise bleiben im gemeinsamen Progress v2 erhalten, kein Umschreiben beim Laden. Alte Wurzelkäufe erhalten neue Effekte ab dem nächsten Run; die alten +4 % Schaden/+5 % HP/3 % Intervall entfallen dafür. Voller Baum jetzt +16 % Schaden/+20 % HP/11 % kürzeres Intervall plus Einstiegs-/Schlüsselboni. Run-Start-Snapshot bewahrt. Fünf neue F1-/Inspector-Werte für Schaden/Heilung/Geschwindigkeit/Dauern, 92 Felder, Profil v10 liest v1–v9 und ergänzt fehlende Werte aus Startdefaults, ohne Quelldatei umzuschreiben. Vier Momentum-Treffer bleiben feste Regel.
+
+**Frühe Motivation / Darstellung:** Farbige Pfade, sichtbare Querwege, runde kleine II/III-Knoten, markante Wurzeln und größere Endziele; Zustände gefüllt/gold/farbig/gedimmt plus Text, separater Fokusring. Details zeigen tatsächliche Wirkung, Preis, Voraussetzungen und Status. Pfeiltasten, Tab, Enter/Space, Maus; Esc zurück. Stadt zählt bezahlbare Käufe und nennt First Spark/Renewal/Second Wind als Ziele. **Grenze des Erfolgskriteriums:** Leerer Geldbeutel + 0/1/2 abgeschlossene Wellen = 0/10/30 Echoes am Run-Ende. Erst zwei geklärte Wellen ermöglichen einen Wurzelkauf. Kein Kauf nach jedem beliebig kurzen ersten Run garantiert; ausdrücklich keine künstliche Zusatzbelohnung eingeführt.
+
+**Prüfung / Grenzen:** 898 Checks in zwölf Suites ohne Fehler (63 CE5), sechs geänderte Scripts per Godot MCP gültig. Echte Projektil-Kombinationen, einmalige Heilung/tödliche/geschützte Treffer, direkte/indirekte Treffer, Pause/Reset, v9-Profil, Käufe/Erstattungen und alle 15 Detail-Layouts geprüft. Vier native D3D12-Vorschauen von Stadt/gemischtem Baum/Kindling/Momentum erstellt und gesichtet. Technische Umsetzung ist keine menschliche Balance-/Lernkurvenabnahme. Kein neuer Clip, Export, Deployment oder GitHub-Push. Verwertung/Itemlevel und Seer-Gewichtung bleiben offen.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** CE4 technisch umgesetzt, positive CE3-Mixed-Build-Entdeckung als Grundlage; natürliche Itemvielfalt/Balance noch offen.
-**Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Echo/Hunter-Scepter und Storm/Phoenix-Bücher, 5 % Itemchance, Champion-Cooldown 2 s nach Erholung (§8.15).
-**Dev-Konsole:** F1 87 Werte, CE4-Einzel-/Gruppentests, CE3-Builds und Wave-Jump; Profile v9 lesen v1–v8, Progress v2 bewahrt.
-**Umfang/Sprache:** Wellenkarten und einmalige Run-Ende-Auszahlung bewahrt; Code/UI Englisch. Kein neuer Spieler-Aktivskill, neue Klasse, dauerhafte Items oder XP-Leiste.
-**Prüfung:** Godot 4.7.2: 835 Checks ohne Fehler; sechs CE4-Gameplay-Scripts via MCP gültig. Kurzer Batch, kein Langzeitbenchmark.
-**Material:** Zwei native gestellte CE4-Vorschauen vom 19.10.2026 in `Progress/captures/`; frühere Medien erhalten, kein neuer Clip.
-**Feedback/Offen:** Natürliche Itemvielfalt bei 5 %, Phoenix-Überleben, gemischte Builds und Champion-Rhythmus menschlich prüfen. Seer separat, Export ausgeschlossen.
-**Nächster Schritt:** CE4_PLAYTEST.md mit mehreren natürlichen Runs prüfen; Spiel lokal de56637 auf codex/item-discovery-synergies. GitHub bleibt CE2 3ccb604 bis ausdrücklicher Push-Freigabe. Verwertung/Itemlevel geparkt.
+**Projektphase:** CE5 technisch umgesetzt; menschlicher externer Playtest/Balance offen.
+**Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Ordner.
+**Neu umgesetzt:** Kindling/Emberguard/Arcane Momentum statt Wurzel-Grundwerten, neuer Baum und Stadt-Kaufhinweis (§8.16); CE3/CE4-Systeme bewahrt.
+**Dev-Konsole / Daten:** F1 92 Werte, Profile v10 lesen v1–v9; Progress v2, IDs, bezahlte Preise und Run-Snapshot unverändert.
+**Umfang / Früher Kauf:** 15 Knoten, zwölf Folgetalente/Kosten/Reset erhalten; ohne Guthaben ab zwei abgeschlossenen Wellen 30 Echoes, kein garantierter Kauf nach kürzerem Run.
+**Prüfung:** Godot 4.7.2: 898 Checks ohne Fehler; sechs CE5-Scripts via MCP gültig, Tastatur/Maus/Detail-Platz geprüft.
+**Material:** Vier native gestellte CE5-Stadt-/Baumvorschauen vom 19.10.2026 in `Progress/captures/`; kein neuer Clip.
+**Offen:** CE5_PLAYTEST.md menschlich prüfen: spürbare Wurzeleffekte/frühe Motivation, dazu natürliche CE4-Vielfalt und Balance. Verwertung/Itemlevel und Seer-Gewichtung separat.
+**Git / Nächster Schritt:** Lokal auf codex/skill-tree-early-progression, vorab Tag ce4-before-ce5 in beiden Repositories; Spiel-Commit 00e378d. GitHub weiter CE2 3ccb604 bis neuer Push-Freigabe. Kein Export beauftragt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -541,6 +555,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | CE5 – Skill Tree / Early Progression | Bestätigter Ersatz der drei Wurzel-Grundwerte durch Kindling/Emberguard/Momentum; 15 IDs/Wege/Kosten/Reset/Snapshot erhalten. Neuer Baum und bezahlbare Ziele. Ab zwei geklärten Wellen erster Kauf, keine Zusatzbelohnung | 898 Checks ohne Fehler, sechs MCP-Prüfungen, vier native Vorschauen; menschliche Balance offen, lokal gesichert, kein Push/Export |
 | 2026-10-19 | CE4 umgesetzt | Nutzer entdeckt Fan/Pierce/Overcharge; vier neue Items vertiefen Synergien. 5 % Loot bei gleicher Kaskade, Champion-Timing über F1, neuer Cooldown 2 s nach Erholung. Slots/Seer/Ökonomie/Persistenz bewahrt | Spiel lokal de56637; 835 Checks, sechs MCP-Prüfungen, zwei native Vorschauen; natürliche Vielfalt/Balance offen, kein Push |
 | 2026-10-19 | CE3 Follow-up umgesetzt | Separater Auftrag nach positivem CE3-Spieltest: Burst 105/70 %, freigegebener Champion-Ansturm erst nach Escorts, Inventar-Buildübersicht. Seer/Ökonomie/Persistenz bewahrt | Spiel lokal 335327e; 766 Checks, vier MCP-Prüfungen, drei native Vorschauen; neue Balance/UI menschlich offen, nur lokale Commits |
 | 2026-10-19 | CE3 umgesetzt | Separater Auftrag bestätigt sechs Karten, zufällige gültige Angebote statt fixer Dreierauswahl sowie Burst/Piercing/Overcharge. Bestehende Wellenbelohnungen und Meta-Regeln bleiben | Spiel lokal 715a344; 731 Checks, vier MCP-Scriptprüfungen, zwei native Vorschauen; menschliche Build-Vielfalt offen, kein neuer Push |

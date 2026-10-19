@@ -79,3 +79,13 @@ Nachfolgender CE1-Meilenstein: `captures/2026-10-18_ce1_encounter.png` und `2026
 ## CE4 – 19.10.2026
 
 `captures/2026-10-19_ce4_inventory.png` und `2026-10-19_ce4_effects.png`: native D3D12-Vorschauen 1152×720 aus tests/capture_preview.gd -- --test-mode (ce4_inventory / ce4_effects). Beide gesichtet. Inventar: alle acht Items bewusst eingefüllt, Hunter/Phoenix ausgerüstet und Echo zum Vergleich fokussiert; Karten und Phoenix-Teilzähler gestellt. Kampfbild: positionierte eingefrorene Gruppe, Storm über einen tatsächlichen kontrollierten Projektiltreffer ausgelöst; zusätzlicher Echo-Schuss für die violette Markierung direkt gestellt. Keine menschliche Run-Aufnahme, kein Video und kein Beleg für natürliche Dropfrequenz oder Balance. Vorgeschichte unverändert erhalten.
+## CE5 – Skill Tree Refresh & Early Progression – 19.10.2026
+
+Vier echte native D3D12-Engine-Ausgaben, 1152×720, mit `tests/capture_preview.gd -- --test-mode` aus dem aktiven Spiel erzeugt und visuell gesichtet:
+
+- `captures/2026-10-19_ce5_skilltree.png`: Renewal ausgewählt, vier gekaufte Knoten, 270 Echoes; goldene bezahlbare und gedimmte gesperrte Knoten. Querweg Power II → Vitality III benutzt.
+- `captures/2026-10-19_ce5_kindling.png`: dieselbe Anordnung, Kindling-Details und Preis des vorhandenen Kaufs.
+- `captures/2026-10-19_ce5_momentum.png`: dieselbe Anordnung, noch kaufbares Arcane Momentum ausgewählt.
+- `captures/2026-10-19_ce5_town.png`: zurück in Emberhaven, vier bezahlbare Talente und spätere Ziele.
+
+Kaufanordnung/Guthaben bewusst im isolierten Testspiel aufgebaut; kein echter Spielerfortschritt, menschlicher Playthrough oder Beleg einer natürlichen Fund-/Lernkurve. Code/UI Englisch. Screenshots zeigen den CE5-Stand (Spiel-Commit siehe DEVLOG.md), nicht die ältere GitHub-Version. Kleinere Knotentexte und die Detail-/Kaufaufteilung wurden vor diesen endgültigen Bildern korrigiert. Keine externen Assets, kein Clip oder Upload.
