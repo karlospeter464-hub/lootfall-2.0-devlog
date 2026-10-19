@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.2 · **Stand:** 19. Oktober 2026
+**Version:** 1.3 · **Stand:** 19. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -475,17 +475,31 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 **Planungsauftrag:** Gegenmaßnahmen und kleinsten nächsten Test gemeinsam festlegen. Keine dieser Beobachtungen ändert bisher Gameplay, Belohnungen, Fortschritt oder Persistenz. Aktueller Code und englische Testanleitung liegen im Spiel-Repository; dieser Abschnitt liefert ChatGPT den offenen Designkontext ohne private Chat-Transkripte.
 
+### 8.13 CE3 – Build Discovery & Card Synergies
+
+**Freigabe / Ziel:** Separater CE3-Nutzerauftrag vom 19.10.2026: Im Run ungewöhnliche Karten-/Itemkombinationen entdecken. **Bestätigte Abweichung vom Plan:** Die drei immer angebotenen Statistik-Karten werden durch einen sechs Karten großen Pool mit zufälligen Angeboten ersetzt. Bestehende Wellenzeitpunkte und Bossbelohnungen unverändert; keine weiteren Fortschritts-/Belohnungs-/Persistenzänderungen.
+
+**Umgesetzt:** Bis zu drei unterschiedliche gültige Karten ohne Gewichtung nach Build oder garantierte Synergie. Seed reproduziert Angebote bei gleicher vorheriger RNG-Nutzung. Angebote bleiben bei Inventar/F1/Build-Refresh bestehen, ausgeschöpfte oder wirkungslose Karten entfallen. Bei völlig leerem Pool kein blockierender Auswahlbildschirm. Power/Quick/Fan innerhalb bestehender Grenzen wiederholbar; neue Mechanikkarten einmal pro Run wählbar.
+
+**Neue Karten:** Ember Burst: direkter Projektil-Kill explodiert am besiegten Gegner, Radius 65, 40 % Projektilschaden, einmal je Gegner; indirekte Kills lösen keinen Burst aus. Piercing Flame: bis zu zwei unterschiedliche direkte Ziele je Feuerball, auch innerhalb eines Physikschritts; keine wiederholten direkten Treffer desselben Ziels. Overcharge: vier tatsächliche direkte Treffer laden den nächsten Haupt-/ersten Feuerball für +75 % Schaden. Seitenschüsse normal; indirekte Ereignisse zählen nicht, während READY keine weitere Ladung auf Vorrat. Abfeuern verbraucht die Ladung auch bei Verfehlen, abgelehnter Spawn am Projektilcap nicht. Ring/Hand/READY/Projektil markieren Ladung. Alle neuen Karten und Ladungen resetten mit dem Run.
+
+**Wechselwirkungen:** Codex pro direktem Piercing-Treffer möglich, Primärziel jeweils ausgeschlossen. Burst und Codex können beide denselben überlebenden Nachbarn treffen; Guardian-Rüstung gilt je Ereignis. Burst löst keine rekursiven Burst-Ketten aus. Overcharge skaliert den Projektilschaden und damit abgeleiteten Flächenschaden; First Spark bleibt wie bisher nur direkt. Keine neue Effekt-Engine. 256 Projektile und maximal 512 kurzlebige visuelle Effekte, Schaden wird am visuellen Limit weiter berechnet.
+
+**Debug / Verifikation:** Drei neue F1-Werte: Burst-Radius/Schadensanteil und Overcharge-Bonus; 74 Werte, Profile v8 lesen v1–v7 validiert ohne Umschreiben. Vorhandene isolierte Testarrangements um drei Seed-42-Builds ergänzt; nur mit `-- --test-mode`. Englische Anleitung `CE3_PLAYTEST.md`. 128 neue + 603 bestehende = **731 Checks ohne Fehler**. Vier Gameplay-Scripts via Godot MCP gültig. Kurze kombinierte Stress-Fixture mit 256 Projektilen/64 Gegnern, kein dauerhafter FPS-Nachweis. Zwei gesichtete native D3D12-Vorschauen, gestellte Auswahl und Kampfanordnung, kein menschlicher Run/Clip.
+
+**Offen / Scope-Abgleich:** Erfolgskriterium bleibt menschlich zu prüfen: drei bis fünf natürliche Runs mit tatsächlich anderen Spielweisen statt nur anderen Zahlen. Seer-Gewichtung, neuer Schnellfeuer-Gegner, Champion-Ansturm, neue Items/Klassen, Verwertung und Echoes-Ökonomie ausdrücklich nicht umgesetzt. Keine ungefragte Scope-Erweiterung und kein automatischer GitHub-Push.
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** CE2 technisch umgesetzt; längerer Aufstieg mit wiederkehrenden Bossen, menschliche Abnahme offen.
+**Projektphase:** CE3 technisch umgesetzt; zufällige Build-Entwicklung auf dem CE2-Aufstieg, menschliche Abnahme offen.
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Projektordner.  
-**Neu umgesetzt:** Kein regulärer Sieg nach 6; Boss 5/10 wiederholt, Karten 2/4/5 je Block, moderatere Echoes nach 6, Seer-Schwelle 3.
-**Dev-Konsole:** F1 71 Werte, Wave-Jump und Run-/Wellenzeiten; Profile v7 unterstützen v1–v6; Progress v2 bewahrt.
+**Neu umgesetzt:** Bis zu drei zufällige Angebote aus sechs Karten; Ember Burst, Piercing Flame und Overcharge als einmal wählbare Run-Mechaniken (§8.13).
+**Dev-Konsole:** F1 74 Werte, drei isolierte CE3-Builds, Wave-Jump und Run-/Wellenzeiten; Profile v8 lesen v1–v7, Progress v2 bewahrt.
 **Umfang/Sprache:** Wellenkarten und einmalige Run-Ende-Auszahlung bewahrt; Code/UI Englisch. Kein neuer Skill, neue Klasse, dauerhafte Items oder XP-Leiste.
-**Prüfung:** Godot 4.7.2: 603 Checks ohne Fehler; sechs geänderte Gameplay-Scripts via MCP gültig.
-**Material:** Vier native CE2-Vorschauen vom 19.10.2026 in `Progress/captures/`; Vorgeschichte erhalten.
-**Feedback/Offen:** Erster Nutzer-Spieltest: Ausrüstungswechsel motiviert, Seer zu wenig relevant, Champion allein zu harmlos; Details §8.12. Dauer, Baumtempo und Export weiter offen.
-**Nächster Schritt:** Gegenmaßnahmen gemeinsam planen; keine neue Gameplay-Freigabe. Aktueller Stand auf ausdrücklichen Auftrag auf GitHub main synchronisiert (Spiel 3ccb604); keine automatische Synchronisierung. Verwertung/Itemlevel geparkt.
+**Prüfung:** Godot 4.7.2: 731 Checks ohne Fehler; vier CE3-Gameplay-Scripts via MCP gültig. Kurzer Stress-Test ersetzt keinen Langzeittest.
+**Material:** Zwei native gestellte CE3-Vorschauen vom 19.10.2026 in `Progress/captures/`; frühere Medien erhalten, kein neuer Clip.
+**Feedback/Offen:** Drei bis fünf natürliche Runs auf unterschiedliche Spielweisen prüfen; Seer-Gewichtung/Champion allein (§8.12), Dauer, Baumtempo, Export offen.
+**Nächster Schritt:** CE3-Spieltest nach englischem CE3_PLAYTEST.md. Spiel lokal 715a344 auf codex/build-discovery-card-synergies; GitHub bleibt auf CE2 3ccb604 bis passendem Push-Auftrag. Verwertung/Itemlevel geparkt.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -494,6 +508,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | CE3 umgesetzt | Separater Auftrag bestätigt sechs Karten, zufällige gültige Angebote statt fixer Dreierauswahl sowie Burst/Piercing/Overcharge. Bestehende Wellenbelohnungen und Meta-Regeln bleiben | Spiel lokal 715a344; 731 Checks, vier MCP-Scriptprüfungen, zwei native Vorschauen; menschliche Build-Vielfalt offen, kein neuer Push |
 | 2026-10-19 | Spieltest / GitHub-Abgleich | Nutzerfeedback zu Seer-Relevanz, Boss-Kiting, Ausrüstungswechsel und Bewegung in §8.12 festgehalten; ausdrücklich beide Repositories für weitere ChatGPT-Planung hochladen | Keine Gameplay-Änderung; Spiel 3ccb604 auf main und CE2-Branch veröffentlicht, Chronik begleitet auf main. Weitere Mechaniken offen |
 | 2026-10-19 | CE2 umgesetzt | Separater Auftrag ersetzt CE2A: Aufstieg bis Tod/Sicherheitsstopp, wiederkehrende Bossbegegnungen/Karten, begrenzte Skalierung, neue späte Echoes-Kurve, 3-Hit-Seer und Anti-Dauerinterrupt beim Boss | 603 Checks ohne Fehler, sechs MCP-Scripts, vier native Vorschauen; Dauer/Balance offen. Spiel f6d1be7 lokal, kein Push beauftragt |
 | 2026-10-18 | GitHub / Veröffentlichung | Nutzer autorisiert öffentliche Repositories für Spiel und Chronik, Konto nach Klärung karlospeter464-hub. lootfall-2.0 und lootfall-2.0-devlog angelegt; lokale Trennung und Ausschluss privater Konfigurationen bleiben erhalten | Spiel 4c4f917 auf main/aktuellem Entwicklungsbranch veröffentlicht und Remote-Hashes geprüft; begleitender Chronik-Checkpoint folgt auf main. Künftige Pushes benötigen passenden Auftrag |

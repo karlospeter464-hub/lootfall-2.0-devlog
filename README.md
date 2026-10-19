@@ -1,12 +1,12 @@
 # Lootfall 2.0
 
-**Lokaler CE2-Checkpoint:** Spiel `f6d1be7` auf `codex/ascent-boss-milestones`; GitHub noch auf dem vorherigen Stand. Masterplan §8.11 und die vier neuen Galerie-Aufnahmen dokumentieren die geprüfte Umsetzung.
+**Aktuell: CE3 – Build Discovery & Card Synergies (19.10.).** Bis zu drei zufällige unterschiedliche Angebote aus sechs Karten. Ember Burst, Piercing Flame und Overcharge sind einmal pro Run wählbar, Power/Quick/Fan bleiben begrenzt wiederholbar. Masterplan §8.13 dokumentiert die freigegebene Erweiterung. **731 Checks ohne Fehler**, vier MCP-Scriptprüfungen und zwei native gestellte Vorschauen; menschliche Build-Vielfalt noch offen.
 
-**Aktuell: CE2 – Ascent & Boss Milestones (19.10.).** Kein regulärer Sieg nach 6; weiter bis Tod oder technischem Sicherheitsstopp (Standard 100). Karten nach 2/4/5 jedes Fünferblocks, Rune Champion bei 5/15, Ash Prophet bei 10/20. Echoes nach 6 moderater: 322/507/742 bei 10/15/20. Seer-Standard drei direkte Treffer. Ziel 15–20 Minuten noch ungeprüft. **603 Checks ohne Fehler.**
+**CE3 testen:** F5 für natürliche Runs. Isoliert mit `-- --test-mode`: F1 → Rewards & tools → CE3-Build wählen → Start CE3 test. Drei Builds: Burst/Power/Ember, Piercing/Fan/Codex und Overcharge/Quick/Fan. Englische Regeln und Anleitung im Spielprojekt: `CE3_PLAYTEST.md`. F1 hat 74 Werte, Profile v8 lesen v1–v7.
 
-**CE2 testen:** F5 für natürliche Runs; isoliert mit -- --test-mode bietet F1 → Rewards & tools den Wave-Jump. Acht neue Regler in Waves/Rewards, Profile v7 (71 Werte) lesen v1–v6. Alte Profile behalten ihre Zahlen; Reset defaults für den neuen Aufstieg. Englischsprachige Anleitung: `C:/Users/elias/Lootfall 2.0/lootfall-2.0/CE2_PLAYTEST.md`. Dieses Paket bleibt lokal; GitHub bis separatem Push-Auftrag auf dem vorigen Stand.
+**CE2 bleibt erhalten:** Aufstieg bis Tod oder technischem Sicherheitsstopp 100, Karten 2/4/5 je Fünferblock, Champion/Prophet 5/10. Echoes, Baum und Inventar bleiben erhalten. Seer-Relevanz und Champion allein sind offene separate Kampfplanung (§8.12); keine neue Bossfähigkeit in CE3.
 
-**GitHub (öffentlich, auf ausdrücklichen Nutzerauftrag eingerichtet):** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). Beide lokalen Repositories bleiben getrennt. Hauptbranch auf GitHub: `main`; Spielentwicklung für CE2 auf `codex/ascent-boss-milestones`. Neue lokale Commits werden nicht automatisch hochgeladen.
+**GitHub:** [Spiel](https://github.com/karlospeter464-hub/lootfall-2.0) · [Entwicklungschronik](https://github.com/karlospeter464-hub/lootfall-2.0-devlog). CE2 wurde auf ausdrücklichen Auftrag auf main hochgeladen (Spiel 3ccb604). CE3 wird lokal gesichert; kein neuer Upload oder automatische Synchronisierung beauftragt. Beide Repositories bleiben getrennt.
 
 **CE1-Spieltest nachgeschärft:** Zwei Guardians, mehr Leben und echte BLOCKED-Anzeige; Seer-Unterbrechung schon mit Swift + einer Quick-Karte technisch nachgewiesen. 349 Checks ohne Fehler, neue native Vorschau in der Galerie. Spiel-Commit `ce3744d`, Branch `codex/counterplay-feedback`. Bei altem geladenem F1-Profil **Reset defaults** verwenden, um neue Startwerte zu testen; alte Profile werden nicht stillschweigend verändert.
 
@@ -26,11 +26,11 @@
 
 **Weiter vorhanden:** Acht Taschenfelder und Zepter-/Buchslot mit vier festen Items, die erst beim Ausrüsten wirken. Run-Items/Karten werden beim neuen Versuch zurückgesetzt. Wellenkarten nach 2/4/5 je Fünferblock; Echoes weiterhin nur einmal am Run-Ende für abgeschlossene Wellen. Bodenloot zeigt nur den Namen, Beschreibungen stehen im pausierten Inventar.
 
-**Dev-Konsole: F1.** 71 einstellbare Werte einschließlich separater Item-/Rarity-Chancen, tatsächlicher Dropanteile, Seer-Werten und Baum. Neue Profile v7 lesen v1–v6; alte Zahlen werden mit sichtbarem Hinweis unter dem neuen Lootmodell verwendet, neue Felder erhalten Defaults. Baumpreise gelten für neue Käufe, Rückerstattung nutzt bezahlte Preise. Testaktionen können echte Echoes beeinflussen. Vollständige englische Anleitung und Testbefehle: `README.md` im Spielordner.
+**Dev-Konsole: F1.** 74 einstellbare Werte einschließlich separater Item-/Rarity-Chancen, tatsächlicher Dropanteile, Seer-Werten und Baum. Neue Profile v8 lesen v1–v7; alte Zahlen werden mit sichtbarem Hinweis unter dem neuen Lootmodell verwendet, neue Felder erhalten Defaults. Baumpreise gelten für neue Käufe, Rückerstattung nutzt bezahlte Preise. Testaktionen können echte Echoes beeinflussen. Vollständige englische Anleitung und Testbefehle: `README.md` im Spielordner.
 
 Steuerung: WASD bewegen, Maus zielen, linke Maustaste halten zaubern, **I** Equipment, **Escape** aktuelles Fenster schließen oder pausieren. Zum Loot-Test: F1 → Rewards & tools → Item wählen → Drop selected item → schließen und aufheben → I → vergleichen und ausrüsten. Erst ausgerüstete Items wirken. Volle Tasche lässt Bodenfunde liegen; Wechsel bewahrt das vorherige Item. Profile speichern keine Items, Testschalter oder Währung.
 
-**Prüfung:** Godot 4.7.2: 603 automatisierte Prüfungen ohne Fehler, darunter 249 Ascent-, 74 CE1- und 28 Rarity-Checks und eine Verteilungsprüfung mit 100.000 Ziehungen. Sechs geänderte Gameplay-Scripts via Godot MCP validiert, vier native CE2-Vorschauen gesichtet. Manuelle Begegnungstiefe/Lootbalance, andere Fenstergrößen und Export bleiben offen; keine Qualitätsvarianten oder dauerhaften Run-Items.
+**Prüfung:** Godot 4.7.2: 731 Checks ohne Fehler (128 CE3 + 603 bestehende). Vier CE3-Gameplay-Scripts via MCP gültig, zwei native CE3-Vorschauen gesichtet. Der kurze 256-Projektil-/64-Gegner-Test ist kein Langzeitbenchmark. Menschliche Build-Vielfalt, Balance und Export bleiben offen.
 
 - [Entwicklungschronik](Progress/index.html): neue Vorschauen und gekennzeichnete Vorgeschichte.
 - [Masterplan](LOOTFALL_MASTERPLAN.md): Konzept, aktueller Stand und wesentliche Entscheidungen.
@@ -38,7 +38,7 @@ Steuerung: WASD bewegen, Maus zielen, linke Maustaste halten zaubern, **I** Equi
 - [Chronik pflegen](Progress/README.md): Medienherkunft und Quellsicherungen.
 - [Projektregeln](AGENTS.md): Planabgleich für nächste Pakete.
 
-Das alte Projekt `C:/Users/elias/lootfall` und die Downloads-Kopie des Masterplans bleiben unverändert. Nächster Schritt: vollständigen Stadt-/Kauf-/Run-Loop spielen und beobachten, ob der nächste Wunschknoten motiviert.
+Das alte Projekt `C:/Users/elias/lootfall` und die Downloads-Kopie des Masterplans bleiben unverändert. Nächster Schritt: drei bis fünf natürliche Runs nach CE3_PLAYTEST.md vergleichen und Spielweisen statt nur Schadenszahlen bewerten.
 
 ## Lokale Git-Checkpoints
 
