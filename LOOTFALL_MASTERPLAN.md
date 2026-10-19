@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.6 · **Stand:** 19. Oktober 2026
+**Version:** 1.7 · **Stand:** 19. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -538,15 +538,15 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** CE5 technisch umgesetzt; menschlicher externer Playtest/Balance offen.
-**Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat im OneDrive-Ordner.
-**Neu umgesetzt:** Kindling/Emberguard/Arcane Momentum statt Wurzel-Grundwerten, neuer Baum und Stadt-Kaufhinweis (§8.16); CE3/CE4-Systeme bewahrt.
-**Dev-Konsole / Daten:** F1 92 Werte, Profile v10 lesen v1–v9; Progress v2, IDs, bezahlte Preise und Run-Snapshot unverändert.
-**Umfang / Früher Kauf:** 15 Knoten, zwölf Folgetalente/Kosten/Reset erhalten; ohne Guthaben ab zwei abgeschlossenen Wellen 30 Echoes, kein garantierter Kauf nach kürzerem Run.
-**Prüfung:** Godot 4.7.2: 898 Checks ohne Fehler; sechs CE5-Scripts via MCP gültig, Tastatur/Maus/Detail-Platz geprüft.
-**Material:** Vier native gestellte CE5-Stadt-/Baumvorschauen vom 19.10.2026 in `Progress/captures/`; kein neuer Clip.
-**Offen:** CE5_PLAYTEST.md menschlich prüfen: spürbare Wurzeleffekte/frühe Motivation, dazu natürliche CE4-Vielfalt und Balance. Verwertung/Itemlevel und Seer-Gewichtung separat.
-**Git / Nächster Schritt:** Lokal auf codex/skill-tree-early-progression, vorab Tag ce4-before-ce5 in beiden Repositories; Spiel-Commit 00e378d. GitHub-main nach ausdrücklicher Freigabe am 19.10.2026 auf Spiel 00e378d aktualisiert; Chronik wird mit diesem Sync-Commit nachgeführt. Kein Export beauftragt.
+**Projektphase:** Erster Windows-Playtest v0.1 lokal exportiert; Feature-Freeze, Gameplay weiter CE5/00e378d.
+**Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Chronik separat, keine Gameplay-/Balanceänderung für Export.
+**Paket:** `C:/Users/elias/Lootfall 2.0/Exports/Playtest_v0.1/Lootfall_Prototype_Playtest_v0.1_Windows.zip`, ca. 37,6 MiB; EXE/PCK/README/Lizenzen, außerhalb Git.
+**Build / Daten:** Godot 4.7.2 Windows x86_64 Release; F1 nicht zugänglich, MCP-Autoload/Tests/private Daten ausgeschlossen, normale Spielstände bewahrt.
+**Prüfung:** 898 Source-Checks, 688 Checks gegen exportiertes PCK unter Testlaufzeit, sechs Paket-Audits ohne Fehler; ZIP neu entpackt bytegleich, Details in WINDOWS_PLAYTEST.md.
+**Native EXE:** Frischer Stadtstart, F1, Run, Bewegung/Feuerbälle/Gegner/Lootdrop, Tod/Ergebnis/Rückkehr und isolierte gespeicherte Bestwelle beobachtet; kein vollständiger nativer Progressionslauf.
+**Offen:** Native Karten/Ausrüsten/Bosse/neue Effekte/positive Auszahlung/Talentkauf/Neustart noch manuell abnehmen, breitere Hardware/Balance offen. Computer Use durch Nutzer-Escape beendet.
+**Material:** Keine neue archivierte Aufnahme für Export; vorhandene CE5-Stadt-/Baumvorschauen bleiben historisch. ZIP nur lokal, kein Versand/Upload.
+**Git / Nächster Schritt:** Quell-Checkpoint-Tags playtest-v0.1-source-2026-10-19 in beiden Repos; Spiel lokal 3010a95. GitHub bleibt 00e378d. Nutzer kann ZIP selbst weitergeben, keine automatische Veröffentlichung.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -555,6 +555,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-19 | Erster externer Windows-Playtest | Expliziter Release-Auftrag unter Feature-Freeze: x86_64-Release-ZIP mit Anleitung/Lizenzen außerhalb Git; keine Gameplay-/Balanceänderung oder Veröffentlichung | 898 Source- + 688 PCK-Checks, sechs Audits, ZIP bytegleich; nativer Start/Run/Tod gesehen, vollständige Release-Abnahme offen; Spiel lokal 3010a95, kein Push |
 | 2026-10-19 | GitHub-Synchronisierung | Nutzer beauftragt Upload des aktuellen Stands; Spiel CE3–CE5 bis 00e378d auf main, passende Chronik und Screenshots nachgeführt. Kein Force-Push, keine automatische Synchronisierung | Spiel-Remote-Hash verifiziert; Chronik-Sync separat committed |
 | 2026-10-19 | CE5 – Skill Tree / Early Progression | Bestätigter Ersatz der drei Wurzel-Grundwerte durch Kindling/Emberguard/Momentum; 15 IDs/Wege/Kosten/Reset/Snapshot erhalten. Neuer Baum und bezahlbare Ziele. Ab zwei geklärten Wellen erster Kauf, keine Zusatzbelohnung | 898 Checks ohne Fehler, sechs MCP-Prüfungen, vier native Vorschauen; menschliche Balance offen, lokal gesichert, kein Push/Export |
 | 2026-10-19 | CE4 umgesetzt | Nutzer entdeckt Fan/Pierce/Overcharge; vier neue Items vertiefen Synergien. 5 % Loot bei gleicher Kaskade, Champion-Timing über F1, neuer Cooldown 2 s nach Erholung. Slots/Seer/Ökonomie/Persistenz bewahrt | Spiel lokal de56637; 835 Checks, sechs MCP-Prüfungen, zwei native Vorschauen; natürliche Vielfalt/Balance offen, kein Push |

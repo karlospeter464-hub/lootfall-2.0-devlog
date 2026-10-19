@@ -89,3 +89,7 @@ Vier echte native D3D12-Engine-Ausgaben, 1152×720, mit `tests/capture_preview.g
 - `captures/2026-10-19_ce5_town.png`: zurück in Emberhaven, vier bezahlbare Talente und spätere Ziele.
 
 Kaufanordnung/Guthaben bewusst im isolierten Testspiel aufgebaut; kein echter Spielerfortschritt, menschlicher Playthrough oder Beleg einer natürlichen Fund-/Lernkurve. Code/UI Englisch. Screenshots zeigen den CE5-Stand (Spiel-Commit siehe DEVLOG.md), nicht die ältere GitHub-Version. Kleinere Knotentexte und die Detail-/Kaufaufteilung wurden vor diesen endgültigen Bildern korrigiert. Keine externen Assets, kein Clip oder Upload.
+
+## Windows-Playtest v0.1 – 19.10.2026
+
+Lokales Release-ZIP außerhalb Git erstellt. Native EXE visuell geprüft; keine neue Aufnahme archiviert, da Computer Use per Nutzer-Escape beendet wurde. CE5-Bilder bleiben vorherige Vorschauen und werden nicht als Release-Nachweis umgedeutet. Prüfgrenzen und Paketpfad in DEVLOG.md und WINDOWS_PLAYTEST.md im Spielprojekt. Kein neuer Clip, Upload oder Versand.
