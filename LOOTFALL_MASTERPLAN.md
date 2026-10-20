@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.8 · **Stand:** 19. Oktober 2026
+**Version:** 1.9 · **Stand:** 20. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -546,17 +546,27 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.18 Visual Lift 01 – Procedural Art Polish
+
+**Freigabe / Bezug:** Separater Nutzerauftrag für drei rein visuelle Pässe gemäß ART_DIRECTION.md. Keine neuen PNGs, Blender, Gameplay-, Balance- oder Progressionsänderungen. §8.17 bleibt dokumentierter früherer Versuch: Der neue prozedurale Apprentice ist jetzt Standard, die vorhandene Illustration bleibt unverändert über Use Artwork zuschaltbar. Keine vollständige A1-Assetproduktion oder finale Stilabnahme.
+
+**Umsetzung:** A: konturierte große Flächen, Kapuze/Mantel/Buch, aggressiver Chaser, schwebender Seer mit Rune und Cast-Aufbau, kantiger Guardian mit Kern und Rush-Akzenten; Bosskrone und Warnflächen erhalten. B: gerichtete Feuerformen, cyanfarbene Overcharge-Geometrie, radialer Burst, zweifarbiger Storm-Blitz und Treffer-/Blockimpulse aus denselben Ereignissen. C: große dunkle Platten, wenige Risse/Runen, Kantenschatten. Draw-Transformationen werden zurückgesetzt; visuelle Uhren pausieren, Floor-Variation verwendet keinen Gameplay-Zufall. Schaden, Kollision, Bewegung, KI, Wellen, Loot und Persistenz unverändert.
+
+**Verifikation / Grenzen:** 14 Suites / **930 Checks ohne Fehler**, davon 12 neue Visual-Prüfungen und ein zusätzlicher Default-Check im Artwork-Test. Neun native D3D12-Bilder gesichtet: prozeduraler Vorher-Stand, jeder Pass, echte Bewegung/zwei Projektiltreffer, realer direkter Kill mit Burst, beide Bossvarianten und Intro. Vorher/Nachher gleiche kontrollierte Welle-3-Anordnung; kein menschlicher kompletter Run, kein Langzeit-FPS-Benchmark. Keine neue Videoaufnahme, kein Export oder Push.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** Art Vertical Slice 01 technisch umgesetzt; A1 nur Apprentice-Teilversuch, Style-Abnahme offen.
+**Projektphase:** Visual Lift 01 technisch umgesetzt, menschliche Stil-/Lesbarkeitsabnahme offen.
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Code/UI Englisch, Chronik separat.
-**Neu:** Nutzer-Anime-Mage als Sprite2D mit echter Alpha, Fußpivot, Mipmaps, kleinen visuellen Reaktionen; alter Körper als Fallback (§8.17).
-**Planbindung:** ART_DIRECTION.md und ASSET_ROADMAP.md aus GitHub gelesen/lokal integriert; frontale Illustration nur für diesen Versuch freigegeben. Gameplay/Hitbox/Aim/Schussursprung unverändert.
-**Prüfung:** Godot 4.7.2: 917 Checks ohne Fehler, drei MCP-Scripts gültig; native Bewegung/zwei Projektiltreffer, Seer-Kreis und Champion-Warnung gesichtet.
-**Material:** Vier neue native Engine-Captures vom 19.10.2026: art_before, art_mage, art_live, art_boss; keine neue Videoaufnahme.
-**Offen:** Finale Top-down-/3/4-Perspektive, reduzierte Details, sparsame Richtungs-/Castbilder und menschliche Stilabnahme; übrige A1-Assets nicht beauftragt.
-**Export / Daten:** Windows-v0.1-ZIP bleibt unveränderter vorheriger Stand außerhalb Git; keine erneute Export-/Uploadfreigabe und keine normalen Spielstände verändert.
-**Git / Nächster Schritt:** Spiel lokal 5691976 auf codex/art-mage-vertical-slice; Chronik integriert remote Art-Dokumente ohne Verlust lokaler Exportnotizen. F5 im Godot-Projekt zum eigenen Test; kein Push.
+**Neu:** Drei prozedurale Visual-Pässe für Figuren, Kampf-VFX und Arena (§8.18). Apprentice standardmäßig gezeichnet; alte PNG-Illustration optional erhalten.
+**Planbindung:** Rein visuell im ausdrücklich beauftragten Umfang gemäß Art Bible; keine Änderungen am Gameplay-Loop, keine neuen Belohnungs-/Resetregeln.
+**Prüfung:** Godot 4.7.2: 930 Checks, 0 Fehler; Funktionsvergleich bestätigt unveränderte Physik-/Kampfmethoden. Native Bewegung/Treffer/Burst/Storm, Seer- und Champion-Warnung, Prophet und Bossintro gesichtet.
+**Material:** Neun native Bilder vom 20.10.2026 in Progress/captures; Vorher/Nachher und Pass A/B/C in der Galerie. Kontrollierte Engine-Szenarien, kein menschlicher Run/Clip.
+**Offen:** Dein Stilurteil, Lesbarkeit bei dichten langen Runs und dauerhafte Performance. Draw-Körper bleiben vereinfachte stilisierte Figuren, keine finalen handgezeichneten Richtungsanimationen.
+**Export / Daten:** Bestehendes Windows-v0.1-ZIP bleibt alter Stand; normale Spielstände unangetastet. Kein Push/Upload.
+**Git / Nächster Schritt:** Lokaler Spiel-Commit **677bf98** auf codex/procedural-visual-lift. Vorher-Tags checkpoint/visual-lift-01-before in beiden Repositories. F5 zum eigenen visuellen Spieltest.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -565,6 +575,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-20 | Visual Lift 01 | Drei ausdrücklich rein visuelle Draw-Pässe: einheitliche Figuren/Animation, Kampf-VFX, ruhiger Steinboden. Prozeduraler Mage Standard, Illustration optional erhalten; Gameplay bewahrt | Spiel lokal 677bf98; 930 Checks ohne Fehler, neun native Captures; Stil-/Dauerabnahme offen, kein Export/Push |
 | 2026-10-19 | Art Vertical Slice 01 | Nutzer liefert ersten Mage und erlaubt engen frontalen Prototyp: Sprite2D/Alpha/Pivot/Mipmaps/Fallback statt neuer Gameplaylogik; nur Apprentice-Teil von A1 | Spiel lokal 5691976; 917 Checks, drei MCP-Prüfungen, vier native Captures; Perspektiv-/Stilabnahme offen, kein Export/Push |
 | 2026-10-19 | Erster externer Windows-Playtest | Expliziter Release-Auftrag unter Feature-Freeze: x86_64-Release-ZIP mit Anleitung/Lizenzen außerhalb Git; keine Gameplay-/Balanceänderung oder Veröffentlichung | 898 Source- + 688 PCK-Checks, sechs Audits, ZIP bytegleich; nativer Start/Run/Tod gesehen, vollständige Release-Abnahme offen; Spiel lokal 3010a95, kein Push |
 | 2026-10-19 | GitHub-Synchronisierung | Nutzer beauftragt Upload des aktuellen Stands; Spiel CE3–CE5 bis 00e378d auf main, passende Chronik und Screenshots nachgeführt. Kein Force-Push, keine automatische Synchronisierung | Spiel-Remote-Hash verifiziert; Chronik-Sync separat committed |

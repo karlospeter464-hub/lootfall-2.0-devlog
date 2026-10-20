@@ -120,6 +120,10 @@ Abnahmekriterien:
 
 **Wichtig:** Dieses Dokument beschreibt **wie** Lootfall aussehen soll. Für **was wir wann bauen** siehe [ASSET_ROADMAP.md](ASSET_ROADMAP.md). Kein Gameplay- oder Assetumbau ohne eigenes freigegebenes Arbeitspaket.
 
-### Aktueller Versuch – Art Vertical Slice 01, 19.10.2026
+### Vorheriger Versuch – Art Vertical Slice 01, 19.10.2026
 
 Explizit freigegebener Teilversuch: nur der vorhandene Apprentice erhält das vom Nutzer gelieferte Crimson-Grimoire-PNG. **Bewusste Versuchsausnahme:** frontale Illustration statt fertigem erhöhtem 3/4-Sprite, ohne Neugestaltung oder Kameraumbau. Rot/Weiß/Gold bleibt als einzelne Figur gut abgesetzt; Mipmaps glätten die starken Details im kleinen Maßstab. Die Figur bleibt aufrecht, Fußanker auf unverändertem Spielobjekt; Silhouette und Warnungen in Godot geprüft. Kein finales Charakterdesign und keine Abnahme der gesamten Style-C-Assetfamilie. Für die Endfassung weiterhin vereinfachte Gameplay-Art, passende Perspektive und wenige konsistente Richtungs-/Animationsbilder entwickeln. Stand und echte Aufnahmen: DEVLOG.md / Progress/index.html.
+
+## Visual Lift 01 — Stand 20.10.2026
+
+Separat freigegebener prozeduraler Stiltest in drei Pässen umgesetzt: Draw-Silhouetten/leichte Animation, grafische Kampf-VFX, ruhiger Steinboden. Keine neuen Bildassets oder neue Animationspipeline; keine Gameplayänderung. Der prozedurale Apprentice ist wieder Standard, die frühere gelieferte Illustration bleibt optional erhalten. Techniken und neun echte Engine-Captures: Masterplan §8.18, DEVLOG und Progress/index.html. 930 Checks ohne Fehler, Spiel lokal 677bf98. Keine vollständige A1-/Roadmap-Abnahme, keine Freigabe weiterer Assets, kein neuer Export/Push. Menschliche Stil-/Dauerabnahme bleibt offen.
