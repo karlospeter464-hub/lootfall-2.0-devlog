@@ -560,13 +560,13 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 **Projektphase:** Visual Lift 01 technisch umgesetzt, menschliche Stil-/Lesbarkeitsabnahme offen.
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Code/UI Englisch, Chronik separat.
-**Neu:** Drei prozedurale Visual-Pässe für Figuren, Kampf-VFX und Arena (§8.18). Apprentice standardmäßig gezeichnet; alte PNG-Illustration optional erhalten.
+**Neu:** Nach Nutzerfeedback Minion als gehörnte Klauenfigur, Guardian/Champion als Plattenritter überarbeitet; Stahl/Cyan gegenüber Bronze/Gold. Magier und Seer vom Nutzer positiv bewertet, unverändert (§8.18).
 **Planbindung:** Rein visuell im ausdrücklich beauftragten Umfang gemäß Art Bible; keine Änderungen am Gameplay-Loop, keine neuen Belohnungs-/Resetregeln.
-**Prüfung:** Godot 4.7.2: 930 Checks, 0 Fehler; Funktionsvergleich bestätigt unveränderte Physik-/Kampfmethoden. Native Bewegung/Treffer/Burst/Storm, Seer- und Champion-Warnung, Prophet und Bossintro gesichtet.
-**Material:** Neun native Bilder vom 20.10.2026 in Progress/captures; Vorher/Nachher und Pass A/B/C in der Galerie. Kontrollierte Engine-Szenarien, kein menschlicher Run/Clip.
+**Prüfung:** Visual-Lift-Ausgangspaket 930 Checks ohne Fehler; Gegnerrevision: vier relevante Suites / 370 Checks erneut ohne Fehler. Funktionsvergleich: nur Zeichnung geändert; zwei native neue Gegner-/Champion-Bilder gesichtet.
+**Material:** Neun Visual-Lift-Bilder plus zwei Revisionsbilder vom 20.10.2026; Galerie erhält beide Stände. Kontrollierte Engine-Szenarien, kein menschlicher Run/Clip.
 **Offen:** Dein Stilurteil, Lesbarkeit bei dichten langen Runs und dauerhafte Performance. Draw-Körper bleiben vereinfachte stilisierte Figuren, keine finalen handgezeichneten Richtungsanimationen.
 **Export / Daten:** Bestehendes Windows-v0.1-ZIP bleibt alter Stand; normale Spielstände unangetastet. Kein Push/Upload.
-**Git / Nächster Schritt:** Lokaler Spiel-Commit **677bf98** auf codex/procedural-visual-lift. Vorher-Tags checkpoint/visual-lift-01-before in beiden Repositories. F5 zum eigenen visuellen Spieltest.
+**Git / Nächster Schritt:** Spielrevision lokal **e720b49** auf codex/procedural-visual-lift. Ausgangspaket 677bf98. F5 zum eigenen visuellen Spieltest; Silhouettenabnahme offen.
 **Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
 
 ---
@@ -575,6 +575,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-20 | Gegner-Stilrevision | Magier/Seer gefallen dem Nutzer; Minion und beide Tanks erneut überarbeiten. Gehörnte Klauenfigur, gegliederte Plattenrüstung, Stahl-/Bronze-Unterscheidung, Schutzbögen statt Rahmen; nur Zeichnung | Spiel lokal e720b49; 370 Checks erneut bestanden, zwei native Bilder; visuelles Urteil offen, kein Push |
 | 2026-10-20 | Visual Lift 01 | Drei ausdrücklich rein visuelle Draw-Pässe: einheitliche Figuren/Animation, Kampf-VFX, ruhiger Steinboden. Prozeduraler Mage Standard, Illustration optional erhalten; Gameplay bewahrt | Spiel lokal 677bf98; 930 Checks ohne Fehler, neun native Captures; Stil-/Dauerabnahme offen, kein Export/Push |
 | 2026-10-19 | Art Vertical Slice 01 | Nutzer liefert ersten Mage und erlaubt engen frontalen Prototyp: Sprite2D/Alpha/Pivot/Mipmaps/Fallback statt neuer Gameplaylogik; nur Apprentice-Teil von A1 | Spiel lokal 5691976; 917 Checks, drei MCP-Prüfungen, vier native Captures; Perspektiv-/Stilabnahme offen, kein Export/Push |
 | 2026-10-19 | Erster externer Windows-Playtest | Expliziter Release-Auftrag unter Feature-Freeze: x86_64-Release-ZIP mit Anleitung/Lizenzen außerhalb Git; keine Gameplay-/Balanceänderung oder Veröffentlichung | 898 Source- + 688 PCK-Checks, sechs Audits, ZIP bytegleich; nativer Start/Run/Tod gesehen, vollständige Release-Abnahme offen; Spiel lokal 3010a95, kein Push |

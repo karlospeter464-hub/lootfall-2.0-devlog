@@ -1,5 +1,15 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-20 – Visual Lift: Minion und Tanks nachgeschärft
+
+**Feedback / Umfang:** Nutzer bestätigt Magier/Seer, lehnt bisherige Minion-/Tankformen ab. Gezielt Chaser, Rune Guardian und Rune Champion überarbeitet; keine neue Art-Pipeline, kein Gameplay oder Balancing. Beide Arbeitsbäume geprüft: Chronik sauber, im Spiel nur Godots automatisch erzeugte UID der eigenen Visual-Testdatei unversioniert; diese reguläre Quellmetadatei mitgesichert.
+
+**Änderung:** Gehörnte Minion-Maske, sichtbare Arme/Klauen und getrennte Beine statt kompakter Körperfläche. Beide Tanks als gegliederte Plattenritter mit Helm/Visier, Schulterplatten, Brustkern, Stoffschurz und Stiefeln. Normaler Wächter kühler Stahl/Cyan, Champion Bronze/Gold mit Schulterspitzen und bestehender Krone. Zwei kurze Schutzbögen ersetzen den großen Schildrahmen; tatsächliche Rüstungsabsorption, Trefferflash und Warnroute bleiben. Magier/Seher unangetastet.
+
+**Prüfung / Material:** Godot 4.7.2: Visual Lift 12 + Counterplay 74 + Combat Polish 35 + Ascent 249 = **370 erneut bestandene Checks, 0 Fehler**. Nicht alle 930 erneut ausgeführt. Quellvergleich bestätigt ausschließlich Zeichenänderungen der Gegner; keine Änderung an Physik-/Schaden-/KI-Methoden. Zwei native D3D12-Captures erstellt und gesichtet, kontrollierte Welle-3-Gruppe sowie Champion-Warnung. Neue Vorschau `enemy_revision` setzt nach dem tatsächlichen Rüstungstreffer nur den temporären Flash auf null, damit die Grundfarben sichtbar sind; Blockzahl bleibt echter absorbierter Schaden. Vorherige Bilder bleiben erhalten. Kein neuer Clip, menschlicher Langzeittest, Export oder Push.
+
+**Sicherung / offen:** Spiel lokal **e720b49**, gezielt staged und geprüft; zugehörige Galerie/Masterplan nachgeführt. Dein Urteil zu diesen Silhouetten bleibt offen. Keine weiteren Mechaniken oder Designänderungen daraus abgeleitet.
+
 ## 2026-10-20 – Visual Lift 01: Procedural Art Polish
 
 **Auftrag / Sicherung:** Nutzer beauftragt drei visuelle Draw-Pässe gemäß Art Bible, keine neuen PNGs oder Blender, ausdrücklich kein Gameplay-/Balanceumbau. Beide AGENTS, Masterplan §9, Art Direction, Roadmap und betroffene Zeichenmethoden geprüft. Beide Remotes abgerufen: keine neuen Remote-Commits gegenüber den lokalen Entwicklungsständen; nichts zurückgesetzt. Ausgangsstände sauber, Tags `checkpoint/visual-lift-01-before`: Spiel 5691976, Chronik 31ee54c. Ponytail: bestehende Draw-Funktionen statt neuer Animations-/Assetarchitektur.
