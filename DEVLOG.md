@@ -1,5 +1,9 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-20 – GitHub-Synchronisierung nach Visual Lift
+
+Auf ausdrücklichen Nutzerauftrag beide sauberen Repositories und aktuellen Remotes geprüft. Remote-main ist jeweils Vorfahr des lokalen Stands; kein Konflikt oder Force-Push nötig. Spielstand **e720b49** enthält Exportvorbereitung, Mage-Versuch, Visual Lift und Minion-/Tankrevision. Chronik bis **c5d21f1** enthält Masterplan, Berichte und Aufnahmen dieser Pakete; dieser Eintrag begleitet die freigegebene Synchronisierung beider main-Branches. Keine neuen Spieländerungen oder erneut ausgeführten Tests; bisherige Prüfergebnisse gelten wie in den Paketberichten. Das lokale Windows-ZIP wird nicht hochgeladen.
+
 ## 2026-10-20 – Visual Lift: Minion und Tanks nachgeschärft
 
 **Feedback / Umfang:** Nutzer bestätigt Magier/Seer, lehnt bisherige Minion-/Tankformen ab. Gezielt Chaser, Rune Guardian und Rune Champion überarbeitet; keine neue Art-Pipeline, kein Gameplay oder Balancing. Beide Arbeitsbäume geprüft: Chronik sauber, im Spiel nur Godots automatisch erzeugte UID der eigenen Visual-Testdatei unversioniert; diese reguläre Quellmetadatei mitgesichert.
