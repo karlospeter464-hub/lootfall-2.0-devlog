@@ -1,5 +1,20 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-20 – Designwende: Vom Wave-Prototyp zur wiederbelebten Welt
+
+**Auslöser:** Der erste externe Playtester erreichte Welle 7 und Welle 12. Kampf und Build-Experimente machten Spaß, aber es fehlte ein übergeordnetes Ziel. Bisher blieb die Arena unverändert, während Echoes und Skilltree hauptsächlich den Charakter stärkten.
+
+**Vom Nutzer bestätigte Neuausrichtung – Reclaim Life:** Eine rätselhafte Verseuchung beschädigt Böden und Natur; jeder legitime Run trägt zum dauerhaften Heilungsfortschritt bei, höhere Wellen mehr. Sichtbare Veränderungen in mehreren Phasen statt bloßer Prozentanzeige. Region wird nach kumulativen Punkten vollständig wieder lebendig; der Überschuss eines starken Runs fließt als absolute Restaurationspunkte in das nächste Gebiet. Neue Region: lokale Welle 1, frischer zufälliger Build, aber bestehende dauerhafte Skilltree-Talente. Diese sollen frühe Wellen zunehmend schneller machen und zum Build-Aufbau nutzen; die Herausforderung folgt in späteren Wellen. Verschiedene Gegnermischungen, aber keine regionsabhängigen Pflicht-Builds.
+
+**Neue Langzeitmetriken:** Freigeschaltete Region, Best Wave **pro Region** (z. B. 35), Anzahl vollständig restaurierter Regionen (z. B. 2). Restauration ist abschließbar; Wellenrekorde bleiben offen. Die Vision verbindet Spielerwerte Wachstum, Mut und Fürsorge mit einer sichtbar wiederhergestellten Welt, mit subtiler Ökologie-Parallele ohne belehrenden Ton. Eine mögliche spätere reale Umweltwirkung ist Inspiration, keine Spendenzusage.
+
+**Entwicklungsbedeutung:** Eine grundlegende Erweiterung des Meta-Loops und der Spielidentität, kein bloßer neuer Effekt oder zusätzliche Items. Die Dokumentation unterscheidet bewährtes Core Gameplay von noch nicht umgesetztem Weltfortschritt. Vor einer technischen Umstellung stehen Punktekalkulation, Skilltree-Skalierung, frühe Abbrüche, Anti-Farming, genaue Run-Enden und Save-Migration zur Prüfung.
+
+**Status:** Nur Design festgehalten in `WORLD_RESTORATION.md`, Masterplan und Chronik. **Keine Änderung an Godot, keine neuen Spieltests oder Gameplay-Aufnahmen**; alte Regressionsergebnisse beziehen sich auf den bisherigen Stand.
+
+---
+
+
 ## 2026-10-20 – GitHub-Synchronisierung nach Visual Lift
 
 Auf ausdrücklichen Nutzerauftrag beide sauberen Repositories und aktuellen Remotes geprüft. Remote-main ist jeweils Vorfahr des lokalen Stands; kein Konflikt oder Force-Push nötig. Spielstand **e720b49** enthält Exportvorbereitung, Mage-Versuch, Visual Lift und Minion-/Tankrevision. Chronik bis **c5d21f1** enthält Masterplan, Berichte und Aufnahmen dieser Pakete; dieser Eintrag begleitet die freigegebene Synchronisierung beider main-Branches. Keine neuen Spieländerungen oder erneut ausgeführten Tests; bisherige Prüfergebnisse gelten wie in den Paketberichten. Das lokale Windows-ZIP wird nicht hochgeladen.
