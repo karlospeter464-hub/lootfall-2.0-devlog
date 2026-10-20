@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.0 · **Stand:** 20. Oktober 2026
+**Version:** 2.1 · **Stand:** 20. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -561,19 +561,30 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.19 World Restoration & Progression Overhaul — spielbarer erster Stand
+
+**Freigabe / Abweichung vom Plan:** Separater Gesamtauftrag erlaubt ausdrücklich neuen dauerhaften nicht ausgebbaren Weltfortschritt, lokale Regionen/Bestwellen und substanzielle Talent-Erweiterung; technische Design-/Balanceentscheidungen innerhalb dieses Pakets eigenständig. Beide AGENTS entsprechend modernisiert, Git-/Save-/Test-/Veröffentlichungsschutz bewahrt. GitHub-Konzeptdatei WORLD_RESTORATION.md und zugehörige Remote-Dokumentation konfliktfrei übernommen.
+
+**Implementiert:** Drei Frontiers Ashen Fields / Withered Grove / Rotwater Marsh (600/1400/2800 Punkte), kumulatives Run-Ende-Restoration 2n(n+1) pro n geklärten Wellen. Ohne Clear nur 2 Punkte nach 30 aktiven Sekunden, 3 Kills und 3 direkten Hits. Kein Instant-Abbruch-Farming; keine neue ausgebbare Währung. Absolute Übertragung über mehrere Regionen, danach Überschussbank; neue lokale Welle 1 mit leerem Run-Build und permanentem Talent-Snapshot. Alte Regionen vorerst nicht wiederholbar. Sichtbare deterministische Boden-/Vegetations-/Wasserheilung, Tween und „Life Returns“, Regionsübersicht mit getrennten Bestwellen/Unlock-/Restored-Metriken. Keine neuen Kollisionen oder regionalen Gegner-Multiplikatoren.
+
+**Talente / Saves:** 45 statt 15 Knoten, zwölf neue besondere Ziele und 18 Wachstumsknoten, zusätzliche Querwege, scrollbare Bedienung. Alte 15 IDs/Wirkungen/Preise und exakte Erstattung erhalten. Volle Dauer-Grundwerte +88 % Schaden/+110 % HP/35 % kürzeres Intervall, plus Kindling-/Boss-/Karten-/Flächen-/Heil-/Echo-/Storm-/Momentum- und einmaliger Lebensschutz. 11790 Echoes Gesamtpreis, bestehende Run-Echoes-Kurve unverändert. Progress v3 liest v1/v2 ohne Schreibzugriff beim Laden; erster Write mit verifiziertem Originalbackup. Echoes+Welt+Bestwelle+Settlement-ID atomar, Retry ohne Doppelzahlung. Reine Regionsdaten/-regeln und Art ausgelagert; Details in WORLD_RESTORATION.md.
+
+**Prüfung / Grenzen:** 1055 Checks/15 Suites ohne Fehler, neue 95 zusätzlich nativ. Elf tatsächliche gesichtete Engine-Aufnahmen mehrerer Stufen und aller Biome/Stadt/Baum/Sandbox/Abschluss. Daten- und Ablaufprüfung, keine menschliche Mehr-Run-Balanceabnahme. Debug-Sandbox in getrennter Save-Datei, normale Saves nicht für Tests verwendet. Regionale Gegnerzusammenstellungen, organischere Art und Endgame bleiben offen. Kein Export/Upload/Push.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Neue Spielvision (Konzept, 20.10.):** World Restoration / Reclaim Life verbindlich vereinbart; Details zu Punkten, Regionseinstieg, Bestwellen, Umweltphasen, Überschuss und Balance in [WORLD_RESTORATION.md](WORLD_RESTORATION.md). **Noch keine Implementierung/Tests.**
-**Projektphase:** Visual Lift 01 technisch umgesetzt, menschliche Stil-/Lesbarkeitsabnahme offen.
-**Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Code/UI Englisch, Chronik separat.
-**Neu:** Nach Nutzerfeedback Minion als gehörnte Klauenfigur, Guardian/Champion als Plattenritter überarbeitet; Stahl/Cyan gegenüber Bronze/Gold. Magier und Seer vom Nutzer positiv bewertet, unverändert (§8.18).
-**Planbindung:** Rein visuell im ausdrücklich beauftragten Umfang gemäß Art Bible; keine Änderungen am Gameplay-Loop, keine neuen Belohnungs-/Resetregeln.
-**Prüfung:** Visual-Lift-Ausgangspaket 930 Checks ohne Fehler; Gegnerrevision: vier relevante Suites / 370 Checks erneut ohne Fehler. Funktionsvergleich: nur Zeichnung geändert; zwei native neue Gegner-/Champion-Bilder gesichtet.
-**Material:** Neun Visual-Lift-Bilder plus zwei Revisionsbilder vom 20.10.2026; Galerie erhält beide Stände. Kontrollierte Engine-Szenarien, kein menschlicher Run/Clip.
-**Offen:** Dein Stilurteil, Lesbarkeit bei dichten langen Runs und dauerhafte Performance. Draw-Körper bleiben vereinfachte stilisierte Figuren, keine finalen handgezeichneten Richtungsanimationen.
-**Export / Daten:** Bestehendes Windows-v0.1-ZIP bleibt alter Stand; normale Spielstände unangetastet. Kein Push/Upload.
-**Git / Nächster Schritt:** Spielrevision lokal **e720b49** auf codex/procedural-visual-lift. Ausgangspaket 677bf98. F5 zum eigenen visuellen Spieltest; Silhouettenabnahme offen.
-**Pflegeanweisung:** Diesen Abschnitt nach jeder tatsächlich abgeschlossenen Arbeit auf höchstens circa 10 kurze Zeilen aktualisieren. Nur verifizierte Ergebnisse als implementiert eintragen.
+**Projektphase:** World Restoration & Progression Overhaul lokal spielbar; menschliche Langzeitabnahme offen.
+**Spielprojekt:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot; F5 startet Emberhaven, englischer Code/UI.
+**Neu:** Drei sichtbare Frontiers, kumulative Heilung/Überhang/regionale Rekorde, 45 Talente, Progress v3 und sichere Test-Sandbox (§8.19 / WORLD_RESTORATION.md).
+**Planbindung:** Neue Weltfortschritts-/Regionen-/Baumregeln ausdrücklich freigegeben; zufälliger Karten-/Itemloop, bisherige Käufe und Echoes erhalten.
+**Prüfung:** 1055 Checks / 15 Suites ohne Fehler; 95 neue zusätzlich nativ, sauberer Editorimport. Savefehler/Retry/Reload/Migration und alle drei Frontiers geprüft.
+**Material:** Elf neue gesichtete native World-Captures; kontrollierte Szenarien, kein menschlicher Komplettlauf/Clip.
+**Offen:** Mehr-Run-Balance/Preise, dichte späte Wellen, regionale Gegnerunterschiede und weitere Biome-/Endgame-Ausarbeitung.
+**Daten / Export:** Tests nur isoliert; alte Saves read-only geladen, vor Migration Backup. Windows-v0.1-ZIP bleibt älter. Kein Push beauftragt.
+**Git / Nächster Schritt:** Spiel lokal **88861a2** auf codex/world-restoration. Schnelltest: F5 → Restoration sandbox → Stufen/Heal/Overflow/Test-Echoes; Leave sandbox lädt Normalstand.
+**Pflegeanweisung:** Nur verifizierte Ergebnisse als implementiert eintragen; technische Umsetzung und menschliche Spielabnahme unterscheiden.
 
 ---
 
@@ -581,6 +592,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-20 | World Restoration umgesetzt | Expliziter Gesamtauftrag: dauerhafte Heilung, drei Frontiers/Bestwellen, absoluter Übertrag und 45 Talente. Neue Progressionsregeln freigegeben; alte Käufe/Run-Buildloop erhalten; eigenständige Paketverantwortung in AGENTS | Spiel lokal 88861a2; 1055 Checks, elf native Bilder, 95 Checks zusätzlich nativ; menschliche Pace offen, kein Push/Export |
 | 2026-10-20 | Produktvision World Restoration | Nutzer bestätigt kumulative Regeneration der verseuchten Welt nach jedem legitimen Run, visuelle Heilungsphasen, absoluten Punktübertrag in neue Region, region-lokale Wellenrekorde, frischen Run-Build mit dauerhaften Talenten; Skilltree später tiefer. | Nur dokumentierter Designmeilenstein, **keine Spielimplementierung**; WORLD_RESTORATION.md |
 | 2026-10-20 | Gegner-Stilrevision | Magier/Seer gefallen dem Nutzer; Minion und beide Tanks erneut überarbeiten. Gehörnte Klauenfigur, gegliederte Plattenrüstung, Stahl-/Bronze-Unterscheidung, Schutzbögen statt Rahmen; nur Zeichnung | Spiel lokal e720b49; 370 Checks erneut bestanden, zwei native Bilder; visuelles Urteil offen, kein Push |
 | 2026-10-20 | Visual Lift 01 | Drei ausdrücklich rein visuelle Draw-Pässe: einheitliche Figuren/Animation, Kampf-VFX, ruhiger Steinboden. Prozeduraler Mage Standard, Illustration optional erhalten; Gameplay bewahrt | Spiel lokal 677bf98; 930 Checks ohne Fehler, neun native Captures; Stil-/Dauerabnahme offen, kein Export/Push |

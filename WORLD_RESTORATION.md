@@ -1,7 +1,7 @@
 # LOOTFALL 2.0 – World Restoration: Reclaim Life
 
-**Stand:** 20.10.2026 · **Status:** bestätigte neue Spielerfantasie und Konzeptentscheidungen; **nicht implementiert**.  
-**Gilt ergänzend zum** [LOOTFALL_MASTERPLAN.md](LOOTFALL_MASTERPLAN.md). Die alte technische Run-Struktur bleibt bis zu einem ausdrücklich beauftragten Umsetzungspaket bestehen.
+**Stand:** 20.10.2026 · **Status:** erste zusammenhängende spielbare Umsetzung lokal implementiert und technisch geprüft; menschliche Progressionsabnahme offen.
+**Gilt ergänzend zum** [LOOTFALL_MASTERPLAN.md](LOOTFALL_MASTERPLAN.md). Der gesonderte Auftrag „World Restoration & Progression Overhaul“ hat die folgenden Umsetzungen ausdrücklich freigegeben; der zufällige Kampf-/Build-Run bleibt erhalten.
 
 > **Every run makes you stronger. Every run brings the world back to life.**
 
@@ -20,7 +20,7 @@
 3. **Rewarding Restart:** Echoes in einem dauerhaften, langfristig komplexeren Skilltree ausgeben. Die zunehmende Macht trägt spätere Runs schneller durch ihre leichten ersten Wellen.
 4. **Persistent World Restoration:** Jede Expedition trägt zur dauerhaften Renaturierung der Welt bei, unabhängig davon, ob sie einen neuen Rekord erreicht.
 
-Die **Run-Qualität** muss zählen: Höhere erreichte bzw. abgeschlossene Wellen geben deutlich mehr Restoration-Fortschritt. Aber auch kürzere legitime Runs leisten einen positiven Beitrag. Die Detailregel für Tod während der ersten unvollendeten Welle und Anti-Farming bleibt offen.
+Die **Run-Qualität** muss zählen: Höhere erreichte bzw. abgeschlossene Wellen geben deutlich mehr Restoration-Fortschritt. Aber auch kürzere legitime Runs leisten einen positiven Beitrag. Die erste implementierte Mindestleistung und Anti-Abbruch-Regel steht in Abschnitt 6.
 
 ## 3. Welt, Story und Ton
 
@@ -38,7 +38,7 @@ Die **Run-Qualität** muss zählen: Höhere erreichte bzw. abgeschlossene Wellen
 | **Best Wave in a Region** | Persönlicher Leistungsrekord in einem zusammenhängenden Run in **dieser** Region | Region 3 · Best Wave 35 |
 | **Regions Restored** | Wie viele Regionen wurden dauerhaft vollständig renaturiert? | 2 Regions Restored |
 
-Diese Größen **nicht vermischen**: 100 % restauriert ist ein abschließbares Weltziel; die persönliche Best Wave bleibt auch danach offen und vergleichbar. Weitere Anzeigen können Restorationspunkte/-anteil **der aktuellen Region** betreffen. Die Zahlen sind UI-Ideen, keine bereits erstellten HUD-Elemente.
+Diese Größen **nicht vermischen**: 100 % restauriert ist ein abschließbares Weltziel; die persönliche Best Wave bleibt auch danach offen und vergleichbar. Weitere Anzeigen können Restorationspunkte/-anteil **der aktuellen Region** betreffen. Diese drei Metriken sind jetzt getrennt in Emberhaven/Regionskarten und lokalem Run-HUD sichtbar.
 
 ## 5. Festgelegter World-Restoration-Loop
 
@@ -50,38 +50,52 @@ Diese Größen **nicht vermischen**: 100 % restauriert ist ein abschließbares W
 6. Bei 100 % gilt die Region als dauerhaft restored; die nächste Region wird freigeschaltet und zur **aktuellen Frontier**. Bereits restaurierte Gebiete sind kein Pflichtkampf mehr.
 7. **Überschüssige absolute Restoration-Punkte** aus einem guten Run werden der nächsten Region gutgeschrieben (nicht Prozentpunkte übertragen). Beispiel: erste Region 80/100, guter Run bringt 35 Punkte → erste Region 100/100, die nächsten 15 Punkte werden auf die neue Region angerechnet.
 8. Neue Expedition in der nächsten Region: **lokale Welle 1**, keine vorausgewählten Starter-Items und kein verpflichtender Expedition Draft. Der Spieler startet mit seinen **permanenten Talenten**, aber Run-Karten und Run-Equipment beginnen frisch.
-9. Andere Gegnermischungen/optische Biome geben jeder Region ein eigenes Gefühl. Schwierigkeit **nicht** so hoch resetten, dass die im Skilltree gewonnene Macht bedeutungslos wird; die ersten lokalen Wellen sollen mit wachsender Stärke schneller zur Build-Aufbauphase werden. Erst spätere Wellen sind die harte Herausforderung.
+9. Optische Biome geben jeder Region ein eigenes Gefühl; unterschiedliche Gegnermischungen bleiben ein späterer Ausbau. Schwierigkeit **nicht** so hoch resetten, dass die im Skilltree gewonnene Macht bedeutungslos wird; die ersten lokalen Wellen sollen mit wachsender Stärke schneller zur Build-Aufbauphase werden. Erst spätere Wellen sind die harte Herausforderung.
 10. Bereits geheilte Regionen und ihre Bestwellen bleiben als getrennte Erfolge erhalten. Optionale Wiederholbarkeit für Highscores ist langfristig denkbar, keine Implementierungsfreigabe.
 
-## 6. Balance-Leitlinien und echte offene Fragen
+## 6. Implementierte Regeln — erste Balancehypothese
 
-**[ENTSCHEIDUNG]**
-- Alle ernsthaften Runs leisten Restaurationsfortschritt; außergewöhnlich hohe Wellen deutlich mehr.
-- Skilltree und Restaurationspunkte sind getrennte Belohnungsmechanismen. Kein Zwang zu zusätzlicher, ausgebbarer Währung.
-- Region 2 soll anders spielen, aber nicht einen einzigen „richtigen“ Build vorschreiben.
-- Der Skilltree darf **komplexer und tiefer werden**, um langfristige Charakterentwicklung und schnelleren Aufbau in frühen Wellen zu unterstützen. Konkrete Erweiterung ist **noch nicht beauftragt**.
-- Wellen 1–5 bzw. 1–10 späterer Regionen dürfen sich dank erarbeiteter Stärke leicht anfühlen; sie sollen zügig den Build aufbauen. Der Boss-/Wave-Druck entsteht weiter oben.
-- Bestehende zufällige Karten-/Item-Mechaniken bleiben das Herzstück und werden nicht durch einen vorgefertigten Startbuild ersetzt.
+**Ausdrückliche Freigabe:** Nutzerauftrag World Restoration & Progression Overhaul. Neue Fortschritts-/Resetregeln sind eine bestätigte **Abweichung vom früheren Plan**, keine bloße Umsetzung dieser Konzeptdatei. Bestehende Echoes-Kurve, zufällige Run-Karten/Items, 15 alte Talent-IDs, bezahlte Preise und exakter kostenloser Reset bleiben erhalten.
 
-**[OFFEN]**
-- Absolute Punkte pro abgeschlossener Welle / Wachstumsformel und Kostenkurve pro Region; ob neue Bestleistungen zusätzlich belohnt werden.
-- Mindestleistung bei extrem frühem Tod, Regel gegen absichtliches Abbrechen, Speichern und genau ein Mal auszahlen.
-- Visual-Transitions in der Arena sowie Darstellung der Gesamtkarte und eventueller „restored“-Hub-Reaktionen.
-- Schwierigkeitszuwachs pro Region vs. Spieler-Talentmacht; Dauer der leichten Build-Aufbauwellen; Timing der Wellen.
-- Zeitpunkt des Welt-Upgrades: erst auf der Ergebnis-/Hub-Seite oder schon beim Überschreiten der Schwelle im laufenden Run.
-- Umgang mit mehr als einem Regionsabschluss durch einen einzigen außergewöhnlich hohen Punktevorrat.
-- Legacy-Spielstandmigration/Übergang der bisherigen globalen Bestwelle zu region-lokalen Bestwellen.
-- Ob man restaurierte Regionen freiwillig erneut spielen darf und wie sich das auf Progression auswirkt.
-- Tieferer Skilltree, spätere horizontal interessante Freischaltungen und Endgame nach der Welt-Restoration.
+| Region | Restaurationsziel | Darstellung |
+|---|---:|---|
+| Ashen Fields | 600 | Asche/Erde → saubere Flächen → Gras und kleine Blüten |
+| Withered Grove | 1400 | Dunkler Boden/tote Stämme → lebende Vegetation und grüne Baumkronen |
+| Rotwater Marsh | 2800 | Trübe Tümpel/dunkler Boden → klareres Wasser, Schilf und Pflanzen |
 
-Diese Fragen dürfen Codex zu **mehreren guten Varianten und einem bevorzugten technischen/spielerischen Vorschlag** führen, aber nicht ohne Produktautorisierung neue Economy-, Persistenz- und Reset-Regeln produktiv ändern.
+Bei Tod oder Welle-100-Sicherheitsstopp: **2 × n × (n+1)** Restaurationspunkte bei n abgeschlossenen lokalen Wellen (max. 100). Beispiele 1/5/10/12/20 → 4/60/220/312/840. Keine Bestleistungs-Sonderprämie. Zwei Welle-12-Clears ergeben 624 Punkte und heilen die erste Region mit 24 Überhang; drei Welle-10-Clears ergeben 660. Dies ist ein Rechenmodell, keine gemessene menschliche Run-Dauer.
 
-## 7. Aktueller Implementierungsstatus und nächste Stufe
+Ohne abgeschlossene Welle: 2 Punkte erst nach mindestens 30 aktiven Sekunden, drei Kills und drei direkten Treffern. Sofortiges Abbrechen, bloßes Warten, Neustart oder Schließen eines unvollendeten Runs zahlt keine Restoration aus. Kein neuer Abbruch-Farmbutton oder Crash-/Run-Resume. Gewöhnlicher Tod unter dieser Mindestleistung bleibt bei null; die Spielversprechen-Zeile ist keine garantierte Auszahlung für jedes Starten.
 
-**IMPLEMENTIERT vor dieser Entscheidung:** Godot-Wave-Loop, bestehende zufällige Karten und acht Items, zwei Bosstypen, Echoes, Emberhaven, 15 Talentknoten, prozedurale Figuren/Arena; der aktuelle Aufstieg beginnt stets bei Welle 1 und läuft bis Tod oder Sicherheitsstopp.
+Punkte und Echoes werden am Run-Ende in **einer** atomaren Transaktion samt Regionsrekord und Settlement-ID gespeichert. Fehler: keine der Belohnungen ändert sich, Retry bleibt sichtbar. Doppelte Auszahlung desselben letzten Run-IDs wird auch nach Neuladen verhindert. Überhang bleibt absolut, kann mehrere Regionen fertigstellen und wird nach der dritten Region als nicht ausgebbarer Überschuss erhalten. Technische Grenze 1 Milliarde Überschuss; Überschreitung blockiert die Speicherung sichtbar statt zu verfallen. Keine vierte Region implementiert.
 
-**JETZT BESTÄTIGT, NICHT IMPLEMENTIERT:** Region-lokale Runs/Wellenrekorde, Restoration-Punkte, sichtbare Heilungsstufen, Punktübertrag, freigeschaltete Frontiers, regionale Gegnermischungen und späterer schnellere Build-Aufbau durch einen tieferen Skilltree.
+Die abgeschlossene Region bleibt gespeichert; automatisch neue Frontier, nächster Run lokale Welle 1, leere Run-Ausrüstung/Karten, bestehender Talent-Snapshot. Alte Regionen sind nicht zur Wiederholung auswählbar. Kein pauschaler regionaler Gegnerstärke-Multiplikator: das erarbeitete Wachstum hilft durch frühe lokale Wellen, bestehende späte Skalierung/Bosse bleiben. Regionale Gegnerkompositionen und separate Bossinhalte sind **geplant**, nicht implementiert.
 
-**NÄCHSTER MÖGLICHER VERTICAL SLICE (nur Vorschlag):** Eine verseuchte Arena vor/nach zwei sichtbaren Heilungsstufen, kummulierende Restoration-Punkte über mehrere reale Runs, Ergebnisanzeige getrennt von Echoes, erster Frontier-Übergang mit Übertragung der überschüssigen Punkte, zweite Region mit eigenen Bestwellen und frischem Build. Kein Pflicht-Neubau von drei vollständigen Welten.
+## 7. Erweiterter Skilltree — implementiert
 
-**Dokumentations-/Release-Regel:** Keine Gameplayänderung, kein Godot-Test und keine neuen Screenshots werden durch das bloße Festhalten dieser Vision behauptet. Codex soll bei künftig ausdrücklich freigegebenen Paketen Architektur, Refactoring und Tests eigenständig übernehmen dürfen, ohne die bestätigten Spielerziele zu verändern. Keine ungefragten GitHub-Pushes.
+**45 statt 15 Knoten**, drei kombinierbare Pfade mit je 15 Tiers, zusätzliche Querwege bei VII und XI. Alte 15 Käufe bleiben byte-/preislogisch kompatibel; kein Klassenlock. Scrollbarer Baum mit Tastaturfokus, Tooltip/Detailwirkung und exaktem Reset. Tiers VI–XV kosten je Pfad 160/190/240/260/320/350/420/460/520/650 Echoes; alle 45 insgesamt **11790**. Bestehende Echoes-Auszahlung unverändert.
+
+Neue spezielle Ziele:
+- **Power:** Cinder Memory (Kindling +25 Prozentpunkte), Giant Slayer (+25 % direkter Bossschaden), Convergence (+6 % Basisschaden pro entdeckter Burst-/Pierce-/Overcharge-Karte, max. 18 %), Wildfire (+35 % Burst-/Codex-Flächenschaden ohne zusätzliche Ereignisse).
+- **Vitality:** Bulwark (+0,2 s Trefferschutz), Living Spring (+25 % bestehende Wellen-/Emberguard-/Phoenix-Heilung), Warden Skin (12 % weniger eingehender Schaden), Last Light (ein tödlicher Treffer pro Run auf 1 HP abgefangen, 2 s Schutz; bestehende Heilung darf anschließend wirken).
+- **Flow:** Afterglow (Momentum +2 s), Resonant Echo (+30 % direkter Echo-Schaden), Chain Current (Storm +40 % Reichweite/+25 % Schaden, weiterhin ein Versuch je Angriff), Unbound (während Momentum 12 % kürzeres Intervall).
+
+18 neue Wachstumsknoten flankieren diese zwölf Ziele. Voller Baum an reinen Dauerwerten: +88 % Schaden, +110 % HP, 35 % kürzeres Intervall; im Test Basisschaden 14 → 26,32, HP 100 → 210, Intervall 0,36 → 0,234 s vor weiteren Karten/Items. Convergence/Boss-/Momentum- und andere konditionale Effekte kommen passend zum Build hinzu. Beschreibung/Inventarvergleich zeigt die durch Talente geänderten Itemwerte; kein garantierter Starter-Build.
+
+## 8. Architektur, Speicherung und schnelle Abnahme
+
+- `scripts/world_regions.gd`: deklarative Regionen, reine Belohnungs-/Übertrag-/Validierungsfunktionen; kein Gameplay-RNG.
+- `scripts/world_art.gd`: deterministische prozedurale Biome, kontinuierliche Bodenheilung, vegetative Schwellen, ohne neue Kollision. Dieselbe Zeichnung wird als Regionsvorschau genutzt.
+- `scripts/progress_store.gd`: Progress v3 mit world.points[3], world.best[3], world.overflow und last_settlement; liest v1/v2. Lesen verändert keine Datei. Vor erster Migration verifizierte bytegleiche .pre_world.json, danach bestehende Safe-JSON-Transaktion. Alte Bestwelle wird Region 1 zugeordnet; Echoes/Käufe bleiben erhalten.
+- `arena.gd`: bestehender Runloop integriert Snapshot der Frontier, Auszahlung/1,5-s-Heilungsübergang und Erfolgsmeldung „Life Returns“. Keine Wiederbelebung/Runverlängerung durch Regionswechsel; Belohnung am Run-Ende.
+- `town_panel.gd`: Regionsübersicht/Erfolge und scrollbarer Baum; `skill_tree.gd`, Player und bestehende Kampfereignisse tragen neue Talente. Keine allgemeine Effekt-Engine.
+
+**Schnelltest in Godot:** F5 → Emberhaven → **Restoration sandbox — separate test save**. Kopfzeile muss SANDBOX zeigen. 0/25/50/75-%-Vorschau setzen und Explore starten oder **Heal + overflow / +3000 test Echoes** für fertige Region mit exakt 120 Punkten Überhang sowie Testgeld. Damit zweite/dritte Region und neue Talente schnell testen. Zurück in der Stadt über **Leave sandbox** normal gespeicherten Stand laden. Sandboxdatei getrennt und persistent, normale Datei unverändert; Tools in Release verborgen/abgewiesen. Englische vollständige Anleitung: WORLD_RESTORATION_PLAYTEST.md im Spielrepo.
+
+## 9. Echte Verifikation und offener Ausbau
+
+Spiel lokal **88861a2** auf codex/world-restoration. **1055 Checks in 15 Suites, 0 Fehler**: 95 neue Restaurationschecks plus 30 zusätzliche Baum-Detail-Layouts; Legacy-Suites weiterhin gültig. Neue 95er-Suite zusätzlich nativ mit D3D12 bestanden; Editorimport sauber. Geprüft: Migration/Backup, Reload, exakte alte und neue Erstattungen, atomare Schreibfehler/Retry, Überhang/Mehrfachabschluss, alle Frontiers/frische lokale Runs, voller Baum/Machtzuwachs, reale Storm-Reichweite/Schaden und Phoenix-Heilung, Kindling/Echo/Momentum/Bossmodifikator, einmaliger Lebensschutz sowie isolierte Sandbox.
+
+Elf echte native Aufnahmen: Ashen Fields 0/25/75/100 %, Grove 0/75 %, Marsh 75 %, Stadt, tiefer Baum, Sandbox, tatsächlicher Run-Ende-Auszahlungs-/Unlockpfad mit kontrolliertem vorherigen 590/600-Stand und zwei simuliert geklärten Wellen. Gestellte Tests, kein Nachweis menschlicher 2–3-Run-Pace; keine „natürlich verdiente“ Heilung behauptet.
+
+**Offen:** menschliche Langzeitkurve/Skillpreis-Tuning, Performance in sehr dichten späten Wellen, organischere Art, eigene regionale Gegnerzusammenstellungen/Challenges, optionale Wiederholbarkeit alter Regionen und Endgame nach drei Regionen. Storyherkunft und reale Naturschutz-Idee in §3 bleiben konzeptionell. Keine weiteren Klassen, Starter-Drafts, Währungen, Exporte, Clips oder GitHub-Pushes. Beide AGENTS modernisiert; innerhalb freigegebener Pakete eigenständige Umsetzung, Sicherheitsregeln bleiben.
