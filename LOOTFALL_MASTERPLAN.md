@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 1.9 · **Stand:** 20. Oktober 2026
+**Version:** 2.0 · **Stand:** 20. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -32,6 +32,8 @@ Dieses Dokument ist der **gemeinsame Bezugspunkt für das neue Codex-Projekt**. 
 8. Vor Gameplay-Paketen Ziel, Planbezug, Umfang und offene Entscheidungen kurz ausweisen. Abweichungen bei Core Loops, Belohnungsauslösern oder Persistenz ausdrücklich benennen und vor Umsetzung bestätigen lassen; technische Details im freigegebenen Umfang eigenständig lösen. Abschluss gegen den beauftragten Umfang prüfen.
 
 ---
+
+**Neue bestätigte Spielvision (noch nicht implementiert):** [WORLD_RESTORATION.md](WORLD_RESTORATION.md) ergänzt diesen Masterplan. Historische Technikkapitel beschreiben weiterhin den bestehenden Prototypen.
 
 ## 1. Vision und Zielspieler
 
@@ -65,6 +67,7 @@ In **Lootfall** baut der Spieler während eines kurzen, zunehmend intensiven Act
 | **1. Build-Entdeckung** | Mein nächster Durchlauf kann sich deutlich anders spielen. | Entscheidungen erzeugen neue Kombinationen, nicht nur größere Zahlen. |
 | **2. Herausfordernder Aufstieg** | Jede zusätzliche Welle ist ein nachvollziehbarer Erfolg. | Der Spieler will seinen Bestwert übertreffen; steigende Schwierigkeit bleibt fair und lesbar. |
 | **3. Belohnender Neuanfang** | Auch ein gescheiterter Run bringt echte Möglichkeiten für die Zukunft. | Seltene Drops und dauerhafte Fortschritte erzeugen Vorfreude auf den nächsten Versuch. |
+| **4. Weltrestauration [ENTSCHEIDUNG, noch nicht implementiert]** | Jeder legitime Run hilft, verseuchte Regionen sichtbar wiederzubeleben. | Kumulativer Weltfortschritt, vollständig restaurierte Regionen und getrennte regionale Wellenrekorde. |
 
 **Übergreifende Qualität:** Treffer, Machtanstieg, Item-Drops und Rekorde brauchen klares **Game Feel** (visuelles und akustisches Feedback), ohne unnötige Effektflut.
 
@@ -99,6 +102,8 @@ Kein Multiplayer, keine Online-Ökonomie, keine vollständige ARPG-Kampagne, kei
 *Qualitätsfrage:* Entstehen durch Kartenentscheidungen erkennbar verschiedene Spielstile? Hat man Lust, eine andere Kombination auszuprobieren?
 
 ### Loop C — Prestige / Meta-Fortschritt (viele Runs)
+**[NEUE ENTSCHEIDUNG – NOCH NICHT IMPLEMENTIERT]:** Echoes für dauerhafte Talente **plus** kumulative, nicht ausgebbare Restaurationspunkte pro legitimen Run. Höhere Wellen bringen mehr Fortschritt, jeder legitime Run trägt bei. Verseuchte Regionen heilen sichtbar in Stufen, bei 100 % wird die nächste Region freigeschaltet; überschüssige absolute Punkte fließen weiter. Nächster Run: **lokale Welle 1**, frischer Run-Build, dauerhafte Talente. Je stärker der Skilltree, desto schneller dienen frühe Wellen dem Build-Aufbau. Getrennte Erfolgsmetriken: Region freigeschaltet, Best Wave pro Region, Anzahl restaurierter Regionen. Details in [WORLD_RESTORATION.md](WORLD_RESTORATION.md). Die folgende historische CE2-Regel beschreibt weiterhin den **implementierten Ist-Zustand**.
+
 **[ENTSCHEIDUNG, aktualisiert CE2] Run beenden (Tod oder ausdrücklich technischer Sicherheitsstopp) → Ergebnis und Echoes erhalten → zur Stadt / ins Hideout zurückkehren → Echoes im dauerhaften Skilltree ausgeben → nächster Run ab Welle 1.**
 
 - **[ENTSCHEIDUNG / IMPLEMENTIERT]** Der Hideout-Fortschritt erfolgt über einen vernetzten dauerhaften Passivbaum nach PoE-Vorbild mit Grundwertknoten, größeren Zwischenzielen und spielstilprägenden Boni. Eine erste Fassung mit **15 vernetzten Knoten** und kostenlosen Resets ist umgesetzt (§8.5); ihre langfristige Balance/spielerische Wirkung bleibt zu prüfen. Klassenwahl ist ein separates späteres System.
@@ -558,6 +563,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Neue Spielvision (Konzept, 20.10.):** World Restoration / Reclaim Life verbindlich vereinbart; Details zu Punkten, Regionseinstieg, Bestwellen, Umweltphasen, Überschuss und Balance in [WORLD_RESTORATION.md](WORLD_RESTORATION.md). **Noch keine Implementierung/Tests.**
 **Projektphase:** Visual Lift 01 technisch umgesetzt, menschliche Stil-/Lesbarkeitsabnahme offen.
 **Spielprojekt:** `C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot`; Code/UI Englisch, Chronik separat.
 **Neu:** Nach Nutzerfeedback Minion als gehörnte Klauenfigur, Guardian/Champion als Plattenritter überarbeitet; Stahl/Cyan gegenüber Bronze/Gold. Magier und Seer vom Nutzer positiv bewertet, unverändert (§8.18).
@@ -575,6 +581,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-20 | Produktvision World Restoration | Nutzer bestätigt kumulative Regeneration der verseuchten Welt nach jedem legitimen Run, visuelle Heilungsphasen, absoluten Punktübertrag in neue Region, region-lokale Wellenrekorde, frischen Run-Build mit dauerhaften Talenten; Skilltree später tiefer. | Nur dokumentierter Designmeilenstein, **keine Spielimplementierung**; WORLD_RESTORATION.md |
 | 2026-10-20 | Gegner-Stilrevision | Magier/Seer gefallen dem Nutzer; Minion und beide Tanks erneut überarbeiten. Gehörnte Klauenfigur, gegliederte Plattenrüstung, Stahl-/Bronze-Unterscheidung, Schutzbögen statt Rahmen; nur Zeichnung | Spiel lokal e720b49; 370 Checks erneut bestanden, zwei native Bilder; visuelles Urteil offen, kein Push |
 | 2026-10-20 | Visual Lift 01 | Drei ausdrücklich rein visuelle Draw-Pässe: einheitliche Figuren/Animation, Kampf-VFX, ruhiger Steinboden. Prozeduraler Mage Standard, Illustration optional erhalten; Gameplay bewahrt | Spiel lokal 677bf98; 930 Checks ohne Fehler, neun native Captures; Stil-/Dauerabnahme offen, kein Export/Push |
 | 2026-10-19 | Art Vertical Slice 01 | Nutzer liefert ersten Mage und erlaubt engen frontalen Prototyp: Sprite2D/Alpha/Pivot/Mipmaps/Fallback statt neuer Gameplaylogik; nur Apprentice-Teil von A1 | Spiel lokal 5691976; 917 Checks, drei MCP-Prüfungen, vier native Captures; Perspektiv-/Stilabnahme offen, kein Export/Push |
