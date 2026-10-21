@@ -1,5 +1,11 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-21 – Alle Landschaften als einzelne Fortschrittsbilder
+
+**Auftrag / Ergebnis:** Nutzer möchte jede Map je Fortschrittsansicht einzeln sehen. Beide Repositories vorher sauber. Vorhandenen Capture-Pfad ohne Spieländerung genutzt: 15 native Godot-PNGs (1152×720), Fields/Grove/Marsh jeweils 0/25/50/75/100 %. Galerieabschnitt „Alle Maps · fünf Heilungsstufen“ mit Einzelansicht/Download. Kontrollierte Szene mit HUD/Figuren und isoliertem APPDATA/--test-mode; echte Saves unberührt. Die fünf Vergleichsstufen sind Stichproben der kontinuierlichen Darstellung, keine neuen festen Spielphasen.
+
+**Prüfung:** Alle 15 Capture-Prozesse erfolgreich; PNG-Anzahl/Abmessungen sowie Galerielinks/IDs geprüft. Neun zusätzliche 25/50/100-%-Ansichten visuell gesichtet; 0/75-%-Darstellung bereits im vorherigen Paket gesichtet. Erst angenommene virtuelle Auflösung 1280×800 bei Datei-Check korrigiert: native Fensteraufnahme tatsächlich 1152×720. Keine neuen Gameplaytests erforderlich, kein Code geändert, Export oder Push.
+
 ## 2026-10-21 – Aktuelle HP gezielt setzen
 
 **Scope:** Nutzer wünscht exakte Lebenswerte in F1 und fragt nach dem Bildwechsel. Kleiner Folgeauftrag zum aktuellen Testkomfort (§9), keine zusätzliche Progressions-/Balanceänderung. Beide Git-Stände vor Änderung sauber. Ponytail weiter genutzt.

@@ -587,6 +587,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 **Projektphase:** Habitat-Sanity-Pass und Dev-Testwerkzeuge lokal umgesetzt; persönliche Stil-/Langzeitabnahme offen.
 **Spielprojekt:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot; F5, Code/UI Englisch.
+**Material:** Galerie mit 15 einzelnen PNGs: alle Maps bei 0/25/50/75/100 %, kontrollierte Engine-Screenshots.
 **Neu:** F1 erlaubt zusätzlich exakte aktuelle HP (1..effektives Maximum, ohne Schadenstrigger); Folgeprüfung 271 Checks, ein natives Bild.  Luftbildreferenzen tatsächlich visuell geprüft; getrennte natürliche Sumpfbecken/Ufer, gruppierte Kronen, Wiesenstruktur. F1 → Test tools mit Vorwärtssprung samt kumulativer Sofortgutschrift, Echoes Add/Set/Zero und Welle abschließen.
 **Planbindung:** Ausdrücklich freigegebene Debug-Abweichung vom normalen Belohnungszeitpunkt: übersprungene Wellen geben Echoes und Restoration sofort; spätere Abrechnung zieht Vorschuss ab. Normale Runs unverändert, kein Karten-/Item-Autobuild.
 **Prüfung:** 1265 Checks / 17 Suites bestanden; 190 neue zusätzlich nativ, Geometrie/Wallet/Retry/Dedupe/Frontier/Build/Pausen geprüft. Sieben native Bilder gesichtet.
@@ -601,6 +602,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-21 | Map-Vergleichsbilder | Nutzer möchte jede Landschaft je Fortschrittsansicht einzeln sehen; 15 native PNGs bei 0/25/50/75/100 % in Galerie | Capture-Erfolg, PNG-Größen und Galerielinks geprüft; keine Spieländerung |
 | 2026-10-21 | Testkomfort HP | Nutzer beauftragt aktuelle HP gezielt setzen; F1 1..effektives Maximum, HUD/Metriken korrekt, keine Wiederbelebung. Landschaftswechsel erläutert | 271 relevante Checks bestanden; ein natives Bild, kein voller erneuter Lauf/Export/Push |
 | 2026-10-21 | Habitat-Sanity / Testkomfort | Nutzer beantragt Luftbildabgleich sowie direkte Debug-Wellensprünge inklusive Echoes/Heilung und Wallet-Reset. Getrennte Becken, Vorwärtssprünge mit Differenzzahlung, erhaltene Builds, kein Skipped-Card-Autobuild | 1265 Checks/17 Suites; 190 zusätzlich nativ, sieben Bilder; keine Veröffentlichung, persönliche Abnahme offen |
 | 2026-10-21 | Live-Heilung / Maps | Nutzer bestätigt Restoration bereits im Run, Wellenabschluss zulässig. Gleiche Gesamtpunkte, persistente Differenzgutschrift statt Ende-Doppelzahlung; Karten als Maps geklärt, drei Biome konsistenter | Spiel lokal 220bd89; 1075 Checks, 20 zusätzlich nativ, zehn Bilder; Stil-/Langzeitabnahme offen, kein Push |
