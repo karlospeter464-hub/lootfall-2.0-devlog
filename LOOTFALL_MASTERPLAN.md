@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.1 · **Stand:** 20. Oktober 2026
+**Version:** 2.2 · **Stand:** 21. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -573,18 +573,28 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.20 Live Restoration & Map Polish
+
+**Auftrag / bestätigte Abweichung:** Nutzer möchte Punkte und sichtbare Veränderung während des Runs; Wellenende ausdrücklich zulässig. Restoration wird jetzt nach jeder geklärten Welle n mit 4n Punkten gespeichert, bei gleicher kumulativer Kurve. Echoes bleiben am Run-Ende. Laufender Run bleibt auch nach 100 % im Ursprungsbiom, nächste Expedition nutzt neue Frontier; Überhang weiterhin exakt. Gespeicherter Fortschritt bleibt auch nach Abbruch erhalten, Abbruch vergibt nichts zusätzlich. Karten-Grafik nach Rückfrage ausdrücklich Landschaften/Maps; Auswahlkarten nicht umgestaltet.
+
+**Umsetzung / Saves:** 1,2-s-Heilungstween/HUD nach Wellenende, auch während pausierter Kartenwahl sichtbar. Progress v4 liest v1–v3, speichert Run-ID/Ursprungsregion/bereits gutgeschriebene Summe. Nur Differenz auszahlen, final Echoes einmal; Retry/Reload, Regionenabschluss mitten im Run und weitere Credits danach geprüft. SAVE PENDING bei Schreibfehler, Retry im aktiven Spiel, blockierter Neustart statt stillem Verlust. Drei Biome teilen facettierte organische Bodenflächen/Schatten, Wege/Steine, winklige Baumkronen bzw. breite Wasserbecken/Ufer/Schilf. Keine neuen Kollisionen, Gegner-, Loot- oder Talentänderungen.
+
+**Verifikation:** Spiel lokal 220bd89. 1075 Checks/16 Suites bestanden, 20 neue zusätzlich nativ; Editorimport erfolgreich. Zehn native Bilder inkl. Vorher/Nachher und 24,3→25-%-Live-Wellenabschluss gesichtet. Technische Prüfung, keine menschliche Stil-/Langzeitabnahme. Kein Export/Clip/Push.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** World Restoration & Progression Overhaul lokal spielbar; menschliche Langzeitabnahme offen.
-**Spielprojekt:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot; F5 startet Emberhaven, englischer Code/UI.
-**Neu:** Drei sichtbare Frontiers, kumulative Heilung/Überhang/regionale Rekorde, 45 Talente, Progress v3 und sichere Test-Sandbox (§8.19 / WORLD_RESTORATION.md).
-**Planbindung:** Neue Weltfortschritts-/Regionen-/Baumregeln ausdrücklich freigegeben; zufälliger Karten-/Itemloop, bisherige Käufe und Echoes erhalten.
-**Prüfung:** 1055 Checks / 15 Suites ohne Fehler; 95 neue zusätzlich nativ, sauberer Editorimport. Savefehler/Retry/Reload/Migration und alle drei Frontiers geprüft.
-**Material:** Elf neue gesichtete native World-Captures; kontrollierte Szenarien, kein menschlicher Komplettlauf/Clip.
-**Offen:** Mehr-Run-Balance/Preise, dichte späte Wellen, regionale Gegnerunterschiede und weitere Biome-/Endgame-Ausarbeitung.
-**Daten / Export:** Tests nur isoliert; alte Saves read-only geladen, vor Migration Backup. Windows-v0.1-ZIP bleibt älter. Kein Push beauftragt.
-**Git / Nächster Schritt:** Spiel lokal **88861a2** auf codex/world-restoration. Schnelltest: F5 → Restoration sandbox → Stufen/Heal/Overflow/Test-Echoes; Leave sandbox lädt Normalstand.
-**Pflegeanweisung:** Nur verifizierte Ergebnisse als implementiert eintragen; technische Umsetzung und menschliche Spielabnahme unterscheiden.
+**Projektphase:** Live Restoration & Map Polish lokal umgesetzt; Stil-/Langzeitabnahme offen.
+**Spielprojekt:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot; F5, Code/UI Englisch.
+**Neu:** Sofortige dauerhafte Wellen-Restoration samt sichtbarer Heilung und konsistente überarbeitete Landschaften (§8.20).
+**Planbindung:** Nutzerfreigabe für Belohnungszeitpunkt-Änderung; gleiche Punktekurve, Echoes/Karten-/Itemloop/Talente erhalten. „Karten“ meint Maps.
+**Prüfung:** 1075 Checks / 16 Suites bestanden; 20 Live-Checks zusätzlich nativ, Editorimport erfolgreich. V3-Kompatibilität/Retry/Dedupe/Regionsüberhang geprüft.
+**Material:** Zehn neue native Bilder vom 21.10.; kontrollierte Biome und Live-Wellenabschluss mit lebendem Spieler. Kein Clip.
+**Offen:** Menschliche Grafik-/Gefahrenlesbarkeit und Langzeitbalance/Performance, regionale Gegnerunterschiede.
+**Daten / Export:** Progress v4 liest v1–v3; Tests/Screens nur isolierte Saves. Windows-ZIP bleibt alt; kein Push beauftragt.
+**Git / Nächster Schritt:** Spiel lokal **220bd89**; F5 → Run spielen → nach Wave-Clear Heilung beobachten. Frühere 88861a2-Basis dokumentiert in §8.19.
+**Pflegeanweisung:** Nur verifizierte Ergebnisse als implementiert eintragen; technische und menschliche Abnahme unterscheiden.
 
 ---
 
@@ -592,6 +602,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-21 | Live-Heilung / Maps | Nutzer bestätigt Restoration bereits im Run, Wellenabschluss zulässig. Gleiche Gesamtpunkte, persistente Differenzgutschrift statt Ende-Doppelzahlung; Karten als Maps geklärt, drei Biome konsistenter | Spiel lokal 220bd89; 1075 Checks, 20 zusätzlich nativ, zehn Bilder; Stil-/Langzeitabnahme offen, kein Push |
 | 2026-10-20 | World Restoration umgesetzt | Expliziter Gesamtauftrag: dauerhafte Heilung, drei Frontiers/Bestwellen, absoluter Übertrag und 45 Talente. Neue Progressionsregeln freigegeben; alte Käufe/Run-Buildloop erhalten; eigenständige Paketverantwortung in AGENTS | Spiel lokal 88861a2; 1055 Checks, elf native Bilder, 95 Checks zusätzlich nativ; menschliche Pace offen, kein Push/Export |
 | 2026-10-20 | Produktvision World Restoration | Nutzer bestätigt kumulative Regeneration der verseuchten Welt nach jedem legitimen Run, visuelle Heilungsphasen, absoluten Punktübertrag in neue Region, region-lokale Wellenrekorde, frischen Run-Build mit dauerhaften Talenten; Skilltree später tiefer. | Nur dokumentierter Designmeilenstein, **keine Spielimplementierung**; WORLD_RESTORATION.md |
 | 2026-10-20 | Gegner-Stilrevision | Magier/Seer gefallen dem Nutzer; Minion und beide Tanks erneut überarbeiten. Gehörnte Klauenfigur, gegliederte Plattenrüstung, Stahl-/Bronze-Unterscheidung, Schutzbögen statt Rahmen; nur Zeichnung | Spiel lokal e720b49; 370 Checks erneut bestanden, zwei native Bilder; visuelles Urteil offen, kein Push |
