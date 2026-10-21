@@ -1,5 +1,17 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-21 – Aktuelle HP gezielt setzen
+
+**Scope:** Nutzer wünscht exakte Lebenswerte in F1 und fragt nach dem Bildwechsel. Kleiner Folgeauftrag zum aktuellen Testkomfort (§9), keine zusätzliche Progressions-/Balanceänderung. Beide Git-Stände vor Änderung sauber. Ponytail weiter genutzt.
+
+**Änderung:** F1 → Test tools → Current HP → Set current HP setzt lebenden Run auf 1..effektives Maximum; übergroße Anfragen gekappt, Null/negative/nichtendliche Werte und Tote/Ergebnis/Stadt abgewiesen. Unverwundbarkeit umgangen, HUD synchronisiert, kein Damage-taken-Metrikzuwachs und keine Treffer-/Talenttrigger. Maximum inklusive Talente und Player-Tab-Änderungen berücksichtigt. Keine Save-/Profiländerung.
+
+**Erklärung:** Landschaft pro tatsächlichem Wellenabschluss mit gespeichertem Restoration-Zuwachs, 1,2-s-Tween auch während Kartenwahl. Boden/Wasserfarben kontinuierlich, verteilte Gras-Schwellen, Waldkronen 25–80 %, Blüten 75 %. 100 % öffnet Folgegebiet; Wechsel erst nächster Run. Debug-Sprung aktualisiert Darstellung sofort.
+
+**Prüfung:** 271 relevante Checks bestanden (197 Devtools inkl. sieben neuer HP-Prüfungen, 54 Console, 20 Live Restoration). Tatsächlicher HP-Button, HUD, Unverwundbarkeit, Metriken, Clamp, unzulässige Werte, Wiederherstellen und keine Wiederbelebung geprüft. Ein nativer D3D12-Screenshot gesichtet/archiviert. Kein kompletter erneuter 17-Suite-Lauf, Langzeittest oder neuer Export. Bekannte System-Zertifikatsspeicher-Meldung beim Offline-Start unverändert; normale Saves nicht genutzt. Kein Push für diesen Folgeauftrag.
+
+**Git:** Spiel lokal **770fe86**; zugehörige Dokumentation/Galerie separat lokal gesichert.
+
 ## 2026-10-21 – Habitat-Sanity und Testkomfort in F1
 
 **Auftrag / Planabgleich:** Nutzer bemängelt überlagernde Wasserflächen, fordert tatsächlich visuell geprüfte Natur-Luftbilder und mehr Testaktionen statt nur Balancewerte. Freigegebene Abweichung vor Umsetzung ausgewiesen: Debug-Wellensprung schreibt Echoes und Heilung schon während des Runs gut. Normale Wellen-/Karten-/Itemregeln bleiben. Beide Repositories vor Änderungen sauber; Masterplan §9 und gemeinsame AGENTS geprüft. Ponytail für gezielte Umsetzung genutzt.
