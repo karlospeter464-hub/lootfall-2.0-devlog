@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.2 · **Stand:** 21. Oktober 2026
+**Version:** 2.3 · **Stand:** 21. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -585,15 +585,14 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** Live Restoration & Map Polish lokal umgesetzt; Stil-/Langzeitabnahme offen.
+**Projektphase:** Habitat-Sanity-Pass und Dev-Testwerkzeuge lokal umgesetzt; persönliche Stil-/Langzeitabnahme offen.
 **Spielprojekt:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot; F5, Code/UI Englisch.
-**Neu:** Sofortige dauerhafte Wellen-Restoration samt sichtbarer Heilung und konsistente überarbeitete Landschaften (§8.20).
-**Planbindung:** Nutzerfreigabe für Belohnungszeitpunkt-Änderung; gleiche Punktekurve, Echoes/Karten-/Itemloop/Talente erhalten. „Karten“ meint Maps.
-**Prüfung:** 1075 Checks / 16 Suites bestanden; 20 Live-Checks zusätzlich nativ, Editorimport erfolgreich. V3-Kompatibilität/Retry/Dedupe/Regionsüberhang geprüft.
-**Material:** Zehn neue native Bilder vom 21.10.; kontrollierte Biome und Live-Wellenabschluss mit lebendem Spieler. Kein Clip.
-**Offen:** Menschliche Grafik-/Gefahrenlesbarkeit und Langzeitbalance/Performance, regionale Gegnerunterschiede.
-**Daten / Export:** Progress v4 liest v1–v3; Tests/Screens nur isolierte Saves. Windows-ZIP bleibt alt; kein Push beauftragt.
-**Git / Nächster Schritt:** Spiel lokal **220bd89**; F5 → Run spielen → nach Wave-Clear Heilung beobachten. Frühere 88861a2-Basis dokumentiert in §8.19.
+**Neu:** Luftbildreferenzen tatsächlich visuell geprüft; getrennte natürliche Sumpfbecken/Ufer, gruppierte Kronen, Wiesenstruktur. F1 → Test tools mit Vorwärtssprung samt kumulativer Sofortgutschrift, Echoes Add/Set/Zero und Welle abschließen.
+**Planbindung:** Ausdrücklich freigegebene Debug-Abweichung vom normalen Belohnungszeitpunkt: übersprungene Wellen geben Echoes und Restoration sofort; spätere Abrechnung zieht Vorschuss ab. Normale Runs unverändert, kein Karten-/Item-Autobuild.
+**Prüfung:** 1265 Checks / 17 Suites bestanden; 190 neue zusätzlich nativ, Geometrie/Wallet/Retry/Dedupe/Frontier/Build/Pausen geprüft. Sieben native Bilder gesichtet.
+**Daten / Export:** Keine Save-Schemaänderung, bestehende Käufe/Preise bleiben. Werkzeuge verändern bewusst aktuell geladenen Save; separate Sandbox vorhanden. Normale Saves im Test unberührt. Kein neuer Export oder Push.
+**Offen:** Menschliches Stilurteil, Lesbarkeit und dichte Langzeitperformance. Boden bleibt Deko, Wasser durchquerbar.
+**Git / Nächster Schritt:** Spiel lokal **a3e4e5d**, zugehöriger Chronikcheckpoint separat. F5 → F1 → Test tools; für Experimente vorher Emberhaven-Sandbox wählen.
 **Pflegeanweisung:** Nur verifizierte Ergebnisse als implementiert eintragen; technische und menschliche Abnahme unterscheiden.
 
 ---
@@ -602,6 +601,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-21 | Habitat-Sanity / Testkomfort | Nutzer beantragt Luftbildabgleich sowie direkte Debug-Wellensprünge inklusive Echoes/Heilung und Wallet-Reset. Getrennte Becken, Vorwärtssprünge mit Differenzzahlung, erhaltene Builds, kein Skipped-Card-Autobuild | 1265 Checks/17 Suites; 190 zusätzlich nativ, sieben Bilder; keine Veröffentlichung, persönliche Abnahme offen |
 | 2026-10-21 | Live-Heilung / Maps | Nutzer bestätigt Restoration bereits im Run, Wellenabschluss zulässig. Gleiche Gesamtpunkte, persistente Differenzgutschrift statt Ende-Doppelzahlung; Karten als Maps geklärt, drei Biome konsistenter | Spiel lokal 220bd89; 1075 Checks, 20 zusätzlich nativ, zehn Bilder; Stil-/Langzeitabnahme offen, kein Push |
 | 2026-10-20 | World Restoration umgesetzt | Expliziter Gesamtauftrag: dauerhafte Heilung, drei Frontiers/Bestwellen, absoluter Übertrag und 45 Talente. Neue Progressionsregeln freigegeben; alte Käufe/Run-Buildloop erhalten; eigenständige Paketverantwortung in AGENTS | Spiel lokal 88861a2; 1055 Checks, elf native Bilder, 95 Checks zusätzlich nativ; menschliche Pace offen, kein Push/Export |
 | 2026-10-20 | Produktvision World Restoration | Nutzer bestätigt kumulative Regeneration der verseuchten Welt nach jedem legitimen Run, visuelle Heilungsphasen, absoluten Punktübertrag in neue Region, region-lokale Wellenrekorde, frischen Run-Build mit dauerhaften Talenten; Skilltree später tiefer. | Nur dokumentierter Designmeilenstein, **keine Spielimplementierung**; WORLD_RESTORATION.md |

@@ -108,3 +108,11 @@ Elf echte native Aufnahmen: Ashen Fields 0/25/75/100 %, Grove 0/75 %, Marsh 75 %
 **Map-Polish:** Gemeinsame facettierte Flächen und Schatten, unregelmäßige koordinatenbasierte Verteilung ohne Gameplay-RNG. Felder/Wald mit verwitterten Wegplatten und gezielten Gras-/Blütenflächen, Wald mit kantigen Kronen statt Kreisen, Sumpf mit breiten Ufer-/Wasserflächen und Schilf statt Pfützenraster. Keine Kollisionen oder neuen Hindernisse. Alte Captures bleiben Vorgeschichte des vorigen Spielstands.
 
 **Technisch geprüft:** Spiel lokal **220bd89**, 1075 Checks in 16 Suites, 0 fehlgeschlagene Checks. Neue Live-Suite mit 20 Checks zusätzlich nativ bestanden; Editorimport erfolgreich. Zehn neue native gesichtete Bilder inklusive alter/neuer Feldkarte, aller Biome sowie tatsächlichem Wellenabschluss mit lebendem Spieler von 146/600 auf 150/600 (24,3 → 25 %). Kontrollierte Fixture, keine natürliche Langzeitabnahme. Kein neuer Clip, Export oder Push. Menschliche Lesbarkeit und Performance im dichten Run bleiben offen.
+
+## 11. Follow-up 21.10.2026 — Naturabgleich und schnelle Debug-Tests
+
+Luftbilder von USFWS und Wiese/Waldrand von oben tatsächlich visuell geprüft, verlinkt im aktuellen Devlog/englischen DEV_TOOLS_PLAYTEST.md. Sumpf ohne überlagernde Wasserbecken: fünf unterschiedliche separate Konturen, ein Ufer je Fläche, gruppiertes Schilf. Wasser bleibt Deko. Waldkronen/Wiesenstruktur angepasst.
+
+**Beauftragte Debug-Abweichung:** F1 → Test tools funktioniert ohne isolierten Startparameter. Vorwärtssprung zu N kreditiert kumulativ 1..N−1 inklusive Echoes und Restoration sofort, gespeicherte Differenz statt Doppelzahlung. Runende zahlt nur verbleibende Echoes; Weltpunkte nutzen bereits vorhandenes Run-Dedupe. Build bleibt; keine automatische Kartenauswahl/Itemerzeugung. Rücksprünge nur durch neuen Run; kein Resume. Add/Set/Zero bearbeitet Wallet, nicht Käufe/Erstattungswerte/Welt. Finish wave nutzt normalen Karten-/Heilungsabschluss ohne Killloot. Änderungen betreffen aktuellen Save; separate Sandbox weiter nutzbar. Keine Schemaänderung oder Release-Freigabe der Werkzeuge.
+
+**Nachweis:** 1265 Checks/17 Suites, neue 190 zusätzlich nativ; sieben native gesichtete Bilder. Menschliche Stil-/Langzeitabnahme offen, kein Export/Push.
