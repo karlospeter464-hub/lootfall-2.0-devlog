@@ -1,5 +1,17 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-23 – Alpha 0.2 für manuellen itch.io-Upload
+
+**Freigabe / Umsetzung:** Reines Release-/QA-Paket. Beide Git-Stände anfangs sauber; AGENTS, Masterplan §9, Restoration-Regeln und V0.1-Export geprüft. Aktuellen lokalen Gameplaystand 770fe86 verwendet; nur Version/Windows-Metadaten/Exportziel und Paket-Audit/Dokumentation angepasst. Vorhandene offizielle 4.7.2-Release-Templates verifiziert. Kein Pull/Reset, Gameplay-/Balance-/Saveformatwechsel oder neuer Dienst.
+
+**Ergebnis:** Fertige ZIP außerhalb Git unter Exports/Playtest_v0.2, 39.857.009 Bytes, fünf Dateien. Drei Regionen/45 Talente/Live-Heilung enthalten, F1/Sandbox/Debugaktionen in Release gesperrt. Godot-/Bibliothekslizenzen und ehrliche Asset-Provenienz beigelegt. Sechs echte native kontrollierte PNGs plus englische itch.io-Texte/Platzhalterlink; sieben Bilder in Chronik inkl. direktem ZIP-Livebild. Vollbericht ALPHA_02_RELEASE.md, englische technische Doku WINDOWS_ALPHA_02.md im Spielrepo.
+
+**Prüfung:** 1272 Source-Checks/17 Suites, 868 PCK-Checks/10 Suites, 8 Audits bestanden. Native bytegleiche Release-EXE mit separatem QA-Einstieg und finalem PCK: 87 + 23 Checks, tatsächlicher Speicher-/Neustart-/Unlock-/Tweenpfad. Kein Harness im ZIP. Direkte EXE beim Nutzer-Retry erreichbar: frische Stadt, F1 gesperrt, Explore, später echtes Livebild Welle 2 und +4 Punkte in isolierter Datei. Benutzereingaben erkannt, weitere UI-Aktionen gestoppt. Vollständige menschliche Abnahme nicht behauptet. SHA/PE/ZIP/Extraktion geprüft. Normale Saves unberührt; alte ZIP bewahrt.
+
+**Aufschlussreiche Fehlversuche / Grenzen:** Erster Audit im Quellverzeichnis sah lokale Dateien; Wiederholung standalone sauber. Release-CLI verbietet Pfad-/Script-Overrides; QA per unabhängiger bytegleicher EXE mit benachbarter QA-PCK, die den finalen Spielpack lädt. QA-InputMap zunächst fehlend, Zeiger-Rechtsannahme durch synthetische Koordinaten ungeeignet; InputMap übernommen und Richtung gegen tatsächlichen Viewportzeiger geprüft. Alle finalen Checks bestanden. Breite Hardware/Longrun und kompletter menschlicher EXE-Loop offen. Start-/Editorcache-Diagnosen im eingeschränkten Kontext aufgezeichnet, kein Systemschutz verändert. Öffentliche Weitergaberechte der optional gebündelten Nutzerillustration nicht separat dokumentiert; vor Upload durch Eigentümer klären. Kein Upload/Push. Während der Arbeit neu aufgetauchte fremde unversionierte Grafik erhalten und nicht gestagt.
+
+**Git:** Spiel lokal **ad04503** auf codex/world-restoration; staged Diff geprüft, reiner Release-/Audit-/Doku-Commit. Zugehörige Chronik separat lokal gesichert. Kein Push.
+
 ## 2026-10-21 – Alle Landschaften als einzelne Fortschrittsbilder
 
 **Auftrag / Ergebnis:** Nutzer möchte jede Map je Fortschrittsansicht einzeln sehen. Beide Repositories vorher sauber. Vorhandenen Capture-Pfad ohne Spieländerung genutzt: 15 native Godot-PNGs (1152×720), Fields/Grove/Marsh jeweils 0/25/50/75/100 %. Galerieabschnitt „Alle Maps · fünf Heilungsstufen“ mit Einzelansicht/Download. Kontrollierte Szene mit HUD/Figuren und isoliertem APPDATA/--test-mode; echte Saves unberührt. Die fünf Vergleichsstufen sind Stichproben der kontinuierlichen Darstellung, keine neuen festen Spielphasen.

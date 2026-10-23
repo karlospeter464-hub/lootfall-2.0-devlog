@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.3 · **Stand:** 21. Oktober 2026
+**Version:** 2.4 · **Stand:** 23. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -585,15 +585,13 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Projektphase:** Habitat-Sanity-Pass und Dev-Testwerkzeuge lokal umgesetzt; persönliche Stil-/Langzeitabnahme offen.
-**Spielprojekt:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot; F5, Code/UI Englisch.
-**Material:** Galerie mit 15 einzelnen PNGs: alle Maps bei 0/25/50/75/100 %, kontrollierte Engine-Screenshots.
-**Neu:** F1 erlaubt zusätzlich exakte aktuelle HP (1..effektives Maximum, ohne Schadenstrigger); Folgeprüfung 271 Checks, ein natives Bild.  Luftbildreferenzen tatsächlich visuell geprüft; getrennte natürliche Sumpfbecken/Ufer, gruppierte Kronen, Wiesenstruktur. F1 → Test tools mit Vorwärtssprung samt kumulativer Sofortgutschrift, Echoes Add/Set/Zero und Welle abschließen.
-**Planbindung:** Ausdrücklich freigegebene Debug-Abweichung vom normalen Belohnungszeitpunkt: übersprungene Wellen geben Echoes und Restoration sofort; spätere Abrechnung zieht Vorschuss ab. Normale Runs unverändert, kein Karten-/Item-Autobuild.
-**Prüfung:** 1265 Checks / 17 Suites bestanden; 190 neue zusätzlich nativ, Geometrie/Wallet/Retry/Dedupe/Frontier/Build/Pausen geprüft. Sieben native Bilder gesichtet.
-**Daten / Export:** Keine Save-Schemaänderung, bestehende Käufe/Preise bleiben. Werkzeuge verändern bewusst aktuell geladenen Save; separate Sandbox vorhanden. Normale Saves im Test unberührt. Kein neuer Export oder Push.
-**Offen:** Menschliches Stilurteil, Lesbarkeit und dichte Langzeitperformance. Boden bleibt Deko, Wasser durchquerbar.
-**Git / Nächster Schritt:** Spiel lokal **770fe86**, zugehöriger Chronikcheckpoint separat. F5 → F1 → Test tools; für Experimente vorher Emberhaven-Sandbox wählen.
+**Projektphase:** Alpha 0.2 Windows-Release lokal paketiert, manueller itch.io-Upload durch Nutzer.
+**Spielprojekt:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot, Version 0.2.0. Aktuelles Gameplay wie 770fe86; keine Balance-/Mechanikänderung im Releasepaket.
+**Enthalten:** Drei Regionen, kumulative Live-Restoration und Heilung, Übertrag, 45 Talente, bisheriger Karten-/Item-/Bossloop. HP-/Wellen-/Wallet-Tools nur Debug; im Release verborgen/abgewiesen.
+**ZIP / Material:** C:/Users/elias/Lootfall 2.0/Exports/Playtest_v0.2/Lootfall_Alpha_v0.2_Windows.zip; sechs native Bilder + englische Texte unter itch_assets. ALPHA_02_RELEASE.md enthält Vollbefund.
+**Prüfung:** 1272 Source / 868 PCK / 8 Auditchecks bestanden; 87 + 23 native Release-QA-Checks. Frisch entpackte EXE direkt bis Welle 2/+4 Restoration beobachtet, F1 gesperrt. QA-Harness gesondert, kein vollständiger menschlicher Durchlauf behauptet.
+**Daten / Grenzen:** Gleicher Savepfad/v4-Kompatibilität, Tests isoliert, V0.1 erhalten. Hardware-/Langzeittest offen. Separate Weitergaberechte der optionalen Nutzerillustration vor öffentlichem Upload bestätigen; Lizenzhinweise beigelegt. Kein Upload/Push.
+**Git:** Spiel lokal **ad04503**, Chronik separat; kein Push. Code/UI Englisch, Berichte Deutsch.
 **Pflegeanweisung:** Nur verifizierte Ergebnisse als implementiert eintragen; technische und menschliche Abnahme unterscheiden.
 
 ---
@@ -602,6 +600,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-23 | Alpha 0.2 Release/QA | Nutzer beauftragt neuestes lokales Windows-Release-ZIP und itch.io-Materialien ohne Gameplayänderung/Upload. Version 0.2.0, alte Saves erhalten, F1/Sandbox gesperrt | ZIP/Quell-/PCK-/Release-QA geprüft, sechs Bilder/Texte; manueller Komplettlauf/Hardware und Illustrationsrechte offen; kein Push |
 | 2026-10-21 | Map-Vergleichsbilder | Nutzer möchte jede Landschaft je Fortschrittsansicht einzeln sehen; 15 native PNGs bei 0/25/50/75/100 % in Galerie | Capture-Erfolg, PNG-Größen und Galerielinks geprüft; keine Spieländerung |
 | 2026-10-21 | Testkomfort HP | Nutzer beauftragt aktuelle HP gezielt setzen; F1 1..effektives Maximum, HUD/Metriken korrekt, keine Wiederbelebung. Landschaftswechsel erläutert | 271 relevante Checks bestanden; ein natives Bild, kein voller erneuter Lauf/Export/Push |
 | 2026-10-21 | Habitat-Sanity / Testkomfort | Nutzer beantragt Luftbildabgleich sowie direkte Debug-Wellensprünge inklusive Echoes/Heilung und Wallet-Reset. Getrennte Becken, Vorwärtssprünge mit Differenzzahlung, erhaltene Builds, kein Skipped-Card-Autobuild | 1265 Checks/17 Suites; 190 zusätzlich nativ, sieben Bilder; keine Veröffentlichung, persönliche Abnahme offen |
