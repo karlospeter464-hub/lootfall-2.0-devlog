@@ -593,6 +593,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 **Daten / Grenzen:** Progress v5 liest v1–v4 und sichert vor Migration .pre_living.json; Käufe/Preise/Welt bleiben. Alte Alpha kann v5 nicht lesen, überschreibt es aber nicht. Zurückwechsel nur bewusst mit Backup. Alle Prüfungen mit isolierten Daten, echte Saves nicht verwendet. Menschliche Sound-/Spielgefühl-Abnahme und Langzeitleistung offen.
 **Release:** Bestehendes ZIP C:/Users/elias/Lootfall 2.0/Exports/Playtest_v0.2/Lootfall_Alpha_v0.2_Windows.zip per SHA256 unverändert. Kein neuer Export, Upload oder Push.
 **Videoproduktion EP01:** Sechs native Movie-Maker-Clips, 1080p/30, H.264/AAC, 6–10 s; A/B echter historischer Commit e720b49 rekonstruiert, C–F 014793a. Große Dateien außerhalb Git unter C:/Users/elias/Lootfall 2.0/Video_Production/EP01; Shotlist/Manifest/Workflow und kleine Vorschaubilder in Chronik. Keine Gameplayänderung; beschleunigte Welle-12-Creditfixtures offen markiert. Alle MP4s dekodiert/abgespielt; tatsächlicher CapCut-Import und menschliche Tonabnahme offen.
+**Video-Follow-up:** Erster ausdrücklich beauftragter Rohschnitt: 38 s, 1080×1920/30, englische Texte, Originalton, Zeitlupe und angepasste Bildausschnitte. MP4 lokal geprüft; kein Voiceover/Musik/Upload, DRAFT01.md.
 **Git:** Lokale Spiel-/Chronik-Checkpoints nach geprüftem Paket; konkreter Spielhash im aktuellen DEVLOG-Eintrag.
 **Pflegeanweisung:** Nur verifizierte Ergebnisse als implementiert eintragen; technische und menschliche Abnahme unterscheiden.
 
@@ -602,6 +603,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-23 | EP01 Rohschnitt freigegeben | Nutzer beauftragt ersten Entwurf aus vorhandenen Videos: 38 s in 9:16, englische Texte, Originalton, keine Spieländerung | Native MP4-Prüfung, Standbilder/Schnittnotizen; Voiceover/Musik und menschliche Abnahme offen; kein Upload |
 | 2026-10-23 | YouTube Video Production 01 | Nutzer beauftragt sechs echte Laufzeitclips und wiederverwendbaren Capture-Workflow; historische/aktuelle Quellarchive und Testdaten getrennt, kein Gameplay/Balancing | Sechs 1080p/30-MP4s, native Decoder-/Wiedergabe-/Audio- und Quellvergleichsprüfung; Shotlist/Manifest/Standbilder, keine Veröffentlichung |
 | 2026-10-23 | Game Feel & Living World / freigegebene Echo-Abweichung | Killbudget in persistente Orbs aufgeteilt; Teilwellen behalten; Runende zahlt nur Rest. Wachstum/Wind/100-%-Reveal, Karten und Hub visuell überarbeitet; v5 mit Migrationsbackup | 1354 Sourcechecks + 82 nativ, 17 PNGs/GIF; lokale Commits, Alpha-ZIP unverändert; menschliche Abnahme offen |
 | 2026-10-23 | Alpha 0.2 Release/QA | Nutzer beauftragt neuestes lokales Windows-Release-ZIP und itch.io-Materialien ohne Gameplayänderung/Upload. Version 0.2.0, alte Saves erhalten, F1/Sandbox gesperrt | ZIP/Quell-/PCK-/Release-QA geprüft, sechs Bilder/Texte; manueller Komplettlauf/Hardware und Illustrationsrechte offen; kein Push |

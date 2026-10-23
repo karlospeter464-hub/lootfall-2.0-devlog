@@ -3,7 +3,10 @@ param(
     [string]$Destination,
     [Parameter(Mandatory=$true)][string]$Report,
     [Parameter(Mandatory=$true)][string]$PreviewPrefix,
-    [switch]$InspectOnly
+    [switch]$InspectOnly,
+    [int]$Width = 1920,
+    [int]$Height = 1080,
+    [double]$TrimStartSeconds = 0.0333333333333333
 )
 # Run with built-in Windows PowerShell 5.1 (WinRT support), not pwsh.
 $ErrorActionPreference = 'Stop'
@@ -41,8 +44,8 @@ if ($Destination) {
     [IO.File]::WriteAllBytes($Destination, [byte[]]@())
     $outputFile = Await-Operation ([Windows.Storage.StorageFile]::GetFileFromPathAsync([IO.Path]::GetFullPath($Destination))) ([Windows.Storage.StorageFile])
     $profile = [Windows.Media.MediaProperties.MediaEncodingProfile]::CreateMp4([Windows.Media.MediaProperties.VideoEncodingQuality]::HD1080p)
-    $profile.Video.Width = 1920
-    $profile.Video.Height = 1080
+    $profile.Video.Width = $Width
+    $profile.Video.Height = $Height
     $profile.Video.FrameRate.Numerator = 30
     $profile.Video.FrameRate.Denominator = 1
     $profile.Video.Bitrate = 12000000
@@ -50,8 +53,8 @@ if ($Destination) {
     $profile.Audio.ChannelCount = 2
     $profile.Audio.Bitrate = 192000
     $encoder = New-Object Windows.Media.Transcoding.MediaTranscoder
-    # Remove only Movie Maker's initialization frame; leave the runtime sequence intact.
-    $encoder.TrimStartTime = [TimeSpan]::FromSeconds(1.0 / 30)
+    # Movie Maker needs one initialization frame removed; rendered edits use zero.
+    $encoder.TrimStartTime = [TimeSpan]::FromSeconds($TrimStartSeconds)
     $prepared = Await-Operation ($encoder.PrepareFileTranscodeAsync($inputFile, $outputFile, $profile)) ([Windows.Media.Transcoding.PrepareTranscodeResult])
     if (-not $prepared.CanTranscode) { throw ('Cannot transcode: ' + $prepared.FailureReason) }
     Await-Action ($prepared.TranscodeAsync())
@@ -66,7 +69,9 @@ $null = $addClip.Invoke($composition.Clips, @($clip))
 $frames = @()
 foreach ($fraction in @(0.1, 0.4, 0.7, 0.9)) {
     $time = [TimeSpan]::FromSeconds($clip.OriginalDuration.TotalSeconds * $fraction)
-    $image = Await-Operation ($composition.GetThumbnailAsync($time, 960, 540, [Windows.Media.Editing.VideoFramePrecision]::NearestFrame)) ([Windows.Graphics.Imaging.ImageStream])
+    $thumbWidth = if ($properties.Width -ge $properties.Height) {960} else {360}
+    $thumbHeight = [int][Math]::Round($thumbWidth * [double]$properties.Height / $properties.Width)
+    $image = Await-Operation ($composition.GetThumbnailAsync($time, $thumbWidth, $thumbHeight, [Windows.Media.Editing.VideoFramePrecision]::NearestFrame)) ([Windows.Graphics.Imaging.ImageStream])
     $reader = New-Object Windows.Storage.Streams.DataReader($image.GetInputStreamAt(0))
     $null = Await-Operation ($reader.LoadAsync([uint32]$image.Size)) ([uint32])
     $bytes = New-Object byte[] ([int]$image.Size)

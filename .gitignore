@@ -12,3 +12,4 @@ Thumbs.db
 /Video_Production/**/*.wav
 /Video_Production/**/source_snapshots/
 /Video_Production/**/.godot/
+/Video_Production/**/__pycache__/

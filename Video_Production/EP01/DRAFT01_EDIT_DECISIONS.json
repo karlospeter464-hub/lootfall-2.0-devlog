@@ -1,0 +1,150 @@
+{
+  "duration": 38,
+  "fps": 30,
+  "size": [
+    1080,
+    1920
+  ],
+  "timeline": [
+    [
+      0,
+      1.2,
+      "E",
+      2.5,
+      1,
+      "fit",
+      "My first playtester\nexposed a problem.",
+      "A better game started here."
+    ],
+    [
+      1.2,
+      4.5,
+      "A",
+      0.2,
+      1,
+      "action",
+      "My first playtester\nexposed a problem.",
+      "The first two runs reached\nwave 7. Then wave 12."
+    ],
+    [
+      4.5,
+      8.5,
+      "B",
+      0.3,
+      1,
+      "action",
+      "The combat worked.",
+      "Spells. Loot. Build experiments."
+    ],
+    [
+      8.5,
+      10.5,
+      "B",
+      4.6,
+      1,
+      "cards",
+      "So did the builds.",
+      "Choices that changed each run."
+    ],
+    [
+      10.5,
+      15,
+      "C",
+      0.2,
+      1,
+      "action",
+      "But why\nkeep playing?",
+      "The feedback: no convincing\nlong-term goal."
+    ],
+    [
+      15,
+      23,
+      "D",
+      0,
+      0.75,
+      "fit",
+      "So I gave every run\na purpose.",
+      "Not just a stronger character.\nA world worth coming back to."
+    ],
+    [
+      23,
+      29,
+      "E",
+      1.8,
+      0.6666666666666666,
+      "fit",
+      "Bring a dead world\nback to life.",
+      "Grow. Restore.\nLeave something better behind."
+    ],
+    [
+      29,
+      32,
+      "E",
+      6.2,
+      1,
+      "fit",
+      "One region healed.\nAnother waiting.",
+      "Permanent progress.\nA bigger journey."
+    ],
+    [
+      32,
+      38,
+      "F",
+      0,
+      1,
+      "fit",
+      "Every run makes\nyou stronger.",
+      "LOOTFALL / EARLY PROTOTYPE"
+    ]
+  ],
+  "voiceover": false,
+  "music": false,
+  "audio": "Original source PCM, 3x gain, cut fades; slow sections also slow the game sound",
+  "audio_peak": 0.364288330078125,
+  "source_files": {
+    "A": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\historical\\A_EP01_e720b49_final.avi",
+    "B": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\historical\\B_EP01_e720b49_final.avi",
+    "C": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\current\\C_EP01_014793a_final.avi",
+    "D": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\current\\D_EP01_014793a_final.avi",
+    "E": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\current\\E_EP01_014793a_final.avi",
+    "F": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\current\\F_EP01_014793a_final.avi"
+  },
+  "renderer_sha256": "a8153a7e17bbaf8ebcfc32a2e187cea390d172c8c20699644d5888714f00396a",
+  "intermediate_header_repaired": true,
+  "intermediate_color_format": "MJPEG 4:2:0 / PCM stereo 48kHz",
+  "caption_overrides": [
+    {
+      "start": 18,
+      "end": 23,
+      "title": "World Restoration."
+    },
+    {
+      "start": 35,
+      "end": 38,
+      "title": "Every run brings the world back to life.",
+      "footer": "Would you play this?"
+    }
+  ],
+  "intermediate_reencoded_420": true,
+  "output_file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\edits\\Draft01\\Lootfall_EP01_Draft01.mp4",
+  "output_sha256": "98c8d74a232840b16a1d22335e3d0b113a345eee4e0fc652a622fe010001dd1d",
+  "qa": {
+    "file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\edits\\Draft01\\Lootfall_EP01_Draft01.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 38.0179791,
+    "fps": 30,
+    "video_compression": "H264",
+    "audio_compression": "AAC",
+    "audio_sample_rate": 48000,
+    "audio_channels": 2,
+    "decoded_previews": [
+      "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/edits/Draft01/decoded_final_10.jpg",
+      "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/edits/Draft01/decoded_final_40.jpg",
+      "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/edits/Draft01/decoded_final_70.jpg",
+      "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/edits/Draft01/decoded_final_90.jpg"
+    ],
+    "playback_reached_seconds": 37.8481425,
+    "verified": "Native Windows decoder decoded four positions; muted MediaPlayer playback reached the end"
+  }
+}

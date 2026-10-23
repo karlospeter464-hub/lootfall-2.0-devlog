@@ -1,6 +1,19 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
 
+## 2026-10-23 – EP01: erster tatsächlicher Hochformat-Rohschnitt
+
+**Freigabe:** Nutzer beauftragt nach den sechs Rohclips ausdrücklich einen ersten Schnittentwurf. 38 Sekunden mit englischen Texten, Original-Spielton und 9:16-Aufbereitung; noch kein Voiceover, keine Musik und keine Veröffentlichung. Vorherige Begrenzung auf Rohmaterial damit für diesen Schnitt erweitert; kein Gameplay-/Balancingauftrag. Spielrepo weiterhin sauber auf 014793a; unbekannte unversionierte Nutzergrafik in Chronik erhalten.
+
+**Ergebnis:** Lokale MP4 unter C:/Users/elias/Lootfall 2.0/Video_Production/EP01/edits/Draft01/Lootfall_EP01_Draft01.mp4. Kurzer geheilter Teaser → historische Action/Builds/Karten → fehlendes Langzeitziel → Wachstum → Regionsabschluss/Unlock → Emberhaven/Skilltree und Schlussfrage. Kampf folgt der mittig bewegten Figur, Menüs/Landschaft werden ohne verlorene Karten/Regionen eingepasst. Kurze Überblendungen/Schlussblende, 0,75×/0,67× Wachstum; englische Texte eingebrannt. Historische Rekonstruktion und beschleunigte Restoration stehen im Bild. Originalton dreifach verstärkt und an Schnitten ausgeblendet; Zeitlupe dehnt auch Ton/Tonhöhe. Keine zusätzlichen Sounds erfunden, stille historische Abschnitte bleiben still.
+
+**Technik / Prüfung:** Fester kleiner Schnitt-Renderer verarbeitet 1140 tatsächliche AVI-Videoframes mit Pillow/NumPy, keine Standbildanimation und kein allgemeines Videoeditor-System. Windows-Encoder um optionale Größe/Starttrim erweitert, alte Defaults bewahrt. Finale Datei nativ: 1080×1920, 30 FPS, 38,018 s, H.264/AAC, 48-kHz-Stereo. Vier Positionen aus der finalen MP4 dekodiert/visuell geprüft, stumme Wiedergabe bis 37,848 s. Master hat genau 1140 Frames und 38 s PCM; Peak 0,3643, kein Clipping. Alle sechs ursprünglichen AVI-/MP4-Paare per SHA256 unverändert. Neun Layout-Stichproben inklusive Karten/Heilung/Ende angesehen. Kein tatsächlicher CapCut-Import oder subjektiver Sound-/Tempo-Test.
+
+**Fehlversuch / Korrektur:** Im selbst erzeugten AVI-Zwischenformat wurde zunächst über einen optionalen rcFrame hinausgeschrieben: Godots Streamheader ist nur 48 Byte lang, das folgende strf-Feld wurde überschrieben. Ursache geprüft und im gemeinsamen Writer korrigiert, entstandenen Header gezielt repariert. Kompatiblen 4:2:0-MJPEG-Pfad mit kurzer nativer Probe bestätigt und vollständigen Master entsprechend neu kodiert; danach MP4-Export/Dekodierung/Wiedergabe erfolgreich. Technische Proben außerhalb Git erhalten. Keine Programme installiert oder originale Medien überschrieben.
+
+**Dokumentation:** DRAFT01.md, Schnittzeiten/Quellen/Hash/QA als DRAFT01_EDIT_DECISIONS.json, kleine Vorschauen/Galerie und Masterplan §9/10 nachgeführt; große AVI/MP4 außerhalb Git. Für nächste Iteration zuerst Entwurf ansehen und Erzähltempo/Textmenge bewerten, dann Voiceover/gezielte Tonmischung. Kein Push, Upload, neuer Spiel-Export oder Änderung echter Saves.
+
+
 ## 2026-10-23 – YouTube EP01: echte Aufnahmen statt Screenshot-Animation
 
 **Auftrag / Bezug:** Erstes englisches Short-Rohmaterial „My First Playtester Exposed a Problem With My Game“. Die Wellen 7/12 und das fehlende Langzeitziel sind bereits in WORLD_RESTORATION.md §1 und im früheren Devlog dokumentiert. Keine neue Gameplayfreigabe: ausschließlich Aufnahmehilfen, Quellarchive, Medien-QA und Dokumentation. Spielrepo vor/nach Arbeit sauber auf **014793a**, kein produktiver Code-/Balance-/Savewechsel.
