@@ -1,0 +1,558 @@
+{
+  "episode": "EP01",
+  "theme": "My First Playtester Exposed a Problem With My Game",
+  "capture_date": "2026-10-23",
+  "engine": "Godot 4.7.2 stable ed1daf0bf, native D3D12, Movie Maker 30 FPS",
+  "encoder": "Built-in Windows Media Foundation; H264/AAC; no FFmpeg CLI installed",
+  "no_tester_original_footage": true,
+  "production_game_unchanged": true,
+  "clips": [
+    {
+      "shot": "A",
+      "title": "A — The Original Game",
+      "capture_date": "2026-10-23",
+      "source_commit": "e720b49d48a5432dfc25e8cd5f63f9287166ae12",
+      "source_commit_date": "2026-10-20T20:26:55+02:00",
+      "game_version": "not set in historical project.godot",
+      "classification": "controlled historical reconstruction",
+      "artificial_setup": "Historischer Commit ohne Restoration, heute inszeniert. Welle 3, Spawnbudget 40, Swift Scepter/Cinder Codex, 1 Power/1 Fan; Gegner werden nachgesetzt.",
+      "shared_setup": "Seed 4201; invulnerable test actor; sinusoidal centered movement; auto-aim/attacks use existing player/projectile logic. No enemy HP/damage or production balancing changed. D/E clear frozen damage-number VFX and remaining projectiles for the landscape reveal. Rendering-only fit into 16:9; no gameplay transform.",
+      "raw_master": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\historical\\A_EP01_e720b49_final.avi",
+      "import_file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\01_Original_Game.mp4",
+      "avi_sha256": "1a810e729db05033197200a27bf999b7e117ad81660a4ba0ff46c3528cd5f4fd",
+      "mp4_sha256": "4429cd0e2f5c6e3854ac2771c21484202604923cd1a8866be5b228386467eabd",
+      "capture_controller_sha256": "6d1c19ded860b4ab748bf6ea02ec517275cb6fab3d1e825e14bbcafd8d3ff310",
+      "movie_capture": {
+        "capture_kind": "controlled historical reconstruction",
+        "checks": [
+          "Real projectiles hit real enemies; multiple actors visible"
+        ],
+        "fps": 30,
+        "frames": 240,
+        "game_version": "",
+        "initial_world_points": [],
+        "invulnerable": true,
+        "kills": 21,
+        "max_enemies": 10,
+        "passed": true,
+        "requested_seconds": 8.0,
+        "scripted_centered_movement": true,
+        "seed": 4201,
+        "shot": "A",
+        "shots_hit": 37,
+        "source_commit": "e720b49",
+        "viewport": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_mp4": {
+        "file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\01_Original_Game.mp4",
+        "width": 1920,
+        "height": 1080,
+        "seconds": 8.0019791,
+        "fps": 30,
+        "video_compression": "H264",
+        "audio_compression": "AAC",
+        "audio_sample_rate": 48000,
+        "audio_channels": 2,
+        "decoded_previews": [
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/A_decoded_final_10.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/A_decoded_final_40.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/A_decoded_final_70.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/A_decoded_final_90.jpg"
+        ],
+        "playback_reached_seconds": 7.7987265,
+        "verified": "Native Windows decoder decoded four positions; muted MediaPlayer playback reached the end"
+      },
+      "raw_audio": {
+        "raw_size": [
+          1920,
+          1080
+        ],
+        "raw_frames": 241,
+        "raw_fps": 30.00030000300003,
+        "pcm_format": [
+          1,
+          2,
+          48000,
+          192000,
+          4,
+          16
+        ],
+        "peak": 0.0,
+        "rms": 0.0
+      }
+    },
+    {
+      "shot": "B",
+      "title": "B — Combat and Build Discovery",
+      "capture_date": "2026-10-23",
+      "source_commit": "e720b49d48a5432dfc25e8cd5f63f9287166ae12",
+      "source_commit_date": "2026-10-20T20:26:55+02:00",
+      "game_version": "not set in historical project.godot",
+      "classification": "controlled historical reconstruction",
+      "artificial_setup": "Historischer Commit: Welle 2, Spawnbudget 40, Ember Scepter/Storm Grimoire, 1 Power/1 Fan und Burst vorbereitet. Bei 4,5 s scripted Cleanup; regulärer Wave-Clear öffnet echte Kartenwahl.",
+      "shared_setup": "Seed 4201; invulnerable test actor; sinusoidal centered movement; auto-aim/attacks use existing player/projectile logic. No enemy HP/damage or production balancing changed. D/E clear frozen damage-number VFX and remaining projectiles for the landscape reveal. Rendering-only fit into 16:9; no gameplay transform.",
+      "raw_master": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\historical\\B_EP01_e720b49_final.avi",
+      "import_file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\02_Combat_and_Build_Discovery.mp4",
+      "avi_sha256": "0e5109eb8a87d459b6c3c9e6dc2520de4a75d6e654a551080d3ccc016a664e68",
+      "mp4_sha256": "1f2fda2e29cff6fc81a7258c43045512735eee3437a06ec6648cec90c7bd997d",
+      "capture_controller_sha256": "6d1c19ded860b4ab748bf6ea02ec517275cb6fab3d1e825e14bbcafd8d3ff310",
+      "movie_capture": {
+        "capture_kind": "controlled historical reconstruction",
+        "checks": [
+          "Real projectiles hit real enemies; multiple actors visible",
+          "Real wave-clear path opened three upgrade choices"
+        ],
+        "fps": 30,
+        "frames": 240,
+        "game_version": "",
+        "initial_world_points": [],
+        "invulnerable": true,
+        "kills": 18,
+        "max_enemies": 10,
+        "passed": true,
+        "requested_seconds": 8.0,
+        "scripted_centered_movement": true,
+        "seed": 4201,
+        "shot": "B",
+        "shots_hit": 15,
+        "source_commit": "e720b49",
+        "viewport": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_mp4": {
+        "file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\02_Combat_and_Build_Discovery.mp4",
+        "width": 1920,
+        "height": 1080,
+        "seconds": 8.0019791,
+        "fps": 30,
+        "video_compression": "H264",
+        "audio_compression": "AAC",
+        "audio_sample_rate": 48000,
+        "audio_channels": 2,
+        "decoded_previews": [
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/B_decoded_final_10.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/B_decoded_final_40.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/B_decoded_final_70.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/B_decoded_final_90.jpg"
+        ],
+        "playback_reached_seconds": 7.7949765,
+        "verified": "Native Windows decoder decoded four positions; muted MediaPlayer playback reached the end"
+      },
+      "raw_audio": {
+        "raw_size": [
+          1920,
+          1080
+        ],
+        "raw_frames": 241,
+        "raw_fps": 30.00030000300003,
+        "pcm_format": [
+          1,
+          2,
+          48000,
+          192000,
+          4,
+          16
+        ],
+        "peak": 0.0,
+        "rms": 0.0
+      }
+    },
+    {
+      "shot": "C",
+      "title": "C — A Dying World",
+      "capture_date": "2026-10-23",
+      "source_commit": "014793a9f699d90985c2e68d91e64d713261834b",
+      "source_commit_date": "2026-10-23T14:46:22+02:00",
+      "game_version": "0.2.0",
+      "classification": "controlled current-source runtime",
+      "artificial_setup": "Aktuelle Fields bei 0 %. Welle 3, Spawnbudget 40, Ember Scepter/Cinder Codex, 1 Power/1 Fan; Gegnernachschub verhindert leere Passage. Keine Heilung im Clip.",
+      "shared_setup": "Seed 4201; invulnerable test actor; sinusoidal centered movement; auto-aim/attacks use existing player/projectile logic. No enemy HP/damage or production balancing changed. D/E clear frozen damage-number VFX and remaining projectiles for the landscape reveal. Rendering-only fit into 16:9; no gameplay transform.",
+      "raw_master": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\current\\C_EP01_014793a_final.avi",
+      "import_file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\03_A_Dying_World.mp4",
+      "avi_sha256": "195492cbf75158e95e5f4194420d1b1ee39e26dbd531aff9e921e511cce7eef0",
+      "mp4_sha256": "eff57dcb1e36d4c5c7bfb3b2d3ac302a0b631d864baa167eb41d2d1a8965f62c",
+      "capture_controller_sha256": "6d1c19ded860b4ab748bf6ea02ec517275cb6fab3d1e825e14bbcafd8d3ff310",
+      "movie_capture": {
+        "capture_kind": "controlled current-source runtime",
+        "checks": [
+          "Real projectiles hit real enemies; multiple actors visible",
+          "Ashen Fields remained fully blighted"
+        ],
+        "fps": 30,
+        "frames": 180,
+        "game_version": "0.2.0",
+        "initial_world_points": [
+          0,
+          0,
+          0
+        ],
+        "invulnerable": true,
+        "kills": 15,
+        "max_enemies": 7,
+        "passed": true,
+        "requested_seconds": 6.0,
+        "scripted_centered_movement": true,
+        "seed": 4201,
+        "shot": "C",
+        "shots_hit": 28,
+        "source_commit": "014793a",
+        "viewport": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_mp4": {
+        "file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\03_A_Dying_World.mp4",
+        "width": 1920,
+        "height": 1080,
+        "seconds": 6.0179791,
+        "fps": 30,
+        "video_compression": "H264",
+        "audio_compression": "AAC",
+        "audio_sample_rate": 48000,
+        "audio_channels": 2,
+        "decoded_previews": [
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/C_decoded_final_10.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/C_decoded_final_40.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/C_decoded_final_70.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/C_decoded_final_90.jpg"
+        ],
+        "playback_reached_seconds": 5.8600955,
+        "verified": "Native Windows decoder decoded four positions; muted MediaPlayer playback reached the end"
+      },
+      "raw_audio": {
+        "raw_size": [
+          1920,
+          1080
+        ],
+        "raw_frames": 181,
+        "raw_fps": 30.00030000300003,
+        "pcm_format": [
+          1,
+          2,
+          48000,
+          192000,
+          4,
+          16
+        ],
+        "peak": 0.0406494140625,
+        "rms": 0.004962256060824708
+      }
+    },
+    {
+      "shot": "D",
+      "title": "D — The World Comes Back to Life",
+      "capture_date": "2026-10-23",
+      "source_commit": "014793a9f699d90985c2e68d91e64d713261834b",
+      "source_commit_date": "2026-10-23T14:46:22+02:00",
+      "game_version": "0.2.0",
+      "classification": "controlled current-source runtime",
+      "artificial_setup": "Kontrollierte kumulative Credit-Fixture: Welle 12, Welt 0/600, bisherige Run-Credits 0. Scripted Cleanup bei 2 s; echter Clear/Save/Tween schreibt 312 Punkte (52 %). Kartenoverlay für Landschaft verborgen. Keine Darstellung der normalen Einzelwellenrate.",
+      "shared_setup": "Seed 4201; invulnerable test actor; sinusoidal centered movement; auto-aim/attacks use existing player/projectile logic. No enemy HP/damage or production balancing changed. D/E clear frozen damage-number VFX and remaining projectiles for the landscape reveal. Rendering-only fit into 16:9; no gameplay transform.",
+      "raw_master": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\current\\D_EP01_014793a_final.avi",
+      "import_file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\04_The_World_Comes_Back_to_Life.mp4",
+      "avi_sha256": "9ba1cfac85037528ea19fddc59a0ed34cf008380e5745debba3ca96bcfa7fac6",
+      "mp4_sha256": "11d704f7d0470239208a36ed34f06a55d8420fbdfa547948b46db552eeccb5e5",
+      "capture_controller_sha256": "6d1c19ded860b4ab748bf6ea02ec517275cb6fab3d1e825e14bbcafd8d3ff310",
+      "movie_capture": {
+        "capture_kind": "controlled current-source runtime",
+        "checks": [
+          "Real projectiles hit real enemies; multiple actors visible",
+          "Actual cumulative wave credit grew Fields from 0 to 52 percent"
+        ],
+        "fps": 30,
+        "frames": 240,
+        "game_version": "0.2.0",
+        "initial_world_points": [
+          0,
+          0,
+          0
+        ],
+        "invulnerable": true,
+        "kills": 7,
+        "max_enemies": 7,
+        "passed": true,
+        "requested_seconds": 8.0,
+        "scripted_centered_movement": true,
+        "seed": 4201,
+        "shot": "D",
+        "shots_hit": 7,
+        "source_commit": "014793a",
+        "viewport": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_mp4": {
+        "file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\04_The_World_Comes_Back_to_Life.mp4",
+        "width": 1920,
+        "height": 1080,
+        "seconds": 8.0019791,
+        "fps": 30,
+        "video_compression": "H264",
+        "audio_compression": "AAC",
+        "audio_sample_rate": 48000,
+        "audio_channels": 2,
+        "decoded_previews": [
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/D_decoded_final_10.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/D_decoded_final_40.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/D_decoded_final_70.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/D_decoded_final_90.jpg"
+        ],
+        "playback_reached_seconds": 7.7522058,
+        "verified": "Native Windows decoder decoded four positions; muted MediaPlayer playback reached the end"
+      },
+      "raw_audio": {
+        "raw_size": [
+          1920,
+          1080
+        ],
+        "raw_frames": 241,
+        "raw_fps": 30.00030000300003,
+        "pcm_format": [
+          1,
+          2,
+          48000,
+          192000,
+          4,
+          16
+        ],
+        "peak": 0.10150146484375,
+        "rms": 0.005171142501558603
+      }
+    },
+    {
+      "shot": "E",
+      "title": "E — Region Fully Restored",
+      "capture_date": "2026-10-23",
+      "source_commit": "014793a9f699d90985c2e68d91e64d713261834b",
+      "source_commit_date": "2026-10-23T14:46:22+02:00",
+      "game_version": "0.2.0",
+      "classification": "controlled current-source runtime",
+      "artificial_setup": "Wie D, aber gespeicherte Welt startet bei 288/600 (48 %). Echte 312 Punkte heilen auf 600; Grove freigeschaltet. Echte Kartenauswahl bei 5 s, Ergebnis/Return to Town bei 6 s. Kein Punktüberhang bei dieser exakt passenden Fixture.",
+      "shared_setup": "Seed 4201; invulnerable test actor; sinusoidal centered movement; auto-aim/attacks use existing player/projectile logic. No enemy HP/damage or production balancing changed. D/E clear frozen damage-number VFX and remaining projectiles for the landscape reveal. Rendering-only fit into 16:9; no gameplay transform.",
+      "raw_master": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\current\\E_EP01_014793a_final.avi",
+      "import_file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\05_Region_Fully_Restored.mp4",
+      "avi_sha256": "8e123fefa1aee4c9778fa4089fd38344819b07bc377e5cc6a6846e3e87a8c097",
+      "mp4_sha256": "282f2206783de76b4d21e01bff5718a6b04832f187b741b0f2c2978237979c8c",
+      "capture_controller_sha256": "6d1c19ded860b4ab748bf6ea02ec517275cb6fab3d1e825e14bbcafd8d3ff310",
+      "movie_capture": {
+        "capture_kind": "controlled current-source runtime",
+        "checks": [
+          "Real projectiles hit real enemies; multiple actors visible",
+          "Actual completion unlocked Grove and returned to town"
+        ],
+        "fps": 30,
+        "frames": 300,
+        "game_version": "0.2.0",
+        "initial_world_points": [
+          288,
+          0,
+          0
+        ],
+        "invulnerable": true,
+        "kills": 7,
+        "max_enemies": 7,
+        "passed": true,
+        "requested_seconds": 10.0,
+        "scripted_centered_movement": true,
+        "seed": 4201,
+        "shot": "E",
+        "shots_hit": 7,
+        "source_commit": "014793a",
+        "viewport": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_mp4": {
+        "file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\05_Region_Fully_Restored.mp4",
+        "width": 1920,
+        "height": 1080,
+        "seconds": 10.0073125,
+        "fps": 30,
+        "video_compression": "H264",
+        "audio_compression": "AAC",
+        "audio_sample_rate": 48000,
+        "audio_channels": 2,
+        "decoded_previews": [
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/E_decoded_final_10.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/E_decoded_final_40.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/E_decoded_final_70.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/E_decoded_final_90.jpg"
+        ],
+        "playback_reached_seconds": 9.8026609,
+        "verified": "Native Windows decoder decoded four positions; muted MediaPlayer playback reached the end"
+      },
+      "raw_audio": {
+        "raw_size": [
+          1920,
+          1080
+        ],
+        "raw_frames": 301,
+        "raw_fps": 30.00030000300003,
+        "pcm_format": [
+          1,
+          2,
+          48000,
+          192000,
+          4,
+          16
+        ],
+        "peak": 0.121429443359375,
+        "rms": 0.007086797833426671
+      }
+    },
+    {
+      "shot": "F",
+      "title": "F — The Bigger Journey",
+      "capture_date": "2026-10-23",
+      "source_commit": "014793a9f699d90985c2e68d91e64d713261834b",
+      "source_commit_date": "2026-10-23T14:46:22+02:00",
+      "game_version": "0.2.0",
+      "classification": "controlled current-source runtime",
+      "artificial_setup": "Geladene Weltpunkte [600,560,0], regionale Bestwellen [12,7,0], 180 Echoes, keine Talente gekauft. Fields restored, Grove 40 %, Marsh locked. Bei 5 s echte Skilltree-Ansicht, bei 7 s zurück zur Übersicht.",
+      "shared_setup": "Seed 4201; invulnerable test actor; sinusoidal centered movement; auto-aim/attacks use existing player/projectile logic. No enemy HP/damage or production balancing changed. D/E clear frozen damage-number VFX and remaining projectiles for the landscape reveal. Rendering-only fit into 16:9; no gameplay transform.",
+      "raw_master": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\current\\F_EP01_014793a_final.avi",
+      "import_file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\06_The_Bigger_Journey.mp4",
+      "avi_sha256": "ce2277b50b083242ee13a7b32024fb01805b238400c6da923db3511c9e005a4f",
+      "mp4_sha256": "78eed1584dce47cbf3ab3423bcfea592b0751c898ead2e724b30bae2bfe1eb2a",
+      "capture_controller_sha256": "6d1c19ded860b4ab748bf6ea02ec517275cb6fab3d1e825e14bbcafd8d3ff310",
+      "movie_capture": {
+        "capture_kind": "controlled current-source runtime",
+        "checks": [],
+        "fps": 30,
+        "frames": 240,
+        "game_version": "0.2.0",
+        "initial_world_points": [
+          600,
+          560,
+          0
+        ],
+        "invulnerable": true,
+        "kills": 0,
+        "max_enemies": 0,
+        "passed": true,
+        "requested_seconds": 8.0,
+        "scripted_centered_movement": true,
+        "seed": 4201,
+        "shot": "F",
+        "shots_hit": 0,
+        "source_commit": "014793a",
+        "viewport": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_mp4": {
+        "file": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\capcut_import\\06_The_Bigger_Journey.mp4",
+        "width": 1920,
+        "height": 1080,
+        "seconds": 8.0019791,
+        "fps": 30,
+        "video_compression": "H264",
+        "audio_compression": "AAC",
+        "audio_sample_rate": 48000,
+        "audio_channels": 2,
+        "decoded_previews": [
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/F_decoded_final_10.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/F_decoded_final_40.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/F_decoded_final_70.jpg",
+          "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/F_decoded_final_90.jpg"
+        ],
+        "playback_reached_seconds": 7.7559973,
+        "verified": "Native Windows decoder decoded four positions; muted MediaPlayer playback reached the end"
+      },
+      "raw_audio": {
+        "raw_size": [
+          1920,
+          1080
+        ],
+        "raw_frames": 241,
+        "raw_fps": 30.00030000300003,
+        "pcm_format": [
+          1,
+          2,
+          48000,
+          192000,
+          4,
+          16
+        ],
+        "peak": 0.0,
+        "rms": 0.0
+      }
+    }
+  ],
+  "missing": [
+    "No original external tester run footage",
+    "No voiceover or final edit requested",
+    "No baked 9:16 exports: full-width cards/hub require deliberate fitting in CapCut"
+  ],
+  "legacy_material": [
+    {
+      "file": "C:\\Users\\elias\\OneDrive\\Dokumente\\ChatGPT\\Lootfall 2.0\\Progress\\archive\\Recording 2026-10-14 115459.mp4",
+      "width": 1212,
+      "height": 666,
+      "seconds": 14.5279791,
+      "fps": 30.020744334335024,
+      "video_compression": "H264",
+      "audio_compression": "AAC",
+      "audio_sample_rate": 48000,
+      "audio_channels": 2,
+      "decoded_previews": [
+        "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/legacy_115459_10.jpg",
+        "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/legacy_115459_40.jpg",
+        "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/legacy_115459_70.jpg",
+        "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/legacy_115459_90.jpg"
+      ],
+      "playback_reached_seconds": 0,
+      "verified": "Metadata and four decoded positions only; not full playback"
+    },
+    {
+      "file": "C:\\Users\\elias\\OneDrive\\Dokumente\\ChatGPT\\Lootfall 2.0\\Progress\\archive\\Recording 2026-10-14 172325.mp4",
+      "width": 1164,
+      "height": 746,
+      "seconds": 53.8666333,
+      "fps": 30,
+      "video_compression": "H264",
+      "audio_compression": "AAC",
+      "audio_sample_rate": 48000,
+      "audio_channels": 2,
+      "decoded_previews": [
+        "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/legacy_172325_10.jpg",
+        "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/legacy_172325_40.jpg",
+        "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/legacy_172325_70.jpg",
+        "C:/Users/elias/Lootfall 2.0/Video_Production/EP01/previews/legacy_172325_90.jpg"
+      ],
+      "playback_reached_seconds": 0,
+      "verified": "Metadata and four decoded positions only; not full playback"
+    }
+  ],
+  "workflow_smoke": {
+    "shot": "D",
+    "passed": true,
+    "output": "C:\\Users\\elias\\Lootfall 2.0\\Video_Production\\EP01\\technical_probes\\workflow_smoke_D",
+    "stages": [
+      "Git archive",
+      "isolated import",
+      "native Movie Maker",
+      "MP4 encode",
+      "native decode",
+      "muted playback"
+    ]
+  },
+  "source_file_comparison": {
+    "pre_restoration_e720b49": [
+      "project.godot"
+    ],
+    "living_world_014793a": [
+      "project.godot"
+    ],
+    "meaning": "Among original tracked files only the two snapshot window overrides changed. Capture helper and generated cache/UID files are additional."
+  }
+}

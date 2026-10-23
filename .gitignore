@@ -5,3 +5,10 @@
 *.log
 Thumbs.db
 .DS_Store
+
+# Generated production media and source copies belong in the external episode folder.
+/Video_Production/**/*.avi
+/Video_Production/**/*.mp4
+/Video_Production/**/*.wav
+/Video_Production/**/source_snapshots/
+/Video_Production/**/.godot/
