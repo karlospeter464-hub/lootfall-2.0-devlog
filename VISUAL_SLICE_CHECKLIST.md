@@ -108,7 +108,7 @@
 - **Codex:** prüft lokalen Ist-Stand, erstellt die testbare Integrationsstelle, importiert bereitgestellte Dateien, bindet Animationen an bestehende Zustände, automatisiert reproduzierbare Tests/Vergleiche und dokumentiert den verifizierten Fortschritt.
 - **Git/Veröffentlichung:** Spielassets/Code im Spielrepo; Design-Gates hier; Commits/Pushes/öffentliche Uploads nur nach passenden Aufträgen. Keine stillen Spielregeländerungen.
 
-**Nächste konkrete Aktion:** **Gate 0** – Codex-Leseaudit für Spielergröße/Kamera/Sprite-Schnittstellen + Referenzaufnahme. **Parallel Gate 1** – 2–3 gezielte Apprentice-Entwürfe in *identischer* Gameplay-Perspektive entwickeln. Nach Sichtung der Ergebnisse die exakte Asset-Spezifikation festlegen; erst dann Implementierungsfreigabe.
+**Nächste konkrete Aktion (aktualisiert):** Runtime-Kandidat v01 anhand der neuen Idle-/Live-Kampfbilder sichten. Methode A für den Apprentice abnehmen oder eine konkrete Einschränkung gezielt nachbessern; finales PNG ohne eingebrannten Bodenschatten liefern. Keine automatische weitere Assetserie oder dauerhafte Ersetzung.
 ## Verifizierter Zwischenstand – 25.10.2026, Methode A
 
 Expliziter Nutzerauftrag erweitert Gate 0 um einen **isolierten** Sprite-/AnimationPlayer-Test, keine dauerhafte Ersetzung. Online-Checkliste aus origin/main (5b7ae5a) lokal übernommen; lokale übrige Chronik und unversionierte Nutzergrafik bewahrt. Kein pauschales Zusammenführen der auseinanderliegenden lokalen/Online-Chronik.
@@ -124,3 +124,20 @@ Expliziter Nutzerauftrag erweitert Gate 0 um einen **isolierten** Sprite-/Animat
 **Gate-Status:** Gate 0 technisch belegt mit genannter Editorgrenze; Methode A technisch demonstriert. Gates 1–5 als vollständiges A1-Paket bleiben offen. Insbesondere keine finale Perspektiv-/Figurenabnahme, kein Chaser-/Bodenpaket und keine dauerhafte Integration behaupten.
 
 **Nächster Schritt:** Creative Director sichtet echte Spielgröße und subtilen Bewegungstest. Erstes vereinfachtes erhöhtes 3/4-Runtime-PNG liefern: Vorschlag 256×320 RGBA, sichtbare Figur ca. 280 Pixel hoch, exakten Fußanker dokumentieren, Startziel 64 logische Pixel. Danach im vorhandenen Test ersetzen und abnehmen; keine weitere Assetserie vor diesem Vergleich.
+
+## Runtime-Kandidat v01 – tatsächlicher In-Engine-Test, 25.10.2026
+
+**Explizit freigegeben:** lootfall_apprentice_runtime_candidate_v01.png im bestehenden isolierten Test integrieren und mit mindestens zwölf aktiven Gegnern prüfen. Kein Gameplay-/Hitbox-/Balancing-/Progressionswechsel und kein Push. Spiel-Checkpoint **33424dc**.
+
+- [x] Tatsächliche Einzeldatei bereitgestellt, geprüft und bytegleich als Test-Fixture übernommen; das mitgesendete German Mage Animation Sheet nicht als Runtime-Sheet verwendet.
+- [x] 256×320 RGBA, Alpha-Bounds (18,26,212,274), Fußanker (128,300), Sprite-Offset (-128,-300), Skalierung 64/274 = 0,23357664. Ca. 49,5×64 logische Pixel / 44,6×57,6 Bildschirmpixel im unveränderten Standardfenster.
+- [x] Sprite2D + AnimationPlayer weiterhin isoliert; Idle/Move/Cast und Hurt-Färbung, V-Fallback und ursprüngliches F5 erhalten. Keine Änderungen an produktiven Scripts/Szenen, Kamera oder Projektkonfiguration.
+- [x] Nativer D3D12-Kampftest mit realer Bewegung, laufender KI und echten Projektil-/Schadenspfaden: 180 Physikframes, durchgehend zwölf Gegner, zehn Schüsse, acht Treffer, 80 tatsächlicher Schaden; Spieler-HP am Ende 54,5728. Automatisierte Eingaben/Zielwahl, kein menschlicher Playthrough; unveränderte Kampfwerte, isolierte Testdaten.
+- [x] Tatsächlicher Idle-Screenshot und Live-Kampfscreenshot in normaler Ansicht erstellt und gesichtet: [Galerie](Progress/index.html#candidate-v01). Kampfbild bei zwölf aktiven Gegnern, kein eingefrorenes Tableau.
+- [x] 27 Candidate-Headless-Checks, 20 bestehende Player-Art-Checks, zwölf bestehende Visual-Lift-Checks sowie 39 native Checks bestanden. Foot-Pivot, Pause, Animationswahl, Hurt, ursprünglicher Körper, Projektilursprung und Werte geprüft.
+
+**Sichtbefund:** Kein sichtbarer rechteckiger Hintergrund oder auffälliger Alpha-Rand in den gesichteten Bildern. Hut/Feuer sind gut erkennbar; Gesicht, Finger und Buchdetails gehen bei 64 logischen Pixeln weitgehend verloren. Zielanzeige, Projektile und feindliche Warnkreise bleiben in der Stichprobe sichtbar. Das PNG besitzt bereits einen gezeichneten Bodenschatten und überlagert den vorhandenen Godot-Schatten; sein Schatten würde mitwippen und mitskalieren. Für die endgültige Fassung Körper-PNG ohne Bodenschatten liefern.
+
+**Bewertung Methode A:** Für den ersten spielbaren Apprentice-Prototyp ausreichend. Ganze Figur atmet/wippt/reagiert; keine eigenständigen Schritte, Arme oder Buchbewegungen. Feste Bildrichtung passt nicht zu jeder Schuss-/Laufrichtung. Erst persönlich prüfen, ob diese Grenzen akzeptabel sind; keine automatische Umstellung auf B/C. Zeitliche Artefaktfreiheit, lange Kampf-/Performance-Abnahme und vollständige A1-Stilfamilie bleiben offen. Keine finale Produktions-/Perspektivabnahme aus einem kurzen Test ableiten.
+
+**Quelle:** Nutzer-Download, 80179 Byte, SHA256 831023c026176d2949e3e8a085148ea1cb79d72d1684a0b7977fbbead3053128. Original erhalten. Anleitung im Spielrepo VISUAL_SLICE_A_PLAYTEST.md; Belege unter Progress/captures/2026-10-25_candidate_v01/.

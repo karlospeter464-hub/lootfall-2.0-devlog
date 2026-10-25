@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Runtime-Kandidat v01 · 25.10.:** Neues 256×320-PNG nur im isolierten Methode-A-Test, Fußanker (128,300), 64 logische Pixel Höhe. 180 echte Physikframes bei zwölf aktiven Gegnern, zehn Schüsse/acht Treffer; 59 Headless- und 39 native Checks bestanden. Idle/Kampfbilder in Galerie, Spiel 33424dc. F5/Gameplay unverändert; eingebrannter Schatten und feste Blickrichtung als Grenzen, persönliche Abnahme offen. Details VISUAL_SLICE_CHECKLIST.md.
+
 **Visual Slice A · 25.10.:** Isolierter Apprentice-Test aus ausdrücklich beauftragtem Leseaudit: Sprite2D + AnimationPlayer für Idle/Move/Cast; normales F5/Player/Gameplay unverändert. Originaldarstellung 50×55 logisch (ca. 45×50 im Standardfenster), PNG-Testziel 64 logisch. 26 neue + 131 bestehende Headless-Checks, nativer Vergleich 30 Checks und vier PNGs. Checkliste VISUAL_SLICE_CHECKLIST.md, Start/Asset-Brief im Spielrepo VISUAL_SLICE_A_PLAYTEST.md; menschliche Stil-/Perspektiv-/Animationsabnahme und finales Runtime-PNG offen. Kein vollständiges A1-Gate, Export oder Push.
 
 **Projektphase:** Lokales Game Feel & Living World Overhaul; Alpha 0.2 bleibt unverändert.
@@ -605,6 +607,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-25 | Runtime-Kandidat v01 | Einzel-PNG in Methode A und echten Zwölf-Gegner-Kampf übernehmen, bisherige Darstellung bewahren | 59 Headless-/39 native Checks, Idle/Kampfbilder; feste Pose/Schatten als Grenzen, keine dauerhafte Ersetzung |
 | 2026-10-25 | Visual Slice A / enger Testauftrag | Ein PNG plus Godot-Animationen isoliert prüfen, Fallback/Spielregeln bewahren | 50×55 Ist-Größe gemessen, 64-Pixel-Test, 26+131 Headless-/30 native Checks; endgültige Art und Stilabnahme offen |
 | 2026-10-23 | EP01 Rohschnitt freigegeben | Nutzer beauftragt ersten Entwurf aus vorhandenen Videos: 38 s in 9:16, englische Texte, Originalton, keine Spieländerung | Native MP4-Prüfung, Standbilder/Schnittnotizen; Voiceover/Musik und menschliche Abnahme offen; kein Upload |
 | 2026-10-23 | YouTube Video Production 01 | Nutzer beauftragt sechs echte Laufzeitclips und wiederverwendbaren Capture-Workflow; historische/aktuelle Quellarchive und Testdaten getrennt, kein Gameplay/Balancing | Sechs 1080p/30-MP4s, native Decoder-/Wiedergabe-/Audio- und Quellvergleichsprüfung; Shotlist/Manifest/Standbilder, keine Veröffentlichung |
