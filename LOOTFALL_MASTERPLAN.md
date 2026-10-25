@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.3 · **Stand:** 21. Oktober 2026
+**Version:** 2.4 · **Stand:** 25. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -593,6 +593,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 **Daten / Export:** Keine Save-Schemaänderung, bestehende Käufe/Preise bleiben. Werkzeuge verändern bewusst aktuell geladenen Save; separate Sandbox vorhanden. Normale Saves im Test unberührt. Kein neuer Export oder Push.
 **Offen:** Menschliches Stilurteil, Lesbarkeit und dichte Langzeitperformance. Boden bleibt Deko, Wasser durchquerbar.
 **Git / Nächster Schritt:** Spiel lokal **a3e4e5d**, zugehöriger Chronikcheckpoint separat. F5 → F1 → Test tools; für Experimente vorher Emberhaven-Sandbox wählen.
+**Gesamtprojekt-Statusmeldung (25.10.2026; Release-/Marketingangaben vom Nutzer, Links und tatsächliche Upload-Daten nicht unabhängig geprüft):** Eine spielbare Lootfall-Alpha wurde auf itch.io hochgeladen. Unter **GoGoEli** wurden YouTube- und TikTok-Auftritt eingerichtet und der erste Short/Clip zur Spielentwicklung und World Restoration auf **beiden Plattformen veröffentlicht**. Kanalbranding (Banner/Avatar/Bios), Upload-Texte, Hooks und Hashtags wurden vorbereitet. Eine wiederverwendbare **CapCut-Automation** für die Videoerstellung wurde eingerichtet und vom Nutzer als funktionierend bestätigt. Die konkrete veröffentlichte Build-Version, Ziel-URLs, Nutzungszahlen und CapCut-Implementierungsdetails sind noch nicht in der Chronik nachgewiesen; keine Gleichsetzung mit dem letzten lokalen Godot-/Git-Stand. Spiel-Code-/Teststatus oben bleibt Stand der letzten separat protokollierten technischen Prüfung.
+**Nächster operativer Schritt:** GoGoEli-Publishing-Kit bei jedem neuen Video aus dem tatsächlichen Clip erstellen, Inhalte vor Veröffentlichung kurz freigeben und Kanal-/Release-Links samt Kennzahlen nachtragen (s. §12).
 **Pflegeanweisung:** Nur verifizierte Ergebnisse als implementiert eintragen; technische und menschliche Abnahme unterscheiden.
 
 ---
@@ -601,6 +603,9 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-25 (Statusmeldung) | Erste externe Distribution | Nutzer meldet: spielbare Alpha auf itch.io hochgeladen; GoGoEli-Short auf YouTube und TikTok gepostet; persönliche Branding-/Kanaltexte erstellt | Als **vom Nutzer bestätigt** dokumentiert; konkrete Releaseversion, Links, Zeitpunkte und Reichweiten noch offen |
+| 2026-10-25 (Statusmeldung) | Content-Automation | Nutzer bestätigt funktionierende CapCut-Automation zum Video-Workflow; erster Kurzclip über Playtestfeedback und dauerhafte Heilung der Welt produziert | Funktionsstatus laut Nutzer; Toolkonfiguration, Ausgabeformat und Dateipfade noch nicht erfasst |
+| 2026-10-25 | Gesamtprojektsteuerung | Dokumentation soll neben Features auch Export/Release, Marketing, Content und Automation als überprüfbare Meilensteine abbilden; GoGoEli Publishing-Kit definiert (§12) | Prozessentscheidung; noch keine automatische Plattformveröffentlichung oder API-Anbindung |
 | 2026-10-21 | Habitat-Sanity / Testkomfort | Nutzer beantragt Luftbildabgleich sowie direkte Debug-Wellensprünge inklusive Echoes/Heilung und Wallet-Reset. Getrennte Becken, Vorwärtssprünge mit Differenzzahlung, erhaltene Builds, kein Skipped-Card-Autobuild | 1265 Checks/17 Suites; 190 zusätzlich nativ, sieben Bilder; keine Veröffentlichung, persönliche Abnahme offen |
 | 2026-10-21 | Live-Heilung / Maps | Nutzer bestätigt Restoration bereits im Run, Wellenabschluss zulässig. Gleiche Gesamtpunkte, persistente Differenzgutschrift statt Ende-Doppelzahlung; Karten als Maps geklärt, drei Biome konsistenter | Spiel lokal 220bd89; 1075 Checks, 20 zusätzlich nativ, zehn Bilder; Stil-/Langzeitabnahme offen, kein Push |
 | 2026-10-20 | World Restoration umgesetzt | Expliziter Gesamtauftrag: dauerhafte Heilung, drei Frontiers/Bestwellen, absoluter Übertrag und 45 Talente. Neue Progressionsregeln freigegeben; alte Käufe/Run-Buildloop erhalten; eigenständige Paketverantwortung in AGENTS | Spiel lokal 88861a2; 1055 Checks, elf native Bilder, 95 Checks zusätzlich nativ; menschliche Pace offen, kein Push/Export |
@@ -658,3 +663,30 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 ### Abschließende Arbeitsregel
 
 **Nicht die Anzahl der Features maximieren, sondern die Menge an nachgewiesenem Spielspaß pro Stunde Entwicklungsarbeit.**
+
+---
+
+## 12. Gesamtprojektbetrieb – Veröffentlichung, GoGoEli-Marketing und Automation
+
+**[ENTSCHEIDUNG, 25.10.2026]** Dieses Masterdokument erfasst den **gesamten Lootfall-Projektfortschritt**: Game Design, Godot-Implementierung und Qualitätssicherung, Builds/Exporte, itch.io-Releases/Playtests, GoGoEli-Kanal und Social-Videos, Content-Pipeline/CapCut, Rückmeldungen und Kennzahlen. Gameplay-Designprinzipien und bestehende Freigabegrenzen bleiben unverändert.
+
+### 12.1 Status und Nachweis
+
+- **Stand 25.10., vom Nutzer berichtet:** Alpha auf itch.io hochgeladen; YouTube-Short veröffentlicht; TikTok veröffentlicht; CapCut-Automation gebaut und nach Nutzerurteil erfolgreich eingesetzt. Branding für GoGoEli und englische Kanalbeschreibungen erstellt. Die Caption-/Videostory drehte sich um Playtester-Feedback und den World-Restoration-Loop.
+- **Offen zur Ergänzung:** Plattform- und Post-URLs, Release-Datum/-Versionsnummer, genauer Uploadinhalt/Build-Hash, CapCut-Automationsschritte, tatsächliche Reichweiten/Retention/Feedback. Solche Angaben nicht erfinden.
+- **Quellenstatus:** „Vom Nutzer berichtet“, „per Link nachgewiesen“, „lokal geprüft“, „öffentlich veröffentlicht“ und „gemessen“ getrennt verwenden. Insbesondere kein neuer Spiel-Export oder aktuelle Spielversion allein aus einer Social-Veröffentlichung ableiten.
+- **Protokollrhythmus:** Pro Release oder veröffentlichtem Content-Stück ein **knapper** DEVLOG-Eintrag mit Datum, Zweck, Material, Kanal, Link/Status und Erkenntnis. Masterplan §9 für die kurze Gesamtübersicht; §10 nur für wichtige Meilensteine. Keine doppelten Tageslisten oder vollständigen Skripte im Masterplan.
+
+### 12.2 GoGoEli Publishing Kit – standardisierter Chat-Workflow
+
+**Trigger:** Nutzer lädt fertigen Clip hoch und schreibt z. B. „GoGoEli Publishing Kit“ (optional: Zielplattformen, Link/CTA, besondere Tonalität). Wenn keine Plattform angegeben, **YouTube Shorts + TikTok** bedienen. Bestehenden Stil anwenden: **Englisch, persönlich, locker, gamer-first, neugierig, keine austauschbaren Clickbait-Phrasen**.
+
+1. **Video wirklich analysieren:** Ton/gesprochene Worte (falls auswertbar), Szenen, eingeblendete Aussagen, Länge, Handlung, wichtigster Moment und tatsächlich sichtbares Ergebnis. Bei fehlender Sprachtranskription Unsicherheit offen markieren, statt Inhalte zu erfinden.
+2. **Hook zuerst:** Ein starker, konkreter Konflikt oder eine visuelle Transformation aus dem Clip; Titel und erste Bildschirmsekunde sollen sich ergänzen. Keine erfundenen Versprechen oder allgemeine „BIG PROBLEM“-Formeln ohne spezifischen Mehrwert.
+3. **YouTube liefern:** einen priorisierten englischen Titel und zwei Alternativen; direkt kopierbare Beschreibung (natürliche Suchbegriffe); drei relevante Hashtags, optionale Studio-Tags, Cover-Text, ersten Kommentar und Einstellungen (typischerweise Gaming, Englisch, nicht speziell für Kinder – sofern passend zum Inhalt).
+4. **TikTok liefern:** Text für die ersten 1–2 Sekunden, kurzes Cover-Wording, fertige englische Caption, 3–5 relevante Hashtags, ersten Kommentar und ggf. konkrete Schnittverbesserung für 9:16.
+5. **Preflight:** Behauptungen gegen Video prüfen; CTA nur bei tatsächlich erreichbar verlinktem Ziel; fremde Musik/Bilder, KI-Kennzeichnung und Vertraulichkeit prüfen; Veröffentlichungszeit und reale URLs nicht raten.
+6. **Nach Upload:** Nutzer bestätigt veröffentlichte Kanäle und Links; genau einen nachvollziehbaren Meilenstein in DEVLOG/§9–10 eintragen. Bei verfügbaren Kennzahlen nach 48 h und 7 Tagen Reichweite, durchschnittliche Wiedergabe, vollständige Views, Profil-/Linkklicks und Feedback erfassen, um Hooks zu vergleichen.
+
+**Automationsgrenze:** Aus einem hochgeladenen Video kann ChatGPT in dieser Unterhaltung ein Publishing Kit erzeugen; eine dauerhafte lokale CapCut-Watcher-Pipeline oder vollautomatisches Publizieren existiert dadurch **nicht**. Codex kann bei separatem Auftrag ein lokales Skript bauen (Datei erkennen → Metadaten/Keyframes/Transkript → strukturierten Draft); Uploads auf TikTok/YouTube benötigen jeweils geeignete Integrationen, Berechtigungen und explizite Freigabe. Keine API-Schlüssel in Git protokollieren, keine eigenständigen Uploads.
+
