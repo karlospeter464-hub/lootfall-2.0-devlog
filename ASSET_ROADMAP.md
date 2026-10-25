@@ -157,3 +157,6 @@ Ein Asset gilt **nicht** als implementiert, wenn lediglich eine Illustration ode
 ## Visual Lift 01 — Stand 20.10.2026
 
 Separat freigegebener prozeduraler Stiltest in drei Pässen umgesetzt: Draw-Silhouetten/leichte Animation, grafische Kampf-VFX, ruhiger Steinboden. Keine neuen Bildassets oder neue Animationspipeline; keine Gameplayänderung. Der prozedurale Apprentice ist wieder Standard, die frühere gelieferte Illustration bleibt optional erhalten. Techniken und neun echte Engine-Captures: Masterplan §8.18, DEVLOG und Progress/index.html. 930 Checks ohne Fehler, Spiel lokal 677bf98. Keine vollständige A1-/Roadmap-Abnahme, keine Freigabe weiterer Assets, kein neuer Export/Push. Menschliche Stil-/Dauerabnahme bleibt offen.
+
+## Methode A – isolierter Apprentice-Test, 25.10.2026
+Explizit beauftragter Teil von A1/Gate 0–2: Ist-Größe 50×55 logische Pixel, Sprite-Test 64 Pixel Alpha-Höhe; Sprite2D + AnimationPlayer, ursprüngliche F5-Darstellung unverändert. 26 neue und 131 bestehende Headless-Checks sowie 30 native Prüfungen bestanden. Neues geliefertes PNG nur Test-Fixture, Alpha bestätigt; noch kein finales erhöhtes 3/4-Gameplay-Sprite oder vollständige A1-Abnahme. Fortschritt und nächste Abnahme in VISUAL_SLICE_CHECKLIST.md; genauer Runtime-Brief/Startkommando im Spielrepo VISUAL_SLICE_A_PLAYTEST.md. Keine neue Pipeline oder weitere Assetfamilie.

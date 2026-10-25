@@ -1,5 +1,7 @@
 # Lootfall 2.0
 
+**25.10.2026 · Visual Slice A:** Isolierter Apprentice-Test mit Einzelbild und AnimationPlayer; normales F5 bleibt unverändert. [Checkliste](VISUAL_SLICE_CHECKLIST.md) · [echter Größenvergleich](Progress/index.html#visual-a). Noch keine finale Art-/Stilabnahme; Start und Asset-Brief im Spielrepo VISUAL_SLICE_A_PLAYTEST.md.
+
 
 **Aktuell · 23.10.2026:** Living-World-Spielstand 014793a (Echo-Orbs, organisches Wachstum, 45 Talente/3 Regionen). Für YouTube EP01 sind sechs echte 1080p/30-FPS-Clips lokal vorbereitet: [Shotlist](Video_Production/EP01/SHOTLIST.md), [Capture-Workflow](VIDEO_PRODUCTION_WORKFLOW.md), [Galerie](Progress/index.html#video-ep01). Videos außerhalb Git unter C:/Users/elias/Lootfall 2.0/Video_Production/EP01. Kontrollierte historische/aktuelle Aufnahmen, kein Tester-Originalmaterial, kein Upload. Die folgenden Abschnitte dokumentieren frühere Meilensteine; aktueller Spiel-/Savestand im Masterplan §9.
 

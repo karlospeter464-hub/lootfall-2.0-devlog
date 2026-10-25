@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Visual Slice A · 25.10.:** Isolierter Apprentice-Test aus ausdrücklich beauftragtem Leseaudit: Sprite2D + AnimationPlayer für Idle/Move/Cast; normales F5/Player/Gameplay unverändert. Originaldarstellung 50×55 logisch (ca. 45×50 im Standardfenster), PNG-Testziel 64 logisch. 26 neue + 131 bestehende Headless-Checks, nativer Vergleich 30 Checks und vier PNGs. Checkliste VISUAL_SLICE_CHECKLIST.md, Start/Asset-Brief im Spielrepo VISUAL_SLICE_A_PLAYTEST.md; menschliche Stil-/Perspektiv-/Animationsabnahme und finales Runtime-PNG offen. Kein vollständiges A1-Gate, Export oder Push.
+
 **Projektphase:** Lokales Game Feel & Living World Overhaul; Alpha 0.2 bleibt unverändert.
 **Spielprojekt:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot. Spiel/UI Englisch, Berichte Deutsch.
 **Neu spielbar:** persistente Echo-Orbs mit Magnet/Vacuum, organisch wachsende Vegetation aller drei Regionen (Fields zuerst), 100-%-Inszenierung vor Kartenwahl, größere ikonische Upgrade-Karten, animierte Emberhaven-Kulisse und differenzierte Regionskarten, fünf selbst synthetisierte Sounds.
@@ -603,6 +605,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-25 | Visual Slice A / enger Testauftrag | Ein PNG plus Godot-Animationen isoliert prüfen, Fallback/Spielregeln bewahren | 50×55 Ist-Größe gemessen, 64-Pixel-Test, 26+131 Headless-/30 native Checks; endgültige Art und Stilabnahme offen |
 | 2026-10-23 | EP01 Rohschnitt freigegeben | Nutzer beauftragt ersten Entwurf aus vorhandenen Videos: 38 s in 9:16, englische Texte, Originalton, keine Spieländerung | Native MP4-Prüfung, Standbilder/Schnittnotizen; Voiceover/Musik und menschliche Abnahme offen; kein Upload |
 | 2026-10-23 | YouTube Video Production 01 | Nutzer beauftragt sechs echte Laufzeitclips und wiederverwendbaren Capture-Workflow; historische/aktuelle Quellarchive und Testdaten getrennt, kein Gameplay/Balancing | Sechs 1080p/30-MP4s, native Decoder-/Wiedergabe-/Audio- und Quellvergleichsprüfung; Shotlist/Manifest/Standbilder, keine Veröffentlichung |
 | 2026-10-23 | Game Feel & Living World / freigegebene Echo-Abweichung | Killbudget in persistente Orbs aufgeteilt; Teilwellen behalten; Runende zahlt nur Rest. Wachstum/Wind/100-%-Reveal, Karten und Hub visuell überarbeitet; v5 mit Migrationsbackup | 1354 Sourcechecks + 82 nativ, 17 PNGs/GIF; lokale Commits, Alpha-ZIP unverändert; menschliche Abnahme offen |

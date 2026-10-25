@@ -1,4 +1,17 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
+## 2026-10-25 – Apprentice: isolierter Visual Slice mit Animationsmethode A
+
+**Auftrag / Umfang:** Nutzer beauftragt Ist-Audit, Messung, PNG-Anforderungen und kleinen isolierten Test. Bezug auf ART_DIRECTION, ASSET_ROADMAP A1 und die neue Online-VISUAL_SLICE_CHECKLIST (origin/main 5b7ae5a). Keine dauerhafte Ersetzung, Gameplay-, Kamera-, Balance- oder Saveänderung. Spielrepo vorher sauber auf 014793a; unversionierte Nutzergrafik im Devlog bewahrt. Methode A ist freigegeben, finale Gameplay-Perspektive/Stylefamilie nicht.
+
+**Befund:** Kein Camera2D/Zoom, Canvas identisch, 1280×800 logisch / 1152×720 Standardfenster. Aktuelle Draw-Figur durch echten transparenten Godot-Viewport mit 50×55 Pixeln gemessen (inkl. Schatten/Aim, Idle nach rechts), entsprechend ca. 45×50 Displaypixel. Radius 15 und Schussstart +25 unverändert. Optionale alte Illustration 63×84 Canvaspixel bei 0,058 bleibt erhalten und standardmäßig aus. Body-Draw, Aim/Overcharge/Talentanzeigen und Cast/Hurt müssen getrennt bleiben.
+
+**Versuch:** Neues Nutzer-PNG Chibi Witch with Flaming Staff and Spellbook.png als bytegleiche Test-Fixture (SHA256 7272d1a45d3766a7ffee1f8fb55c41d6f85e18dc78777ec680f16a285340fa04). 1086×1448, echte Transparenz/Teilalpha; Alpha-Bounds (31,19,1037,1429). Keine Bildbearbeitung oder Neugenerierung, keine finales-Asset-Behauptung. Isolierte Arena hängt Sprite2D an VisualMotion und AnimationPlayer; 64 logische Pixel Alpha-Höhe, temporärer Fußanker (590,1410). Idle/Move/Cast über vorhandene Zustände, Hurt/Indikatoren unverändert; V schaltet zurück. Normale Player-Szene und Produktionsscripts haben keinen Diff. Ein Bild bewegt/deformiert nur die ganze Zeichnung, keine Gliedmaßenanimation.
+
+**Prüfung:** Neuer Headless-Test 26 Checks ohne Fehler; vorhandene player_art/visual_lift/combat_polish/arena: 20+12+35+64 = 131 Checks ohne Fehler. Native D3D12-Ausgabe 30 Checks ohne Fehler inklusive echter 1x-Messung und drei Szenenbildern. Prüft Alpha/Mipmaps, visuelle Tracks, unveränderte Physik/Werte, echte akzeptierte Cast-Signale/Cooldown, bisherigen Hurt-Effekt, Pause, Reset, Missing-Texture-Fallback und unveränderten Gameplay-RNG. Gleiche Welle 3/Seed 42, zwölf stationär arrangierte Gegner und bestehende Warnungen; menschlicher Kampf und dichte Mischbuild-Last nicht geprüft. Spiel-MCP verweist noch auf das ältere lootfall_starter und lieferte AUTH_FAILED; keine erfolgreiche Editor-Inspektion behauptet. Stattdessen expliziter aktiver Projektpfad und native Engineprozesse mit getrenntem APPDATA/--test-mode.
+
+**Lokaler Spiel-Checkpoint:** d74ef1f. Kein Push. Zusätzlich erste Referenzaufnahme vor dem Test unter Progress/captures/2026-10-25_visual_a_before.png erhalten.
+
+**Belege / nächster Schritt:** Progress/captures/2026-10-25_visual_a/{before,prototype_idle,prototype_cast,current_sprite_1x}.png; alle gesichtet. Details/Startkommando und Runtime-Brief im Spielrepo VISUAL_SLICE_A_PLAYTEST.md. 256×320-RGBA-Canvas mit ca. 280 Pixeln Figurenhöhe als Lieferhypothese; ca. 64 logische Pixel im Spiel, 60–72 erst visuell vergleichen. Erhöhte 3/4-Ansicht, weniger feine Details, dokumentierter Fußanker, Schatten separat. Menschliche Stil-/Animationsabnahme und endgültiges Runtime-PNG offen; A1 als Gesamtpaket nicht fertig. Kein Export/Push/Upload.
 
 
 ## 2026-10-23 – EP01: erster tatsächlicher Hochformat-Rohschnitt
