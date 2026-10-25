@@ -12,6 +12,18 @@
 
 **Aktueller Ausgangspunkt (historisch, 19.–21.10.):** Style C entschieden; ein frontaler Apprentice-PNG-Versuch und ein anschließender prozeduraler Visual Lift wurden bereits technisch erprobt. Die prozeduralen Visuals sind laut dokumentiertem Stand wieder Standard. **A1 als kohärente neue Spritefamilie wurde noch nicht visuell freigegeben.** Aktuellen tatsächlichen Godot-/Git-/Exportstand vor Umsetzung immer erneut prüfen.
 
+## Designentscheidung – 25.10.2026 (Gate 1 begonnen)
+
+**[ENTSCHEIDUNG: Stilreferenz für Apprentice ausgewählt]** Aus drei gemeinsam erzeugten Illustrationen wurde **Variante 2** gewählt und anschließend gezielt **vereinfacht**. Die vereinfachte Zeichnung dient als **visuelles Zielbild**, ist aber noch **kein** ausgemessener 3/4-Top-down-Gameplay-Sprite, noch nicht freigestellt und nicht in Godot eingebaut.
+
+**Unbedingt erhalten:** großer breiter spitzer Hexen-/Magierhut, silberweißes Haar, dunkelgrau/schwarzer einfacher Umhang mit rostroten Innenseiten, schlichter Holzstab mit orange leuchtender Feuerkugel, sichtbar getragenes aufgeschlagenes Zauberbuch, wenige metallene Akzente. Die Figur soll als **unerfahrener Apprentice**, nicht als voll ausgerüsteter Erzmagier wirken.
+
+**Weiter reduzieren für Gameplay:** Gesichtsdetails, Stofffalten, Gürtel-/Schmuckornamente und feine Flammenpartikel. Wichtig sind **erkennbare Silhouette, Stab, Buch, Hut, Feuerakzent und Bodenkontakt**. Die bisherige Illustration zeigt eine frontal/leicht erhöhte Figur mit dunklem Hintergrund; für das Spiel **neues Bild mit echter erhöhter Top-down-/3/4-Kameraperspektive, sauberem Alpha und richtigem Fußanker** herstellen, ohne wichtige Details oder Proportionen unabsichtlich zu verändern.
+
+**[ENTSCHEIDUNG: Animations-Prototyp A]** Ein zunächst **statisches Runtime-Sprite**, das Godot mittels subtiler AnimationPlayer/Tween-Transformen für Idle/Bewegung/Cast/Hurt belebt. **Noch nicht technisch umgesetzt oder als ausreichend bestätigt.** Kein Frame-by-frame-Produktionsauftrag vor In-Engine-Abnahme.
+
+**Asset-Quelle:** Die gewählte vereinfachte Illustration liegt bisher im Chat als generiertes Bild vor, **noch nicht als versioniertes Spielasset im Repo**; Herkunft und spätere exportierte Datei getrennt festhalten. Nicht aus einer veralteten früheren Illustration importieren.
+
 ## Arbeitsreihenfolge und Abnahme-Gates
 
 ### 0. Ausgangslage sichern – Codex, nur lesend
@@ -25,14 +37,15 @@
 - [ ] 2–3 **gezielte** Apprentice-Konzepte mit **derselben Kamera/Pose/Größe** erstellen; keine drei unabhängigen Fantasy-Porträts.
 - [ ] Ausrichtung festlegen: leicht erhöhte Top-down-3/4-Ansicht, sichtbarer Bodenkontakt/Fußanker, Zepter + Buch, große Konturen, wenige erkennbare Details.
 - [ ] Bei 100 % Gameplaygröße gegen den aktuellen Hintergrund prüfen: Gesicht/Kostüm dürfen zurücktreten, Silhouette/Zaubergeste müssen erkennbar sein.
-- [ ] **Eine** Referenzfigur auswählen und eine kompakte Style-Karte fixieren: Konturstärke relativ zur Spritegröße, Schatten (2–3 Flächen), Palette, Kopf-/Körper-Proportionen, Lichtseite, Magiefarbe und Detailbudget.
+- [x] **Stilreferenz** ausgewählt: vereinfachte Variante 2 (Hut, weiße Haare, Stab mit Feuer, Buch, dunkler Umhang/rote Akzente), siehe Entscheidung oben.
+- [ ] **Gameplay-Referenz** in korrekter 3/4-Perspektive auswählen und kompakte Style-Karte fixieren: Konturstärke relativ zur Spritegröße, Schatten (2–3 Flächen), Palette, Kopf-/Körper-Proportionen, Lichtseite, Magiefarbe und Detailbudget.
 - [ ] Chaser als **eine** Form-Gegenprobe im selben Stil konzipieren.
 - **Gate 1:** Creative Director gibt ein Gameplay-Referenzbild, eine Gegner-Gegenprobe und die kleine Style-Karte ausdrücklich frei. **Noch kein Codex-Asset-Import ohne diese Freigabe.**
 
 ### 2. Produktionsmethode mit minimalem Proof festlegen – gemeinsam + Codex
 - [ ] **Ein** echtes Sprite mit sauberem Alpha aus dem freigegebenen Zielbild herstellen; Illustrator-/KI-Konzeptbilder sind noch keine Runtime-Sprites.
 - [ ] Quellen und Rechte notieren (eigenes Artwork/GenAI-Bearbeitung), editierbares Original getrennt vom Runtime-PNG behalten.
-- [ ] Prototypisch entscheiden, wie Bewegung entsteht:
+- [x] Für den **ersten Prototyp Animationsmethode A** ausgewählt (ein Sprite + AnimationPlayer/Tweens); die tatsächliche Tauglichkeit ist noch zu testen:
   - **A – Ein Frame + Godot-AnimationPlayer/Tweens** (Atmung, leichtes Bouncen, Cast-Recoil): **Startfavorit**, schnell und konsistent.
   - **B – Wenige getrennte Körperteile** (z. B. Mantel/Arm/Stab) im Scene-Tree animieren: wenn A zu steif ist.
   - **C – Frame-by-frame** mit `AnimatedSprite2D`/`SpriteFrames`: erst wenn für lesbare Bewegung nötig und Frames perspektivisch konsistent hergestellt werden können.
