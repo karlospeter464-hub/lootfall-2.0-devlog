@@ -157,3 +157,15 @@ Expliziter Nutzerauftrag erweitert Gate 0 um einen **isolierten** Sprite-/Animat
 **Bewertung:** A+ verbessert Präsenz, Bewegungsrhythmus und Schussfeedback und bleibt ein brauchbarer Zwischenstand. Stab/Arm/Buch bewegen sich weiterhin nur gemeinsam mit dem vollständigen Bild, kein eigener Schrittzyklus und keine echte Richtungsansicht. Für eine deutlich eigenständigere Zaubergeste verspricht ein **kleiner B-Test mit separatem Arm/Stab** sichtbaren Mehrwert; benötigt sauber getrennte Bildteile, kein vollständiges Rig. B wurde nicht gebaut und ist aus diesem Ergebnis nicht automatisch freigegeben. Menschliche Abnahme und lange Kampf-/Performanceprüfung offen.
 
 **Belege:** Progress/captures/2026-10-26_aplus/{aplus_gameplay.mp4,original_idle.png,aplus_idle.png,procedural.png,aplus_combat.png,clip_frames.jpg,polish_metrics.json}. Native AVI außerhalb Git unter C:/Users/elias/Video_Production/Visual_Slice_A_Plus/aplus_native.avi; keine Veröffentlichung/Push. Bedienung/Startkommando in der bestehenden VISUAL_SLICE_A_PLAYTEST.md im Spielrepo.
+
+## v01/A+ als normaler Player – 26.10.2026
+
+**Expliziter Folgeauftrag:** Neue Figur als Standard implementieren. Frühere Einschränkung auf den isolierten Test ist für den Apprentice damit aufgehoben; keine Freigabe neuer Mechaniken oder weiterer Assetfamilien.
+
+- [x] Normale Player-Szene nutzt v01/A+ beim F5-Start, ohne Spezialkommando: aktives Projekt öffnen → F5 → Start Run.
+- [x] Gemeinsame Runtime-Komponente scripts/apprentice_visual.gd und Fire-Shader; reguläre verlustfreie PNG-/Mipmap-Resource unter assets/art/characters/apprentice/apprentice_v01.png. Keine Runtime-Abhängigkeit von Tests oder rohen PNG-Dateien; Test-Fixture nutzt denselben Controller.
+- [x] 64 logische Pixel, Fußanker (128,300), Radius 15, Originalpixel/Backups und historische Illustration erhalten. V schaltet A+ / ursprüngliche v01-A-Animation / prozedural. Use Artwork=false vor Start wählt den prozeduralen Fallback; fehlende Texture blendet ebenfalls auf den vorhandenen Körper zurück.
+- [x] 224 Checks in sechs Suites ohne Fehler: Player Art 24, A+ 39, Visual Lift 12, Arena 64, Combat Polish 35, Inventory 50. Einschließlich Startup-Fallback, importierter Textur, keinen Testabhängigkeiten, Pause/Feuer, Hit-/Castfeedback, Kampfwerten und Projektilursprung. Normaler Hauptszenenstart/120 Frames sauber; natives Standard-Arena-Bild ohne nachträgliche Visual-Injektion gesichtet.
+- [x] Lokale Nutzer-/Editoränderungen an project.godot und vorbestehende unversionierte UID-/Importdateien bewahrt und nicht mitcommittet. Spiel-Checkpoint **eb46baf**, kein Push, kein neuer Releaseexport.
+
+**Jetzt testen:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot öffnen, laufendes Spiel stoppen und F5 → Start Run. Ab diesem Schritt zeigt F5 die neue Figur. Editor-Dateireload bei Rückfrage zulassen. Screenshot: [Standardfigur](Progress/captures/2026-10-26_apprentice_standard.png). Persönliche Spiel-/Stilabnahme und neuer Releaseexport offen; Stab/Arm bleiben fest im Einzelbild, kein B-Rig gebaut.
