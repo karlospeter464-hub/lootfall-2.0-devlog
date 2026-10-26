@@ -1,6 +1,6 @@
 # Lootfall 2.0 – Visual Slice: Schritt-für-Schritt-Checkliste
 
-**Stand:** 25.10.2026 · **Status:** Isolierter Methode-A-Test technisch geprüft; finales Runtime-Artwork und vollständiges A1-Gate offen
+**Stand:** 26.10.2026 · **Status:** v01 als visuelle Basis bestätigt; nächster Schritt isolierter Animationstest, vollständiges A1-Gate offen
 **Arbeitsgrundlagen:** [ART_DIRECTION.md](ART_DIRECTION.md) (verbindlicher Stil C), [ASSET_ROADMAP.md](ASSET_ROADMAP.md) (A1/A2/A3), [LOOTFALL_MASTERPLAN.md](LOOTFALL_MASTERPLAN.md) (Vision/Gates), [WORLD_RESTORATION.md](WORLD_RESTORATION.md) (Weltheilung).
 **Repos:** Dieses Devlog-Repo hält Plan, Freigaben und Vergleichsmaterial fest. **Runtime-Bilddateien und Godot-Integration gehören in das Spielrepo** `karlospeter464-hub/lootfall-2.0`. Keine neuen konkurrierenden Masterpläne anlegen.
 
@@ -141,3 +141,17 @@ Expliziter Nutzerauftrag erweitert Gate 0 um einen **isolierten** Sprite-/Animat
 **Bewertung Methode A:** Für den ersten spielbaren Apprentice-Prototyp ausreichend. Ganze Figur atmet/wippt/reagiert; keine eigenständigen Schritte, Arme oder Buchbewegungen. Feste Bildrichtung passt nicht zu jeder Schuss-/Laufrichtung. Erst persönlich prüfen, ob diese Grenzen akzeptabel sind; keine automatische Umstellung auf B/C. Zeitliche Artefaktfreiheit, lange Kampf-/Performance-Abnahme und vollständige A1-Stilfamilie bleiben offen. Keine finale Produktions-/Perspektivabnahme aus einem kurzen Test ableiten.
 
 **Quelle:** Nutzer-Download, 80179 Byte, SHA256 831023c026176d2949e3e8a085148ea1cb79d72d1684a0b7977fbbead3053128. Original erhalten. Anleitung im Spielrepo VISUAL_SLICE_A_PLAYTEST.md; Belege unter Progress/captures/2026-10-25_candidate_v01/.
+
+## Creative-Director-Entscheidung – 26.10.2026: v01 weiterführen, Animation vertiefen
+
+**[ENTSCHEIDUNG – visuelle Präferenz]** Der Creative Director bevorzugt ausdrücklich **Apprentice Runtime-Kandidat v01** gegenüber v02. **v01 ist der visuelle Ausgangspunkt für die nächste Prototypiteration.** v02 wird nicht weiterverfolgt. Die Entscheidung ist **keine** endgültige Freigabe der permanenten Player-Ersetzung oder des vollständigen A1-Style-Gates; subjektive Beurteilung einer bewegten In-Engine-Version steht aus. Das originalgetreue v01-Runtime-PNG und die bisherigen Testskripte/Belege erhalten.
+
+**[NÄCHSTER KLEINER PRODUKTIONSTEST – Animation, kein Re-Design]** Im **bereits bestehenden isolierten V-Test** v01 lebendiger machen, ohne den Charakter neu zu zeichnen. Reversible Änderungen in drei klaren Zuständen: (1) Idle: subtiler Atem-/Gewichtsshift sowie separates Flackern der Feuerkugel nach Möglichkeit als Godot-VFX; (2) Move: leichtes Bob/Sway ohne Fußanker-Drift oder „Hüpfen“, ggf. eine kleine Neigung; (3) Cast: kurzer gut lesbarer Vorbereitungs-/Release-Impuls inklusive separatem Feuerblitz. Bestehende Gameplay-VFX/Schussrichtung bleiben autoritativ. **Keine** neuen 8-Richtungs-Sprites und **kein** großer Rig-/Sprite-Sheet-Aufbau.
+
+**Art-Grenze:** v01 enthält einen **eingebrannten Bodenschatten**. Für einen Produktionsversuch darf der Schatten **gezielt entfernt** oder die lokale untere Schattenfläche gekapselt werden, **ohne** Stil, Hut, Buch, Haare, Mantel oder Silhouette der Figur umzugestalten. Ist das nur mit sichtbarem Qualitätsverlust möglich, Original belassen, Doppel-Schatten für den Test benennen und den getrennten Shadow-Fix später behandeln.
+
+**[HYPOTHESE, nur wenn A sichtbar zu steif]** Einen **minimalen B-Proof** mit getrenntem Stab/Feuer bzw. Arm testen, und zwar zuerst prüfen, ob der vorhandene Einzelbild-Assetaufbau ohne falsche Lücken/Übermalungen tatsächlich sinnvoll segmentierbar ist. Nicht automatisch auseinanderreißen, wenn das Original eine nicht trennbare Zeichnung ist. Eine kleine originale Cast-Pose wäre eine spätere Alternative, sobald der Nutzen durch einen Clip belegt ist.
+
+**Abnahme-Nachweis:** 5–10 Sekunden echte native Gameplay-Aufnahme statt nur Idle-/Combat-Stills; Idle → Move → Cast → Hurt → Pause (sofern möglich) und Richtungswechsel. Vergleich mit unverändertem v01 und alter prozeduraler Figur im Standardfenster, mindestens ein Gegner-/Warnungsszenario. Prüfen: sichtbarer, aber nicht übertriebener Effekt; Fußkontakt, Schatten und Projektilursprung; keine fehlerhafte Posenrichtung oder Verdeckung von Telegraphern; Tests/Regressionen wie vorher. **Normal F5 bleibt unverändert**, V-Fallback und Save-Isolation erhalten. Danach persönliche Sichtprüfung, erst anschließend Entscheidung über permanente v01-Integration oder kleinsten B-Proof.
+
+**Dokupflege:** Das ist die einzige verbindliche offene nächste Visual-Slice-Iteration. Nach tatsächlichem Codex-Test hier abhaken und technische Nachweise verlinken, keine neuen Plan-Dateien. Weder Animationstest noch finale In-Game-Abnahme als erledigt ausgeben, bevor beides erfolgt.
