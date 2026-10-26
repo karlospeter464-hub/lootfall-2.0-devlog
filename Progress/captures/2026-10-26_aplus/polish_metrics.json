@@ -1,0 +1,18 @@
+{
+	"actual_damage": 84.0,
+	"cast_seen": true,
+	"checks": 9,
+	"combat_physics_frames": 204,
+	"comparison": "Original v01 / A+ / procedural; AI frozen only during comparison and ending; active during combat",
+	"failures": 0,
+	"final_position": "(640.0, 424.0)",
+	"health_end": 54.5728,
+	"initial_position": "(640.0, 424.0)",
+	"minimum_active_enemies": 12,
+	"move_seen": true,
+	"physics_frames": 468,
+	"prepare_seen": true,
+	"shots_fired": 10,
+	"shots_hit": 10,
+	"source_png_unchanged": true
+}

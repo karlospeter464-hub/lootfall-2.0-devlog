@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.4 · **Stand:** 25. Oktober 2026
+**Version:** 2.4 · **Stand:** 26. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Visual Slice A+ · 26.10.:** v02 verworfen, v01 bleibt Basis. Isolierte Atmung/Gewicht, pausierbares Feuer, bodenstabile Bewegung und Cast-Vorbereitung/-Impuls/-Rückkehr; V vergleicht A+/Original/prozedural. F5/Gameplay unverändert, Original-PNG bytegleich; Schattenverdacht korrigiert. 106 Headless-/9 native Demoprüfungen, echter 7,77-s-Clip mit zwölf aktiven Gegnern im Kampf. Spiel a4ebc62, kein Push. A+ Zwischenstand; eigenständige Arm-/Stabgeste bräuchte kleinen separat freizugebenden B-Test. Details VISUAL_SLICE_CHECKLIST.md.
+
 **Runtime-Kandidat v01 · 25.10.:** Neues 256×320-PNG nur im isolierten Methode-A-Test, Fußanker (128,300), 64 logische Pixel Höhe. 180 echte Physikframes bei zwölf aktiven Gegnern, zehn Schüsse/acht Treffer; 59 Headless- und 39 native Checks bestanden. Idle/Kampfbilder in Galerie, Spiel 33424dc. F5/Gameplay unverändert; eingebrannter Schatten und feste Blickrichtung als Grenzen, persönliche Abnahme offen. Details VISUAL_SLICE_CHECKLIST.md.
 
 **Visual Slice A · 25.10.:** Isolierter Apprentice-Test aus ausdrücklich beauftragtem Leseaudit: Sprite2D + AnimationPlayer für Idle/Move/Cast; normales F5/Player/Gameplay unverändert. Originaldarstellung 50×55 logisch (ca. 45×50 im Standardfenster), PNG-Testziel 64 logisch. 26 neue + 131 bestehende Headless-Checks, nativer Vergleich 30 Checks und vier PNGs. Checkliste VISUAL_SLICE_CHECKLIST.md, Start/Asset-Brief im Spielrepo VISUAL_SLICE_A_PLAYTEST.md; menschliche Stil-/Perspektiv-/Animationsabnahme und finales Runtime-PNG offen. Kein vollständiges A1-Gate, Export oder Push.
@@ -609,6 +611,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-26 | Visual Slice A+ | v01 erhalten, v02 verworfen; vorhandenen isolierten Test visuell polieren, keine neue Mechanik/Rig | 106 Headless-/9 native Checks und echter Clip; F5 unverändert, Stab-/Armgrenze und Schattenkorrektur dokumentiert; menschliche Abnahme offen |
 | 2026-10-25 (Statusmeldung) | Erste externe Distribution | Nutzer meldet: spielbare Alpha auf itch.io hochgeladen; GoGoEli-Short auf YouTube und TikTok gepostet; persönliche Branding-/Kanaltexte erstellt | Als **vom Nutzer bestätigt** dokumentiert; konkrete Releaseversion, Links, Zeitpunkte und Reichweiten noch offen |
 | 2026-10-25 (Statusmeldung) | Content-Automation | Nutzer bestätigt funktionierende CapCut-Automation zum Video-Workflow; erster Kurzclip über Playtestfeedback und dauerhafte Heilung der Welt produziert | Funktionsstatus laut Nutzer; Toolkonfiguration, Ausgabeformat und Dateipfade noch nicht erfasst |
 | 2026-10-25 | Gesamtprojektsteuerung | Dokumentation soll neben Features auch Export/Release, Marketing, Content und Automation als überprüfbare Meilensteine abbilden; GoGoEli Publishing-Kit definiert (§12) | Prozessentscheidung; noch keine automatische Plattformveröffentlichung oder API-Anbindung |
