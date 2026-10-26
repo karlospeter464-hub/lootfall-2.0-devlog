@@ -109,6 +109,16 @@
 
 **Git:** Spiel lokal **770fe86**; zugehörige Dokumentation/Galerie separat lokal gesichert.
 
+## 2026-10-25 – Projektmeilenstein: erster öffentlicher Alpha-/Content-Launch (Nutzerbericht)
+
+**Ziel / Entwicklung:** Lootfall wird inzwischen auch als öffentliches Indie-Game-Projekt mit Distribution, Community-Aufbau und Content-Produktion geführt – nicht nur als Godot-Codebasis. Nutzer meldet für die letzten Tage einen **itch.io-Alpha-Upload**, einen **YouTube-Short** und einen **TikTok-Post** unter **GoGoEli**. Branding (Banner/Profilbild) und englische Kanalbeschreibung/Bio wurden gemeinsam vorbereitet. Der Short behandelt das Feedback eines ersten Playtesters und die Spielidee, mit jedem Run die verseuchte Welt zu heilen. Eine **CapCut-Automation** zur Videoproduktion wurde laut Nutzer erstellt und funktioniert erfolgreich.
+
+**Nachweisgrenze:** Datum dieses Eintrags ist das der Statusmeldung, nicht zwingend der einzelnen Veröffentlichungen. Die Original-URLs, Clip-Version, öffentlich verfügbare Build-Nummer und Art der CapCut-Automation liegen hier nicht vor. Upload und Posts sind **vom Nutzer bestätigt**, wurden in dieser Chronik aber nicht technisch über externe Seiten geprüft. Keine Spiel-Export-/Git-Synchronisation oder Performancekennzahlen daraus ableiten. Die letzte separat dokumentierte lokale Gameplay-Prüfung bleibt die vom 21.10. mit 1265 Checks; dies ist **kein** erneuter Test.
+
+**Content-System / Folgeprozess:** Masterplan §12 etabliert ein GoGoEli Publishing Kit: bei neuem Video tatsächlichen Inhalt prüfen, YouTube-Titel/Beschreibung/Hashtags und TikTok-Cover/Caption/Hashtags plus ersten Kommentar liefern. Nur nach Veröffentlichung Links und Ergebnisse protokollieren. Nächste sinnvolle Automationsetappe: Video-/Schnitt-Metadaten und Transkript halbautomatisch über ein lokales Skript bereitstellen; nachfolgende Textvorschläge und finale Plattformfreigabe bleiben zunächst menschlich kontrolliert.
+
+**Offen:** itch.io-URL und genaue Alpha-Version, YouTube-/TikTok-Postlinks, CapCut-Projekttemplate/Workflow-Details, Reichweite/Retention nach 48 h und 7 Tagen, eventuelle Alpha-Spielerreaktionen.
+
 ## 2026-10-21 – Habitat-Sanity und Testkomfort in F1
 
 **Auftrag / Planabgleich:** Nutzer bemängelt überlagernde Wasserflächen, fordert tatsächlich visuell geprüfte Natur-Luftbilder und mehr Testaktionen statt nur Balancewerte. Freigegebene Abweichung vor Umsetzung ausgewiesen: Debug-Wellensprung schreibt Echoes und Heilung schon während des Runs gut. Normale Wellen-/Karten-/Itemregeln bleiben. Beide Repositories vor Änderungen sauber; Masterplan §9 und gemeinsame AGENTS geprüft. Ponytail für gezielte Umsetzung genutzt.
