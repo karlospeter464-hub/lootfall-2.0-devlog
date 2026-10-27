@@ -1,5 +1,18 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-27 – Größeres Spielbild und gerichtete Schlagschatten
+
+**Nutzerfeedback / Folgeauftrag:** Steine werden vom Nutzer ausdrücklich positiv beurteilt. Gewünscht: größere Spielauflösung und gesamtes Fenster; Frage nach Herkunft und weiterer Tiefe. Props sind eigene Godot-Polygonzeichnungen, keine Asset-Bibliothek oder kostenpflichtige Quelle. Positive Prop-Bewertung ist keine pauschale Produktionsfreigabe der Testumgebung.
+
+**Änderung:** Fenster-/Renderausgabe 1600×1000 statt 1152×720; bei canvas_items zeichnet Godot in der höheren Fensterauflösung, logische 1280×800-Arena und Proportionen bleiben erhalten. Bildschirm nativ 1920×1200, Arbeitsbereich 1920×1140. Nur im isolierten Tiefentest zwei gerichtete Schlagschatten ergänzt, längerer Pfeiler- und kürzerer Felsschatten passend zum vorhandenen oberen linken Licht; ursprüngliche Steine unverändert. Normales F5 übernimmt die Fenstergröße, keine Testprops oder Gameplayänderung.
+
+**Prüfung:** Native D3D12-Ausgabe tatsächlich 1600×1000; 22 Checks ohne Fehler. Identischer BEFORE/AFTER-Spielzustand und pixelgleiches HUD bestätigt. Zwölf aktive Gegner, elf Schüsse/neun Treffer, 62 Schaden, alle sieben Wegpunkte/hinter-vor-Passagen wie zuvor erfolgreich. Kein Performancebenchmark oder vollständiger menschlicher Run. Keine neuen Save-/Restoration-/Kollisionsregeln. Vorbestehende Editor-/Nutzerdateien bewahrt. Lokaler Spiel-Commit **3757438**, kein Push/Release.
+
+**Medien / offen:** `Progress/captures/2026-10-27_visual_depth_large/{before.png,after.png,metrics.json}`. Historische 1152×720-Aufnahmen/GIF bewahrt. Mehr Tiefengewinn als weitere Licht-Effekte verspricht als nächster Schritt eine konsistente Gegner-Verdeckung; aktuell sind Körper und Warnflächen im selben CanvasItem, deshalb beide oberhalb der Props. Eine Trennung dafür wurde noch nicht umgesetzt. Spieler-Verdeckung bleibt vorhanden; Props bleiben durchlaufbar. Menschliche Bewertung der neuen Schatten offen.
+
+---
+
+
 ## 2026-10-27 – Ashen Fields: Visual Depth Proof, bewusst beim Platzhalter-Gate gestoppt
 
 **Ziel / Bezug:** Ein ausdrücklich beauftragter Umgebungstest im Sinne Art Direction / Asset-Roadmap A1: ein Ruinenobjekt, ein großer Naturprop, Bodenkontakt, Lichtstimmung und lokale Spieler-Überlagerung. Aktuelle Figur, Kamera, Warnflächen und Gameplay erhalten; keine produktive Freigabe.

@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Größeres Spielbild · 27.10.:** Nutzer bewertet Teststeine positiv. Fenster und tatsächliche Renderausgabe jetzt 1600×1000, logische Arena 1280×800 erhalten. Tiefentest erhält gerichtete Pfeiler-/Felsschatten; Props weiter isoliert. 22 native Checks, identische Vergleichsbilder und HUD bestätigt; Spiel 3757438. Nächster möglicher Tiefenschritt: Gegnerkörper/Warnflächen visuell trennen, noch nicht umgesetzt.
+
 **Visual Depth Proof · 27.10.:** Isolierter Ashen-Fields-Test mit Ruinenpfeiler/Fels, Kontakt-/Formschatten, dezentem Bodenlicht und Spieler-Verdeckung. Identisches BEFORE/AFTER und 3,73-s-Bewegungs-GIF mit zwölf aktiven Gegnern. 19 Headless-/51 native + 12 bestehende Checks bestanden. Sichtbar räumlicher, weiterhin geometrische Platzhalter: visuelle Iteration beendet, keine produktive Integration. Gegner/Warnungen bleiben darüber; keine vollständige Y-Sortierung. Spiel ab5e6a1, F5/Gameplay/Saves unverändert; DEVLOG/Progress.
 
 **Blender-Einzeltest · 27.10.:** Echtes Tripo-Mesh gesichert, ein transparenter 512×640-Render bei 64 logischen Pixeln isoliert in Godot geprüft. V vergleicht Produktions-v01/A+; F5/Gameplay unverändert. 23 Headless-/26 native Checks plus 63 bestehende Prüfungen bestanden; zwölf aktive Gegner, neun Schüsse/acht Treffer. Technisch geeignet, visuell noch zu schmal/glänzend, geschlossenes Seitenbuch schlecht lesbar. Vor Rigging erst Silhouette/Material/Buchpose entscheiden. Spiel 32ace03; Details/Medien DEVLOG und Progress, kein Push/Export.
@@ -617,6 +619,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-27 | Fenstergröße / Tiefen-Folgefrage | Nutzer lobt Steine; Fenster/Renderausgabe auf 1600×1000, gerichtete Schatten im isolierten Test | 22 native Checks, identischer Vergleich; logische Arena/Gameplay unverändert. Keine Produktivübernahme der Props |
 | 2026-10-27 | Visual Depth Proof | Zwei prozedurale Props, Kontaktschatten/Bodenlicht und Spieler-Verdeckung ausschließlich im Test | Identische Vergleichsbilder, 3,73-s-GIF/zwölf aktive Gegner; 19+51+12 Checks. Mehr Tiefe, weiterhin Platzhalter: gestoppt, keine Produktivfreigabe |
 | 2026-10-26 | Apprentice als Standard freigegeben | Nutzer hebt Test-Isolation auf; v01/A+ regulär in Player-Szene, Original/Fallback erhalten | F5 → Start Run, 224 Checks/Start/native Vorschau bestanden; kein neuer Releaseexport/Push |
 | 2026-10-27 | Blender → Godot Einzelcharakter | Ein vorhandenes Tripo-Mesh sichern, orthografisch rendern und isoliert im echten Kampf vergleichen | 23 Headless-/26 native + 63 bestehende Checks, zwölf aktive Gegner; Pipeline funktioniert, Stil/Buchpose vor Animationsausbau klären; F5 unverändert |
