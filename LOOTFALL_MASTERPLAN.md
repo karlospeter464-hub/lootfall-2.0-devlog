@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Original-v01 als 2D-Puppe · 27.10.:** Nutzer möchte ursprünglichen Bildstil mit beweglichen Einzelbereichen. Kontinuierliches Originaltextur-Mesh mit Zepterarm-/Buch-/Hutgelenk isoliert geprüft; keine Neuzeichnung, Neutralpose GPU-pixelgleich. 30 Headless-/100 native plus 26+24 bestehende Checks erfolgreich, echter Kampf und verlangsamte Gelenkvorschau. Spiel d1f72a7, V→v01/A+, F5 unverändert. Große Gesten brauchen künftig echte getrennte Bildlagen/ergänzte verdeckte Flächen; kein vollständiger Rig-/Richtungsworkflow.
+
 **Magier im Stein-Stil · 27.10.:** Nutzer mag Formen/Tiefe, Steine aber zu groß. Testprops samt Schatten auf 65 % verkleinert; eigener facettierter SVG-Magier mit Hut, silbernem Haar, Feuerzepter und offenem Buch isoliert bei 64 logischen Pixeln verglichen. V behält v01/A+-Fallback, F5 unverändert. 26 Headless-/59 native plus 20 Tiefen-/24 Player-Art-Checks bestanden, identisches Bildpaar und echter 3,73-s-Kampfclip. Spiel 7a12889; Stilvorschlag zur persönlichen Abnahme, keine Richtungs-/Riggingserie. DEVLOG/Progress.
 
 **Größeres Spielbild · 27.10.:** Nutzer bewertet Teststeine positiv. Fenster und tatsächliche Renderausgabe jetzt 1600×1000, logische Arena 1280×800 erhalten. Tiefentest erhält gerichtete Pfeiler-/Felsschatten; Props weiter isoliert. 22 native Checks, identische Vergleichsbilder und HUD bestätigt; Spiel 3757438. Nächster möglicher Tiefenschritt: Gegnerkörper/Warnflächen visuell trennen, noch nicht umgesetzt.
@@ -621,6 +623,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-27 | Originalbild mit Gelenken | Nutzer wünscht frühere Art als Referenz und bewegliche Teile; lokalisierte 2D-Mesh-Gelenke statt anderem Stil | Original bytegleich/Neutralpose GPU-pixelgleich, 30+100+26+24 Checks; kleine Gesten spielbar, große Bewegungen/getrennte Lagen offen. F5 unverändert |
 | 2026-10-27 | Magier-Stiltest / kleinere Props | Nutzer mag Stein-Stil und Tiefe; Props zu groß. 65-%-Props mit Schatten und facettierter Magier im isolierten Vergleich | 26+59+20+24 Checks, identisches Bildpaar/echter Kampf; V→v01/A+, F5 unverändert. Persönliche Abnahme offen |
 | 2026-10-27 | Fenstergröße / Tiefen-Folgefrage | Nutzer lobt Steine; Fenster/Renderausgabe auf 1600×1000, gerichtete Schatten im isolierten Test | 22 native Checks, identischer Vergleich; logische Arena/Gameplay unverändert. Keine Produktivübernahme der Props |
 | 2026-10-27 | Visual Depth Proof | Zwei prozedurale Props, Kontaktschatten/Bodenlicht und Spieler-Verdeckung ausschließlich im Test | Identische Vergleichsbilder, 3,73-s-GIF/zwölf aktive Gegner; 19+51+12 Checks. Mehr Tiefe, weiterhin Platzhalter: gestoppt, keine Produktivfreigabe |

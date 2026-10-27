@@ -1,0 +1,10 @@
+{
+  "neutral_gpu_rgba_byte_identical": true,
+  "joint_preview_source_frames": 36,
+  "joint_preview_gif_frames": 31,
+  "joint_preview_duration_ms": 3000,
+  "joint_preview": "Actual rendered mesh poses, slowed demonstration; not a human attack recording",
+  "gameplay_frames": 28,
+  "gameplay_duration_ms": 3730,
+  "gameplay": "Real automated Godot movement, enemy AI and accepted spells"
+}

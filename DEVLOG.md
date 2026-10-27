@@ -1,5 +1,22 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-27 – Original-v01 erhält getrennt bewegliche Bildbereiche
+
+**Auftrag / Entscheidung:** Nutzer möchte die frühere Zeichnung als Referenz behalten und einzelne Teile animieren. Als Quelle ausdrücklich den ursprünglichen linken v01-Magier verwendet; facettierter Entwurf wird dadurch nicht zum Produktionsstandard. Kleiner 2D-Puppen-Proof statt neuer Zeichenstil oder 3D-Rig.
+
+**Umsetzung:** Bytegleiches v01-PNG auf einem kontinuierlichen Polygon2D-Mesh mit 1.353 Vertices / 2.560 Dreiecken. Drei separat steuerbare Node2D-Gelenke: Zepterarm, Buchhand und Hutspitze. Ein AnimationPlayer bewegt diese Bereiche unabhängig vom ruhenden Körper; echte akzeptierte Schüsse starten die Geste. Keine neuen Schussverzögerungen, Cooldowns, Hitboxen oder Gameplaywerte. Kein Bild ausgeschnitten, retuschiert oder neu gezeichnet. Neutralstellung rendert RGBA-bytegleich zu einer normalen Sprite2D derselben Originaltextur im identischen GPU-Viewport. V stellt bisheriges v01/A+ wieder her; F5 bleibt unverändert. Fußanker/64 logische Pixel und kleinere Testprops bleiben erhalten.
+
+**Qualitätskorrektur:** Harte anfängliche Gewichtsgrenzen überschlugen einzelne Mesh-Dreiecke bei maximaler Pose. Weichere Gewichte über die Nachbarzellen und begrenzter Einfluss auf die Körpermitte beseitigten den Fehler. Torso-/Fuß-Testpunkte bleiben unverformt, Zepter/Buch/Hut-Testpunkte bewegen sich; geprüfte Cast-Extrempose ohne invertierte Dreiecke. Kein Beleg für beliebig große Winkel.
+
+**Echte Prüfungen / Medien:** 30 Headless-Checks ohne Fehler; 100 native Checks einschließlich Speichern der Vorschau-/Gameplayframes bestanden. Bisheriger facettierter Test 26 und Produktions-Player-Art 24 erneut erfolgreich; neuer interaktiver Zweig über 90 native Frames geprüft. Zwölf aktive Gegner, elf Schüsse/neun Treffer, 62 Schaden, ca. 898,33 Einheiten Bewegung; eigener Puppet-AnimationPlayer zeigt Move/Cast. Vorher-/Nachher-Spielzustand gleich, Kamera/Auflösung 1600×1000 beibehalten. joints_preview.gif zeigt links Original in Ruhe, rechts dieselbe echte Mesh-Puppe in verlangsamter Gelenkdemonstration: 36 gerenderte Posen, identische Nachbarbilder beim GIF zu 31 Frames zusammengefasst, 3 s. gameplay.gif enthält 28 echte Viewportframes / 3,73 s mit KI, Bewegung und angenommenen Angriffen. Beide GIFs vollständig dekodiert; Neutral-/Extrembilder gesichtet. Kein menschlicher Run oder Performancebenchmark.
+
+**Learnings / Grenze:** Der ursprüngliche Look bleibt erhalten, die Figur kann mit kleinen unabhängigen Gesten belebt werden. Es sind bewegliche Bildbereiche eines zusammenhängenden Meshes, noch keine sauber freigestellten Einzelbildlagen. Schulter/Stab/Ausrüstung können bei Verformung leicht mitgezogen werden. Für große Armschwenks, Überkreuzen vor dem Körper und neue Blickrichtungen müssen getrennte Teile samt verdeckten Körperflächen gestaltet werden. Keine komplette Lauf-/Richtungsserie oder Produktionsübernahme. Menschliche Bewegungsabnahme offen.
+
+**Ablage / Start:** `Progress/captures/2026-10-27_mage_puppet/{before.png,after.png,rig_neutral.png,reference_render.png,joints_preview.gif,gameplay.gif,metrics.json,capture_qa.json}`. Spiel `tests/mage_puppet/puppet_slice.gd -- --test-mode`, V vergleicht; Dokumentation/Gelenkcode im gleichen Testordner. Lokaler Spiel-Commit **d1f72a7**. Original-PNG-Hash unverändert, keine bezahlten Dienste, Save-/Restoration-/Produktionsänderungen oder Push/Release. Rohframes als Arbeitsmaterial außerhalb des Git-Checkpoints bewahrt.
+
+---
+
+
 ## 2026-10-27 – Facettierter Magier im Stein-Stil, Testprops verkleinert
 
 **Nutzerauftrag / Stilfeedback:** Die Steine sind zu groß; Tiefe und Stil gefallen. Gewünscht ist ein Magier in dieser Richtung. Ein einzelner isolierter Stilvergleich, keine dauerhafte F5-Übernahme und kein neuer 3D-/Rigging-Workflow.

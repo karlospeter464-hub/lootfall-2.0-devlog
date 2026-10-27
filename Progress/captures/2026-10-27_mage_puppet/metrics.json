@@ -1,0 +1,22 @@
+{
+	"cast_seen": true,
+	"checks": 100,
+	"crossings": {
+		"rock_behind": true,
+		"rock_front": true,
+		"ruin_behind": true,
+		"ruin_front": true
+	},
+	"damage": 62.0,
+	"failures": 0,
+	"health_end": 100.0,
+	"identical_pair_verified": true,
+	"minimum_enemies": 12,
+	"move_seen": true,
+	"movement_png_frames": 28,
+	"path_distance": 898.331868171692,
+	"physics_frames": 222,
+	"shots_fired": 11,
+	"shots_hit": 9,
+	"waypoints_reached": 7
+}
