@@ -1,4 +1,21 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
+
+## 2026-10-27 – Tripo-Mesh → Blender-Render → echter Godot-Kampf
+
+**Auftrag / Bezug:** Ein vorhandener Magier, ein Render, isolierter In-Game-Vergleich gemäß Art Direction / Asset-Roadmap A1. Kein Rigging-Paket oder weiterer Assetversuch. Normales F5 bleibt v01/A+; Gameplay/Balance/Hitboxen/Skills/Items/Spielstände unverändert.
+
+**Quelle und Sicherung:** Ungespeicherte Live-Szene über Blender-MCP 5.2.3 LTS zugänglich. Echtes volumetrisches Tripo-Mesh (210.075 Vertices, 376.328 Faces, 0,476×0,338×1,0), eine UV-Map und drei eingebettete 4K-Texturen; kein Rig/Animation. Original vollständig vor Änderungen unter `C:/Users/elias/Lootfall 2.0/Blender Repo/visual_slice_2026-10-27/tripo_original.blend` gesichert; getrennte `tripo_render_working.blend`. Vorhandene apprentice_test.blend bewahrt. Keine neue Generierung, kostenpflichtige Tools oder Uploads.
+
+**Änderung:** EEVEE-Studio mit ursprünglichen Materialien, orthografischer Kamera aus 28,41° Höhe, drei Flächenlichtern und transparentem RGBA-PNG 512×640; kein Boden/Schattenfänger. Alpha (118,58,276,510), Fußprojektion (256,560,55891), Skalierung 64/510. Im Standardfenster ca. 31×58 Pixel sichtbare Figur. Test-Player/Arena referenzieren unveränderte Gameplay-Skripte; Controller und Kampfharness nutzen die vorhandene Visual-Slice-Infrastruktur. Idle/Move/Cast sind Ganzbildimpulse. V wechselt Blender ↔ vollständiges Produktions-v01/A+; v01-Feuershader nur beim Fallback. Testmodus ist verpflichtend.
+
+**Echte Prüfung:** Neu 23 Headless- und 26 native D3D12-Checks ohne Fehler. Native 180 Physikframes mit zwölf aktiven Gegnern durchgehend, neun Schüssen, acht Treffern, 80 tatsächlichem Schaden und 196,04 logischen Einheiten Bewegung; Move/Cast beobachtet, Leben am Ende 54,5728. Original Player Art 24 und Visual Slice A 39 Checks ebenfalls bestanden. Idle-Vergleich friert Gegner ein, Kampfaufnahme nutzt aktive KI und echte Projektilkollisionen. Geskripteter Test, kein menschlicher Run. Ein Import meldete den bekannten Editor-Safe-Save-Hinweis bei Exit 0; Laufzeitabschlüsse sauber. Erstes vererbtes Szenen-Override ließ zwei beim Scriptwechsel erzeugte Visual-Nodes zurück; separate kleine Szenenfixtures beseitigten den Leak.
+
+**Visuelle Bewertung / Entscheidung:** Pipeline funktioniert, Modell als kontrollierbare Renderbasis geeignet, dieser Render noch kein hochwertiger Style-C-Produktionssprite. Schlanke Körperform und glänzende silbergraue Textur verlieren gegenüber den grafischen Gegnern/Kampfeffekten Gewicht. Kopf/Zepter sichtbar, kleine Details verschwinden. Buch hängt seitlich geschlossen, statt offen gehalten zu werden, und verschmilzt im kleinen Maßstab mit dem Ärmel. Bodenkontakt plausibel, Ganzbildbewegung bleibt Gleiten. Nächster sinnvoller Schritt erst nach Betrachtung: gezielter Silhouetten-/Material-/Buchposen-Test mit demselben Harness; noch kein Ausbau zur kompletten Animation. Richtungsbilder sind mit fester Kamera reproduzierbar; echte Walk/Cast-Zyklen benötigen deformierbares Mesh, Rig/Weights, getrennt steuerbare Requisiten und verfasste Animationen. Retopologie nach Deformationsprüfung. Anime-Sprite-Generator nicht vergleichend getestet; keine Überlegenheitsbehauptung. Kein vollständiges A1-Gate.
+
+**Medien / Reproduktion:** `Progress/captures/2026-10-27_blender_mage/{mage_idle.png,fallback_idle.png,prototype_idle.png,combat.png,render_metrics.json,combat_metrics.json}`. Start/Details im Spiel `tests/fixtures/blender_mage/README.md`; `--script res://tests/blender_mage_slice.gd -- --test-mode`, V vergleicht; `--combat-capture` liefert Bilder. Lokaler Spiel-Commit **32ace03**, keine Produktionsdatei geändert, vorbestehende project.godot-/Editor-Dateien ausgeschlossen. Kein Push/Releaseexport. Menschliche Stilabnahme, längere Performanceprüfung und animierte Richtungen offen.
+
+---
+
 ## 2026-10-26 – v01/A+ als Standard im normalen F5-Spiel
 
 **Freigabe:** Nutzer beauftragt ausdrücklich die neue Figur als Standard. Die vorherige Test-Isolation ist für den Apprentice aufgehoben, keine neue Gameplay-/Balance-/Progressionsfreigabe. Spiel vor Beginn mit lokaler project.godot-Markierung und vorbestehenden Editor-UIDs/Imports; diese bewahrt und aus dem Checkpoint ausgeschlossen. Fremde unversionierte Nutzergrafik in Chronik erhalten.

@@ -1,0 +1,15 @@
+{
+	"actual_damage": 80.0,
+	"cast_animation_seen": true,
+	"checks": 26,
+	"enemy_count_max": 12,
+	"enemy_count_min": 12,
+	"failures": 0,
+	"frames": 180,
+	"health_end": 54.5728,
+	"move_animation_seen": true,
+	"movement_distance_from_start": 196.042068481445,
+	"screenshot_enemy_count": 12,
+	"shots_fired": 9,
+	"shots_hit": 8
+}

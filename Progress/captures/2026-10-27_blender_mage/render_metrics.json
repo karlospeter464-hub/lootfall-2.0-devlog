@@ -1,0 +1,10 @@
+{
+	"alpha_bounds": "[P: (118, 58), S: (276, 510)]",
+	"canvas_transform": "[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]",
+	"checks": 18,
+	"failures": 0,
+	"foot": "(256.0, 560.5589)",
+	"logical_height": 64,
+	"scale": 0.125490203499794,
+	"source_size": "(512, 640)"
+}

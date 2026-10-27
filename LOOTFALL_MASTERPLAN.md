@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Blender-Einzeltest · 27.10.:** Echtes Tripo-Mesh gesichert, ein transparenter 512×640-Render bei 64 logischen Pixeln isoliert in Godot geprüft. V vergleicht Produktions-v01/A+; F5/Gameplay unverändert. 23 Headless-/26 native Checks plus 63 bestehende Prüfungen bestanden; zwölf aktive Gegner, neun Schüsse/acht Treffer. Technisch geeignet, visuell noch zu schmal/glänzend, geschlossenes Seitenbuch schlecht lesbar. Vor Rigging erst Silhouette/Material/Buchpose entscheiden. Spiel 32ace03; Details/Medien DEVLOG und Progress, kein Push/Export.
+
 **Apprentice-Standard · 26.10.:** v01/A+ jetzt auf ausdrücklichen Folgeauftrag in der normalen Player-Szene aktiv: F5 → Start Run, V vergleicht A+/Original/prozedural. Runtime-Asset/Controller gemeinsam mit Test genutzt, 64 logische Pixel/Fußanker (128,300), Gameplay/Save unverändert. 224 Checks in sechs Suites, Hauptszenenstart und nativer Standard-Screenshot geprüft. Spiel eb46baf, kein Push/Releaseexport; persönliche Abnahme offen.
 
 **Visual Slice A+ · 26.10.:** v02 verworfen, v01 bleibt Basis. Isolierte Atmung/Gewicht, pausierbares Feuer, bodenstabile Bewegung und Cast-Vorbereitung/-Impuls/-Rückkehr; V vergleicht A+/Original/prozedural. F5/Gameplay unverändert, Original-PNG bytegleich; Schattenverdacht korrigiert. 106 Headless-/9 native Demoprüfungen, echter 7,77-s-Clip mit zwölf aktiven Gegnern im Kampf. Spiel a4ebc62, kein Push. A+ Zwischenstand; eigenständige Arm-/Stabgeste bräuchte kleinen separat freizugebenden B-Test. Details VISUAL_SLICE_CHECKLIST.md.
@@ -614,6 +616,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
 | 2026-10-26 | Apprentice als Standard freigegeben | Nutzer hebt Test-Isolation auf; v01/A+ regulär in Player-Szene, Original/Fallback erhalten | F5 → Start Run, 224 Checks/Start/native Vorschau bestanden; kein neuer Releaseexport/Push |
+| 2026-10-27 | Blender → Godot Einzelcharakter | Ein vorhandenes Tripo-Mesh sichern, orthografisch rendern und isoliert im echten Kampf vergleichen | 23 Headless-/26 native + 63 bestehende Checks, zwölf aktive Gegner; Pipeline funktioniert, Stil/Buchpose vor Animationsausbau klären; F5 unverändert |
 | 2026-10-26 | Visual Slice A+ | v01 erhalten, v02 verworfen; vorhandenen isolierten Test visuell polieren, keine neue Mechanik/Rig | 106 Headless-/9 native Checks und echter Clip; F5 unverändert, Stab-/Armgrenze und Schattenkorrektur dokumentiert; menschliche Abnahme offen |
 | 2026-10-25 (Statusmeldung) | Erste externe Distribution | Nutzer meldet: spielbare Alpha auf itch.io hochgeladen; GoGoEli-Short auf YouTube und TikTok gepostet; persönliche Branding-/Kanaltexte erstellt | Als **vom Nutzer bestätigt** dokumentiert; konkrete Releaseversion, Links, Zeitpunkte und Reichweiten noch offen |
 | 2026-10-25 (Statusmeldung) | Content-Automation | Nutzer bestätigt funktionierende CapCut-Automation zum Video-Workflow; erster Kurzclip über Playtestfeedback und dauerhafte Heilung der Welt produziert | Funktionsstatus laut Nutzer; Toolkonfiguration, Ausgabeformat und Dateipfade noch nicht erfasst |

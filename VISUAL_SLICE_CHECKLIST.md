@@ -4,6 +4,10 @@
 **Arbeitsgrundlagen:** [ART_DIRECTION.md](ART_DIRECTION.md) (verbindlicher Stil C), [ASSET_ROADMAP.md](ASSET_ROADMAP.md) (A1/A2/A3), [LOOTFALL_MASTERPLAN.md](LOOTFALL_MASTERPLAN.md) (Vision/Gates), [WORLD_RESTORATION.md](WORLD_RESTORATION.md) (Weltheilung).
 **Repos:** Dieses Devlog-Repo hält Plan, Freigaben und Vergleichsmaterial fest. **Runtime-Bilddateien und Godot-Integration gehören in das Spielrepo** `karlospeter464-hub/lootfall-2.0`. Keine neuen konkurrierenden Masterpläne anlegen.
 
+## Blender-Einzeltest · 27.10.2026
+
+Separater Blender→Godot-Test abgeschlossen: echtes Tripo-Mesh, gesichertes Original, ein 512×640-RGBA-Render, 64 logische Pixel und V-Fallback zu Produktions-v01/A+. 23 Headless-/26 native Checks plus 24 Player-Art-/39 bisherige Visual-Slice-Checks bestanden. Zwölf aktive Gegner, echte Bewegung/Angriffe, Idle-/Kampfbilder unter Progress/captures/2026-10-27_blender_mage. Technisch geeignet, Stil noch nicht abgenommen: schmale glänzende Figur, geschlossenes Seitenbuch kaum lesbar. Keine Freigabe eines vollen Rigs oder einer Richtungsserie; vor Ausbau Silhouette/Material/Buchpose entscheiden. F5 unverändert. Spiel 32ace03; Details DEVLOG und tests/fixtures/blender_mage/README.md im Spielrepo.
+
 ## Ziel und Schnittgrenze
 
 **Ziel:** Eine reale, kurze Godot-Kampfszene soll aus einem Guss wirken: **Bold Graphic Anime Dark Fantasy**, starke 3/4-Top-down-Silhouetten, klar lesbares Kampfgeschehen und sichtbar lebendig werdende Welt. Nicht bloß ein hübsches Konzeptbild; das Ergebnis muss im tatsächlichen Spielmaßstab funktionieren und brauchbare, ehrliche Vorher/Nachher-Aufnahmen liefern.
