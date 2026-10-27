@@ -160,3 +160,21 @@ Separat freigegebener prozeduraler Stiltest in drei Pässen umgesetzt: Draw-Silh
 
 ## Methode A – isolierter Apprentice-Test, 25.10.2026
 Explizit beauftragter Teil von A1/Gate 0–2: Ist-Größe 50×55 logische Pixel, Sprite-Test 64 Pixel Alpha-Höhe; Sprite2D + AnimationPlayer, ursprüngliche F5-Darstellung unverändert. 26 neue und 131 bestehende Headless-Checks sowie 30 native Prüfungen bestanden. Neues geliefertes PNG nur Test-Fixture, Alpha bestätigt; noch kein finales erhöhtes 3/4-Gameplay-Sprite oder vollständige A1-Abnahme. Fortschritt und nächste Abnahme in VISUAL_SLICE_CHECKLIST.md; genauer Runtime-Brief/Startkommando im Spielrepo VISUAL_SLICE_A_PLAYTEST.md. Keine neue Pipeline oder weitere Assetfamilie.
+
+
+## Character-Art-Pipeline Retrospektive und Sprite-Test – 27.10.2026
+
+**Bestehende Entscheidungen gelten weiter:** Style C / Bold Graphic Anime Dark Fantasy ohne Pixel-Art, aktuelle Godot-2D-Top-down-Kamera und Gameplay ohne Änderungen. 2D-Einzel-PNG plus Whole-Image-AnimationPlayer wurde am 25.10. bereits technisch erfolgreich in der isolierten Godot-Szene geprüft. Das ist kein Beleg für gute Lauf-, Blickrichtungs- oder Arm-Animation.
+
+| Weg | Vorteil / Evidenz | Grenze | Minimale Probe |
+|---|---|---|---|
+| Einzel-PNG | Integration, Alpha, Pivot und Combat geprüft | Feste Blickrichtung; Details/Schatten wirken unsauber bei 1x | Nicht als final akzeptieren |
+| Godot-Draw-Magier | Funktioniert und ist animierbar | Nutzer empfindet ihn noch als unzureichend attraktiv | Fallback erhalten |
+| Aus generierten 2D-Teilen mit Skeleton2D | Godot Bones/Polygon2D technisch unterstützt | KI-Teile und perspektivische Drehungen sind ohne manuelle Nacharbeit oft inkonsistent | Nur bei tatsächlich getrennten, passenden Layern |
+| Tripo 3D → Blender → PNG | Ein einziges 3D-Mesh könnte Richtungen und Pose konsistent liefern | fehlerhafte Hand, Exporthürde, Lizenzen, UV-/Rigging-Aufwand, Art-Look | Erst Mesh-vs-Bildebene prüfen; dann EIN transparenter Ortho-Testframe |
+| SpriteLab / SpriteGen | Anbieter nennen Anime/Dark Fantasy, referenzbasierte Animation und transparente Sheets | Visuelle Qualität, kommerzielle Lizenz und Framekonsistenz noch nicht nachgewiesen | 4–6 gleiche Zellen, Idle/Cast und feste Richtung |
+| PixelLab | Ausgereifte 4/8-Direction-Optionen | Starker Pixel-Art-Fokus, passt nicht ohne Stiländerung | Zurückstellen |
+
+**Schnittstelle für Codex:** Native transparente PNGs oder ein rastergleiches Sprite-Sheet, jede Zelle identische Dimension, gleicher Fußanker, dokumentierte Richtung und Figurenhöhe, kein eingebrannter Bodenschatten. Bereits vorhandenen visuellen Player-Knoten und Fallback in einer isolierten Testsituation bewahren. Bei Sheets den Godot-AnimatedSprite2D/SpriteFrames-Weg nutzen (offizielle Anleitung: https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html). Gleiche 1x-Testkamera, echter Combat und mit bisherigem Apprentice vergleichen. Keine erfundenen Zwischenframes und kein automatisches produktives Ersetzen.
+
+**Budget und Abnahme:** Kein Abo oder neues kostenpflichtiges Tool ohne explizite Entscheidung; freie Tool-Nutzung ≠ nachgewiesene kommerzielle Lizenz. Erst sichtbare Test-Screenshots und subjektiver Art-Gate des Nutzers, dann Richtung/Animation/Assetfamilien ausbauen. Fehlversuche mit Screenshots, Datum, Quelle und Rechtelage dokumentieren, nicht als fertige Modelle deklarieren.
