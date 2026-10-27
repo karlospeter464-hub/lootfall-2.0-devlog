@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Magier im Stein-Stil · 27.10.:** Nutzer mag Formen/Tiefe, Steine aber zu groß. Testprops samt Schatten auf 65 % verkleinert; eigener facettierter SVG-Magier mit Hut, silbernem Haar, Feuerzepter und offenem Buch isoliert bei 64 logischen Pixeln verglichen. V behält v01/A+-Fallback, F5 unverändert. 26 Headless-/59 native plus 20 Tiefen-/24 Player-Art-Checks bestanden, identisches Bildpaar und echter 3,73-s-Kampfclip. Spiel 7a12889; Stilvorschlag zur persönlichen Abnahme, keine Richtungs-/Riggingserie. DEVLOG/Progress.
+
 **Größeres Spielbild · 27.10.:** Nutzer bewertet Teststeine positiv. Fenster und tatsächliche Renderausgabe jetzt 1600×1000, logische Arena 1280×800 erhalten. Tiefentest erhält gerichtete Pfeiler-/Felsschatten; Props weiter isoliert. 22 native Checks, identische Vergleichsbilder und HUD bestätigt; Spiel 3757438. Nächster möglicher Tiefenschritt: Gegnerkörper/Warnflächen visuell trennen, noch nicht umgesetzt.
 
 **Visual Depth Proof · 27.10.:** Isolierter Ashen-Fields-Test mit Ruinenpfeiler/Fels, Kontakt-/Formschatten, dezentem Bodenlicht und Spieler-Verdeckung. Identisches BEFORE/AFTER und 3,73-s-Bewegungs-GIF mit zwölf aktiven Gegnern. 19 Headless-/51 native + 12 bestehende Checks bestanden. Sichtbar räumlicher, weiterhin geometrische Platzhalter: visuelle Iteration beendet, keine produktive Integration. Gegner/Warnungen bleiben darüber; keine vollständige Y-Sortierung. Spiel ab5e6a1, F5/Gameplay/Saves unverändert; DEVLOG/Progress.
@@ -619,6 +621,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-27 | Magier-Stiltest / kleinere Props | Nutzer mag Stein-Stil und Tiefe; Props zu groß. 65-%-Props mit Schatten und facettierter Magier im isolierten Vergleich | 26+59+20+24 Checks, identisches Bildpaar/echter Kampf; V→v01/A+, F5 unverändert. Persönliche Abnahme offen |
 | 2026-10-27 | Fenstergröße / Tiefen-Folgefrage | Nutzer lobt Steine; Fenster/Renderausgabe auf 1600×1000, gerichtete Schatten im isolierten Test | 22 native Checks, identischer Vergleich; logische Arena/Gameplay unverändert. Keine Produktivübernahme der Props |
 | 2026-10-27 | Visual Depth Proof | Zwei prozedurale Props, Kontaktschatten/Bodenlicht und Spieler-Verdeckung ausschließlich im Test | Identische Vergleichsbilder, 3,73-s-GIF/zwölf aktive Gegner; 19+51+12 Checks. Mehr Tiefe, weiterhin Platzhalter: gestoppt, keine Produktivfreigabe |
 | 2026-10-26 | Apprentice als Standard freigegeben | Nutzer hebt Test-Isolation auf; v01/A+ regulär in Player-Szene, Original/Fallback erhalten | F5 → Start Run, 224 Checks/Start/native Vorschau bestanden; kein neuer Releaseexport/Push |

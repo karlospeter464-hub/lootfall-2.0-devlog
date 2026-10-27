@@ -1,5 +1,20 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-27 – Facettierter Magier im Stein-Stil, Testprops verkleinert
+
+**Nutzerauftrag / Stilfeedback:** Die Steine sind zu groß; Tiefe und Stil gefallen. Gewünscht ist ein Magier in dieser Richtung. Ein einzelner isolierter Stilvergleich, keine dauerhafte F5-Übernahme und kein neuer 3D-/Rigging-Workflow.
+
+**Änderung:** Eigene codebasierte SVG-Zeichnung mit wenigen großen Hell-Dunkel-Flächen: Hut mit sichtbarer Ober-/Unterseite, silberne Haare, dunkle seitliche Mantelfläche, rostrotes Innenfutter, separates Feuerzepter und deutlich geöffnetes Buch mit Einbanddicke. Keine heruntergeladenen Assets oder Bildgeneratoren, keine Änderung am Original-v01-PNG. Godot rastert die 320×400-Vektorquelle auf 640×800 RGBA, Mipmaps/lineare Minifikation; tatsächliche Alpha-Höhe bleibt 64 logisch, Fußanker (320,750). Vorhandene Sprite2D-/AnimationPlayer-Impulse und alle Gameplay-Skripte weiterverwendet. V stellt vollständiges v01/A+ einschließlich Shader/Fußpunkt wieder her. T schaltet die Umgebungstestprops. Beide Props und ihre Kontakt-/Schlagschatten sind um 35 % in Breite/Höhe verkleinert, Bodenpositionen bleiben gleich.
+
+**Vergleich / echte Prüfung:** 26 Headless- und 59 native D3D12-Checks ohne Fehler; gemeinsamer Tiefentest 20 und Produktions-Player-Art 24 ebenfalls bestanden. Neuer interaktiver Start nativ 90 Frames geprüft. Finales Bildpaar bei Physikframe 140, um frühe Seer-Warnkreise/Props nicht über das Zepter zu legen; nur für den Vergleich pausiert, neutraler Idle-Frame je Darstellung. Spieler-/Gegner-/Projektilzustand, Kamera, Aim, Leben/RNG identisch; HUD pixelgleich, 1600×1000 nativ. Zwölf aktive Gegner durchgehend; elf Schüsse/neun Treffer, 62 tatsächlicher Schaden, ca. 898,33 logische Einheiten Bewegung. Move/Cast beobachtet, alle sieben Wegpunkte und beide Vorder-/Hintergrundpassagen bestanden. 28 echte Viewport-Frames im 3,73-s-GIF, vollständig dekodiert; repräsentative Bilder und 3×-Detailvergleich gesichtet. Kein menschlicher Run oder Leistungsbenchmark.
+
+**Visuelle Einordnung:** Weniger weiches Textur-/Glührauschen, klarer getrennte Buchflächen und konsequentere Seitenbeleuchtung passen zu den Steinen. Dafür kantigeres, vereinfachtes Gesicht und weiterhin steife Ein-Pose-Silhouette. Das ist ein beurteilbarer Stilvorschlag, kein automatischer Nachweis höherer Artqualität. Original bleibt Fallback und normaler F5-Player. Keine zusätzlichen Richtungen, Gliedmaßenanimation oder produktive Freigabe. Gegner bleiben oberhalb der Props, Warnflächen sichtbar, Props durchlaufbar.
+
+**Medien / Reproduktion:** `Progress/captures/2026-10-27_faceted_mage/{before.png,after.png,mage_faceted.png,comparison_detail.png,movement.gif,metrics.json}`. Detailbild ist beschrifteter 3×-Pixelcrop aus denselben Vollbildern; native Vollbilder behalten. Spielstart `--script res://tests/faceted_mage/mage_slice.gd -- --test-mode`, V vergleicht; README und editierbare SVG im selben Testordner. Lokaler Spiel-Commit **7a12889**. Alte Tests/Captures bewahrt, normale Kamera/Auflösung/F5/Gameplay/Kollision/Restoration/Saves unverändert; kein Push/Release. Menschliche Artabnahme offen.
+
+---
+
+
 ## 2026-10-27 – Größeres Spielbild und gerichtete Schlagschatten
 
 **Nutzerfeedback / Folgeauftrag:** Steine werden vom Nutzer ausdrücklich positiv beurteilt. Gewünscht: größere Spielauflösung und gesamtes Fenster; Frage nach Herkunft und weiterer Tiefe. Props sind eigene Godot-Polygonzeichnungen, keine Asset-Bibliothek oder kostenpflichtige Quelle. Positive Prop-Bewertung ist keine pauschale Produktionsfreigabe der Testumgebung.
