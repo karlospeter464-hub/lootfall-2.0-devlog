@@ -1,0 +1,13 @@
+{
+  "native_size": [
+    1600,
+    1000
+  ],
+  "hud_identical_across_four_views": true,
+  "all_four_facings_verified_during_live_combat": true,
+  "strafe_seen": true,
+  "gif_frames": 25,
+  "gif_duration_ms": 3600,
+  "timing": "Actual game.elapsed sample intervals, rounded to GIF 10ms units; final still held 20ms",
+  "sheet": "3x nearest-neighbour crops from four real game screenshots; unchanged originals included"
+}

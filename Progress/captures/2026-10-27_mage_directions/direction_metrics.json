@@ -1,0 +1,14 @@
+{
+	"foot_anchor": "(128.0, 300.0)",
+	"four_true_sources": true,
+	"logical_height_target": 64,
+	"mirroring": false,
+	"pixel_canvas": "(256, 320)",
+	"seen_in_live_combat": [
+		3,
+		0,
+		1,
+		2
+	],
+	"strafe_seen": true
+}

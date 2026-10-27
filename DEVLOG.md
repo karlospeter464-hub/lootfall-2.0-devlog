@@ -1,5 +1,24 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-27 – Version 3: Vier echte Blickrichtungen am ursprünglichen Magier
+
+**Freigabe / Ziel:** Nutzer wählt ausdrücklich Version 3, um Blickrichtung und Übertragbarkeit auf andere Figuren zu beurteilen. Ein einzelner isolierter Magier mit vorne/unten, rechts, hinten/oben und links; keine automatische Figurenserie oder F5-Produktionsübernahme.
+
+**Art / Herkunft:** Front bleibt das bytegleiche v01-Original. Drei zusätzliche echte Seiten-/Rückansichten wurden über das integrierte Imagegen-Tool aus diesem Bild als Referenz generiert, je ein Aufruf mit Transparenz. Kein Spiegelbild als Ersatz, kein CLI/API-Fallback und kein zusätzlicher Assetdienst. Rohdateien unter `tests/mage_four_directions/source/{right,back,left}.png`; vollständige Prompts in `tests/mage_four_directions/PROMPTS.md`. Originale Toolausgaben bewahrt. Godot normalisiert nur Größe und Position auf transparentes 256×320-Canvas mit gemeinsamem Fußpunkt (128,300), Zielhöhe ungefähr 64 logisch. Boots/Höhen manuell pro Ansicht kalibriert, keine Originalpixel überschrieben.
+
+**Technik:** Vorhandene 2D-Mesh-Puppe wiederverwendet; pro Ansicht Arm-/Buch-/Hutgelenke und Gewichtung, bei den zusätzlichen Ansichten kleinere Gesten. Nur eine Ansicht aktiv, Umschaltung nach dominantem Anteil des tatsächlichen Player.aim mit kleiner Diagonal-Toleranz gegen Flackern. Kopf und Körper richten sich gemeinsam aus; WASD und Zielrichtung bleiben unabhängig. V vergleicht vier Richtungen / ursprüngliches v01-A+, T schaltet die kleinen Testprops. Schussursprung, Stats, Hitboxen, Skills/Items, Gegner, Restoration und Save-Regeln unverändert. Keine neuen Bein-/Armzyklen oder 3D-Pipeline.
+
+**Verifikation:** 40 Headless- und 79 native D3D12-Prüfungen ohne Fehler; ursprüngliche Puppe 30, facettierter Test 26 und Produktions-Player-Art 24 ebenfalls bestanden. Neuer interaktiver Zweig 90 native Frames ohne Fehler gestartet. Alle vier Richtungen während aktiver KI und seitliche Bewegung unabhängig vom Ziel nachgewiesen; jede geprüfte maximale Gelenkpose ohne invertierte Dreiecke, Fuß/Physics-Root stabil. Native Route: zwölf Gegner durchgehend, zehn Schüsse/drei Treffer, 26 tatsächlicher Schaden, ca. 882,97 logische Einheiten, alle sieben Wegpunkte. Frühe Schüsse gezielt in vier Hauptachsen statt stets auf einen Guardian, daher andere Trefferzahlen bei identischen Stats.
+
+**Prüfmethodik / Korrektur:** Erster nativer Richtungsnachweis scheiterte, weil der Harness automatisches Aim vor dem Player-Physiktick setzte und der normale Mauseingang es noch vor der Darstellung überschreiben konnte. Test-Aim wird jetzt nach dem Physiktick gesetzt; Produktionssteuerung unverändert. Bestehende abhängige Fixtures erneut geprüft. Native Aufnahme umfasst 25 echte Viewportframes; GIF-Anzeigeintervalle aus gespeicherter game.elapsed-Spielzeit, auf GIF-Zeitschritte gerundet, ca. 3,6 s. Kein interpoliertes/synthetisches Bewegungsvideo. Vollständige GIF-Dekodierung und Sichtung nativer Ansichten bestanden. Historischer JSON-Key physics_frames zählt Harness-Beobachtungen, nicht jede Engine-Iteration während Frame-Speicherung.
+
+**Visuelle Bewertung / andere Figuren:** Die Rückansicht vermittelt den Blick nach oben deutlich besser; Seitenansichten machen die Zielrichtung unabhängig vom Laufen lesbarer. Noch kein fertiges konsistentes Produktionsset: Hutform/Schnallenposition, Körperhaltung, Falten und Fußstellung variieren, Seiten sind leicht gedrehte 3/4-Ansichten. Übergänge sind bei vier Ansichten stufig und können in Silhouette/Kostümdetails springen. Vollständige Laufzyklen fehlen. Steuerung/Mesh-Logik sind wiederverwendbar; für weitere Figuren bleiben zusätzliche Bilder, Größen-/Fußpunktkalibrierung, Gelenkgewichte und Sichtprüfung pro Figur nötig. Keine Zusage eines automatisch fertigen Sets aus einem einzigen Bild. Erst persönliche Spiel-/Artabnahme, keine weitere Figurenserie begonnen.
+
+**Medien / Start:** `Progress/captures/2026-10-27_mage_directions/`: before/after, front/right/back/left im identischen pausierten Kampfzustand, normalisierte source_*-Vorschauen, four_views.png als beschrifteter 3×-Pixelcrop, gameplay.gif und metrics/direction_metrics/capture_qa.json. Alle vier HUDs pixelgleich. Start `--script res://tests/mage_four_directions/direction_slice.gd -- --test-mode`; Maus um Figur führen und gleichzeitig WASD ausprobieren. Lokaler Spiel-Commit **ca97a51**. Originaldateien/alte Tests bewahrt; normales F5 unverändert, kein Push/Release, kein Performance-/Exportbenchmark.
+
+---
+
+
 ## 2026-10-27 – Original-v01 erhält getrennt bewegliche Bildbereiche
 
 **Auftrag / Entscheidung:** Nutzer möchte die frühere Zeichnung als Referenz behalten und einzelne Teile animieren. Als Quelle ausdrücklich den ursprünglichen linken v01-Magier verwendet; facettierter Entwurf wird dadurch nicht zum Produktionsstandard. Kleiner 2D-Puppen-Proof statt neuer Zeichenstil oder 3D-Rig.
