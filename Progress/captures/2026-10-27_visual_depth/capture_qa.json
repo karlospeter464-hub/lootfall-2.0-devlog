@@ -1,0 +1,11 @@
+{
+  "size": [
+    1152,
+    720
+  ],
+  "outside_arena_and_hud_byte_identical": true,
+  "changed_pixels": 520352,
+  "movement_frames": 28,
+  "gif_duration_ms": 3730,
+  "source": "Unaltered Godot viewport PNGs; GIF palette compression only"
+}

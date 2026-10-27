@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Visual Depth Proof · 27.10.:** Isolierter Ashen-Fields-Test mit Ruinenpfeiler/Fels, Kontakt-/Formschatten, dezentem Bodenlicht und Spieler-Verdeckung. Identisches BEFORE/AFTER und 3,73-s-Bewegungs-GIF mit zwölf aktiven Gegnern. 19 Headless-/51 native + 12 bestehende Checks bestanden. Sichtbar räumlicher, weiterhin geometrische Platzhalter: visuelle Iteration beendet, keine produktive Integration. Gegner/Warnungen bleiben darüber; keine vollständige Y-Sortierung. Spiel ab5e6a1, F5/Gameplay/Saves unverändert; DEVLOG/Progress.
+
 **Blender-Einzeltest · 27.10.:** Echtes Tripo-Mesh gesichert, ein transparenter 512×640-Render bei 64 logischen Pixeln isoliert in Godot geprüft. V vergleicht Produktions-v01/A+; F5/Gameplay unverändert. 23 Headless-/26 native Checks plus 63 bestehende Prüfungen bestanden; zwölf aktive Gegner, neun Schüsse/acht Treffer. Technisch geeignet, visuell noch zu schmal/glänzend, geschlossenes Seitenbuch schlecht lesbar. Vor Rigging erst Silhouette/Material/Buchpose entscheiden. Spiel 32ace03; Details/Medien DEVLOG und Progress, kein Push/Export.
 
 **Apprentice-Standard · 26.10.:** v01/A+ jetzt auf ausdrücklichen Folgeauftrag in der normalen Player-Szene aktiv: F5 → Start Run, V vergleicht A+/Original/prozedural. Runtime-Asset/Controller gemeinsam mit Test genutzt, 64 logische Pixel/Fußanker (128,300), Gameplay/Save unverändert. 224 Checks in sechs Suites, Hauptszenenstart und nativer Standard-Screenshot geprüft. Spiel eb46baf, kein Push/Releaseexport; persönliche Abnahme offen.
@@ -615,6 +617,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-27 | Visual Depth Proof | Zwei prozedurale Props, Kontaktschatten/Bodenlicht und Spieler-Verdeckung ausschließlich im Test | Identische Vergleichsbilder, 3,73-s-GIF/zwölf aktive Gegner; 19+51+12 Checks. Mehr Tiefe, weiterhin Platzhalter: gestoppt, keine Produktivfreigabe |
 | 2026-10-26 | Apprentice als Standard freigegeben | Nutzer hebt Test-Isolation auf; v01/A+ regulär in Player-Szene, Original/Fallback erhalten | F5 → Start Run, 224 Checks/Start/native Vorschau bestanden; kein neuer Releaseexport/Push |
 | 2026-10-27 | Blender → Godot Einzelcharakter | Ein vorhandenes Tripo-Mesh sichern, orthografisch rendern und isoliert im echten Kampf vergleichen | 23 Headless-/26 native + 63 bestehende Checks, zwölf aktive Gegner; Pipeline funktioniert, Stil/Buchpose vor Animationsausbau klären; F5 unverändert |
 | 2026-10-26 | Visual Slice A+ | v01 erhalten, v02 verworfen; vorhandenen isolierten Test visuell polieren, keine neue Mechanik/Rig | 106 Headless-/9 native Checks und echter Clip; F5 unverändert, Stab-/Armgrenze und Schattenkorrektur dokumentiert; menschliche Abnahme offen |

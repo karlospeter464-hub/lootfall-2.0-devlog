@@ -1,5 +1,22 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-27 – Ashen Fields: Visual Depth Proof, bewusst beim Platzhalter-Gate gestoppt
+
+**Ziel / Bezug:** Ein ausdrücklich beauftragter Umgebungstest im Sinne Art Direction / Asset-Roadmap A1: ein Ruinenobjekt, ein großer Naturprop, Bodenkontakt, Lichtstimmung und lokale Spieler-Überlagerung. Aktuelle Figur, Kamera, Warnflächen und Gameplay erhalten; keine produktive Freigabe.
+
+**Umsetzung:** Original-Arena über vorhandenen Visual-Slice-Harness instanziiert. Ausschließlich drei neue Testdateien unter `tests/visual_depth/`: Node2D-Polygonzeichnung für einen gebrochenen Pfeiler mit heller Oberseite, dunkler Seite und vertiefter Spitzbogennische sowie einen großen facettierten Fels. Bodenpass mit gerichteten weichen Kontaktschatten und kühlem Alpha-Lichtverlauf, ohne Shader-/Beleuchtungsframework. T schaltet BEFORE/AFTER. Nur der Spieler wird am Prop-Fußpunkt vorne/hinten geschichtet. Gegner samt eingebetteten Warnflächen bleiben stets darüber, Projektile ebenfalls. Keine vollständige Gegner-Y-Sortierung; dadurch können Gegner optisch vor der Ruine schweben. Props sind absichtlich durchlaufbar, weil Kollisionen unverändert bleiben.
+
+**Identischer Vergleich:** Native Godot-D3D12-Bilder bei normalem 1152×720-Fenster / 1280×800 logisch, Identitätskamera, gleichem Spiel-/KI-/Projektilzustand aus dem laufenden Kampf bei Frame 30. Nur für die zwei Bilder Szenenbaum pausiert und Tiefe ausgeblendet/eingeblendet, danach Kampf fortgesetzt. Snapshot-Assertion für Spieler/Gegner/Projektile, Aim, Leben, RNG, Welle, Kamera und Visualclock bestanden. HUD und außerhalb der Arena liegende Bildbereiche sind zusätzlich pixelgleich. BEFORE nutzt dieselben testlokalen Warn-/Actor-Layer wie AFTER; Produktionsskripte/-szene unverändert.
+
+**Echte Bewegung / Prüfungen:** 19 Headless- und 51 native Prüfungen ohne Fehler; vorhandener Visual-Lift-Test 12 ohne Fehler. Interaktiven Zweig zusätzlich nativ 90 Frames gestartet. Sieben Wegpunkte, hinter/vor beiden Props nachgewiesen, ca. 898,33 logische Einheiten Wegstrecke. Zwölf aktive Gegner durchgehend; elf echte Schüsse, neun Treffer, 62 tatsächlicher Schaden, Spielerleben am Ende 100 ohne Statänderung/Unverwundbarkeit. 28 echte Viewport-PNGs zu 3,73-s-GIF zusammengesetzt, ausschließlich Palettenkompression/auf GIF-Zeitschritte gerundete Anzeigezeiten; keine interpolierten oder synthetischen Bilder. Repräsentative vorne/hinten-Frames gesichtet, alle GIF-Frames dekodiert. Kein menschlicher Run oder Langzeitbenchmark.
+
+**Learning / Stop-Entscheidung:** Höhe, Oberseiten/Seiten und Bodenkontakt sind sichtbar besser; die Architektur kann den räumlichen Aufbau ohne Umbau darstellen. Die Props wirken trotzdem deutlich wie einfache geometrische Platzhalter, insbesondere der kantige Fels und der blockartige Pfeiler. Kein Nachweis hochwertiger fertiger Dark-Fantasy-Umgebung. Deshalb wie beauftragt visuelle Iteration hier gestoppt; keine weiteren Effekte, Props, Regionen oder produktive Integration. Eine einzelne besser gestaltete Prop-Grafik wäre nach menschlicher Sichtung der kleinste mögliche Folgetest, kein automatisch begonnenes Paket. Ein anfänglich weiß erscheinender Bodenverlauf wurde als vorzeitig freigegebene lokale GradientTexture erkannt und durch eine gehaltene Member-Referenz korrigiert; nur korrigierte Bilder ausgeliefert.
+
+**Medien / Reproduktion:** `Progress/captures/2026-10-27_visual_depth/{before.png,after.png,comparison.png,movement.gif,metrics.json,capture_qa.json}`. Spielstart: `--script res://tests/visual_depth/depth_slice.gd -- --test-mode`; T vergleicht, WASD/Maus/LMB spielen. Start-/Capture-Anleitung in `tests/visual_depth/README.md`. Lokaler Spiel-Commit **ab5e6a1**. Keine Produktionsdatei geändert; vorbestehende project.godot-/Editor-Dateien und fremde Chronikgrafik erhalten. F5, Charakterassets, Gameplay, Kollision, Restoration-/Save-Regeln unverändert. Kein bezahltes Tool, Release, Upload oder Push. Menschliche Sichtabnahme offen.
+
+---
+
+
 ## 2026-10-27 – Tripo-Mesh → Blender-Render → echter Godot-Kampf
 
 **Auftrag / Bezug:** Ein vorhandener Magier, ein Render, isolierter In-Game-Vergleich gemäß Art Direction / Asset-Roadmap A1. Kein Rigging-Paket oder weiterer Assetversuch. Normales F5 bleibt v01/A+; Gameplay/Balance/Hitboxen/Skills/Items/Spielstände unverändert.
