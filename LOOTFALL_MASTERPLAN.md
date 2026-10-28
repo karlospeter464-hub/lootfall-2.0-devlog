@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.7 · **Stand:** 28. Oktober 2026
+**Version:** 2.8 · **Stand:** 28. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -645,7 +645,22 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 **Beispielsynergie:** Gravitation Q bündelt Gegner; Prisma E feuert den Lichtstrahl durch die Gruppe. Die Synergie entsteht durch Timing, Positionierung und bestehende Trefferregeln – **kein verpflichtender eigener Kombinationszauber** pro Paar. Weitere Kandidaten: Gravitation + Inferno (Sog + Meteor), Natur + Prisma (Festhalten + Linie), Sturm + Seelenecho (mobil + Abbild).
 
-#### 8.21.5 Prototyp-Vorgehen und Migrationsgrenzen [VORSCHLAG – keine Freigabe zur Implementierung]
+#### 8.21.5 Gefährten-Story: Zerstrittene mit Verderbnis-Einfluss (B mit A)
+
+**[ENTSCHEIDUNG – Storyrichtung, 28.10.2026]:** **B ist das Fundament, A ein unterstützendes Element.** Die sechs ehemaligen Freunde sind eigenständige Personen, die nach einer gemeinsamen Katastrophe aus unterschiedlichen, glaubwürdigen Gründen getrennte Wege gegangen sind. Sie sind **nicht bloß sechs passive Gefangene**, die der Magier nach einem Bosskampf einsammelt. Die Verderbnis kann einzelne Gefährten zusätzlich gefangen halten, korrumpieren, manipulieren oder in einen Konflikt treiben. **Nicht jeder Freund muss auf dieselbe Weise gerettet werden.**
+
+**[HYPOTHESE – dramaturgischer Rahmen]:** Frühere gemeinsame Krise: eine Region opfern, um andere zu schützen? Die Freunde waren uneins, machten Fehler und tragen verschiedene Teile der Wahrheit. Der zunächst unerfahrene Magier hat eigene Werte und versucht, Freunde und Welt wieder zusammenzuführen, ohne dass alle ihre Meinungen aufgeben müssen. Ursache und moralische Wahrheit der Katastrophe bleiben offen; Gut und Böse sind keine auswählbaren Fraktionen.
+
+**Integration in bestehende Gameplay-Loops:**
+- Kampf/Wellen treiben **bereits implementierte** fortlaufende Renaturierung nach jeder vollständig geklärten Welle voran (Boden/Wasser fließend, Pflanzen in Schwellen, 100-%-Höhepunkt). Keine neue Nature-Healing-Mechanik.
+- Einige **einmalige Story-/Rettungs-Meilensteine** verbinden regionale Fortschritte mit dem Begegnungs-/Boss-Loop: Konfrontation mit einem Freund oder seiner Entscheidung → Verderbnis-Einfluss überwinden **und/oder** Vertrauen zurückgewinnen → Freund kehrt ins Hub zurück → neue aktive Kraft und persönlicher Echoes-Talentbaum. Ein bloßer Sieg muss nicht bedeuten, dass seine moralische Position „falsch“ war.
+- **Erster Gefährte früh**, zweiter ebenfalls rechtzeitig zum frühen Zwei-Kräfte-Spielgefühl; danach weitere in bedeutsamen Abständen. Die drei bereits implementierten Regionen sind eine mögliche Basis, **nicht** verpflichtend „zwei Freunde je Region“. Die Zahlen, Reihenfolge und Trigger bleiben offen.
+- Gerettete Freunde sind dauerhafte, klar erkennbare Charaktere im Hub; kurze glaubwürdige Dialoge/Umgebungsdetails statt textlastiger Kampagne. Im Run spielt der Magier selbst und aktiviert bis zu zwei **erlernte Kräfte manuell auf Q/E**; keine zusätzlichen NPC-Begleiter im Kampf erforderlich.
+- Die Story erklärt, **warum** Fähigkeiten freigeschaltet werden, während Karten, Loot, höhere Wellen, Echoes und sichtbare Heilung den Großteil der Spielzeit tragen.
+
+**Story-Qualitätsregel:** Die Verdorbenheit sollte Konflikte verschärfen, **nicht alle moralischen Fehler der Freunde entschuldigen**. Jeder soll eigene Motive, Verantwortung und ein glaubwürdiges Verhältnis zum Protagonisten behalten. Exakte Charakterbiografien und Rettungsszenen erst zusammen mit dem jeweiligen Gameplay-Moment entwickeln.
+
+#### 8.21.6 Prototyp-Vorgehen und Migrationsgrenzen [VORSCHLAG – keine Freigabe zur Implementierung]
 
 1. **Erst enges Integrationsaudit** des vorhandenen 45-Knoten-Talentbaums, Kauf-/Refund-/Save-Schemas und Kampfsystems (Run-Karten, Equipment, Grundangriff, zwei neue Eingaben). Der vorhandene 45er-Baum **funktioniert im GitHub-Spielstand**, bleibt bis zur ausdrücklichen Umstellung intakt; keine stillschweigende doppelte permanente Talentökonomie. Erst auf den zwei-Freunde-Entwurf migrieren, wenn Spielspaß bestätigt und Echoes/Käufe sicher übernommen/erstattet werden können.
 2. **Erster spielbarer Gefährten-Slice** mit **Gravitation + Prisma**, Q/E, zwei eigenen Cooldowns und **je einem kleinen repräsentativen Pfad mit Grundwerten UND Schlüsseltalenten**. Eine frühe erste Rettung, die zweite für den Test rasch oder per isolierter Sandbox freischaltbar. Weitere vier Freund-Bäume noch nicht vollständig programmieren. Keine neue Währung, keine Gut/Böse-Fraktion, kein Prestige, keine weitere Klasse.
@@ -689,6 +704,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-28 | Storyrichtung: B mit A | Sechs Freunde sind nach moralisch schwieriger gemeinsamer Vergangenheit zerstritten; Verderbnis kann einzelne zusätzlich gefangen halten/korrumpieren. Jede Rettung ist eine nachvollziehbare Charakterbegegnung plus seltener Gameplay-Freischaltmoment. Regionsheilung pro Welle bleibt unangetastet; keine festen zwei Freunde pro Region, kein Gut/Böse-Fraktionszwang. | Storyrichtung entschieden; konkrete Figuren-/Boss-/Freischalt-Events offen, kein Spielcode |
 | 2026-10-28 | Gefährten als Talentbäume / größere Meta-Progression | Sechs Gefährten als Combat-Schulen; nur zwei ausrüstbar, Q/E manuell. Jeder Freund bringt eigenen freien Echoes-Baum mit allgemeinen Grundwert-Knoten und sechs besonderen Fähigkeits-/Feuerball-Talenten. Gemeinsamer 45er-Baum soll **ersetzt**, nicht parallel erweitert werden; 15 Knoten/Freund vorgeschlagen. Bestehende Karten, Loot und World Restoration erhalten; frühes Freund-Freischalten. | **Designrichtung festgelegt**, Zahlen/Bäume/Migration als Hypothese/offen; keine Implementierung |
 | 2026-10-28 | Game Design: Gefährten / Welt / Build-Dimensionen | Spielerfokus auf spektakuläre Magie und sichtbare Naturheilung; einmalig gerettete Freunde als Kräfte-Freischaltung, max. zwei gleichzeitig im Run. Bestehende Karten/Items/45er-Baum und Heilung behalten; konkreten zwei-Kräfte-Slice statt neuer Gesamtsysteme testen (§8.21). Gut/Böse-Fraktionswahl geparkt. | Erlebnisrichtung bestätigt, Integrationsdetails/Meilenstein-Trigger Hypothesen; **keine neue Spielimplementierung** |
 | 2026-10-27 | Character-Art: Retrospektive / nächstes Gate | Zweitägige Iterationen und Tripo-Export-/Handprobleme dokumentiert. Bereits erfolgreichen Einzel-PNG-Import anerkannt; echte Richtungs-/Gliedmaßenanimation offen. Enger 3D-Ortho-vs-referenzbasiertes Sprite-Sheet-Test statt erneuter freier Bilditeration | Recherche und Nutzerbericht, kein neuer Game-Code/Blender-Erfolgsnachweis, Lizenz-/Bildbelege offen |
