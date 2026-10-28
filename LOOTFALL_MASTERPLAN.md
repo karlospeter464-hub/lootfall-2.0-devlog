@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.5 · **Stand:** 27. Oktober 2026
+**Version:** 2.6 · **Stand:** 28. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -583,7 +583,58 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
+### 8.21 Gefährten als Build-Meilensteine – Vision und nächster Vertical-Slice-Test (28.10.2026)
+
+**Status:** Gemeinsame Erlebnisrichtung **[ENTSCHEIDUNG]**; folgende konkrete Integration und Umfangszuschnitte **[HYPOTHESE]**, **keine Gameplay-Implementierungsfreigabe**. Diese Richtung ergänzt die bestehenden §2-Loops, WORLD_RESTORATION.md und die aktuellen CE3–CE5-Systeme, statt sie stillschweigend zu ersetzen.
+
+**Spielerfantasie / emotionaler Nordstern [ENTSCHEIDUNG]:** Spektakuläre, kontrollierbare Magie gegen Gegnerhorden **und** eine geheimnisvolle Dark-Fantasy-Welt, die sich durch das Kämpfen sichtbar regeneriert. Build-Experimentieren und besondere Funde halten die Runs abwechslungsreich. Die Story gibt dem Kampf Bedeutung, ohne eine dialoglastige Kampagne vorauszusetzen.
+
+**Story-Richtung [HYPOTHESE, Details offen]:** Die Welt leidet unter einer rätselhaften Verderbnis („The Blight“); der junge Magier kann sie durch Expeditionen zurückdrängen. Verlorene einstige Gefährten werden als besondere, emotionale Meilensteine zurückgewonnen. Sie unterscheiden sich in Magie, Werten und Perspektiven; gegenseitiges Verständnis und die Verbindung ihrer Stärken bilden den thematischen Kern. Ursprung der Spaltung, Antagonist, Zahl/Namen/Reihenfolge der Freunde, konkrete Rettungsereignisse und Dialogumfang sind **offen**. Gut/Böse-/Licht/Schatten-Fraktionswahl, getrennte Kampagnen und strikt vorgegebene Gegensatzpaare sind **geparkt**, nicht Teil dieses Prototyps. Der Magier bleibt die einzige aktuelle Spielerklasse.
+
+#### 8.21.1 Eine klare Zuständigkeit pro Verbesserungsdimension
+
+| Dimension | Dauer | Spielerfrage | Konkretes Beispiel | Abgrenzung zum Ist-Stand |
+|---|---|---|---|---|
+| **Gefährten / Kräfte** | Dauerhafte, seltene Story-/Welt-Meilensteine; für Runs **max. zwei Kräfte** aus bereits freigeschalteten Freunden auswählen | **Welche Spielwerkzeuge stehen mir offen?** | Gefährtin A: Gravitationsfeld zieht Gegner zusammen; Gefährte B: Lichtlanze trifft in einer Linie | **NEU, nicht implementiert**. Gefährten ersetzen weder Karten noch Loot. Für den nächsten Test sind zwei Probekräfte ausreichend; fünf/sechs/acht Freunde sind keine Scope-Zusage. |
+| **Permanenter Echoes-Talentbaum** | Über Runs; aktuell 45 Knoten in Power/Vitality/Flow, mit kostenlosem exaktem Reset | **Welche dauerhaften Eigenschaften baue ich aus?** | Power → Kindling/Flächenschaden; Vitality → Heilung/Schutz; Flow → Momentum/Tempo | **BESTEHEND**. Für den ersten Gefährtentest als gemeinsamer Magier-Baum behalten. Separate vollständige Talentbäume *pro Freund* würden den Scope vervielfachen: **geparkt**. Spätere kleine freundspezifische Spezialisierungen erst nach Playtests. |
+| **Wellenkarten (1 aus 3)** | Nur aktueller Run; bestehender Pool mit sechs Karten, Angebot an bestehenden Wellen-Meilensteinen | **Wie entwickle ich diesen Run?** | Fire Fan, Ember Burst, Piercing Flame oder Overcharge verändern derzeit vor allem den Feuerball | **BESTEHEND**. Karten bleiben ausdrücklich wellenbasiert, kein Ersatz durch XP-/Sammelleisten oder Gefährten. Spätere Karten können ausgewählte Gefährtenkräfte beeinflussen; kein automatisches Versprechen, dass jede alte Karte auf jede neue Fähigkeit wirkt. |
+| **Run-Items** | Zufälliger Fund; Tasche plus bewusstes Ausrüsten von Scepter und Book, bei neuem Run reset | **Welcher Fund verändert meinen Build überraschend?** | Cinder Codex: Splash; Storm Grimoire: Blitz; Echo Scepter: zusätzlicher Schuss | **BESTEHEND**, derzeit acht feste Gegenstände. Kein dauerhaftes Gear, neues Crafting oder umfangreiche Item-Persistenz für den ersten Gefährtentest. |
+| **Welt-Restauration** | Regionsfortschritt bleibt dauerhaft; keine ausgebbare Währung | **Was hat mein Kampf in der Welt bewirkt?** | Nach jeder geklärten lokalen Welle +4n Punkte; Boden/Wasser kontinuierlich überblendet, sichtbare Vegetationsschwellen, 100-%-Reveal | **BESTEHEND**, drei Regionen und persistente Speicherung; nicht neu bauen. Getrennte Bestwelle bleibt offen, gerettete Region bleibt gerettet. |
+
+**Prinzip:** Ein Freund schaltet eine **aktive Fähigkeit / einen magischen Spielstil** frei; Karten formen den kurzfristigen Run, Items erzeugen überraschende Loot-Kombinationen, der bestehende Baum unterstützt langfristiges Wachstum. Gefährten sind somit eine **Freischalt-/Loadout-Ebene** über den vorhandenen drei Upgrade-Systemen, **kein vierter paralleler XP- oder Preisbaum**. Der Grundangriff des Magiers bleibt für den Prototyp erhalten; die zwei Gefährtenkräfte sind zusätzliche wählbare Werkzeuge, keine Pflicht schon im ersten Run.
+
+#### 8.21.2 Beispiel für einen vollständigen Build [Illustration, kein implementiertes Verhalten]
+
+- **Dauerhaft:** A und B gerettet; vor Run beide Kräfte als zwei Gefährten-Slots gewählt. Talentbaum: z. B. Power mit AoE-/Schadensschwerpunkt.
+- **Aktive Kräfte:** A **Gravitationsfeld** zieht die Gegner kurz zusammen; B **Lichtlanze** verursacht gerichteten Flächenschaden durch die Gruppe. Beide sind einzeln sinnvoll, gemeinsam entsteht eine räumliche Synergie – **ohne zwingend eigenen Sonderzauber für jedes Paar**.
+- **Im Run:** Nach Wellen 1 aus 3 Karten wählen, etwa **Ember Burst**: mit Feuerball direkt besiegte Gegner explodieren. Ein gefundener **Cinder Codex** ergänzt Feuerball-Splash. Zusammenziehen erleichtert Treffergruppen; Lichtlanze ergänzt als zweites Werkzeug. Alte Karten-/Itemregeln gelten weiterhin genau für die Effekte, die heute im Code verdrahtet sind.
+- **Sichtbarer Welteffekt:** Jede geklärte Welle schreibt den bestehenden Restoration-Fortschritt gut; Umgebung regeneriert sich über die vorhandenen Übergänge. **Freund-Rettung** als separater einmaliger Welt-/Story-Meilenstein, nicht als zufälliger Mob-Drop und nicht nach jeder Welle.
+
+#### 8.21.3 Schutz vor Scope-Creep [Design-Leitplanken]
+
+1. **Maximal zwei ausgerüstete Gefährtenkräfte pro Run**; die gesamte Auswahl wächst horizontal mit künftig freigeschalteten Freunden. 6 Freunde ergäben 15 ungeordnete Zweier-Paare (bei freier Paarwahl) – **nicht** 15 verpflichtend handgeschriebene Spezialfähigkeiten.
+2. **Wenige wiederverwendbare Wirkmechaniken** (z. B. Gruppieren, Linie, Fläche, Schild, Dauerwirkung) vor individuellen Paar-Skripten. Synergien primär durch räumliche/zeitliche Interaktion; teure Spezialduos nur nach nachgewiesenem Spielspaß.
+3. Bestehende **45 permanente Knoten**, sechs Karten, acht Items und drei Biome zunächst behalten. Keine gleichzeitige Einführung von Freund-Talentbäumen, moralischen Fraktionen, NPC-Dörfern, Ökonomie oder Content-Flut.
+4. **Keine vierte Ressource/XP-Leiste**. Rettungen erfolgen an klaren, noch festzulegenden Meilensteinen; genaue Trigger, Reihenfolge, Wiederspielbarkeit restaurierter Gebiete, Loadout-Wechselzeitpunkt und Freischalt-Balance bleiben **[OFFEN]**.
+5. **Bewährte Dauer/Run-Grenzen:** Talentkäufe, Restoration und gerettete Freunde persistent; Run-Karten, Ausrüstung und temporäre Effekte resetten. Gefährtenfreischaltungen bei späterer Implementierung speichersicher ergänzen, bestehende Saves nicht zerstören.
+6. Ein spektakulärer Spell muss **lesbar und performancetauglich** sein. Maximalzahl aktiver Effekte, Telegraphe und klare Formen priorisieren gegenüber vielen überlagerten Partikeln.
+
+#### 8.21.4 Nächstes enges Gameplay-Experiment [VORSCHLAG, noch nicht freigegeben]
+
+**Ziel:** In einer vorhandenen Arena beweisen, dass **zwei kombinierbare Gefährtenkräfte + sichtbare Renaturierung** sich besser anfühlen als bloße zusätzliche Status-Upgrades.
+
+- **Paket A – Integrationsaudit:** Bestehende Player-/Skill-/Card-/Item-/Save-Schnittstellen und zwei Extra-Inputs prüfen; minimalen Datenvertrag für `companion_id`, `unlocked`, `equipped` (max. zwei) skizzieren. Keine automatische Implementierung aus diesem Abschnitt.
+- **Paket B – Combat Slice:** Zwei Platzhalter-Gefährten, je eine verständliche aktive Kraft (beispielsweise kurzes Gravitationsfeld und gerichteter Strahl), übersichtliche Cooldowns und bewusstes Loadout vor dem Run. Klassischer Feuerball bleibt; keine Freund-NPC-Animation, kein eigener Talentbaum.
+- **Paket C – Mini-Meilenstein:** Erste simple, einmalige Rettung als sichtbarer Freischaltmoment; zweite Kraft für Testzwecke über einen kurzen festen Meilenstein **oder isoliertes Debug** verfügbar, damit das Zusammenspiel früh geprüft werden kann. Rettungs-Trigger und Persistenz für den Produktivmodus gesondert entscheiden. Die derzeitige Restoration-Kurve, Wellenbelohnungen, Echoes, acht Items und 45 Knoten unangetastet lassen.
+- **Abnahme:** (1) Max. zwei ausgerüstete Kräfte, (2) klarer Unterschied zu einem Ein-Kraft-Run, (3) beobachtbare Gruppieren+Strahl-Synergie, (4) Karten/Items funktionieren unverändert, (5) Welt heilt nach jeder Welle weiter, (6) bestehende Saves/Resetregeln geschützt, (7) menschlicher kurzer Spieltest auf Magiegefühl, Kombinationsspaß und visuelle Lesbarkeit.
+
+**Nicht im Slice:** komplette Geschichte, sechs/acht Figuren, neue Fraktionswahl, zusätzliche Biome, neue 45+-Talentbäume, Leaderboard-Server, Wirtschaft, kosmetisches Prestige, weitere Klassen. Diese Planung ist **keine** Beauftragung der Spielimplementierung.
+
+---
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
+
+**Konzeptabgleich 28.10.2026 (nur Planung):** Gefährten als seltene Freischaltmeilensteine; maximal zwei aktive Gefährtenkräfte je Run; bestehender Echoes-Baum, Wellenkarten, Items und Restoration bleiben eigenständige Dimensionen. Spektakuläre Magie + sichtbare Renaturierung sind die priorisierten Spielerlebnisse. §8.21 beschreibt Integrationshypothese und nächsten Vertical-Slice-Test, **noch nicht implementiert**; Gut/Böse-Fraktionen vorerst geparkt. Remote-Snapshot geprüft; lokaler Arbeitsstand kann weiter sein.
 
 **Character-Art Retrospektive · 27.10. (Nutzerfeedback):** PNG-Import und Einzelbild-Bewegung aus Methode A sind bereits technisch bewiesen, aber es gibt noch keinen final akzeptierten richtungskonsistent animierten Apprentice. Tripo-Mage mit defekter Buchhand, regulärer Export wirkt kostenpflichtig; Blender-Import wurde vom Nutzer gemeldet, Objekttyp noch offen. Nächster eng begrenzter Test: echtes Mesh → 1 Ortho-PNG aus Gameplaywinkel → bestehende isolierte Godot-Testszene; andernfalls referenzbasiertes Anime/Dark-Fantasy-4–6-Frame-Sprite-Sheet. Keine neuen technischen Erfolge oder Lizenzen behaupten. Siehe ASSET_ROADMAP.md und DEVLOG.md.
 
@@ -611,6 +662,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-28 | Game Design: Gefährten / Welt / Build-Dimensionen | Spielerfokus auf spektakuläre Magie und sichtbare Naturheilung; einmalig gerettete Freunde als Kräfte-Freischaltung, max. zwei gleichzeitig im Run. Bestehende Karten/Items/45er-Baum und Heilung behalten; konkreten zwei-Kräfte-Slice statt neuer Gesamtsysteme testen (§8.21). Gut/Böse-Fraktionswahl geparkt. | Erlebnisrichtung bestätigt, Integrationsdetails/Meilenstein-Trigger Hypothesen; **keine neue Spielimplementierung** |
 | 2026-10-27 | Character-Art: Retrospektive / nächstes Gate | Zweitägige Iterationen und Tripo-Export-/Handprobleme dokumentiert. Bereits erfolgreichen Einzel-PNG-Import anerkannt; echte Richtungs-/Gliedmaßenanimation offen. Enger 3D-Ortho-vs-referenzbasiertes Sprite-Sheet-Test statt erneuter freier Bilditeration | Recherche und Nutzerbericht, kein neuer Game-Code/Blender-Erfolgsnachweis, Lizenz-/Bildbelege offen |
 | 2026-10-25 (Statusmeldung) | Erste externe Distribution | Nutzer meldet: spielbare Alpha auf itch.io hochgeladen; GoGoEli-Short auf YouTube und TikTok gepostet; persönliche Branding-/Kanaltexte erstellt | Als **vom Nutzer bestätigt** dokumentiert; konkrete Releaseversion, Links, Zeitpunkte und Reichweiten noch offen |
 | 2026-10-25 (Statusmeldung) | Content-Automation | Nutzer bestätigt funktionierende CapCut-Automation zum Video-Workflow; erster Kurzclip über Playtestfeedback und dauerhafte Heilung der Welt produziert | Funktionsstatus laut Nutzer; Toolkonfiguration, Ausgabeformat und Dateipfade noch nicht erfasst |
