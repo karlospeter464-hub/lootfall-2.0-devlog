@@ -1,5 +1,22 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-28 – Visueller Meilenstein: Der Magier bekommt vier Blickrichtungen
+
+**Persönliches Nutzerfeedback:** Der Nutzer hat den Vier-Richtungen-Test angesehen/ausprobiert und bewertet ihn ausdrücklich sehr positiv, als großes sichtbares Upgrade. Insbesondere in der tatsächlichen kleinen Spielauflösung wirkt das Ergebnis bereits überzeugend. Damit ist die erste sichtbare Wirkung jetzt auch menschlich positiv beurteilt; das ist keine vollständige Abnahme aller Animationen, Konsistenzdetails oder einer produktiven Integration.
+
+**Was wir feiern:** Der vertraute v01-Magier kann Kopf und Körper passend zur Zielrichtung zeigen, während die Bewegung davon unabhängig bleibt. Der ursprüngliche Bildstil bleibt als Grundlage erkennbar. Kleine eigenständige Arm-/Buch-/Hutgesten und zusätzliche Seiten-/Rückansichten ergeben erstmals einen beurteilbaren Weg vom einzelnen Referenzbild zum gerichteten 2D-Charakter. Technischer Ausgangspunkt ist der isolierte Spiel-Commit ca97a51 vom 27.10.; die zugehörigen tatsächlichen Engine-Aufnahmen und Prüfberichte sind bereits archiviert.
+
+**Wie die Bilder entstanden:** Das ursprüngliche v01-PNG blieb für die Front erhalten und wurde dem integrierten Imagegen-Tool als Referenz für drei separate zusätzliche Ansichten gegeben. Prompts legten Hut, Haare, Mantel, Farben, anatomische Hände für Zepter/Buch, Perspektive und transparenten Hintergrund fest. Anschließend in Godot Größe/Fußpunkte angeglichen und Gelenke/Gewichte pro Ansicht kalibriert. Keine simple Spiegelung oder Drehung der Front, keine neue Blender-Produktion. Quellen und vollständige Prompts bleiben im Spiel unter tests/mage_four_directions/ erhalten.
+
+**Konkreter offener Fehler – Buch in Rückansicht:** Nutzerhinweis: Die offenen Seiten müssen weiterhin zum Gesicht bzw. zur Blick-/Leseseite des Magiers zeigen. In der aktuellen Rückansicht wirkt die Buchausrichtung fälschlich zum Betrachter gedreht. Für die Korrektur soll die Ausrichtung der übrigen Figur erhalten bleiben und gezielt das Buch mit passender sichtbarer Einband-/Seitenfläche angepasst werden. Dieser Archivauftrag hat das Bild noch nicht verändert.
+
+**Konsistenz / nächste Leitlinie:** Der Test bestätigt die gestalterische Richtung an dieser Figur, nicht automatisch ein reproduzierbar fertiges Set für jede andere Figur. Gemeinsame Referenz und feste Merkmalsliste helfen bei Stil, Farben und Proportionen; räumliche Ausrüstungsdetails, Handzuordnung, Hutform und Posen brauchen weiter Sichtprüfung. Für die nächste Produktionsentscheidung zuerst dieses Set anhand einer verbindlichen Charakter-/Ausrüstungsreferenz bereinigen und danach höchstens eine weitere Figur vergleichend prüfen. Keine weitere Assetserie, Richtungszahl, Veröffentlichung oder Produktionsintegration durch diesen Eintrag beauftragt.
+
+**Archiv / Prüfung:** Bestehende Medien unter Progress/captures/2026-10-27_mage_directions/ unverändert wiederverwendet: four_views.png, gameplay.gif und native front/right/back/left-Bilder; Quellen/Metriken bleiben erhalten. Prominente Meilensteinkarte, Chronikübersicht und aktueller Status aktualisiert. Keine neuen Spieltests oder Aufnahmen behauptet: heute nur Dokumentation, Medienverweise geprüft. Kein Spiel-/Assetcode geändert, kein Push/Release. Nutzerzusage und bekannter Buchfehler gemeinsam festgehalten.
+
+---
+
+
 ## 2026-10-27 – Version 3: Vier echte Blickrichtungen am ursprünglichen Magier
 
 **Freigabe / Ziel:** Nutzer wählt ausdrücklich Version 3, um Blickrichtung und Übertragbarkeit auf andere Figuren zu beurteilen. Ein einzelner isolierter Magier mit vorne/unten, rechts, hinten/oben und links; keine automatische Figurenserie oder F5-Produktionsübernahme.

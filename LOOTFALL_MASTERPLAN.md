@@ -585,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**Visueller Meilenstein · 28.10.:** Nutzer bewertet den Vier-Richtungen-Magier ausdrücklich als großes Upgrade und wünscht Archivierung. Erste Wirkung im tatsächlichen Spielmaßstab persönlich positiv beurteilt. Referenzbasierte Ansichten + lokale Mesh-Gesten als vielversprechender Weg; keine pauschale Produktions-/Figurenserienfreigabe. Offener Nutzerhinweis: Buchseiten in Rückansicht müssen zum Gesicht des Magiers zeigen; aktuell zum Betrachter orientiert, noch nicht korrigiert. Vor weiteren Figuren Referenz/Ausrüstungsregeln und Ansichten konsistent bereinigen. DEVLOG/Progress mit vorhandenen Aufnahmen aktualisiert, keine neuen Spieltests.
+
 **Vier Blickrichtungen · 27.10.:** Nutzer wählt Version 3. Original-v01 vorne plus drei referenzgenerierte echte Seiten-/Rückansichten; kein Spiegelersatz. Isolierte 2D-Puppe richtet Kopf/Körper nach Zielvektor aus, seitliches Laufen bleibt unabhängig. 40 Headless-/79 native plus 30+26+24 bestehende Checks bestanden, zwölf aktive Gegner und echter 3,6-s-Clip. Spiel ca97a51, F5 unverändert. Technisch auf andere Figuren übertragbar, aber Ansichten/Fußpunkte/Gewichte und Kostümdetail-Konsistenz pro Figur nötig; Laufzyklen/Artabnahme offen.
 
 **Original-v01 als 2D-Puppe · 27.10.:** Nutzer möchte ursprünglichen Bildstil mit beweglichen Einzelbereichen. Kontinuierliches Originaltextur-Mesh mit Zepterarm-/Buch-/Hutgelenk isoliert geprüft; keine Neuzeichnung, Neutralpose GPU-pixelgleich. 30 Headless-/100 native plus 26+24 bestehende Checks erfolgreich, echter Kampf und verlangsamte Gelenkvorschau. Spiel d1f72a7, V→v01/A+, F5 unverändert. Große Gesten brauchen künftig echte getrennte Bildlagen/ergänzte verdeckte Flächen; kein vollständiger Rig-/Richtungsworkflow.
@@ -625,6 +627,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-28 | Persönlicher visueller Meilenstein | Nutzer bewertet Vier-Richtungen-Magier als großes Upgrade, Archivierung beauftragt | Erste Wirkung positiv beurteilt; Rückansicht-Buch zum Gesicht ausrichten noch offen. Bestehende Aufnahmen bewahrt, keine Produktions-/Serienfreigabe |
 | 2026-10-27 | Version 3 / vier Blickrichtungen | Nutzer will echten Richtungswechsel und Übertragbarkeit beurteilen; Originalfront + drei referenzgenerierte Seiten/Rücken, vorhandene Mesh-Gelenke | 40+79+30+26+24 Checks, alle vier während KI/Strafing gesehen; Art/Posen noch angleichen, F5 unverändert und keine weitere Figurenserie |
 | 2026-10-27 | Originalbild mit Gelenken | Nutzer wünscht frühere Art als Referenz und bewegliche Teile; lokalisierte 2D-Mesh-Gelenke statt anderem Stil | Original bytegleich/Neutralpose GPU-pixelgleich, 30+100+26+24 Checks; kleine Gesten spielbar, große Bewegungen/getrennte Lagen offen. F5 unverändert |
 | 2026-10-27 | Magier-Stiltest / kleinere Props | Nutzer mag Stein-Stil und Tiefe; Props zu groß. 65-%-Props mit Schatten und facettierter Magier im isolierten Vergleich | 26+59+20+24 Checks, identisches Bildpaar/echter Kampf; V→v01/A+, F5 unverändert. Persönliche Abnahme offen |
