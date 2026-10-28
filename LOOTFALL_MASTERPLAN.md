@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.6 · **Stand:** 28. Oktober 2026
+**Version:** 2.7 · **Stand:** 28. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -583,58 +583,85 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ---
 
-### 8.21 Gefährten als Build-Meilensteine – Vision und nächster Vertical-Slice-Test (28.10.2026)
+### 8.21 Neue Gefährten-Architektur – aktive Magie, eigene Talentbäume, Builds (28.10.2026)
 
-**Status:** Gemeinsame Erlebnisrichtung **[ENTSCHEIDUNG]**; folgende konkrete Integration und Umfangszuschnitte **[HYPOTHESE]**, **keine Gameplay-Implementierungsfreigabe**. Diese Richtung ergänzt die bestehenden §2-Loops, WORLD_RESTORATION.md und die aktuellen CE3–CE5-Systeme, statt sie stillschweigend zu ersetzen.
+**Status:** Produkt-Richtung und Kernregeln **[ENTSCHEIDUNG]**; konkrete Knotenanzahl, Upgrade-Effekte, Werte, Kosten, Freischalt-Trigger und Integrationsdetails **[HYPOTHESE/OFFEN]**. Der folgende Abschnitt **ersetzt die frühere Integrationshypothese von §8.21**, die Gefährten nur als zusätzliche Kräfte neben dem globalen 45-Knoten-Baum plante. Keine Implementierung oder Änderung der Godot-Saves allein durch dieses Dokument.
 
-**Spielerfantasie / emotionaler Nordstern [ENTSCHEIDUNG]:** Spektakuläre, kontrollierbare Magie gegen Gegnerhorden **und** eine geheimnisvolle Dark-Fantasy-Welt, die sich durch das Kämpfen sichtbar regeneriert. Build-Experimentieren und besondere Funde halten die Runs abwechslungsreich. Die Story gibt dem Kampf Bedeutung, ohne eine dialoglastige Kampagne vorauszusetzen.
+**Erlebnis-Nordstern [ENTSCHEIDUNG]:** Spektakuläre, aktiv eingesetzte Magie in intensiven Gegnerwellen; eine geheimnisvolle Dark-Fantasy-Welt, die nach abgeschlossenen Wellen sichtbar wieder auflebt. Starke, seltene Loot-Funde und vielfältige Builds bleiben maßgeblich. Die Geschichte um verlorene Freunde motiviert die Freischaltungen, dominiert aber nicht das Spielgefühl. Die Gut/Böse-/Licht/Schatten-Fraktionswahl und verbindliche philosophische Wertepaarungen sind **geparkt**; zunächst **Spielmechanik vor Wertesymbolik**.
 
-**Story-Richtung [HYPOTHESE, Details offen]:** Die Welt leidet unter einer rätselhaften Verderbnis („The Blight“); der junge Magier kann sie durch Expeditionen zurückdrängen. Verlorene einstige Gefährten werden als besondere, emotionale Meilensteine zurückgewonnen. Sie unterscheiden sich in Magie, Werten und Perspektiven; gegenseitiges Verständnis und die Verbindung ihrer Stärken bilden den thematischen Kern. Ursprung der Spaltung, Antagonist, Zahl/Namen/Reihenfolge der Freunde, konkrete Rettungsereignisse und Dialogumfang sind **offen**. Gut/Böse-/Licht/Schatten-Fraktionswahl, getrennte Kampagnen und strikt vorgegebene Gegensatzpaare sind **geparkt**, nicht Teil dieses Prototyps. Der Magier bleibt die einzige aktuelle Spielerklasse.
+#### 8.21.1 Festgelegter Kern
 
-#### 8.21.1 Eine klare Zuständigkeit pro Verbesserungsdimension
+1. **Sechs geplante Gefährten als Gesamtbild [ENTSCHEIDUNG als Designrichtung, nicht sechs sofortige Implementierungen]:** **Gravitation, Prisma, Sturm, Natur, Inferno, Seelenecho** sind derzeit Arbeitsnamen für die magischen Schulen/Gefährten. Persönlichkeit, endgültige Figurennamen, wer zuerst gerettet wird, Kapitel, Dialoge und Rettungsanlässe bleiben offen.
+2. **Jeder Gefährte IST ein eigener permanenter Talentbaum** mit einer eigenen aktiven Magie sowie Verbesserungen dieser Magie und des Grundangriffs. **Kein separater allgemeiner/permanenter Baum in der Zielarchitektur.** Der Magier behält den normalen Feuerball als Basisangriff.
+3. **Frühe Freischaltung des ersten Freundes** nach einem kurzen, verständlichen Einführungs-Meilenstein: Spieler lernt früh das Prinzip Gefährte → Fähigkeit → Talentbaum. Weitere Freunde sind seltene, bedeutsame Rettungs-/Freischalt-Meilensteine (nicht gewöhnliche Loot-Drops). Exakte Trigger/Zahl der benötigten Runs: **[OFFEN]**.
+4. **Maximal zwei gerettete Gefährten pro Run ausrüstbar**. **Q** aktiviert die erste, **E** die zweite aktive Kraft, jeweils mit eigenem Cooldown und bewusster Positionierung/Timing. Keine automatische Gefährten-Zauberauslösung im Zielkonzept. Zwei Kräfte bilden den Run-Loadout; bei sechs verfügbaren Freunden ergeben sich **15 frei wählbare Zweierkombinationen**. Ein erster Run kann naturgemäß mit nur einem freigeschalteten Freund stattfinden.
+5. **Freier, optisch verzweigter Baum (Variante A):** Man kann die Zweige in selbstgewählter Reihenfolge priorisieren und langfristig **alle** Knoten eines Freundes erlernen; keine sich gegenseitig ausschließenden Talente oder erzwungene Spezialisierungs-Resets.
+6. **Geteilte, begrenzte Echoes für alle sechs Bäume:** Ein neues Freischalten schafft die Entscheidung „bereits entwickelten Freund weiter stärken oder in den neuen investieren?“. Erworbene Talente bleiben dauerhaft erhalten, auch wenn ihr Freund nicht ausgerüstet ist. **Nur die Talente der höchstens zwei ausgerüsteten Freunde wirken während des Runs**; das gilt auch für deren allgemeine Werteboni. Keine zusätzliche Gefährten-XP oder vierte Währung.
+7. **Prestige vorerst ausgeschlossen**. Freier/exakter Reset des bisherigen globalen Baums ist Implementierungs-Ist-Stand, **kein automatisch beschlossenes Respec für künftige Freund-Bäume**. Rückerstattungskosten und Umspezialisierung bleiben zu entscheiden.
 
-| Dimension | Dauer | Spielerfrage | Konkretes Beispiel | Abgrenzung zum Ist-Stand |
+#### 8.21.2 Verbesserungsdimensionen – klar getrennt
+
+| Ebene | Dauer / Quelle | Rolle | Beispiel | Stand |
 |---|---|---|---|---|
-| **Gefährten / Kräfte** | Dauerhafte, seltene Story-/Welt-Meilensteine; für Runs **max. zwei Kräfte** aus bereits freigeschalteten Freunden auswählen | **Welche Spielwerkzeuge stehen mir offen?** | Gefährtin A: Gravitationsfeld zieht Gegner zusammen; Gefährte B: Lichtlanze trifft in einer Linie | **NEU, nicht implementiert**. Gefährten ersetzen weder Karten noch Loot. Für den nächsten Test sind zwei Probekräfte ausreichend; fünf/sechs/acht Freunde sind keine Scope-Zusage. |
-| **Permanenter Echoes-Talentbaum** | Über Runs; aktuell 45 Knoten in Power/Vitality/Flow, mit kostenlosem exaktem Reset | **Welche dauerhaften Eigenschaften baue ich aus?** | Power → Kindling/Flächenschaden; Vitality → Heilung/Schutz; Flow → Momentum/Tempo | **BESTEHEND**. Für den ersten Gefährtentest als gemeinsamer Magier-Baum behalten. Separate vollständige Talentbäume *pro Freund* würden den Scope vervielfachen: **geparkt**. Spätere kleine freundspezifische Spezialisierungen erst nach Playtests. |
-| **Wellenkarten (1 aus 3)** | Nur aktueller Run; bestehender Pool mit sechs Karten, Angebot an bestehenden Wellen-Meilensteinen | **Wie entwickle ich diesen Run?** | Fire Fan, Ember Burst, Piercing Flame oder Overcharge verändern derzeit vor allem den Feuerball | **BESTEHEND**. Karten bleiben ausdrücklich wellenbasiert, kein Ersatz durch XP-/Sammelleisten oder Gefährten. Spätere Karten können ausgewählte Gefährtenkräfte beeinflussen; kein automatisches Versprechen, dass jede alte Karte auf jede neue Fähigkeit wirkt. |
-| **Run-Items** | Zufälliger Fund; Tasche plus bewusstes Ausrüsten von Scepter und Book, bei neuem Run reset | **Welcher Fund verändert meinen Build überraschend?** | Cinder Codex: Splash; Storm Grimoire: Blitz; Echo Scepter: zusätzlicher Schuss | **BESTEHEND**, derzeit acht feste Gegenstände. Kein dauerhaftes Gear, neues Crafting oder umfangreiche Item-Persistenz für den ersten Gefährtentest. |
-| **Welt-Restauration** | Regionsfortschritt bleibt dauerhaft; keine ausgebbare Währung | **Was hat mein Kampf in der Welt bewirkt?** | Nach jeder geklärten lokalen Welle +4n Punkte; Boden/Wasser kontinuierlich überblendet, sichtbare Vegetationsschwellen, 100-%-Reveal | **BESTEHEND**, drei Regionen und persistente Speicherung; nicht neu bauen. Getrennte Bestwelle bleibt offen, gerettete Region bleibt gerettet. |
+| **Grundangriff des Magiers** | Immer verfügbar | Verlässliche Kernaktion | Feuerball | **Bestehend** |
+| **Gefährten + persönliche Talentbäume** | Freunde retten; Echoes permanent in einzelne Bäume investieren; nur 1–2 ausgerüstete Bäume wirken | Neue aktive Zauber, **allgemeine Grundwerte**, besondere Skill- und Feuerball-Wechselwirkungen | Gravitation: Schwarzes Loch; dort +Angriff, +HP, größerer Sog, Feuerballsynergien kaufen | **Neue Zielarchitektur, noch nicht implementiert**; ersetzt langfristig den globalen 45er-Baum |
+| **Wellenkarten (1 aus 3)** | Wiederkehrende vorhandene Auswahl; nur aktueller Run | Situativer Umbau des aktuellen Builds | Fire Fan, Pierce, Burst, Overcharge, Tempo/Power | **Bestehend**, nicht durch Freunde oder XP-Leiste ersetzen |
+| **Run-Items** | Zufällige Drops, bewusst ausrüsten; aktueller Run | Seltene Überraschung und zusätzliche Synergie | Cinder Codex: Flächenschaden; Storm Grimoire: Blitz; Echo Scepter: Extra-Schuss | **Bestehend**, derzeit acht Items; keine neue Item-Persistenz |
+| **World Restoration** | Nach jeder abgeschlossenen Welle; permanent pro Region | Unmittelbares visuelles Weltfeedback und Langzeitziel | Boden/Wasser kontinuierlich, Vegetation in Schwellen, 100-%-Reveal; lokale Bestwellen | **Bestehend**; gleiche Restoration-Punkte-/Speicher-/Regionenregeln |
 
-**Prinzip:** Ein Freund schaltet eine **aktive Fähigkeit / einen magischen Spielstil** frei; Karten formen den kurzfristigen Run, Items erzeugen überraschende Loot-Kombinationen, der bestehende Baum unterstützt langfristiges Wachstum. Gefährten sind somit eine **Freischalt-/Loadout-Ebene** über den vorhandenen drei Upgrade-Systemen, **kein vierter paralleler XP- oder Preisbaum**. Der Grundangriff des Magiers bleibt für den Prototyp erhalten; die zwei Gefährtenkräfte sind zusätzliche wählbare Werkzeuge, keine Pflicht schon im ersten Run.
+**Systemgrenze:** Ein Gefährte ist **Talentbaum + freischaltbarer aktiver Zauber**, nicht einfach eine zusätzliche Karte. Karten ändern den **Run**, Items kommen als **Funde**, Echoes finanzieren die **langfristigen Entscheidungen zwischen Freunden**. Vorhandene mechanische Karten/Items wirken zunächst wie bisher auf den Feuerball; ob spätere Varianten auf die Gefährtenkräfte wirken, wird explizit designt und getestet.
 
-#### 8.21.2 Beispiel für einen vollständigen Build [Illustration, kein implementiertes Verhalten]
+#### 8.21.3 Größere Gefährten-Bäume – Grundwerte zwischen Schlüsseltalenten
 
-- **Dauerhaft:** A und B gerettet; vor Run beide Kräfte als zwei Gefährten-Slots gewählt. Talentbaum: z. B. Power mit AoE-/Schadensschwerpunkt.
-- **Aktive Kräfte:** A **Gravitationsfeld** zieht die Gegner kurz zusammen; B **Lichtlanze** verursacht gerichteten Flächenschaden durch die Gruppe. Beide sind einzeln sinnvoll, gemeinsam entsteht eine räumliche Synergie – **ohne zwingend eigenen Sonderzauber für jedes Paar**.
-- **Im Run:** Nach Wellen 1 aus 3 Karten wählen, etwa **Ember Burst**: mit Feuerball direkt besiegte Gegner explodieren. Ein gefundener **Cinder Codex** ergänzt Feuerball-Splash. Zusammenziehen erleichtert Treffergruppen; Lichtlanze ergänzt als zweites Werkzeug. Alte Karten-/Itemregeln gelten weiterhin genau für die Effekte, die heute im Code verdrahtet sind.
-- **Sichtbarer Welteffekt:** Jede geklärte Welle schreibt den bestehenden Restoration-Fortschritt gut; Umgebung regeneriert sich über die vorhandenen Übergänge. **Freund-Rettung** als separater einmaliger Welt-/Story-Meilenstein, nicht als zufälliger Mob-Drop und nicht nach jeder Welle.
+**[ENTSCHEIDUNG]** Bäume brauchen **mehr als drei rein besondere Stufen**: zwischen spürbaren Fähigkeits-Upgrades liegen normale Ausbauknoten, sodass Echoes langfristig relevant bleiben und auch die Grundlagen stärker werden. Die Grundwerte sind in jedem Freund-Baum verfügbar; kein zusätzlicher globaler Baum.
 
-#### 8.21.3 Schutz vor Scope-Creep [Design-Leitplanken]
+**[HYPOTHESE für ein einheitliches, datengetriebenes Baum-Schema]** **15 Knoten je Gefährte = 9 wiederverwendbare Grundwertknoten + 6 besondere Talente**, insgesamt langfristig **90** Knoten in sechs Bäumen, von denen höchstens die Boni zweier Bäume zugleich wirken. Die 6 besonderen Talente entsprechen dem jeweiligen 3+3-Entwurf unten. Grafische Verzweigungen und Querverbindungen ermöglichen verschiedene Kaufpfade, aber letztlich alle Käufe (Variante A). Beispielrhythmus:
 
-1. **Maximal zwei ausgerüstete Gefährtenkräfte pro Run**; die gesamte Auswahl wächst horizontal mit künftig freigeschalteten Freunden. 6 Freunde ergäben 15 ungeordnete Zweier-Paare (bei freier Paarwahl) – **nicht** 15 verpflichtend handgeschriebene Spezialfähigkeiten.
-2. **Wenige wiederverwendbare Wirkmechaniken** (z. B. Gruppieren, Linie, Fläche, Schild, Dauerwirkung) vor individuellen Paar-Skripten. Synergien primär durch räumliche/zeitliche Interaktion; teure Spezialduos nur nach nachgewiesenem Spielspaß.
-3. Bestehende **45 permanente Knoten**, sechs Karten, acht Items und drei Biome zunächst behalten. Keine gleichzeitige Einführung von Freund-Talentbäumen, moralischen Fraktionen, NPC-Dörfern, Ökonomie oder Content-Flut.
-4. **Keine vierte Ressource/XP-Leiste**. Rettungen erfolgen an klaren, noch festzulegenden Meilensteinen; genaue Trigger, Reihenfolge, Wiederspielbarkeit restaurierter Gebiete, Loadout-Wechselzeitpunkt und Freischalt-Balance bleiben **[OFFEN]**.
-5. **Bewährte Dauer/Run-Grenzen:** Talentkäufe, Restoration und gerettete Freunde persistent; Run-Karten, Ausrüstung und temporäre Effekte resetten. Gefährtenfreischaltungen bei späterer Implementierung speichersicher ergänzen, bestehende Saves nicht zerstören.
-6. Ein spektakulärer Spell muss **lesbar und performancetauglich** sein. Maximalzahl aktiver Effekte, Telegraphe und klare Formen priorisieren gegenüber vielen überlagerten Partikeln.
+| Fortschrittsabschnitt | Knoten | Beispiel |
+|---|---|---|
+| Einstieg | 3 **Grundwerte** | +Angriff, +max. HP, +Cast-Speed |
+| Erste Meilensteine | 2 **besondere Talente** | Schwarzes Loch größer; Feuerball verlangsamt |
+| Ausbau | 3 **Grundwerte** | Weitere Angriffs-/HP-/Tempo-Knoten |
+| Mittlere Meilensteine | 2 **besondere Talente** | Sog länger; Feuerball stärker gegen eingesogene Gegner |
+| Tiefer Ausbau | 3 **Grundwerte** | Weitere Grundwerte zu steigenden Echoes-Kosten |
+| Schlüsseltalente | 2 **besondere Talente** | Gravitationskollaps explodiert; Kills im Feld verstärken ihn |
 
-#### 8.21.4 Nächstes enges Gameplay-Experiment [VORSCHLAG, noch nicht freigegeben]
+**Grundwerte [Beispiele, ausdrücklich noch kein Balancing]:** +Angriff (etwa „+5“ als Wunschbild, muss relativ zur tatsächlichen Basis geprüft werden), +maximale HP, etwas kürzeres Feuerball-Cast-Intervall; gegebenenfalls Cooldown-Reduktion der Freund-Fähigkeit oder Bewegungsbonus nur falls klar unterscheidbar. Weil **zwei Talentbäume gleichzeitig wirken**, brauchen gemeinsame Grundwerte sinnvolle additive/multiplikative Regeln und Obergrenzen, keine ungebremsten Cast-/Schadensstapel. Bei aktuellem dokumentiertem Feuerball-Basiswert um 14 wäre +5 Angriff bereits ca. +36 %; deshalb Zahlen nicht als fertige Vorgabe behandeln. Echoes-Preise sollen zu echten Entscheidungen führen; **konkrete Kostenkurve offen**, Skalierung und Spieltempo im Playtest bestimmen. Einstieg muss schnell genug für den ersten Talentkauf sein.
 
-**Ziel:** In einer vorhandenen Arena beweisen, dass **zwei kombinierbare Gefährtenkräfte + sichtbare Renaturierung** sich besser anfühlen als bloße zusätzliche Status-Upgrades.
+**Alle Knoten werden im jeweiligen Freund-Baum mit demselben Ressourcentyp Echoes gekauft.** Hohe Kosten späterer Meilensteine können den Drang nach neuen Runs und höheren Wellen unterstützen, ohne einen künstlichen Klassen-/Freund-Lock zu erzeugen. Der Erwerb selbst bleibt dauerhaft, auch beim Wechsel des Loadouts.
 
-- **Paket A – Integrationsaudit:** Bestehende Player-/Skill-/Card-/Item-/Save-Schnittstellen und zwei Extra-Inputs prüfen; minimalen Datenvertrag für `companion_id`, `unlocked`, `equipped` (max. zwei) skizzieren. Keine automatische Implementierung aus diesem Abschnitt.
-- **Paket B – Combat Slice:** Zwei Platzhalter-Gefährten, je eine verständliche aktive Kraft (beispielsweise kurzes Gravitationsfeld und gerichteter Strahl), übersichtliche Cooldowns und bewusstes Loadout vor dem Run. Klassischer Feuerball bleibt; keine Freund-NPC-Animation, kein eigener Talentbaum.
-- **Paket C – Mini-Meilenstein:** Erste simple, einmalige Rettung als sichtbarer Freischaltmoment; zweite Kraft für Testzwecke über einen kurzen festen Meilenstein **oder isoliertes Debug** verfügbar, damit das Zusammenspiel früh geprüft werden kann. Rettungs-Trigger und Persistenz für den Produktivmodus gesondert entscheiden. Die derzeitige Restoration-Kurve, Wellenbelohnungen, Echoes, acht Items und 45 Knoten unangetastet lassen.
-- **Abnahme:** (1) Max. zwei ausgerüstete Kräfte, (2) klarer Unterschied zu einem Ein-Kraft-Run, (3) beobachtbare Gruppieren+Strahl-Synergie, (4) Karten/Items funktionieren unverändert, (5) Welt heilt nach jeder Welle weiter, (6) bestehende Saves/Resetregeln geschützt, (7) menschlicher kurzer Spieltest auf Magiegefühl, Kombinationsspaß und visuelle Lesbarkeit.
+#### 8.21.4 Sechs Kampfstile und je sechs besondere Talente [HYPOTHESE]
 
-**Nicht im Slice:** komplette Geschichte, sechs/acht Figuren, neue Fraktionswahl, zusätzliche Biome, neue 45+-Talentbäume, Leaderboard-Server, Wirtschaft, kosmetisches Prestige, weitere Klassen. Diese Planung ist **keine** Beauftragung der Spielimplementierung.
+| Gefährte | Eigenständige aktive Kraft (Q/E) | Drei besondere Talente für seine Kraft | Drei besondere Talente für Feuerball-/Spielstil-Synergien |
+|---|---|---|---|
+| **Gravitation** | **Schwarzes Loch** zieht Gegner zu einem Punkt | Größerer Radius; längere Wirkdauer; Explosion bei Kollaps | Feuerball verlangsamt; mehr Feuerballschaden an eingesogenen Gegnern; Kills im Feld verstärken die Kollaps-Explosion |
+| **Prisma** | **Lichtstrahl** trifft Gegner durchgehend in einer Linie | Breiterer Strahl; kürzere Aufladezeit; Strahl teilt sich nach Treffern | Feuerball markiert Ziele; markierte Ziele erleiden mehr Strahlschaden; Feuerball-Kills verkürzen Aufladezeit |
+| **Sturm** | **Blitzsprung** für schnelle Bewegung und elektrische Treffer | Mehr Sprungreichweite; trifft zusätzliche Gegner; zweite Sprungladung | Nach dem Sprung höhere Feuerball-Cast-Speed; nächster Feuerball verstärkt; direkte Feuerballtreffer verringern Sprung-Cooldown |
+| **Natur** | **Magischer Hain** heilt und verlangsamt Gegner im Feld | Größeres Feld; stärkere Regeneration; Gegner werden kurz verwurzelt | Feuerball-Kills im Hain geben Schutz; Feuerballtreffer im Hain erzeugen Dornen; Heilung stärkt den nächsten Feuerball |
+| **Inferno** | **Meteor** mit Einschlag und brennender Fläche | Größerer Einschlag; längere Brenndauer; zweiter kleinerer Meteor | Feuerball entzündet Ziele; Feuerball stärker gegen brennende Gegner; Tod brennender Gegner entzündet Nachbarn |
+| **Seelenecho** | **Magisches Abbild** wiederholt Angriffe | Längere Lebensdauer; höhere Angriffsgeschwindigkeit; zweites schwächeres Abbild | Gemeinsame Treffer erhöhen Schaden; Feuerball-Kills verlängern Bilddauer begrenzt; Abbild übernimmt ausgewählte Feuerballmodifikatoren |
+
+**Wichtig:** Diese Talente sind eine vollständige **erste Gesamtübersicht**, noch keine endgültigen Zahlen/Balancing-Verpflichtungen. Nicht alle bisherigen Feuerball-Mods dürfen ohne Regelprüfung auf Echos/Ketten/indirekte Treffer kopiert werden: vorhandene Projektil-/Effektgrenzen und Anti-Rekursionsregeln schützen.
+
+**Beispielsynergie:** Gravitation Q bündelt Gegner; Prisma E feuert den Lichtstrahl durch die Gruppe. Die Synergie entsteht durch Timing, Positionierung und bestehende Trefferregeln – **kein verpflichtender eigener Kombinationszauber** pro Paar. Weitere Kandidaten: Gravitation + Inferno (Sog + Meteor), Natur + Prisma (Festhalten + Linie), Sturm + Seelenecho (mobil + Abbild).
+
+#### 8.21.5 Prototyp-Vorgehen und Migrationsgrenzen [VORSCHLAG – keine Freigabe zur Implementierung]
+
+1. **Erst enges Integrationsaudit** des vorhandenen 45-Knoten-Talentbaums, Kauf-/Refund-/Save-Schemas und Kampfsystems (Run-Karten, Equipment, Grundangriff, zwei neue Eingaben). Der vorhandene 45er-Baum **funktioniert im GitHub-Spielstand**, bleibt bis zur ausdrücklichen Umstellung intakt; keine stillschweigende doppelte permanente Talentökonomie. Erst auf den zwei-Freunde-Entwurf migrieren, wenn Spielspaß bestätigt und Echoes/Käufe sicher übernommen/erstattet werden können.
+2. **Erster spielbarer Gefährten-Slice** mit **Gravitation + Prisma**, Q/E, zwei eigenen Cooldowns und **je einem kleinen repräsentativen Pfad mit Grundwerten UND Schlüsseltalenten**. Eine frühe erste Rettung, die zweite für den Test rasch oder per isolierter Sandbox freischaltbar. Weitere vier Freund-Bäume noch nicht vollständig programmieren. Keine neue Währung, keine Gut/Böse-Fraktion, kein Prestige, keine weitere Klasse.
+3. **Spielerprüfung:** Macht die Kombination ohne umständliche UI Freude? Vermittelt der erste Rettungsmeilenstein sofort einen neuen Talentbaum? Sind Investitionen in Grundwerte trotz besonderer Fähigkeiten interessant? Sind aktive Q/E-Zauber visuell stark, aber lesbar und gegen Gegner fair? Funktionieren vorhandene Wellenkarten, acht Items, Echoes, automatische Restaurationsgutschrift nach jeder Welle und Regions-Fortschritt **unverändert**?
+4. **Erst danach** entscheiden: finale Knoten- und Kostenkurven, einheitlicher 15-Knoten-Rahmen, genaue Talentboni, Spielstands-Migration, Respec-Regel, weitere Freunde/Story-Meilensteine und Karten-/Item-Unterstützung für Gefährtenkräfte.
+
+**Klare Trennung:** §8.21 beschreibt aktuelle **Design-Entscheidungen** und **Testvorschläge**, nicht einen bereits implementierten Zustand. Alte Abschnitte über den globalen 45er-Baum, seine Preise und gespeicherten Käufe gelten als **historischer/aktueller technischer Ist-Stand**, nicht als paralleles zusätzliches Meta-System der neuen Zielvision.
 
 ---
 
+
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
-**Konzeptabgleich 28.10.2026 (nur Planung):** Gefährten als seltene Freischaltmeilensteine; maximal zwei aktive Gefährtenkräfte je Run; bestehender Echoes-Baum, Wellenkarten, Items und Restoration bleiben eigenständige Dimensionen. Spektakuläre Magie + sichtbare Renaturierung sind die priorisierten Spielerlebnisse. §8.21 beschreibt Integrationshypothese und nächsten Vertical-Slice-Test, **noch nicht implementiert**; Gut/Böse-Fraktionen vorerst geparkt. Remote-Snapshot geprüft; lokaler Arbeitsstand kann weiter sein.
+**Design-Festlegung 28.10.2026 – Gefährtenbäume (nur Planung):** Sechs magische Gefährten (Gravitation, Prisma, Sturm, Natur, Inferno, Seelenecho), max. zwei zugleich aktiv, **Q/E manuell**. Jeder Gefährte **IST** künftig ein eigener permanenter, frei ausbaubarer Echoes-Talentbaum mit Grundwerten zwischen besonderen Fähigkeitstalenten; der bisherige globale 45er-Baum wird in der Zielarchitektur ersetzt (Saves/Käufe erfordern später expliziten Migrationsplan). Als erste Strukturhypothese 15 Knoten/Freund = 9 Werte + 6 besondere Talente; erster Freund früh freischaltbar, Prestige geparkt. Karten, Items und World Restoration unverändert (§8.21). **Noch kein Godot-Code geändert.**
+
+**Vorherige Planung 28.10.2026 – durch §8.21 neu gefasst:** Ursprünglich Gefährten als Erweiterung neben dem globalen Baum; diese Hypothese wurde zugunsten persönlicher Gefährten-Talentbäume verworfen. Spektakuläre Magie + sichtbare Renaturierung bleiben priorisiert; Gut/Böse-Fraktionen geparkt. Remote-Snapshot geprüft, lokaler Arbeitsstand kann weiter sein.
 
 **Character-Art Retrospektive · 27.10. (Nutzerfeedback):** PNG-Import und Einzelbild-Bewegung aus Methode A sind bereits technisch bewiesen, aber es gibt noch keinen final akzeptierten richtungskonsistent animierten Apprentice. Tripo-Mage mit defekter Buchhand, regulärer Export wirkt kostenpflichtig; Blender-Import wurde vom Nutzer gemeldet, Objekttyp noch offen. Nächster eng begrenzter Test: echtes Mesh → 1 Ortho-PNG aus Gameplaywinkel → bestehende isolierte Godot-Testszene; andernfalls referenzbasiertes Anime/Dark-Fantasy-4–6-Frame-Sprite-Sheet. Keine neuen technischen Erfolge oder Lizenzen behaupten. Siehe ASSET_ROADMAP.md und DEVLOG.md.
 
@@ -662,6 +689,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-28 | Gefährten als Talentbäume / größere Meta-Progression | Sechs Gefährten als Combat-Schulen; nur zwei ausrüstbar, Q/E manuell. Jeder Freund bringt eigenen freien Echoes-Baum mit allgemeinen Grundwert-Knoten und sechs besonderen Fähigkeits-/Feuerball-Talenten. Gemeinsamer 45er-Baum soll **ersetzt**, nicht parallel erweitert werden; 15 Knoten/Freund vorgeschlagen. Bestehende Karten, Loot und World Restoration erhalten; frühes Freund-Freischalten. | **Designrichtung festgelegt**, Zahlen/Bäume/Migration als Hypothese/offen; keine Implementierung |
 | 2026-10-28 | Game Design: Gefährten / Welt / Build-Dimensionen | Spielerfokus auf spektakuläre Magie und sichtbare Naturheilung; einmalig gerettete Freunde als Kräfte-Freischaltung, max. zwei gleichzeitig im Run. Bestehende Karten/Items/45er-Baum und Heilung behalten; konkreten zwei-Kräfte-Slice statt neuer Gesamtsysteme testen (§8.21). Gut/Böse-Fraktionswahl geparkt. | Erlebnisrichtung bestätigt, Integrationsdetails/Meilenstein-Trigger Hypothesen; **keine neue Spielimplementierung** |
 | 2026-10-27 | Character-Art: Retrospektive / nächstes Gate | Zweitägige Iterationen und Tripo-Export-/Handprobleme dokumentiert. Bereits erfolgreichen Einzel-PNG-Import anerkannt; echte Richtungs-/Gliedmaßenanimation offen. Enger 3D-Ortho-vs-referenzbasiertes Sprite-Sheet-Test statt erneuter freier Bilditeration | Recherche und Nutzerbericht, kein neuer Game-Code/Blender-Erfolgsnachweis, Lizenz-/Bildbelege offen |
 | 2026-10-25 (Statusmeldung) | Erste externe Distribution | Nutzer meldet: spielbare Alpha auf itch.io hochgeladen; GoGoEli-Short auf YouTube und TikTok gepostet; persönliche Branding-/Kanaltexte erstellt | Als **vom Nutzer bestätigt** dokumentiert; konkrete Releaseversion, Links, Zeitpunkte und Reichweiten noch offen |
