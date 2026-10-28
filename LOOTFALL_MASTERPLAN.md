@@ -1,6 +1,6 @@
 # LOOTFALL — Masterplan für Game Design & Entwicklung
 
-**Version:** 2.8 · **Stand:** 28. Oktober 2026
+**Version:** 2.9 · **Stand:** 28. Oktober 2026
 **Dokumenttyp:** Lebendes Masterdokument / einzige fachliche Planungsquelle  
 **Status:** Konzeptentwurf zur gemeinsamen Weiterentwicklung – **kein** vollständiger Implementierungsauftrag  
 **Verantwortung:** Nutzer = Creative Director und finale Produktentscheidungen · Codex = technische Analyse, Entwicklung, Tests und Dokumentationspflege  
@@ -658,6 +658,13 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 - Gerettete Freunde sind dauerhafte, klar erkennbare Charaktere im Hub; kurze glaubwürdige Dialoge/Umgebungsdetails statt textlastiger Kampagne. Im Run spielt der Magier selbst und aktiviert bis zu zwei **erlernte Kräfte manuell auf Q/E**; keine zusätzlichen NPC-Begleiter im Kampf erforderlich.
 - Die Story erklärt, **warum** Fähigkeiten freigeschaltet werden, während Karten, Loot, höhere Wellen, Echoes und sichtbare Heilung den Großteil der Spielzeit tragen.
 
+**[ENTSCHEIDUNG – Rettungen abwechslungsreich, 28.10.2026]:** Ein **Mix** verschiedener Freischalt-Begegnungen statt sechs gleichartiger „Freund ist Boss → besiegen → freischalten“-Abläufe. Drei wiederverwendbare Inszenierungstypen als **[HYPOTHESE]**:
+- **Direkte Konfrontation:** Ein Freund kämpft aus eigener Überzeugung gegen den Magier; im Bosskampf werden seine Fähigkeiten sichtbar.
+- **Gemeinsamer Kampf / Schutz:** Der Freund ist bedroht oder teilweise verdorben; Wellen/Boss der Verderbnis bezwingen, um ihn zu retten oder Vertrauen aufzubauen.
+- **Besondere Wellen-/Restaurations-Herausforderung:** Verseuchten Ort von Ankern/Gegnern befreien; danach eine eigenständige Begegnung und Entscheidung des Freundes, sich anzuschließen. Keine umfangreiche neue Quest-/Dialog-Engine als Voraussetzung.
+
+**Designregel:** Der Rettungsmoment ist ein **seltener, dauerhafter Freischaltmeilenstein** (neue Q/E-Kraft + neuer Echoes-Baum), keine neue Standardbelohnung nach jeder Welle. Die Wahl des Ereignistyps folgt der jeweiligen Persönlichkeit und dem Spielgefühl; keine zwingende gleichmäßige Verteilung, keine festen sechs Eventskripte im ersten Prototyp. Vorhandene Gegner-, Boss-, Wellen- und Healing-Systeme möglichst wiederverwenden. Konkrete Zuordnung zu Gravitation/Prisma/Sturm/Natur/Inferno/Seelenecho **[OFFEN]**.
+
 **Story-Qualitätsregel:** Die Verdorbenheit sollte Konflikte verschärfen, **nicht alle moralischen Fehler der Freunde entschuldigen**. Jeder soll eigene Motive, Verantwortung und ein glaubwürdiges Verhältnis zum Protagonisten behalten. Exakte Charakterbiografien und Rettungsszenen erst zusammen mit dem jeweiligen Gameplay-Moment entwickeln.
 
 #### 8.21.6 Prototyp-Vorgehen und Migrationsgrenzen [VORSCHLAG – keine Freigabe zur Implementierung]
@@ -704,6 +711,7 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 | Datum | Typ | Änderung / Begründung | Status |
 |---|---|---|---|
+| 2026-10-28 | Rettungsereignisse: Mix | Kein einheitliches Boss-Rettungsschema; Mischung aus direkter Konfrontation, gemeinsamem Kampf gegen Verderbnis und besonderen Wellen-/Restaurations-Herausforderungen. Bestehende Combat-/Restoration-Systeme wiederverwenden; Details pro Charakter später. | Grundsatz entschieden, Events/Zuordnung hypothetisch; keine Implementierung |
 | 2026-10-28 | Storyrichtung: B mit A | Sechs Freunde sind nach moralisch schwieriger gemeinsamer Vergangenheit zerstritten; Verderbnis kann einzelne zusätzlich gefangen halten/korrumpieren. Jede Rettung ist eine nachvollziehbare Charakterbegegnung plus seltener Gameplay-Freischaltmoment. Regionsheilung pro Welle bleibt unangetastet; keine festen zwei Freunde pro Region, kein Gut/Böse-Fraktionszwang. | Storyrichtung entschieden; konkrete Figuren-/Boss-/Freischalt-Events offen, kein Spielcode |
 | 2026-10-28 | Gefährten als Talentbäume / größere Meta-Progression | Sechs Gefährten als Combat-Schulen; nur zwei ausrüstbar, Q/E manuell. Jeder Freund bringt eigenen freien Echoes-Baum mit allgemeinen Grundwert-Knoten und sechs besonderen Fähigkeits-/Feuerball-Talenten. Gemeinsamer 45er-Baum soll **ersetzt**, nicht parallel erweitert werden; 15 Knoten/Freund vorgeschlagen. Bestehende Karten, Loot und World Restoration erhalten; frühes Freund-Freischalten. | **Designrichtung festgelegt**, Zahlen/Bäume/Migration als Hypothese/offen; keine Implementierung |
 | 2026-10-28 | Game Design: Gefährten / Welt / Build-Dimensionen | Spielerfokus auf spektakuläre Magie und sichtbare Naturheilung; einmalig gerettete Freunde als Kräfte-Freischaltung, max. zwei gleichzeitig im Run. Bestehende Karten/Items/45er-Baum und Heilung behalten; konkreten zwei-Kräfte-Slice statt neuer Gesamtsysteme testen (§8.21). Gut/Böse-Fraktionswahl geparkt. | Erlebnisrichtung bestätigt, Integrationsdetails/Meilenstein-Trigger Hypothesen; **keine neue Spielimplementierung** |
