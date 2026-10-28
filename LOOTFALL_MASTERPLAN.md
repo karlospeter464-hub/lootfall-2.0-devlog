@@ -133,6 +133,7 @@ Die Zahlen, Items und Namen sind **Beispiele**, keine festgelegten Drops, Raten 
 
 | Spielerlebnis | Benötigte Fähigkeit des Spiels | Kleinstmöglicher Systembaustein | Erst später erweiterbar um |
 |---|---|---|---|
+| 2026-10-28 | Freigegebene Produktionsintegration | Gesamter Vier-Richtungen-Magier samt Buch-V2 im normalen Spiel; Innenseiten zum Betrachter, frühere Interpretation überholt | Spiel 5762939 auf GitHub main; F5/Start Run, 48+87 Integrationschecks und Regressionen bestanden. V-Fallback, Gameplay/Saves unverändert; kein neuer Export |
 | Mein Angriff fühlt sich gut an | Schaden, Trefferreaktion, Bewegung | Einfacher Combat Core | Weitere Waffen, Status-Effekte, Animationen |
 | Es wird immer anspruchsvoller | Steigende Gegnerbelastung | Zeit-/Wellenbasierter Spawner mit Gegnerlimit | Encounter-Budget, Gegnerrollen, Elite-Affixe |
 | Ich verändere meinen Build | Wahl zwischen Upgrades | Kleine 1-aus-3-Auswahl mit wenigen klaren Effekten | Freie Skill-Slots, Modifikator-Pools, Skilltrees |
@@ -584,6 +585,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 ---
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
+
+**Produktionsübernahme · 28.10.:** Nutzer hat Buch-V2 und den gesamten neuen Magier für F5 sowie GitHub freigegeben. Innenseiten zeigen zum Betrachter; frühere gegenteilige Interpretation ausdrücklich korrigiert. Vier Ansichten nach Mausziel, lokale Gelenkgesten, V→v01/A+, prozeduraler Startup-Fallback. Spiel 5762939 auf GitHub main verifiziert. 48 Headless-/87 native Integrationschecks, Startup/Pause/Treffer und acht Regressionen bestanden. Echte Kampfmedien archiviert. Keine Props, Gameplay-/Saveänderungen oder neue Figurenserie; vorhandene Releasepakete unverändert. Die folgenden Einträge beschreiben ältere Zwischenstände.
 
 **Visueller Meilenstein · 28.10.:** Nutzer bewertet den Vier-Richtungen-Magier ausdrücklich als großes Upgrade und wünscht Archivierung. Erste Wirkung im tatsächlichen Spielmaßstab persönlich positiv beurteilt. Referenzbasierte Ansichten + lokale Mesh-Gesten als vielversprechender Weg; keine pauschale Produktions-/Figurenserienfreigabe. Offener Nutzerhinweis: Buchseiten in Rückansicht müssen zum Gesicht des Magiers zeigen; aktuell zum Betrachter orientiert, noch nicht korrigiert. Vor weiteren Figuren Referenz/Ausrüstungsregeln und Ansichten konsistent bereinigen. DEVLOG/Progress mit vorhandenen Aufnahmen aktualisiert, keine neuen Spieltests.
 

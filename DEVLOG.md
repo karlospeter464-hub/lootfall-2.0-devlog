@@ -1,5 +1,20 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-28 – Freigegebener Vier-Richtungen-Magier im normalen Spiel
+
+**Freigabe:** Nutzer bestätigt den neu erstellten Buchentwurf V2 und beauftragt ausdrücklich den gesamten neuen Magier für das normale Spiel sowie den GitHub-Push. Korrektur des früheren Missverständnisses: Bei der Rückansicht sollen die offenen **Buchinnenseiten zum Betrachter** zeigen. Die frühere Aussage „zum Gesicht, nicht zum Betrachter“ ist damit überholt; V1 mit sichtbaren Außeneinbänden wurde verworfen.
+
+**Umsetzung:** F5 → Start Run verwendet jetzt den vorhandenen Vier-Richtungen-Magier mit Originalfront und referenzgenerierten Seiten-/Rückansichten. Freigegebenes V2-Original bytegleich bewahrt, für die Rückansicht auf gemeinsamen Fußpunkt/256×320 normalisiert. Arm/Buch/Hut bewegen sich weiterhin über das bestehende kontinuierliche 2D-Mesh. Richtungswahl nach tatsächlichem Mausziel, Bewegung unabhängig. Die geprüfte Implementierung wurde aus tests/ in gemeinsame Laufzeitskripte übernommen; reguläre importierte/preload-Texturen ersetzen die nur für den Proof geeigneten Rohbild-Ladevorgänge. Keine Tests/-Abhängigkeit der normalen Hauptszene. V wechselt zur bisherigen v01/A+-Darstellung; Use Artwork=false bewahrt den prozeduralen Start. Historische Grafiktests verwenden explizite alte Szenenfixtures und dieselbe gemeinsame Mesh-Implementierung.
+
+**Grenzen:** Keine Teststeine ins normale Spiel übernommen. Kollision (Radius15), Spielfigurgröße/Fußpunkt, Projektile, Gegner, Werte, Restoration und Save-Regeln unverändert. Keine neuen vollständigen Laufbildzyklen oder weiteren Figuren. Kleine Bildverformungen bleiben der bewusste Umfang; große Gesten benötigen zusätzliche Bildlagen. Kein neuer Export/Installer/itch.io-Upload.
+
+**Tatsächliche Prüfung:** Produktionsrenderer 48 Headless- und 87 native Checks ohne Fehler. Normaler Hauptszenenstart mit Stadt → Start Run, vier Richtungen, Pause, Treffertönung sowie rekursiver Prüfung der Laufzeit-Abhängigkeiten bestanden. Regressionen: Arena64, Combat35, Inventar50, alte Player-Art24, v01-Visual39, Mesh-Puppe30, Vier-Richtungen-Proof40, facettierter Proof26 Checks erfolgreich. Der historische Proof meldet weiterhin Rohbild-Exportwarnungen; der neue Produktionsrenderer verwendet importierte Ressourcen. Native 1600×1000-Aufnahmen: identischer BEFORE/AFTER-Kampfzustand, alle vier Richtungen; 3,63 Sekunden echte Bewegung/Zaubern, zwölf aktive Gegner, elf Schüsse/drei Treffer. Kein menschlicher Vollrun oder neuer Paketexport behauptet.
+
+**Ergebnis / GitHub:** Spiel-Commit `576293935811bc8ea0b742631f8c8bac4a0bb9e6` („Use approved directional mage in normal gameplay“) auf `lootfall-2.0/main` gepusht und Remote-Hash geprüft. Archiv unter Progress/captures/2026-10-28_production_mage/ enthält native Bilder, Vergleichsmetriken und gameplay.gif (960×600-Vorschau mit echten Zeitabständen). Dokumentation lokal gepflegt; das separate Chronik-Repository hat unabhängig fortgeschrittene Remote-Dokumentationscommits und wird in diesem Spiel-Push nicht zusammengeführt oder veröffentlicht.
+
+---
+
+
 ## 2026-10-28 – Visueller Meilenstein: Der Magier bekommt vier Blickrichtungen
 
 **Persönliches Nutzerfeedback:** Der Nutzer hat den Vier-Richtungen-Test angesehen/ausprobiert und bewertet ihn ausdrücklich sehr positiv, als großes sichtbares Upgrade. Insbesondere in der tatsächlichen kleinen Spielauflösung wirkt das Ergebnis bereits überzeugend. Damit ist die erste sichtbare Wirkung jetzt auch menschlich positiv beurteilt; das ist keine vollständige Abnahme aller Animationen, Konsistenzdetails oder einer produktiven Integration.
