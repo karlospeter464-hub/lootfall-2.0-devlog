@@ -696,6 +696,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**29.10. Menüs/Fähigkeitsinfos:** Nutzer bestätigt mehr Spielspaß mit Q/E. Menüs vereinheitlicht; I/HUD/Friends erklären tatsächliche Zauberwerte inklusive bedingtem Schaden. 605 Checks/6 Suites, UI49 zusätzlich nativ; acht gesichtete Bilder. Spiel a187ea8; Details DEVLOG. Persönliche Stil-/Langzeitabnahme offen.
+
 **29.10. Getrennte Dev-Resets:** Talente, Echoes, Story, Healed/Regionsrekorde und Gesamtreset separat; je Run-Ende. Story behält gesperrte Talentkäufe. 402 Checks bestanden; Details DEVLOG.
 
 **29.10. Dev-Reset:** Beauftragter Reset auch im laufenden Run (Run-Ende und Rückkehr nach Emberhaven) für Talente, Echoes und Gefährten-Story im F1-Testmenü; Welt/Rekorde bleiben. 372 Checks bestanden; Details DEVLOG.

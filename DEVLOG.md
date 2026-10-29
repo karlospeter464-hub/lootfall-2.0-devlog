@@ -883,3 +883,13 @@ Town-Beschränkung nach Nutzerfeedback entfernt: Reset funktioniert auch im Run,
 ### Getrennte Resets 29.10.
 Nutzer beauftragt auch Healed-Reset und getrennte Steuerung. F1/Test tools bietet Talente, Echoes, Freund-Story, Healed/Welt und EVERYTHING separat. Jeder beendet den Run. Weltreset löscht Heilung, regionale Freischaltungen und Rekorde inklusive Session-Rekorde. Story-only bewahrt investierte Talente in gesperrten Bäumen bis erneuter Rettung; Talentreset erstattet nichts. Nicht betroffene Bereiche bleiben; atomarer Save. 205 Companion + 197 Dev-Tools-Checks bestanden. Kein neuer nativer Sichttest/Export/Push.
 
+
+## 2026-10-29 — Menüs und verständliche Gefährtenfähigkeiten
+
+**Nutzerfeedback:** Der Companion-Slice läuft laut Nutzer richtig gut und macht mit zwei Fähigkeiten deutlich mehr Spaß. Das ist eine persönliche positive Spielrückmeldung, keine vollständige Langzeitabnahme. Folgeauftrag: Menüs schöner/übersichtlicher und Fähigkeiten samt Schaden erklären. Rückfrage bestätigt: Infos gehören in **I**, E bleibt Zaubertaste.
+
+**Umsetzung:** Gemeinsames Godot-Theme für Stadt/Friends, Inventar, Pause/Ergebnis, Kartenrahmen und Dev-Menü; ruhige Rahmen, einheitliche Buttons, kontrastreiche Hover-/Tastaturfokuszustände, erkennbare Hauptaktion Start Expedition und klar benannte Friends-/Entwicklungswege. Bestehende Navigation/Layouts weitergenutzt. I zeigt jetzt beide ausgerüsteten Kräfte mit Schaden pro Ziel, Cooldown, Dauer/Aufladezeit, Radius/Breite und aktiven Wechselwirkungen. HUD/Friends bieten Hover-Details. Schwarzes Loch ohne Kollaps-Talent ausdrücklich 0 Schaden/Kontrolle; Kollaps-Verstärkung, markierte Ziele und Split-Schaden separat beziffert. Anzeige und Cast verwenden gemeinsame aktuelle Werte, vor Gegnerrüstung; keine Karten-/Gear-Schadensübernahme auf Gefährten hinzugefügt.
+
+**Prüfung:** 605 Checks in sechs betroffenen Suites bestanden (Inventar50, Combat35, Town69, Companion205, Dev197, neue UI49). UI49 zusätzlich nativ D3D12; acht gesichtete Aufnahmen: Stadt, beide Friends-Seiten, I, Pause, Dev, Karten, Ergebnis. Langer doppelter Talenttext nach erster Sichtprüfung gekürzt, damit beide Fähigkeiten schneller erreichbar sind. Initialisierungsreihenfolge der neuen Friends-Vorschau korrigiert. Kein kompletter Suite-Rerun, menschliche Stilabnahme offen. Save-/Economy-/Tastenregeln unverändert.
+
+**Checkpoint:** Spiel `a187ea8`, lokal. Bilder unter `Progress/captures/2026-10-29_menus/`. Kein Export oder Push.
