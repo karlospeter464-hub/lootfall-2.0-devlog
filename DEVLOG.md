@@ -875,3 +875,7 @@ Für kommende Einträge: Datum/Titel, Ziel, Ausgangsproblem, Änderung und Grund
 
 Auf Nutzerauftrag: F1 → Test tools → Reset talents + Echoes + friend story to 0 (town only). Löscht Käufe ohne Erstattung, Wallet, Gefährtenrettungen/Slots sowie ausstehende Echo-Ledger atomar; nur in Emberhaven, aktueller Normal-/Sandbox-Save. Regionen/Heilung/Rekorde bleiben erhalten. 174 Companion- und 197 Dev-Tools-Checks bestanden, inklusive Write-Failure, Reload und abgewiesenem Run-Reset. Keine neue native Aufnahme oder vollständiger Suite-Rerun, kein Push.
 
+
+### Reset-Korrektur 29.10.
+Town-Beschränkung nach Nutzerfeedback entfernt: Reset funktioniert auch im Run, beendet ihn und kehrt nach Emberhaven zurück. Alte offene Echo-Credits werden nach erfolgreichem atomarem Reset entfernt, damit Neustart sie nicht zurückzahlt. Echter Button-Signalpfad mit offenem Run getestet: 175 Companion + 197 Dev-Tools-Checks bestanden. Welt bleibt erhalten. Laufendes Spiel für neue Skripte neu starten.
+
