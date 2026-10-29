@@ -1,0 +1,149 @@
+[
+  {
+    "suite": "arena",
+    "exit": 0,
+    "summary": [
+      "ARENA TEST: 64 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "loot_console",
+    "exit": 0,
+    "summary": [
+      "LOOT / CONSOLE TEST: 54 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "inventory",
+    "exit": 0,
+    "summary": [
+      "INVENTORY TEST: 50 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "town_tree",
+    "exit": 0,
+    "summary": [
+      "TOWN / TREE TEST: 69 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "encounter",
+    "exit": 0,
+    "summary": [
+      "ENCOUNTER / DISPOSAL TEST: 19 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "rarity",
+    "exit": 0,
+    "summary": [
+      "RARITY TEST: 28 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "counterplay",
+    "exit": 0,
+    "summary": [
+      "COUNTERPLAY TEST: 74 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "ascent",
+    "exit": 0,
+    "summary": [
+      "ASCENT TEST: 249 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "card_synergy",
+    "exit": 0,
+    "summary": [
+      "CARD SYNERGY TEST: 128 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "combat_polish",
+    "exit": 0,
+    "summary": [
+      "COMBAT POLISH TEST: 35 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "item_synergy",
+    "exit": 0,
+    "summary": [
+      "ITEM SYNERGY TEST: 65 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "early_progression",
+    "exit": 0,
+    "summary": [
+      "EARLY PROGRESSION TEST: 93 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "player_art",
+    "exit": 0,
+    "summary": [
+      "PLAYER ART TEST: 24 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "visual_lift",
+    "exit": 0,
+    "summary": [
+      "VISUAL LIFT TEST: 12 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "world_restoration",
+    "exit": 0,
+    "summary": [
+      "WORLD RESTORATION TEST: 95 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "live_restoration",
+    "exit": 0,
+    "summary": [
+      "LIVE RESTORATION TEST: 20 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "dev_tools",
+    "exit": 0,
+    "summary": [
+      "DEV TOOLS / HABITATS TEST: 197 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "living_world",
+    "exit": 0,
+    "summary": [
+      "LIVING WORLD TEST: 82 checks, 0 failures"
+    ]
+  },
+  {
+    "suite": "apprentice_startup",
+    "exit": 0,
+    "summary": [
+      "DIRECTIONAL STARTUP: 7 behavior checks plus runtime dependency scan; failures=0"
+    ]
+  },
+  {
+    "suite": "apprentice_directions",
+    "exit": 0,
+    "summary": [
+      "DEPTH PROOF: { \"physics_frames\": 213, \"minimum_enemies\": 12, \"waypoints_reached\": 7, \"crossings\": { \"ruin_behind\": true, \"ruin_front\": true, \"rock_behind\": true, \"rock_front\": true }, \"path_distance\": 898.331763267517, \"shots_fired\": 11, \"shots_hit\": 3, \"damage\": 18.0, \"health_end\": 100.0, \"identical_pair_verified\": false, \"movement_png_frames\": 0, \"capture_times\": [], \"gameplay_seconds\": 3.79917833333328, \"move_seen\": true, \"cast_seen\": true, \"checks\": 48, \"failures\": 0 }"
+    ]
+  },
+  {
+    "suite": "companion",
+    "exit": 0,
+    "summary": [
+      "COMPANION TEST: 167 checks, 0 failures"
+    ]
+  }
+]

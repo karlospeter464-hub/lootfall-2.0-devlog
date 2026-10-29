@@ -1,5 +1,23 @@
 # Lootfall 2.0 – Entwicklungsprotokoll
 
+## 2026-10-28 — Companion-System: erster spielbarer Vertical Slice
+
+**Grund / Freigabe:** Nutzer beauftragt Gravitation und Prisma, Q/E, persönliche 15er-Bäume, frühe Rettungen und eine sichere Ablösung des bisherigen globalen Baums. Aktuellen GitHub-Masterplan 2.9 (§8.21) gelesen. Beide Repositories vorher geprüft: nur bereits unversionierte Import-/UID-Dateien im Spiel und ein PNG in der Chronik; alle unangetastet. Chronik-Historien divergierten (10 lokale / 8 Remote-Commits). Den Masterplan per Drei-Wege-Dateiabgleich zusammengeführt; Konflikte bei Version/Status/Log unter Erhalt beider Historien gelöst. Kein Reset, kein Medienverlust, kein Pull über lokale Arbeit, keine Veröffentlichung.
+
+**Umsetzung:** Drei kleine Runtime-Bausteine (Katalog, Magic, Friends-UI) an bestehende Arena/Save-/Schadenspfade angeschlossen. Sechs Schulen als Daten, zwei vollständig spielbar; persönliche Grundwerte und alle zwölf besonderen Talente. Zwei Slots, Cooldown-HUD, getrennte synthetische Sound-Cues, begrenzte Draw-Effekte und nichtrekursive Strahlteilung. Gravitation in Welle 1 mit schwacher gemeinsamer Hilfe, Prisma als Welle-2-Säuberung; Dialoge, permanente Rettungen, erkennbare Hub-Silhouetten. Normale Karte nach der zweiten Rettung. Natürliche Wellen, Bosse, acht Items, Inventar, Echo-Pickups und pro Welle gespeicherte Heilung/drei Regionen erhalten. Baumwerte/Kosten sind Testbalance (§8.21.7).
+
+**Migration:** Neue Saves v6; alte spielen bis zur beschrifteten Umstellung mit globalem Baum/v5 weiter. Byteverifizierte Archivkopie, historisch bezahlte Preise vollständig zurück; alle 45 Käufe getestet. Welt, Rekorde, Overflow, earned/paid und Settlement-IDs unverändert. .bak-Recovery, fehlgeschlagene Käufe/Unlocks/Loadouts und Retry berücksichtigt. Keine stillschweigende Zuordnung alter Käufe zu neuen Boni, kein paralleler Baum, keine neue Respec-Regel. Reale Saves bei Tests nicht verwendet.
+
+**Geprüft:** 1580 Checks in 21 Suites, null verbleibende Fehler. Neue Suite: 167 Checks auch nativ D3D12; echte Q/E-Eingaben, physischer Sog, Gruppentreffer, Pause/Tod, alle 30 Käufe, Equip-Snapshots, Save-Fehler, v1–v6 und exakte Sicherungen. Historische Tests explizit mit Legacy-Fixtures, neue Architektur separat geprüft. Sechs native Bilder unter `Progress/captures/2026-10-28_companions/` gesichtet. Kontrollierte Aufbauten, keine menschlichen Vollruns. Praktischer Abnahmeleitfaden im Spielrepo `COMPANION_PLAYTEST.md`.
+
+**Aufschlussreiche Korrekturen:** Run-Ende pausiert sofort: Effekte müssen vor dem Pausieren gelöscht werden. Separater Rettungszustand verhindert, dass Escape die Belohnungsfortsetzung übergeht. JSON-Roundtrip-Test muss die JSON-Zahlendarstellung vergleichen; echtes Neuladen war bereits gültig. Ein historischer Fehlerfixture brauchte expliziten Legacy-Modus. Der Richtungsanimations-Proof wartete ohne `--verify` interaktiv; korrekt wiederholt, 48 Checks bestanden.
+
+**Performance:** RX 7600S/D3D12, 150 gemessene Frames nach 30 Warmup, lebende KI: zwölf Gegner mit beiden Kräften Median 7,08/p95 10,66 ms. Künstliche 80-Gegner-Dichte mit Kräften 161,78/176,40 ms, ohne 151,10/164,20 ms. Kein belastbarer 80er-FPS-Anspruch: bereits die vorhandenen dichten Kollisions-/KI-Arbeiten dominieren. Präsentation/VSync enthalten, kein Kill-/Speicher-IO-Benchmark. Normaler Zwölfer-Cap unverändert.
+
+**Offen / Grenzen:** menschliches Spielgefühl, Soundmix, Langzeitkosten/-balance, volle späte Runs mit IO, finale Gefährten-Art, übrige vier Freunde und spätere direkte Konfrontationen. Keine neue Kampagne/Währung/Klasse/Fraktion/Prestige, kein Export, kein Push. Spiel lokal 38ddc22 auf `codex/companion-first-playable`; Chronik separater lokaler Checkpoint.
+
+---
+
 ## 2026-10-28 – Freigegebener Vier-Richtungen-Magier im normalen Spiel
 
 **Freigabe:** Nutzer bestätigt den neu erstellten Buchentwurf V2 und beauftragt ausdrücklich den gesamten neuen Magier für das normale Spiel sowie den GitHub-Push. Korrektur des früheren Missverständnisses: Bei der Rückansicht sollen die offenen **Buchinnenseiten zum Betrachter** zeigen. Die frühere Aussage „zum Gesicht, nicht zum Betrachter“ ist damit überholt; V1 mit sichtbaren Außeneinbänden wurde verworfen.
