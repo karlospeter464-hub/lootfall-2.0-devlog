@@ -173,3 +173,20 @@ Expliziter Nutzerauftrag erweitert Gate 0 um einen **isolierten** Sprite-/Animat
 - [x] Lokale Nutzer-/Editoränderungen an project.godot und vorbestehende unversionierte UID-/Importdateien bewahrt und nicht mitcommittet. Spiel-Checkpoint **eb46baf**, kein Push, kein neuer Releaseexport.
 
 **Jetzt testen:** C:/Users/elias/Lootfall 2.0/lootfall-2.0/project.godot öffnen, laufendes Spiel stoppen und F5 → Start Run. Ab diesem Schritt zeigt F5 die neue Figur. Editor-Dateireload bei Rückfrage zulassen. Screenshot: [Standardfigur](Progress/captures/2026-10-26_apprentice_standard.png). Persönliche Spiel-/Stilabnahme und neuer Releaseexport offen; Stab/Arm bleiben fest im Einzelbild, kein B-Rig gebaut.
+
+<!-- Historische Remote-Planung; neuere Implementierungsnachweise oben haben Vorrang. -->
+
+
+## Creative-Director-Entscheidung – 26.10.2026: v01 weiterführen, Animation vertiefen
+
+**[ENTSCHEIDUNG – visuelle Präferenz]** Der Creative Director bevorzugt ausdrücklich **Apprentice Runtime-Kandidat v01** gegenüber v02. **v01 ist der visuelle Ausgangspunkt für die nächste Prototypiteration.** v02 wird nicht weiterverfolgt. Die Entscheidung ist **keine** endgültige Freigabe der permanenten Player-Ersetzung oder des vollständigen A1-Style-Gates; subjektive Beurteilung einer bewegten In-Engine-Version steht aus. Das originalgetreue v01-Runtime-PNG und die bisherigen Testskripte/Belege erhalten.
+
+**[NÄCHSTER KLEINER PRODUKTIONSTEST – Animation, kein Re-Design]** Im **bereits bestehenden isolierten V-Test** v01 lebendiger machen, ohne den Charakter neu zu zeichnen. Reversible Änderungen in drei klaren Zuständen: (1) Idle: subtiler Atem-/Gewichtsshift sowie separates Flackern der Feuerkugel nach Möglichkeit als Godot-VFX; (2) Move: leichtes Bob/Sway ohne Fußanker-Drift oder „Hüpfen“, ggf. eine kleine Neigung; (3) Cast: kurzer gut lesbarer Vorbereitungs-/Release-Impuls inklusive separatem Feuerblitz. Bestehende Gameplay-VFX/Schussrichtung bleiben autoritativ. **Keine** neuen 8-Richtungs-Sprites und **kein** großer Rig-/Sprite-Sheet-Aufbau.
+
+**Art-Grenze:** v01 enthält einen **eingebrannten Bodenschatten**. Für einen Produktionsversuch darf der Schatten **gezielt entfernt** oder die lokale untere Schattenfläche gekapselt werden, **ohne** Stil, Hut, Buch, Haare, Mantel oder Silhouette der Figur umzugestalten. Ist das nur mit sichtbarem Qualitätsverlust möglich, Original belassen, Doppel-Schatten für den Test benennen und den getrennten Shadow-Fix später behandeln.
+
+**[HYPOTHESE, nur wenn A sichtbar zu steif]** Einen **minimalen B-Proof** mit getrenntem Stab/Feuer bzw. Arm testen, und zwar zuerst prüfen, ob der vorhandene Einzelbild-Assetaufbau ohne falsche Lücken/Übermalungen tatsächlich sinnvoll segmentierbar ist. Nicht automatisch auseinanderreißen, wenn das Original eine nicht trennbare Zeichnung ist. Eine kleine originale Cast-Pose wäre eine spätere Alternative, sobald der Nutzen durch einen Clip belegt ist.
+
+**Abnahme-Nachweis:** 5–10 Sekunden echte native Gameplay-Aufnahme statt nur Idle-/Combat-Stills; Idle → Move → Cast → Hurt → Pause (sofern möglich) und Richtungswechsel. Vergleich mit unverändertem v01 und alter prozeduraler Figur im Standardfenster, mindestens ein Gegner-/Warnungsszenario. Prüfen: sichtbarer, aber nicht übertriebener Effekt; Fußkontakt, Schatten und Projektilursprung; keine fehlerhafte Posenrichtung oder Verdeckung von Telegraphern; Tests/Regressionen wie vorher. **Normal F5 bleibt unverändert**, V-Fallback und Save-Isolation erhalten. Danach persönliche Sichtprüfung, erst anschließend Entscheidung über permanente v01-Integration oder kleinsten B-Proof.
+
+**Dokupflege:** Das ist die einzige verbindliche offene nächste Visual-Slice-Iteration. Nach tatsächlichem Codex-Test hier abhaken und technische Nachweise verlinken, keine neuen Plan-Dateien. Weder Animationstest noch finale In-Game-Abnahme als erledigt ausgeben, bevor beides erfolgt.
