@@ -696,6 +696,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**29.10. Getrennte Dev-Resets:** Talente, Echoes, Story, Healed/Regionsrekorde und Gesamtreset separat; je Run-Ende. Story behält gesperrte Talentkäufe. 402 Checks bestanden; Details DEVLOG.
+
 **29.10. Dev-Reset:** Beauftragter Reset auch im laufenden Run (Run-Ende und Rückkehr nach Emberhaven) für Talente, Echoes und Gefährten-Story im F1-Testmenü; Welt/Rekorde bleiben. 372 Checks bestanden; Details DEVLOG.
 
 **Companion-Slice · 28.10.:** Gravitation/Prisma, Q/E und je 15 persönliche Talente samt frühen Rettungen und Hub spielbar. Ausdrückliche Legacy-Umstellung mit bytegleicher Sicherung/exakter Erstattung; Welt/Echo-Ledger erhalten. 1580 Checks/21 Suites, 167 zusätzlich nativ; sechs Engine-Captures. Zwölf KI-Gegner plus Kräfte 7,08 ms Median, künstliche 80er-Dichte bleibt langsam. Details §8.21.7; menschliche Abnahme offen. Spiel-Checkpoint 38ddc22; kein Push/Export.

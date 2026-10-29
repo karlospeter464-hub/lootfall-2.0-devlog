@@ -879,3 +879,7 @@ Auf Nutzerauftrag: F1 → Test tools → Reset talents + Echoes + friend story t
 ### Reset-Korrektur 29.10.
 Town-Beschränkung nach Nutzerfeedback entfernt: Reset funktioniert auch im Run, beendet ihn und kehrt nach Emberhaven zurück. Alte offene Echo-Credits werden nach erfolgreichem atomarem Reset entfernt, damit Neustart sie nicht zurückzahlt. Echter Button-Signalpfad mit offenem Run getestet: 175 Companion + 197 Dev-Tools-Checks bestanden. Welt bleibt erhalten. Laufendes Spiel für neue Skripte neu starten.
 
+
+### Getrennte Resets 29.10.
+Nutzer beauftragt auch Healed-Reset und getrennte Steuerung. F1/Test tools bietet Talente, Echoes, Freund-Story, Healed/Welt und EVERYTHING separat. Jeder beendet den Run. Weltreset löscht Heilung, regionale Freischaltungen und Rekorde inklusive Session-Rekorde. Story-only bewahrt investierte Talente in gesperrten Bäumen bis erneuter Rettung; Talentreset erstattet nichts. Nicht betroffene Bereiche bleiben; atomarer Save. 205 Companion + 197 Dev-Tools-Checks bestanden. Kein neuer nativer Sichttest/Export/Push.
+
