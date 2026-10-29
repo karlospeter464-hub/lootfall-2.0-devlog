@@ -869,3 +869,9 @@ Nach dem Neustart sind die Godot-MCP-Werkzeuge im Chat verfügbar. Zwei lesende 
 ---
 
 Für kommende Einträge: Datum/Titel, Ziel, Ausgangsproblem, Änderung und Grund, tatsächliche Prüfung, Medienpfad, offene Frage. Fehlversuche festhalten, wenn sie eine Entscheidung erklären. Keine vollständigen Chat-Transkripte nötig.
+
+
+## 2026-10-29 — Dev-Reset für Charakterfortschritt
+
+Auf Nutzerauftrag: F1 → Test tools → Reset talents + Echoes + friend story to 0 (town only). Löscht Käufe ohne Erstattung, Wallet, Gefährtenrettungen/Slots sowie ausstehende Echo-Ledger atomar; nur in Emberhaven, aktueller Normal-/Sandbox-Save. Regionen/Heilung/Rekorde bleiben erhalten. 174 Companion- und 197 Dev-Tools-Checks bestanden, inklusive Write-Failure, Reload und abgewiesenem Run-Reset. Keine neue native Aufnahme oder vollständiger Suite-Rerun, kein Push.
+

@@ -696,6 +696,8 @@ Die frühere Feature-Sammlung enthält: (1) Build-Vielfalt; (2) Synergie von Ski
 
 ## 9. Aktueller Projektstatus – von Codex fortzuführen
 
+**29.10. Dev-Reset:** Beauftragter town-only Reset für Talente, Echoes und Gefährten-Story im F1-Testmenü; Welt/Rekorde bleiben. 371 Checks bestanden; Details DEVLOG.
+
 **Companion-Slice · 28.10.:** Gravitation/Prisma, Q/E und je 15 persönliche Talente samt frühen Rettungen und Hub spielbar. Ausdrückliche Legacy-Umstellung mit bytegleicher Sicherung/exakter Erstattung; Welt/Echo-Ledger erhalten. 1580 Checks/21 Suites, 167 zusätzlich nativ; sechs Engine-Captures. Zwölf KI-Gegner plus Kräfte 7,08 ms Median, künstliche 80er-Dichte bleibt langsam. Details §8.21.7; menschliche Abnahme offen. Spiel-Checkpoint 38ddc22; kein Push/Export.
 
 **Produktionsübernahme · 28.10.:** Nutzer hat Buch-V2 und den gesamten neuen Magier für F5 sowie GitHub freigegeben. Innenseiten zeigen zum Betrachter; frühere gegenteilige Interpretation ausdrücklich korrigiert. Vier Ansichten nach Mausziel, lokale Gelenkgesten, V→v01/A+, prozeduraler Startup-Fallback. Spiel 5762939 auf GitHub main verifiziert. 48 Headless-/87 native Integrationschecks, Startup/Pause/Treffer und acht Regressionen bestanden. Echte Kampfmedien archiviert. Keine Props, Gameplay-/Saveänderungen oder neue Figurenserie; vorhandene Releasepakete unverändert. Die folgenden Einträge beschreiben ältere Zwischenstände.
