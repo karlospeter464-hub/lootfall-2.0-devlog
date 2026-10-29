@@ -910,3 +910,8 @@ Nutzer beauftragt auch Healed-Reset und getrennte Steuerung. F1/Test tools biete
 **Prüfung:** 605 Checks in sechs betroffenen Suites bestanden (Inventar50, Combat35, Town69, Companion205, Dev197, neue UI49). UI49 zusätzlich nativ D3D12; acht gesichtete Aufnahmen: Stadt, beide Friends-Seiten, I, Pause, Dev, Karten, Ergebnis. Langer doppelter Talenttext nach erster Sichtprüfung gekürzt, damit beide Fähigkeiten schneller erreichbar sind. Initialisierungsreihenfolge der neuen Friends-Vorschau korrigiert. Kein kompletter Suite-Rerun, menschliche Stilabnahme offen. Save-/Economy-/Tastenregeln unverändert.
 
 **Checkpoint:** Spiel `a187ea8`, lokal. Bilder unter `Progress/captures/2026-10-29_menus/`. Kein Export oder Push.
+
+## 2026-10-29 — GitHub-Synchronisierung bestätigt
+
+Auf ausdrücklichen Nutzerauftrag lokal gesichert und beide main-Branches ohne Force-Push aktualisiert. Spiel: 3b42d6745f04540e8815563b28a6273108dc1442, inklusive Companion-Slice, getrennter Resets und Menü-/Fähigkeitsinfos. Chronik-Merge 5a8109a erhält lokale Meilensteine sowie zusätzliche Remote-Planung (ASSET_ROADMAP/DEVLOG/Checkliste); aktueller Masterplan unverändert erhalten. Beide Remote-Hashes per ls-remote verifiziert. Vorbestehende unversionierte Art-/Importdateien bleiben lokal, kein Spielstand oder Cache hochgeladen. Keine neue Gameplay-Änderung und kein Export; bestehende Prüfungen gelten. Dieser Eintrag wird als begleitender Dokumentationscheckpoint ebenfalls veröffentlicht.
+
